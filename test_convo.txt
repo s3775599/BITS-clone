@@ -1,0 +1,164 @@
+
+PC:	.. scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?
+
+Barry:	Everything's fine mate.
+
+PC:	I beg your pardon, Barry?
+
+Barry:	All good.
+
+PC:	Barry. I know we've been out here a long time but that doesn't give you licence to drop protocol whenever you feel like it. Got it?
+
+Barry:	[heaves a sign] Yes SIR Lieutanant SIR sorry SIR.
+
+PC:	Systems report, John?
+
+John:	It's fine, it's whatever.
+
+PC:	JOHN.
+
+John:	What? What do you want me to say? It's exactly the same as it was last shift. We haven't done anything since last shift. It's all the same as last shift.
+
+[first dialogue puzzle, returns to the top of the choices tree until John is prompted to check his console]
+
+PC:	
+	1- What's gotten into you two?
+		--John & Barry:		- Nothing.
+
+	2- One more outburst like that and I'll have to file a record of insubordination!
+		- John:	--- Oh no, not that. Please, anything but that.
+			PC:	- John you are an Engineer in the Australian National Astrophysics League. What does that mean to you?
+				John:	It means I get to spend the best years of my life in deep space.
+					PC:	1.- Exactly! It's the adventure of a lifetime!
+						John:	1a--- Oh it's a hoot.
+
+						2.- You don't sound very enthusiastic.
+						John:	--- I wonder why.
+							PC:	-If you don't like it, you can always quit.
+								John:	---Wait, really?
+									PC:	-Of course. But that means you won't have access to any ship-distributed food.
+
+										John:	---Oh.
+											PC:	-Or oxygen.
+												John:	---That doesn't sounds as bad as you you might think actually.
+	3- Are you sure nothing's changed?
+		--- John:	- Yes I'm sure.
+			- PC:	- Are you really sure?
+				---John:	Yes I'm really sure.
+					PC:	- Are you really really sure?
+						John:	--- Yes I'm really really sure.
+							PC:	- Are you really really extra sure?
+								John:	--- Yes I'm really really extra sure.
+									PC:	- Are you really really extra super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-the-airlock sure?
+										John:	--- YES.
+											PC:	- Check your console anyway.
+												John:	--- OKAY, FINE.
+													PC:	- "Sir".
+														John:	--- ... SIR.
+
+
+
+
+
+	4- Well that's good to know.
+		-- Barry: Playing favourites, are we?
+			- PC:	1- What are you talking about?
+				Barry:	- You chew my ear off when I talk like that but he gets away with anything.
+					PC:	--- That's not true.
+						Barry:	-- Yes it is.
+							- PC:	No it isn't.
+								Barry:	-- Yes it is.
+									PC: - No it isn't.
+										Barry:	-- Yes it is!
+											PC:	Who's Lieutenant?
+												Barry:	-- ... you are.
+													PC:	That's right.
+				2- No.
+					--Barry:	It sure looks like it.
+				3- Of course not.
+					--Barry:	Yeah, right.
+				4- Yes.
+					--Barry		I knew it.
+
+[John taps at his console]
+
+John:	See? Everything's...
+
+PC:	Everything's..?
+
+John:	Probably fine. SIR.
+
+[Start animation of Barry slowly, gradually sinking lower into his chair]
+
+PC:	Could you be a bit clearer on what you mean by "probably"?
+
+John:	It looks the same as before, like I said. SIR.
+
+PC:	It LOOKS the same or it IS the same?
+
+John:	It LOOKS like it IS the same. SIR.
+
+PC:	So can you CONFIRM that is IS the same?
+
+John:	... not exactly. SIR.
+
+PC:	Why not?
+
+John:	My console is... in Russian.
+
+[pause]
+
+PC:	Your console is in Russian?
+
+John:	My console is in Russian. SIR.
+
+[pause]
+
+PC:	Could you explain why your console is in Russian, John?
+
+[pause]
+
+John:	No Sir.
+
+[pause. PC and John both look at Barry, who is barely peeking above his console]
+
+PC:	Do you know anything about this, Barry?
+
+Barry:	Possibly.
+
+PC:	I really need a clearer answer than that Barry. Why is John's console in Russian?
+
+Barry:	Well, it was an accident.
+
+[pause]
+	I was bored.
+[pause]
+	So I was looking for a new hobby. And I thought hey, why not try learning a new language?
+[pause]
+	And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface to Russian to see what it looked like.
+[pause]
+	And I couldn't quite find how to switch it back.
+[pause]
+	It turns out language immersion takes a fairly long time.
+
+PC:	You said you switched the SHIP'S COMPUTER interface?
+
+Barry:	Uh, yes Sir.
+
+PC:	So that's going to affect everyone's cons...
+
+[ All crew look at their consoles. pause]
+
+PC:	Oh Barry, you idiot.
+
+Barry:	I feel really bad about it Sir.
+
+John:	Computer's voice recognition should still be working though.
+
+PC:	Computer!
+
+Computer: [angry shouting voice] ZATKNIS, YA ZANYAT! SHTO HOCHESH?
+
+[pause]
+
+PC:	Barry, you complete idiot.
