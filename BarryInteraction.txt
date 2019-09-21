@@ -1,8 +1,21 @@
 PC: I can see you typing away there, you are either fixing this problem or playing Galaga.
 Barry: Sir, I am running a complete Diagnostic...
           PC. 1. Do you know what you did?
-              --Barry: Sir, uh, I have been talking to this girl in the Ukraine and uhhh I have been learning Russia
+              --Barry: Sir, uh, I have been talking to this girl in the Ukraine and uhhh I have been learning Russian
                         during the night shift.
                         I selected Russian as a langugage but now I can't read enough to go back.
-                        --PC: You did what!?
-                        
+                        --PC: You did what!? Did I mention you were an idiot? 
+
+         PC.  2. What was out present course before all this happened?
+	      --Barry: Heading 280, 70, 210. Or 20 clicks from the Dionysus Galaxy.
+		    --PC: Is this charted on our planned course?
+			--Barry: err Actually, we are off course, I took a detour to see the sights
+				PC: BARRY!
+	PC: 3. Have you tried a complete shut-down and reboot?
+		--Barry: Yes
+		     --PC: Have you retraced your steps, pushed the same buttons?
+			--Barry: Yep.	        
+				--PC: Have you tried a systems diagnostic?
+					--Barry: My Systems dianostic is that it's in Russian.
+						--PC: Dammit Barry, how on Earth did this happen?
+							--Barry: Well Earth is not relevant, but I guess you can say I am having a bad day.
