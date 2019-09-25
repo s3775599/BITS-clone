@@ -6,36 +6,49 @@ JOHN DIALOGUE PUZZLE:
 		PC:
 		1b1. Yes.
 			JOHN: What do you imagine I can do to fix this?
-		PC:
-		1c1. You could use your enormous brain.
-			JOHN: What's in it for me?
-			PC:	
-			1c2a: A big thank you and a firm handshake.
-				JOHN: Well that will certainly make up for everything.
-			1c2b: The League's appreciation for all your hard work over the years.
-				JOHN: Oh, spare me.
-				PC:
-				1d1: Come on John, we all appreciate you here.
-					JOHN: What's my surname?
+			PC:
+			1c1: You could use your enormous brain.
+				JOHN: What's in it for me?
+				PC:	
+				1d1: A big thank you and a firm handshake.
+					JOHN: Well that will certainly make up for everything.
+				1d2: The League's appreciation for all your hard work over the years.
+					JOHN: Oh, spare me.
 					PC:
-					1e1: Smith.
-						JOHN: You're not even trying.
-					1e2: McCruthers.
-						JOHN: No.
-					1e3: John.
-						JOHN: No, that's my first name.
-					1e4: Brzeczyszczykiewicz.
-						JOHN: No.
-			1c2c: That attitude isn't helping the team now, is it?
-				JOHN: The team hasn't remembered my birthday for the past eight years.
-		1d1: No.
+					1d2a: Come on John, we all appreciate you here.
+						JOHN: What's my surname?
+						PC:
+						1d2b: Smith.
+							JOHN: You're not even trying.
+						1d2b: McCruthers.
+							JOHN: No.
+						1d2b: John.
+							JOHN: No, that's my first name.
+						1d2b: Brzeczyszczykiewicz.
+							JOHN: No.
+				1d3: That attitude isn't helping the team now, is it?
+					JOHN: The team hasn't remembered my birthday for the past eight years.
+			1c2: You could find someone who can help.
+				JOHN: Oh of course, there's no chance I could possible do anything.
+			1c3: You could try talking to the computer.
+				JOHN: Do you know how to say "Computer: change language to English" in Russian?
+					PC:
+					1c3a: No.
+						JOHN: Do you know how to say "English" in Russian?
+							PC:
+							1c3b: No.
+								JOHN: Do you know any Russian at all?
+								PC:
+								1c3c: No.
+									JOHN: Well, neither do I.
+		1b2: No.
 			JOHN: Then what are you bothering me for? Go tell Barry to fix it.
-		1e1: I think you're the only one here who can.
+		1b3: I think you're the only one here who can.
 			JOHN: You're probably right.
 				[All these dialogue choices lead to the same reply from John]
-				1e2: You're our only hope!
-				1e2: We can't do it without you!
-				1e2: The fate of the League rests on your shoulders.
+				1b2: You're our only hope!
+				1b2: We can't do it without you!
+				1b2: The fate of the League rests on your shoulders.
 					JOHN: Wow it's so nice to be needed. The answer is no.
 
 2a. John, what should we do?
