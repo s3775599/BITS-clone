@@ -29,7 +29,7 @@ JOHN DIALOGUE PUZZLE:
 				1d3: That attitude isn't helping the team now, is it?
 					JOHN: The team hasn't remembered my birthday for the past eight years.
 			1c2: You could find someone who can help.
-				JOHN: Oh of course, there's no chance I could possible do anything.
+				JOHN: Oh of course, there's no chance I could possibly do anything.
 			1c3: You could try talking to the computer.
 				JOHN: Do you know how to say "Computer: change language to English" in Russian?
 					PC:
@@ -106,8 +106,8 @@ JOHN DIALOGUE PUZZLE:
 				JOHN: We don't have enough titanium.
 			3c3b. What if you check the combustion seals?
 				JOHN: I am NOT going into the reactor chamber again.
-			3c3c. What about hydrating the flux probes?
-				JOHN: I get the feeling you're making these things up.
+			3c3c. What about lubricating the flux probes?
+				JOHN: We used the last of the WD40 on the squeaky chair in the comms room.
 			3c3d. What if you restart the synaptic motivators?
 				JOHN: I don't think I could begin to explain in simple terms why that wouldn't work.
 			3c3e. What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger an hydrolygesic feedback decouplement?
