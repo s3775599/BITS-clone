@@ -1,0 +1,95 @@
+
+JOHN DIALOGUE PUZZLE:
+
+1a1. John, you have to fix this.
+	JOHN: Me? You want me to fix this?
+		PC:
+		1b1. Yes.
+			JOHN: What do you imagine I can do to fix this?
+		PC:
+		1c1. You could use your enormous brain.
+			JOHN: What's in it for me?
+		PC:	
+		1c2: A big thank you and a firm handshake.
+			JOHN: Oh, great.
+		1c3: The League's appreciation for your hard work over the years.
+			JOHN: Oh, spare me.
+			PC:
+			1d1: Come on John, we all appreciate you here.
+				JOHN: What's my surname?
+				PC:
+				1e1: Smith.
+					JOHN: You're not even trying.
+				1e2: McCruthers.
+					JOHN: No.
+				1e3: John.
+					JOHN: No, that's my first name.
+				1e4: Brzeczyszczykiewicz.
+					JOHN: No.
+		1c4: That attitude isn't helping the team now, is it?
+			JOHN: The team hasn't remembered my birthday for the past eight years.		
+
+2a. John, what should we do?
+	JOHN: I think you should get Barry to fix the problem he caused.
+		PC:
+		2b1: I don't think he can.
+			JOHN: I'm sure he'll work it out eventually.
+		2b2: I don't think he wants to.
+			JOHN: I know how he feels.
+		2b3: I think he's caused enough damage for one day.
+			JOHN: He broke it, he can fix it. That's all I'm going to say about it.
+
+3a1. John, I need your help.
+	JOHN: What on Canopus do you think I can do about this?
+		PC:
+		3b1. I thought you might have some ideas.
+			JOHN: That's some inspirational leadership right there.
+		3b2. I don't know.
+			JOHN: Well, neither do I.
+		3b3: You're an engineer, aren't you?
+			JOHN:
+			You could says I'm an "engineer". You could also say that I modelled a nuclear reactor out of pinebark when I was 12, I have a first-class degree in quantum propulsion systems, and I was headhunted by the Australian National Astrophysics League before I'd even taken my final exams with promises of overseeing the biggest and most powerful engines humanity had ever devised.
+			
+			Then these stupid AI computers came along and now I press buttons all day asking the computer to find answers to things I devoted my life to studying, and the only tech I'm allowed to go anywhere near is the coffee machine.
+
+			And we ran out of coffee three years ago.
+		
+			But sure. "Engineer".
+
+			[next dialogue loops]
+			PC:
+			3c1. I bet you could fix it.
+				JOHN: I bet you I'm not going to.
+			3c2. Can you think of some way to fix this?
+				JOHN: I don't think a lowly "engineer" has any business fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer.
+				PC:
+				3d1. I bet you'd like to though.
+					JOHN: ...
+					[loops until all choices are selected, in any order]
+					PC:
+					3e1: I bet you really hate that computer.
+						JOHN: ...
+					3e2: I bet you're disappointed that the League reduced you to a button-pushing errand-boy.
+						JOHN: ...
+					3e3: I bet you feel like you really wasted your youth on all that study.
+						JOHN: ...
+					3e4: I bet you'd really like to show this computer how you really feel.
+						JOHN: ...
+
+						JOHN: AAARRRRRRRGH!!
+						[John smashes his console - it fixes the ship's interface by -% ]
+
+			[the next dialogue choice and corresponding answer rotates on the same panel with the above dialogue options]
+			3c3a. What if you align the phase manifold?
+				JOHN: We don't have enough titanium.
+			3c3b. What if you check the combustion seals?
+				JOHN: I am NOT going into the reactor chamber again.
+			3c3c. What about hydrating the flux probes?
+				JOHN: I get the feeling you're making these things up.
+			3c3d. What if you restart the synaptic motivators?
+				JOHN: I don't think I could begin to explain in simple terms why that wouldn't work.
+			3c3e. What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger an hydrolygesic feedback decouplement?
+				JOHN: Yes I thought about that but we don't have enough methylaluniminestricate to counter to secondary neurotrioxin-3 inversion.
+
+4a. I'm scared, John.
+	JOHN: Oh, give me a break.
