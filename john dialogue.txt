@@ -1,74 +1,74 @@
 
 JOHN DIALOGUE PUZZLE:
 
-1a1. John, you have to fix this.
+->: John, you have to fix this.
 	JOHN: Me? You want me to fix this?
 		PC:
-		1b1. Yes.
+		-->: Yes.
 			JOHN: What do you imagine I can do to fix this?
 			PC:
-			1c1: You could use your enormous brain.
+			--->: You could use your enormous brain.
 				JOHN: What's in it for me?
 				PC:	
-				1d1: A big thank you and a firm handshake.
+				---->: A big thank you and a firm handshake.
 					JOHN: Well that will certainly make up for everything.
-				1d2: The League's appreciation for all your hard work over the years.
+				---->: The League's appreciation for all your hard work over the years.
 					JOHN: Oh, spare me.
 					PC:
-					1d2a: Come on John, we all appreciate you here.
+					----->: Come on John, we all appreciate you here.
 						JOHN: What's my surname?
 						PC:
-						1d2b: Smith.
+						------>: Smith.
 							JOHN: You're not even trying.
-						1d2b: McCruthers.
+						------>: McCruthers.
 							JOHN: No.
-						1d2b: John.
+						------>: John.
 							JOHN: No, that's my first name.
-						1d2b: Brzeczyszczykiewicz.
+						------>: Brzeczyszczykiewicz.
 							JOHN: No.
-				1d3: That attitude isn't helping the team now, is it?
+				---->: That attitude isn't helping the team now, is it?
 					JOHN: The team hasn't remembered my birthday for the past eight years.
-			1c2: You could find someone who can help.
+			--->: You could find someone who can help.
 				JOHN: Oh of course, there's no chance I could possibly do anything.
-			1c3: You could try talking to the computer.
+			--->: You could try talking to the computer.
 				JOHN: Do you know how to say "Computer: change language to English" in Russian?
 					PC:
-					1c3a: No.
+					---->: No.
 						JOHN: Do you know how to say "English" in Russian?
 							PC:
-							1c3b: No.
+							----->: No.
 								JOHN: Do you know any Russian at all?
 								PC:
-								1c3c: No.
+								------>: No.
 									JOHN: Well, neither do I.
-		1b2: No.
+		-->: No.
 			JOHN: Then what are you bothering me for? Go tell Barry to fix it.
-		1b3: I think you're the only one here who can.
+		-->: I think you're the only one here who can.
 			JOHN: You're probably right.
 				[All these dialogue choices lead to the same reply from John]
-				1b2: You're our only hope!
-				1b2: We can't do it without you!
-				1b2: The fate of the League rests on your shoulders.
+				--->: You're our only hope!
+				--->: We can't do it without you!
+				--->: The fate of the League rests on your shoulders.
 					JOHN: Wow it's so nice to be needed. The answer is no.
 
-2a. John, what should we do?
+->: John, what should we do?
 	JOHN: I think you should get Barry to fix the problem he caused.
 		PC:
-		2b1: I don't think he can.
+		-->: I don't think he can.
 			JOHN: I'm sure he'll work it out eventually.
-		2b2: I don't think he wants to.
+		-->: I don't think he wants to.
 			JOHN: I know how he feels.
-		2b3: I think he's caused enough damage for one day.
+		-->: I think he's caused enough damage for one day.
 			JOHN: He broke it, he can fix it. That's all I'm going to say about it.
 
-3a1. John, I need your help.
+->: John, I need your help.
 	JOHN: What on Canopus do you think I can do about this?
 		PC:
-		3b1. I thought you might have some ideas.
+		-->: I thought you might have some ideas.
 			JOHN: That's some inspirational leadership right there.
-		3b2. I don't know.
+		-->: I don't know.
 			JOHN: Well, neither do I.
-		3b3: You're an engineer, aren't you?
+		-->: You're an engineer, aren't you?
 			JOHN:
 			You could says I'm an "engineer". You could also say that I modelled a nuclear reactor out of pinebark when I was 12, I have a first-class degree in quantum propulsion systems, and I was headhunted by the Australian National Astrophysics League before I'd even taken my final exams with promises of overseeing the biggest and most powerful engines humanity had ever devised.
 			
@@ -80,38 +80,38 @@ JOHN DIALOGUE PUZZLE:
 
 			[next dialogue loops]
 			PC:
-			3c1. I bet you could fix it.
+			--->: I bet you could fix it.
 				JOHN: I bet you I'm not going to.
-			3c2. Can you think of some way to fix this?
+			--->: Can you think of some way to fix this?
 				JOHN: I don't think a lowly "engineer" has any business fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer.
 				PC:
-				3d1. I bet you'd like to though.
+				---->: I bet you'd like to though.
 					JOHN: ...
 					[loops until all choices are selected, in any order]
 					PC:
-					3e1: I bet you really hate that computer.
+					----->: I bet you really hate that computer.
 						JOHN: ...
-					3e2: I bet you're disappointed that the League reduced you to a button-pushing errand-boy.
+					----->: I bet you're disappointed that the League reduced you to a button-pushing errand-boy.
 						JOHN: ...
-					3e3: I bet you feel like you really wasted your youth on all that study.
+					----->: I bet you feel like you really wasted your youth on all that study.
 						JOHN: ...
-					3e4: I bet you'd really like to show this computer how you really feel.
+					----->: I bet you'd really like to show this computer how you really feel.
 						JOHN: ...
 
 						JOHN: AAARRRRRRRGH!!
 						[John smashes his console - it fixes the ship's interface by -% ]
 
 			[the next dialogue choice and corresponding answer rotates on the same panel with the above dialogue options]
-			3c3a. What if you align the phase manifold?
+			--->: What if you align the phase manifold?
 				JOHN: We don't have enough titanium.
-			3c3b. What if you check the combustion seals?
+			--->: What if you check the combustion seals?
 				JOHN: I am NOT going into the reactor chamber again.
-			3c3c. What about lubricating the flux probes?
+			--->: What about lubricating the flux probes?
 				JOHN: We used the last of the WD40 on the squeaky chair in the comms room.
-			3c3d. What if you restart the synaptic motivators?
+			--->: What if you restart the synaptic motivators?
 				JOHN: I don't think I could begin to explain in simple terms why that wouldn't work.
-			3c3e. What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger an hydrolygesic feedback decouplement?
+			--->: What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger an hydrolygesic feedback decouplement?
 				JOHN: Yes I thought about that but we don't have enough methylaluniminestricate to counter to secondary neurotrioxin-3 inversion.
 
-4a. I'm scared, John.
+->: I'm scared, John.
 	JOHN: Oh, give me a break.

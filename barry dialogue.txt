@@ -1,0 +1,127 @@
+BARRY DIALOGUE PUZZLE
+
+->: I'm very disappointed in you, Barry.
+	BARRY: I don't know how this could have happened, Sir.
+		-->: That's a bit difficult to believe, Barry.
+			BARRY: Uh, I  suppose so.
+		-->: Well, we need to find a way to fix it now.
+			BARRY: Yes sir. I'm working on it right now, Sir.
+		-->: I imagine it had something to do with you fiddling with computer settings you had no business interfering with.
+			BARRY: Uh, true.
+
+->: How could you do this, Barry?
+	BARRY: I didn't mean to do it, Sir.
+		PC:
+		-->: You didn't mean to make the computer virtually impossible to use, thus jeopardising the crew, the ship and the mission?
+			BARRY: Uh, that's correct Sir.
+				PC:
+				--->: Well, that's great. As long as you're sorry.
+					BARRY: I'm very sorry Sir.
+					[pause]
+					BARRY: I'll still need to fix this though, won't I?
+						PC:
+						---->: Yes, Barry. You need to fix the computer so we don't all die from your idiocy. That would be very good of you.
+				--->: I'm pleased to hear it. I was about to put you on report, but since you seem so sincerely sorry, I'll let you off.
+					BARRY: Really, Sir?
+						PC:
+						---->: No, Barry, you colossal moron.
+->: Barry, you need to fix this.
+	BARRY: I know Sir, I'm working on it.
+	PC:
+	-->: Let me know how you get on.
+		BARRY: Yes Sir, I will Sir.
+	-->: What are you doing to fix it?
+		BARRY: I'm going to try something.
+			PC:
+			--->: What's that?
+				BARRY: I'm going to try pressing a button.
+				[pause]
+				BARRY: Nope, nothing.
+			--->: Wait, I have an idea.
+				BARRY: What's that Sir?
+					PC:
+					---->: What kind of training did you get when you were qualifying to be a Pilot?
+						BARRY: Aerodynamics, calculus, spatial geometry, mechanical engineering, first aid, how to drink 7 shots of rum and vomit out your nose, nagivation...
+					PC:
+					----->: Navigation! Wait, seven shots and what? No, nevermind actually.
+						BARRY: What about navigation, Sir?
+							------>: You must have learned about observing your surroundings, noticing minor details and changes of scenery?
+								BARRY: Uh, yes Sir I suppose so.
+									PC:
+									------->: If you replay the scene in your head, can you visualise the console again? All the keys and screens you saw to change the language the first time?
+										BARRY: ...
+										[pause]
+										BARRY: Actually, Sir, I think I just about can.
+										[Barry types at his console]
+										BARRY: Yes... yes..... yes! YES! I've got it!
+											PC:
+											-------->: You've fixed it?
+												BARRY: Uh, not completely Sir. But it looks like it's a little bit better. I'll keep trying. [Barry has fixed the computer interfadce by -%]
+												
+					---->: Try pushing random buttons.
+						BARRY: Are you sure, Sir?
+							PC:
+							----->: Yes.
+								BARRY: Okay, Sir. Here goes...
+								[pause]
+								BARRY: So much for that. [[[OPTION FOR COMIC EFFECT HERE - POSS. FLASHING LIGHT OR ANNOYING SONG STARTS PLAYING]]]
+							----->: No.
+					---->: I think you should not touch anything and let me and John try to fix this.
+						BARRY: If you say so, Sir.
+					
+			--->: Whatever it is Barry, you had better have a good plan.
+				BARRY: ...
+					PC:
+					---->: Barry?
+						BARRY: ...
+							PC:
+							----->: You were going to start pushing random buttons, weren't you Barry?
+								BARRY: Kind of yes, Sir. Sorry Sir.
+	-->: Do you know what's going to happen if you don't sort this out?
+		BARRY: I can imagine, Sir.
+			[the following dialogie options replace all the others; all paths lead back to the main dialogue]
+			PC:
+			--->: Can you imagine not being able to order those spicy kebabs from the food dispenser?
+				BARRY: Oh, god... or the samosas!
+					PC:
+					---->: Get to work, Barry.
+			--->: Can you imagine not being able to activate the turbolift to get back to your quarters?
+				BARRY: So we're stuck here?
+					---->: And getting angrier by the minute.
+			--->: Can you imagine the crew collectively stuffing you into the airlock?
+				BARRY: But they won't be able to open the outer doors without a voice confirmation.
+					PC:
+					---->: I'm sure they'd figure something out.
+			--->: Can you imagine what the rest of the crew is going to do to us if they find out?
+				BARRY: I'm trying not to.
+
+->: I don't understand, Barry.
+	BARRY: Don't understand what, Sir?
+		-->: How could you change the language settings like that? Doesn't it need an admin password?
+			BARRY: Yes Sir, it did.
+				PC:
+				
+		-->: Why did you think you could learn a new language so quickly?
+			BARRY: I heard that when you go to a new country you learn the language really quickly.
+				PC:
+				--->: How quickly?
+					BARRY: Uh, I don't know. I guess.. a few months instead of a few years?
+					PC:
+					---->:Barry, stop talking.
+				--->: Changing the computer interface isn't like going to a new country. It's like you picking up a foreign book and trying to read it immediately.
+					BARRY: Yes, Sir. I realised that after about three seconds.
+						PC:
+						---->: Barry, stop talking.
+		-->: Why didn't you tell us as soon as it happened?
+			BARRY: I was a bit embarrassed and hoped maybe it wouldn't be that noticeable.
+				PC:
+				--->: You thought that we wouldn't notice that the computer was IN ANOTHER LANGUAGE?
+					BARRY: It kind of looks a bit like English.
+						PC:
+						---->: Barry.
+							BARRY: A little bit.
+							PC:
+							----->: Barry.
+								BARRY: A couple of the letters look the same.
+								PC:
+								------>: Barry, stop talking.
