@@ -41,7 +41,7 @@ BARRY DIALOGUE PUZZLE
 				BARRY: What's that Sir?
 					PC:
 					---->: What kind of training did you get when you were qualifying to be a Pilot?
-						BARRY: Aerodynamics, calculus, spatial geometry, mechanical engineering, first aid, how to drink 7 shots of rum and vomit out your nose, nagivation...
+						BARRY: Aerodynamics, calculus, spatial geometry, mechanical engineering, first aid, how to drink 7 shots of rum and vomit out your nose, navigation...
 					PC:
 					----->: Navigation! Wait, seven shots and what? No, nevermind actually.
 						BARRY: What about navigation, Sir?
@@ -97,10 +97,25 @@ BARRY DIALOGUE PUZZLE
 
 ->: I don't understand, Barry.
 	BARRY: Don't understand what, Sir?
-		-->: How could you change the language settings like that? Doesn't it need an admin password?
+		-->: How could you change the language settings like that? Didn't it need an admin password?
 			BARRY: Yes Sir, it did.
 				PC:
-				
+				--->: Do you have some higher authorisation that I don't know about?
+					BARRY: No Sir, it was just luck.
+						PC:
+						---->: "password"?
+							BARRY: No, Sir.
+						---->: "qwerty"?
+							BARRY: No, Sir.
+						---->: "12345678"?
+							BARRY: No, Sir.
+						---->: "ford"?
+							BARRY: No, Sir.
+				--->: How did you know what the captain's password was?
+					BARRY: Someone left a sticky note with the password on my console from the last shift.
+						PC:
+						---->: I guess that means someone else is first up for cleaning the heads next Saturday, at least.
+
 		-->: Why did you think you could learn a new language so quickly?
 			BARRY: I heard that when you go to a new country you learn the language really quickly.
 				PC:
