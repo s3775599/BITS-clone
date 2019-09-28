@@ -42,21 +42,21 @@ BARRY DIALOGUE PUZZLE
 					PC:
 					---->: What kind of training did you get when you were qualifying to be a Pilot?
 						BARRY: Aerodynamics, calculus, spatial geometry, mechanical engineering, first aid, how to drink 7 shots of rum and vomit out your nose, navigation...
-					PC:
-					----->: Navigation! Wait, seven shots and what? No, nevermind actually.
-						BARRY: What about navigation, Sir?
-							------>: You must have learned about observing your surroundings, noticing minor details and changes of scenery?
-								BARRY: Uh, yes Sir I suppose so.
-									PC:
-									------->: If you replay the scene in your head, can you visualise the console again? All the keys and screens you saw to change the language the first time?
-										BARRY: ...
-										[pause]
-										BARRY: Actually, Sir, I think I just about can.
-										[Barry types at his console]
-										BARRY: Yes... yes..... yes! YES! I've got it!
-											PC:
-											-------->: You've fixed it?
-												BARRY: Uh, not completely Sir. But it looks like it's a little bit better. I'll keep trying. [Barry has fixed the computer interfadce by -%]
+						PC:
+						----->: Navigation! Wait, seven shots and what? No, nevermind actually.
+							BARRY: What about navigation, Sir?
+								------>: You must have learned about observing your surroundings, noticing minor details and changes of scenery?
+									BARRY: Uh, yes Sir I suppose so.
+										PC:
+										------->: If you replay the scene in your head, can you visualise the console again? All the keys and screens you saw to change the language the first time?
+											BARRY: ...
+											[pause]
+											BARRY: Actually, Sir, I think I just about can.
+											[Barry types at his console]
+											BARRY: Yes... yes..... yes! YES! I've got it!
+												PC:
+												-------->: You've fixed it?
+													BARRY: Uh, not completely Sir. But it looks like it's a little bit better. I'll keep trying. [Barry has fixed the computer interfadce by -%]
 												
 					---->: Try pushing random buttons.
 						BARRY: Are you sure, Sir?
@@ -66,6 +66,8 @@ BARRY DIALOGUE PUZZLE
 								[pause]
 								BARRY: So much for that. [[[OPTION FOR COMIC EFFECT HERE - POSS. FLASHING LIGHT OR ANNOYING SONG STARTS PLAYING]]]
 							----->: No.
+								BARRY: Okay, let me know when you want me to do something Sir.
+
 					---->: I think you should not touch anything and let me and John try to fix this.
 						BARRY: If you say so, Sir.
 					
