@@ -1,0 +1,62 @@
+Story outline
+
+The Night Watch
+
+Back Story
+
+On a long-range scouting mission into deep space, the crew of the Australian National Astrophysics League deep space reconnaissance frigate ‘Bon Scott’ are a long way from a hot shower. Their mission: to patrol the galaxy looking for unstable planets to destroy, trailblazing the way for mineral harvest ships following them some years behind. Lieutenant Thoroughfare, Third Officer, commands the Night Watch. 
+
+Lieutenant James (“Jim”) Thoroughfare has heard all the jokes now about it always being night in deep space, and the edge really wore off when it became clear that "it's always night" came to be a convenient excuse for him and his team to be summoned to respond to any unpleasant shipboard matters.
+
+Captain has a sniffle? Night Watch pulls a double shift. 
+The toilets are overflowing after another 'saveloy Saturday'? Grab your buckets and fishing waders Night Watch, it’s going to get messy. Someone left the reactor core safety hatch open? Hope you brought some sunscreen, looks like Night Watch are getting a nice tan this week.
+
+Pilot Barry thought commanding a frigate with the power to destroy a planet would be a dream job, but after the first week he realised that most of space is a lot of empty space, and piloting doesn't require very much manoeuvring. After ten years he's lost count of the number of time he's wished he'd brought a good book.
+
+Engineer John graduated top of his university course. He went on to complete a master’s degree in advanced quantum propulsion systems in less than a year. He was headhunted by the Australian National Astrophysics League and was the first choice in every round of panel interviews. He was assigned to the Rasputin and assured that it was the first step in a what was sure to be a prestigious career.
+
+That was approximately two months before Dr Kermit Ferguson made his famous breakthrough in computer AI systems, successfully developing the first sentient computer AI which, despite countless testing, never failed a Turing test. The League was an early adopter of this technology and its flagship UNN Rasputin was the first of the fleet to have a fully sentient computer AI monitoring system installed. 
+Engineer John's years of expertise and training were rendered obsolete immediately and his role was reduced to requesting the computer AI do what he had spent his entire life training to do. As a result, John harbours some resentment towards the computer, the League, and most sentient life in general.
+
+It's a typical night for the Night Watch. Lieutenant Thoroughfare has just come on duty and begins the usual watch checks with Pilot Barry and Engineer John.
+
+Due to an attempt to learn Russian in his vastly spare, Barry has managed to change the highly sophisticated computer AI's interface to Russian, which none of the crew understand. Consequently, the crew don't know how to change this back. They also soon find that as well as changing the language interface, the computer AI's personality has adopted that of a surly, short-tempered Slavic babushka.
+
+However, it's the Night Watch, and surely tonight can't be worse than the aftermath of the last 'saveloy Saturday' (John still can't look at a bowl of muesli without turning green). The mission must continue.
+
+Lieutenant Thoroughfare must convince, cajole, and negotiate with his crew - and the computer - in order to change the console back into English before the Morning Watch crew find out what’s happened.
+
+
+
+
+Plot Outline
+
+Lieutenant Jim Thoroughfare approaches the bridge for the start of the Night Watch.
+
+[Barry introduction dialogue tree – See test_convo.txt]
+
+Now PC has a choice in talking to Barry more, talking to John or talking to the console.
+
+Player decides next path
+
+If talk to Barry
+
+[BarryInteraction.txt]
+
+If successful with Barry the console will successfully change 20% of the interface back into English (additional to John’s dialogue puzzle), making the console puzzle easier to solve.
+
+[Final_scene_teamwork.txt]
+
+Else If talk to John
+
+[JohnInteraction.txt]
+
+If successful with John the console will successfully change 20% of the interface back into English (additionally to solving Barry’s dialogue puzzle), making the console puzzle easier to solve.
+
+[Final_scene_teamwork.txt]
+
+Else If talk to computer
+
+Mini game begins with dialogue from computer at the same time. If PC wins Mini game, the console will successfully be switched back to English.
+
+[Final_Scene_no_assistance.txt]
