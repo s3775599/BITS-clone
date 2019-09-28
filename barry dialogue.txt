@@ -114,7 +114,7 @@ BARRY DIALOGUE PUZZLE
 				--->: How did you know what the captain's password was?
 					BARRY: Someone left a sticky note with the password on my console from the last shift.
 						PC:
-						---->: I guess that means someone else is first up for cleaning the heads next Saturday, at least.
+						---->: I guess that means another Watch is first up for cleaning the heads next Saturday, at least.
 
 		-->: Why did you think you could learn a new language so quickly?
 			BARRY: I heard that when you go to a new country you learn the language really quickly.
