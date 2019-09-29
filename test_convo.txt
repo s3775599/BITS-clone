@@ -157,7 +157,7 @@ John:	Computer's voice recognition should still be working though.
 
 PC:	Computer!
 
-Computer: [angry shouting voice] ZATKNIS, YA ZANYAT! SHTO HOCHESH?
+Computer: [angry shouting voice] ZATKNIS, YA ZANYAT!
 
 [pause]
 
