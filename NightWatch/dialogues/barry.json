@@ -1,0 +1,531 @@
+{
+  "first": {
+    "type": "question",
+    "name": "Barry",
+    "avatar": "barry/barry.png",
+    "position": "right",
+    "animation_in": "move_in",
+    "text": "[color=lime]Yes Sir, Lieutenant Sir?[/color]",
+    "options": ["I'm very disappointed in you, Barry.",
+                "How could you do this, Barry?", 
+                "Barry, you need to fix this.",
+                "I don't understand, Barry..."],
+    "next": ["1_a",
+             "2_a",
+             "3_a",
+             "4_a"]
+  },
+  "repeat": {
+    "type": "question",
+    "name": "Barry",
+    "avatar": "barry/barry.png",
+    "position": "right",
+    "animation_in": "move_in",
+    "text": "[color=lime]Yes, Sir?[/color]",
+    "options": ["I'm very disappointed in you, Barry.",
+                "How could you do this, Barry?", 
+                "Barry, you need to fix this.",
+                "I don't understand, Barry..."],
+    "next": ["1_a", 
+             "2_a",
+             "3_a",
+             "4_a"]
+  },
+  "1_a": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]I don't know how this could have happened, Sir.[/color]",
+    "options": ["That's a bit difficult to believe, Barry.",
+                "Well, we need to find a way to fix it now.",
+                "I imagine it had something to do with you fiddling with computer settings you had no business interfering with."],
+    "next": ["1_a_1",
+             "1_a_2",
+             "1_a_3"]
+  },
+  "1_a_1": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Uh, I  suppose so.[/color]"
+  },
+  "1_a_2": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Yes sir. I'm working on it right now, Sir.[/color]"
+  },
+  "1_a_3": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Uh, true.[/color]"
+  },
+  "2_a": {
+	"type": "text",
+	"name": "Barry",
+	"position": "right",
+	"content": "[color=lime]I didn't mean to do it, Sir.[/color]",
+	"next": "2_a_1"
+  },
+  "2_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "You didn't mean to make the computer virtually impossible to use, thus jeopardising the crew, the ship and the mission?",
+    "next": "2_a_1_a"
+  },
+  "2_a_1_a": {
+    "type": "question",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+	"position": "right",
+    "text": "[color=lime]Uh, that's correct Sir.[/color]",
+    "options": ["Well, that's great. As long as you're sorry.",
+                "I'm pleased to hear it. I was about to put you on report, but since you seem so sincerely sorry, I'll let you off."],
+    "next": ["2_a_1_a_1",
+             "2_a_1_a_2"]
+
+  },
+  "2_a_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]I am very sorry, sir.[/color]",
+    "next": "2_a_1_a_1_a"
+  },
+  "2_a_1_a_1_a": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]. . . I'll still need to fix this though, won't I?[/color]",
+    "next": "2_a_1_a_1_a_1"
+  },
+  "2_a_1_a_1_a_1": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "Yes, Barry. You need to fix the computer so we don't all die from your idiocy. That would be very good of you."
+  },
+  "2_a_1_a_2": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Really, Sir?[/color]",
+    "next": "2_a_1_a_2_a"
+  },
+  "2_a_1_a_2_a ": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "No, Barry, you colossal moron."
+  },
+  "3_a": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]I know Sir, I'm working on it.[/color]",
+    "options": ["Let me know how you get on.",
+                "What are you doing to fix it?",
+                "Do you know what's going to happen if you don't sort this out?"],
+    "next": ["3_a_1",
+             "3_a_2",
+             "3_a_3"]
+  },
+  "3_a_1": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Yes Sir, I will Sir.[/color]"
+  },
+  "3_a_2": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]I'm going to try something.[/color]",
+    "options": ["What's that?",
+                "Wait, I have an idea.",
+                "Whatever it is Barry, you had better have a good plan."],
+    "next": ["3_a_2_a",
+             "3_a_2_b",
+             "3_a_2_c"]
+  },
+  "3_a_2_a": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]I'm going to try pressing a button. . .[/color]",
+	"next": "3_a_2_a_1"
+  },
+  "3_a_2_a_1": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Nope, nothing.[/color]"
+  },
+  "3_a_2_b": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]What's that Sir?[/color]",
+    "options": ["What kind of training did you get when you were qualifying to be a Pilot?",
+                "Try pushing random buttons.",
+                "I think you should not touch anything and let me and John try to fix this."],
+    "next": ["3_a_2_b_1",
+             "3_a_2_b_2",
+             "3_a_2_b_3"]
+  },
+  "3_a_2_b_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Aerodynamics, calculus, spatial geometry, mechanical engineering, first aid, how to drink 7 shots of rum and vomit out your nose, navigation. . .[/color]",
+    "next": "3_a_2_b_1_a"
+  },
+  "3_a_2_b_1_a": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Navigation! |Wait, seven shots and what? No, nevermind actually.",
+	"next": "3_a_2_b_1_a_1"
+  },
+  "3_a_2_b_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]What about navigation, Sir?[/color]",
+    "next": "3_a_2_b_1_a_1_a"
+  },
+  "3_a_2_b_1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You must have learned about observing your surroundings, noticing minor details and changes of scenery?",
+	"next": "3_a_2_b_1_a_1_a_1"
+  },
+  "3_a_2_b_1_a_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Uh, yes Sir I suppose so.[/color]",
+    "next": "3_a_2_b_1_a_1_a_1_a"
+  },
+  "3_a_2_b_1_a_1_a_1_a": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": ["If you replay the scene in your head, can you visualise the console again? All the keys and screens you saw to change the language the first time?"],
+    "next": "3_a_2_b_1_a_1_a_1_a_1"
+  },
+  "3_a_2_b_1_a_1_a_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]. . .|@Actually Sir, I think I just about can.[/color]",
+    "next": "3_a_2_b_1_a_1_a_1_a_1_a"
+  },
+  "3_a_2_b_1_a_1_a_1_a_1_a": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Yes... yes..... yes! YES! I've got it![/color]",
+    "next": "3_a_2_b_1_a_1_a_1_a_1_a_1"
+  },
+  "3_a_2_b_1_a_1_a_1_a_1_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You've fixed it?",
+	"next": "3_a_2_b_1_a_1_a_1_a_1_a_1_a"
+  },
+  "3_a_2_b_1_a_1_a_1_a_1_a_1_a": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Uh, not completely Sir. But it looks like it's a little bit better. I'll keep trying.[/color]@[Barry has fixed the computer interface by 10%]"
+  },
+  "3_a_2_b_2": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]Are you sure, Sir?[/color]",
+    "options": ["Yes.",
+                "No."],
+    "next": ["3_a_2_b_2_a",
+             "3_a_2_b_2_b"]
+  },
+  "3_a_2_b_2_a": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Okay, Sir. Here goes. . .||@nWell, so much for that.[/color]"
+  },
+  "3_a_2_b_2_b": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Okay, let me know when you want me to do something Sir.[/color]"
+  },
+  "3_a_2_b_3 ": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]If you say so, Sir.[/color]"
+  },
+  "3_a_2_c": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime].| .| .[/color]",
+    "next": "3_a_2_c_a"
+  },
+  "3_a_2_c_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Barry",
+	"next": "3_a_2_c_a_1"
+  },
+  "3_a_2_c_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime].| .| .[/color]",
+    "next": "3_a_2_c_a_1_a"
+  }, 
+  "3_a_2_c_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You were going to start pushing random buttons, weren't you Barry?",
+	"next": "3_a_2_c_a_1_a_1"
+  },
+  "3_a_2_c_a_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]Kind of yes, Sir. Sorry Sir.[/color]"
+  },
+  "3_a_3": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]I can imagine, Sir.[/color]",
+    "options": ["Can you imagine not being able to order those spicy kebabs from the food dispenser?",
+                "Can you imagine not being able to activate the turbolift to get back to your quarters?",
+                "Can you imagine the crew collectively stuffing you into the airlock?",
+                "Can you imagine what the rest of the crew is going to do to us if they find out?"],
+    "next": ["3_a_3_a",
+             "3_a_3_b",
+             "3_a_3_c",
+             "3_a_3_d"]
+  },
+  "3_a_3_a": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Oh, god... or the samosas![/color]",
+    "next": "3_a_3_a_1"
+  },
+  "3_a_3_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Get to work, Barry.",
+  },
+  "3_a_3_b": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]So we're stuck here?[/color]",
+    "next": "3_a_3_b_1"
+  },
+  "3_a_3_b_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "And getting angrier by the minute."
+  },
+  "3_a_3_c": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]But they won't be able to open the outer doors without a voice confirmation.[/color]",
+    "next": "3_a_3_c_1"
+  },
+  "3_a_3_c_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I'm sure they'd figure something out.",
+  },
+  "3_a_3_d": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]I don't want to think about it.[/color]",
+    "next": "3_a_3_d_1"
+  },
+  "3_a_3_d_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Soon you won't have a choice.",
+  },
+  "4_a": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]Don't understand what, Sir?[/color]",
+    "options": ["How could you change the language settings like that? Doesn't it need an admin password?",
+                "Why did you think you could learn a new language so quickly?",
+                "Why didn't you tell us as soon as it happened?"],
+    "next": ["4_a_1",
+             "4_a_2",
+             "4_a_3"]
+  },
+  "4_a_1": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]Yes Sir, it did.[/color]",
+    "options": ["Do you have some higher authorisation that I don't know about?",
+                "How did you know what the captain's password was?"],
+    "next": ["4_a_1_a",
+             "4_a_1_b"]
+  },
+  "4_a_1_a": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]No Sir, it was just luck.[/color]",
+    "options": ["\"password\"?",
+                "\"qwerty\"?",
+                "\"12345678\"?",
+                "\"ford\"?"],
+    "next": ["no",
+             "no",
+             "no",
+             "no"]
+  },
+  "no": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
+	"position": "right",
+    "content": "[color=lime]No, Sir.[/color]"
+  },
+  "4_a_1_b": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Someone left a sticky note with the password on my console from the last shift.[/color]",
+    "next": "4_a_1_b_1"
+  },
+  "4_a_1_b_1": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "I guess that means another Watch is first up for cleaning the heads next Saturday, at least."
+  },
+  "4_a_2": {
+    "type": "question",
+	"name": "Barry",
+	"position": "right",
+    "text": "[color=lime]I heard that when you go to a new country you learn the language really quickly.[/color]",
+    "options": ["How quickly?",
+                "Changing the computer interface isn't like going to a new country."],
+    "next": ["4_a_2_a",
+             "4_a_2_b"]
+  },
+  "4_a_2_a": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Uh, I don't know. I guess . . . |a few months, instead of a few years?[/color]",
+    "next": "stoptalking"
+  },
+  "stoptalking": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Barry, stop talking.",
+  },
+  "4_a_2_b": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Yes, Sir. I realised that after about three seconds.[/color]",
+    "next": "stoptalking"
+  },
+  "4_a_3": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]I was a bit embarrassed and hoped maybe it wouldn't be that noticeable.[/color]",
+    "next": "4_a_3_a"
+  },
+  "4_a_3_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You thought that we wouldn't notice that the computer was IN ANOTHER LANGUAGE?",
+	"next": "4_a_3_a_1"
+  },
+  "4_a_3_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]It kind of looks a bit like English. . .[/color]",
+    "next": "4_a_3_a_1_a"
+  },
+  "4_a_3_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Barry.",
+	"next": "4_a_3_a_1_a_1"
+  },
+  "4_a_3_a_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]A little bit. . .[/color]",
+    "next": "4_a_3_a_1_a_1_a"
+  },
+  "4_a_3_a_1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Barry.",
+	"next": "4_a_3_a_1_a_1_a_1"
+  },
+  "4_a_3_a_1_a_1_a_1": {
+    "type": "text",
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]A couple of the letters look the same. . .[/color]",
+    "next": "stoptalking"
+  }
+}

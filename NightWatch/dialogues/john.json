@@ -1,0 +1,465 @@
+{
+  "first": {
+    "type": "question",
+    "name": "John",
+    "avatar": "jimmy/02.png",
+    "position": "right",
+    "animation_in": "move_in",
+    "text": "[color=yellow]Yes SIR, what is it [i]SIR[/i]?[/color]",
+    "options": ["John, you have to fix this.",
+                "John, what should we do?", 
+                "John, I need your help.",
+                "I'm scared, John."],
+    "next": ["1_a",
+             "2_a",
+             "3_a",
+             "4_a"]
+  },
+  "repeat": {
+    "type": "question",
+    "name": "John",
+    "avatar": "jimmy/02.png",
+    "position": "right",
+    "animation_in": "move_in",
+    "text": "[color=yellow]What now, [i]SIR[/i]?[/color]",
+	"options": ["John, you have to fix this.",
+                "John, what should we do?", 
+                "John, I need your help.",
+                "I'm scared, John."],
+    "next": ["1_a",
+             "2_a",
+             "3_a",
+             "4_a"]
+  },
+  "1_a": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]Me? You want me to fix this?[/color]",
+    "options": ["Yes.",
+                "No.",
+                "I think you're the only one here who can."],
+    "next": ["1_a_1",
+             "1_a_2",
+             "1_a_3"]
+  },
+  "1_a_1": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]What do you imagine I can do to fix this?[/color]",
+    "options": ["You could use your enormous brain.",
+                "You could find someone who can help.",
+                "You could try talking to the computer."],
+    "next": ["1_a_1_a",
+             "1_a_1_b",
+             "1_a_1_c"]
+  },
+  "1_a_1_a": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]What's in it for me?[/color]",
+    "options": ["A big thank you and a firm handshake.",
+                "The League's appreciation for all your hard work over the years.",
+                "That attitude isn't helping the team now, is it?"],
+    "next": ["1_a_1_a_1",
+             "1_a_1_a_2",
+             "1_a_1_a_3"]
+  },
+  "1_a_1_a_1": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Right. That will certainly make up for everything.[/color]"
+  },
+  "1_a_1_a_2": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]Oh, spare me.[/color]",
+    "next": "1_a_1_a_2_a"
+  },
+  "1_a_1_a_2_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Come on John, we all appreciate you here.",
+	"next": "1_a_1_a_2_a_1"
+  },
+  "1_a_1_a_2_a_1": {
+    "type": "question",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_in": "on",
+	"position": "right",
+    "text": "[color=yellow]What's my surname?[/color]",
+    "options": ["Smith",
+                "McCruthers",
+                "John.",
+                "Brzęczyszczykiewicz."],
+    "next": ["1_a_1_a_2_a_1_a",
+             "no",
+             "1_a_1_a_2_a_1_b",
+             "no"]
+  },
+  "1_a_1_a_2_a_1_a": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]You're not even trying.[/color]"
+  },
+  "no": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]No.[/color]"
+  },
+  "1_a_1_a_2_a_1_b": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]No, that's my first name.[/color]"
+  },
+  "1_a_1_a_3": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]The team hasn't remembered my birthday for the past eight years.[/color]"
+  },
+  "1_a_1_b": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Oh of course, there's no chance I could possibly do anything.[/color]"
+  },
+  "1_a_1_c": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]Do you know how to say \"Computer: change language to English\" in Russian?[/color]",
+    "next": "1_a_1_c_a"
+  },
+  "1_a_1_c_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "No",
+	"next": "1_a_1_c_a_1"
+  },
+  "1_a_1_c_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]Do you know how to say \"English\" in Russian?[/color]",
+    "next": "1_a_1_c_a_1_a"
+  },
+  "1_a_1_c_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "No.",
+	"next": "1_a_1_c_a_1_a_1"
+  },
+  "1_a_1_c_a_1_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]Do you know any Russian at all?[/color]",
+    "next": "1_a_1_c_a_1_a_1_a"
+  },
+  "1_a_1_c_a_1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "No.",
+	"next": "1_a_1_c_a_1_a_1_a_1"
+  },
+  "1_a_1_c_a_1_a_1_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]Well, neither do I.[/color]"
+  },
+  "1_a_2": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Then what are you bothering me for? Go and tell Barry to fix it.[/color]"
+  },
+  "1_a_3": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]You're probably right.[/color]",
+    "options": ["You're our only hope!",
+                "We can't do it without you!",
+                "The fate of the League rests on your shoulders."],
+    "next": ["answerno",
+             "answerno",
+             "answerno"]
+  },
+  "answerno": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Wow, it's so nice to be needed only when you can't ask the stupid computer for help first. The answer is no.[/color]"
+  },
+  "2_a": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]I think you should get Barry to fix the problem he caused.[/color]",
+    "options": ["I don't think he can.",
+                "I don't think he wants to.",
+                "I think he's caused enough damage for one day."],
+    "next": ["2_a_1",
+             "2_a_2",
+             "2_a_3"]
+  },
+  "2_a_1": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]I'm sure he'll work it out eventually.[/color]"
+  },
+  "2_a_2": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]I know how he feels.[/color]"
+  },
+  "2_a_3": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]He broke it, he can fix it. That's all I'm going to say about it.[/color]"
+  },
+  "3_a": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]What on Canopus do you think I can do about this?[/color]",
+    "options": ["I thought you might have some ideas.",
+                "I don't know.",
+                "You're an engineer, aren't you?"],
+    "next": ["3_a_1",
+             "3_a_2",
+             "3_a_3"]
+  },
+  "3_a_1": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]That's some inspirational leadership right there.[/color]"
+  },
+  "3_a_2": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Well, neither do I.[/color]"
+  },
+  "3_a_3": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]You could say I'm an \"engineer\". You could also say that I modelled a nuclear reactor out of pinebark when I was 12, I have a first-class degree in quantum propulsion systems, and I was headhunted by the Australian National Astrophysics League before I'd even taken my final exams with promises of overseeing the biggest and most powerful engines humanity had ever devised.[/color]",
+    "next": "3_a_3_a"
+  },  
+  "3_a_3_a": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]Then these stupid AI computers came along and now I press buttons all day asking the computer to find answers to things I devoted my life to studying, and the only tech I'm allowed to go anywhere near is the coffee machine.[/color]",
+    "next": "3_a_3_a_1"
+  },
+  "3_a_3_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]And we ran out of coffee three years ago.[/color]",
+    "next": "3_a_3_a_1_a"
+  },
+  "3_a_3_a_1_a": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]But sure. \"Engineer\".[/color]",
+    "options": ["I bet you could fix it.",
+                "Can you think of some way to fix this?"],
+    "next": ["3_a_3_a_1_a_1",
+             "3_a_3_a_1_a_2"]
+  },
+  "3_a_3_a_1_a_1": {
+    "type": "question",
+	"name": "John",
+	"position": "right",
+    "text": "[color=yellow]I bet you I'm not going to.[/color]",
+    "options": ["What if you align the phase manifold?",
+                "What if you check the combustion seals?",
+                "What about lubricating the flux probes?",
+                "What if you restart the synaptic motivators?",
+                "What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],
+    "next": ["3_a_3_a_1_a_1_a",
+            "3_a_3_a_1_a_1_b",
+            "3_a_3_a_1_a_1_c",
+            "3_a_3_a_1_a_1_d",
+            "3_a_3_a_1_a_1_e"]
+  },
+  "3_a_3_a_1_a_1_a": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]We don't have enough titanium.[/color]"
+  },
+  "3_a_3_a_1_a_1_b": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]I am NOT going into the reactor chamber again.[/color]"
+  },
+  "3_a_3_a_1_a_1_c": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]We used the last of the WD40 on the squeaky chair in the comms room.[/color]"
+  },
+  "3_a_3_a_1_a_1_d": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]I don't think I could begin to explain in simple terms why that wouldn't work.[/color]"
+  },
+  "3_a_3_a_1_a_1_e": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Yes I thought about that, but we don't have enough methylaluniminestricate to counter to secondary neurotrioxin-3 inversion.[/color]"
+  },
+  "3_a_3_a_1_a_2": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow]I don't think a lowly \"engineer\" has any business fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer.[/color]",
+    "next": "3_a_3_a_1_a_2_a"
+  },
+  "3_a_3_a_1_a_2_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I bet you really hate that computer.",
+	"next": "3_a_3_a_1_a_2_a_1"
+  },
+  "3_a_3_a_1_a_2_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow].| .| .[/color]",
+    "next": "3_a_3_a_1_a_2_a_1_a"
+  },
+  "3_a_3_a_1_a_2_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I bet you're disappointed that the League reduced you to a button-pushing errand-boy",
+	"next": "3_a_3_a_1_a_2_a_1_a_1"
+  },
+  "3_a_3_a_1_a_2_a_1_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow].| .| .[/color]",
+    "next": "3_a_3_a_1_a_2_a_1_a_1_a"
+  },
+  "3_a_3_a_1_a_2_a_1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I bet you feel like you really wasted your youth on all that study.",
+	"next": "3_a_3_a_1_a_2_a_1_a_1_a_1"
+  },
+  "3_a_3_a_1_a_2_a_1_a_1_a_1": {
+    "type": "text",
+	"name": "John",
+	"position": "right",
+    "content": "[color=yellow].| .| .[/color]",
+    "next": "3_a_3_a_1_a_2_a_1_a_1_a_1_a"
+  },
+  "3_a_3_a_1_a_2_a_1_a_1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I bet you'd really like to show this computer how you really feel.",
+	"next": "smash_1"
+  },
+  "smash_1": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_in": "on",
+	"position": "right",
+    "content": "[color=yellow].| .| .[/color]",
+    "next": "smash_2"
+  },
+  "smash_2": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+    "position": "right",
+    "animation_in": "shake_strong_long",
+    "content": "[color=yellow]AAARRRRRRRGH!![/color]",
+    "next": "smash_3"
+  },
+  "smash_3": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Hey! It looks like . . . |that's fixed it a bit![/color]@[John has fixed the computer interface by 10% ]"
+  },
+  "4_a": {
+    "type": "text",
+	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
+	"position": "right",
+    "content": "[color=yellow]Oh, give me a break.[/color]"
+  }
+}
