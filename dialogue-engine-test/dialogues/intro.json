@@ -9,7 +9,7 @@
   "1": {
 	"type": "text",
     "name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
     "position": "right",
     "animation_in": "move_in",
     "content": "[color=lime]Everything's fine mate.[/color]",
@@ -25,7 +25,8 @@
   "3": {
 	"type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "animation_in": "on",
+    "avatar": "barry/barry.png",
     "position": "right",
     "content": "[color=lime]All good.[/color]",
     "next": "4"
@@ -40,9 +41,9 @@
   "5": {
 	"type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
     "position": "right",
-	"animation_in": "shake_weak_short",
+	"animation_in": "on",
     "animation_out": "move_out",
 	"content": "[sigh] [color=lime]Yes [i]SIR[/i] Lieutanant [i]SIR[/i] sorry [i]SIR[/i].[/color]",
 	"next": "6"
@@ -107,7 +108,7 @@
 	"10_a_1": {
 	"type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_in": "move_in",
 	"animation_out": "move_out",
@@ -298,7 +299,7 @@
   "10_d": {
 	"type": "question",
 	"name": "Barry",
-	"avatar": "jimmy/01.png",
+	"avatar": "barry/barry.png",
     "position": "right",
 	"animation_in": "move_in",
 	"position": "right",
@@ -372,7 +373,7 @@
   "10_d_1_a_1_a_1_a_1_a_1": {
 	"type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=lime]. . . you are.[/color]",
@@ -381,7 +382,7 @@
   "10_d_2": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=lime]It sure looks like it.[/color]",
@@ -390,7 +391,7 @@
   "10_d_3": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=lime]Yeah, right.[/color]",
@@ -399,7 +400,7 @@
   "10_d_4": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=lime]I knew it.[/color]",
@@ -561,7 +562,7 @@
   "31": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_in": "move_in",
     "content": "[color=lime]Possibly.[/color]",
@@ -577,7 +578,7 @@
   "33": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "content": "[color=lime]Well, it was an accident.[/color]",
 	"next": "34"
@@ -585,7 +586,7 @@
   "34": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "content": "[color=lime]I was bored.[/color]",
 	"next": "35"
@@ -593,7 +594,7 @@
   "35": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "content": "[color=lime]So I was looking for a new hobby. And I thought hey, why not try learning another language?[/color]",
 	"next": "36"
@@ -601,7 +602,7 @@
   "36": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "content": "[color=lime]And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface to Russian to see what it looked like.[/color]",
 	"next": "37"
@@ -609,7 +610,7 @@
   "37": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "content": "[color=lime]And I couldn't quite work out how to switch it back.[/color]",
 	"next": "38"
@@ -617,7 +618,7 @@
   "38": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "content": "[color=lime]It turns out language immersion takes a fairly long time.[/color]",
 	"next": "39"
@@ -632,7 +633,7 @@
   "40": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=lime]Uh, yes Sir.[/color]",
@@ -662,7 +663,7 @@
   "44": {
     "type": "text",
 	"name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_in": "move_in",
 	"animation_out": "move_out",

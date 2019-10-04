@@ -2,7 +2,7 @@
   "first": {
     "type": "question",
     "name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
     "position": "right",
     "animation_in": "move_in",
     "text": "[color=lime]Yes Sir, Lieutenant Sir?[/color]",
@@ -18,7 +18,7 @@
   "repeat": {
     "type": "question",
     "name": "Barry",
-    "avatar": "jimmy/01.png",
+    "avatar": "barry/barry.png",
     "position": "right",
     "animation_in": "move_in",
     "text": "[color=lime]Yes, Sir?[/color]",
@@ -46,18 +46,24 @@
   "1_a_1": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Uh, I  suppose so.[/color]"
   },
   "1_a_2": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Yes sir. I'm working on it right now, Sir.[/color]"
   },
   "1_a_3": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Uh, true.[/color]"
   },
@@ -78,6 +84,7 @@
   "2_a_1_a": {
     "type": "question",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
 	"position": "right",
     "text": "[color=lime]Uh, that's correct Sir.[/color]",
     "options": ["Well, that's great. As long as you're sorry.",
@@ -134,6 +141,8 @@
   "3_a_1": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Yes Sir, I will Sir.[/color]"
   },
@@ -159,6 +168,8 @@
   "3_a_2_a_1": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Nope, nothing.[/color]"
   },
@@ -240,6 +251,8 @@
   "3_a_2_b_1_a_1_a_1_a_1_a_1_a": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Uh, not completely Sir. But it looks like it's a little bit better. I'll keep trying.[/color]@[Barry has fixed the computer interface by 10%]"
   },
@@ -256,18 +269,24 @@
   "3_a_2_b_2_a": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
-    "content": "[color=lime]Okay, Sir. Here goes. . .||\n\nWell, so much for that.[/color]"
+    "content": "[color=lime]Okay, Sir. Here goes. . .||@nWell, so much for that.[/color]"
   },
   "3_a_2_b_2_b": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Okay, let me know when you want me to do something Sir.[/color]"
   },
   "3_a_2_b_3 ": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]If you say so, Sir.[/color]"
   },
@@ -302,6 +321,8 @@
   "3_a_2_c_a_1_a_1": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]Kind of yes, Sir. Sorry Sir.[/color]"
   },
@@ -410,6 +431,8 @@
   "no": {
     "type": "text",
 	"name": "Barry",
+    "avatar": "barry/barry.png",
+    "animation_out": "move_out",
 	"position": "right",
     "content": "[color=lime]No, Sir.[/color]"
   },

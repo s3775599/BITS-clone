@@ -70,6 +70,8 @@
   "1_a_1_a_1": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Right. That will certainly make up for everything.[/color]"
   },
@@ -90,6 +92,8 @@
   "1_a_1_a_2_a_1": {
     "type": "question",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_in": "on",
 	"position": "right",
     "text": "[color=yellow]What's my surname?[/color]",
     "options": ["Smith",
@@ -104,30 +108,40 @@
   "1_a_1_a_2_a_1_a": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]You're not even trying.[/color]"
   },
   "no": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]No.[/color]"
   },
   "1_a_1_a_2_a_1_b": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]No, that's my first name.[/color]"
   },
   "1_a_1_a_3": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]The team hasn't remembered my birthday for the past eight years.[/color]"
   },
   "1_a_1_b": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Oh of course, there's no chance I could possibly do anything.[/color]"
   },
@@ -182,6 +196,8 @@
   "1_a_2": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Then what are you bothering me for? Go and tell Barry to fix it.[/color]"
   },
@@ -200,6 +216,8 @@
   "answerno": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Wow, it's so nice to be needed only when you can't ask the stupid computer for help first. The answer is no.[/color]"
   },
@@ -218,18 +236,24 @@
   "2_a_1": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]I'm sure he'll work it out eventually.[/color]"
   },
   "2_a_2": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]I know how he feels.[/color]"
   },
   "2_a_3": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]He broke it, he can fix it. That's all I'm going to say about it.[/color]"
   },
@@ -248,12 +272,16 @@
   "3_a_1": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]That's some inspirational leadership right there.[/color]"
   },
   "3_a_2": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Well, neither do I.[/color]"
   },
@@ -307,30 +335,40 @@
   "3_a_3_a_1_a_1_a": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]We don't have enough titanium.[/color]"
   },
   "3_a_3_a_1_a_1_b": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]I am NOT going into the reactor chamber again.[/color]"
   },
   "3_a_3_a_1_a_1_c": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]We used the last of the WD40 on the squeaky chair in the comms room.[/color]"
   },
   "3_a_3_a_1_a_1_d": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]I don't think I could begin to explain in simple terms why that wouldn't work.[/color]"
   },
   "3_a_3_a_1_a_1_e": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Yes I thought about that, but we don't have enough methylaluniminestricate to counter to secondary neurotrioxin-3 inversion.[/color]"
   },
@@ -393,6 +431,8 @@
   "smash_1": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_in": "on",
 	"position": "right",
     "content": "[color=yellow].| .| .[/color]",
     "next": "smash_2"
@@ -409,12 +449,16 @@
   "smash_3": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Hey! It looks like . . . |that's fixed it a bit![/color]@[John has fixed the computer interface by 10% ]"
   },
   "4_a": {
     "type": "text",
 	"name": "John",
+	"avatar": "jimmy/02.png",
+	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Oh, give me a break.[/color]"
   }
