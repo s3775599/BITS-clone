@@ -25,8 +25,6 @@
   "3": {
 	"type": "text",
 	"name": "Barry",
-    "animation_in": "on",
-    "avatar": "barry/barry.png",
     "position": "right",
     "content": "[color=lime]All good.[/color]",
     "next": "4"
@@ -41,9 +39,8 @@
   "5": {
 	"type": "text",
 	"name": "Barry",
-    "avatar": "barry/barry.png",
     "position": "right",
-	"animation_in": "on",
+	"avatar": "barry/barry.png",
     "animation_out": "move_out",
 	"content": "[sigh] [color=lime]Yes [i]SIR[/i] Lieutanant [i]SIR[/i] sorry [i]SIR[/i].[/color]",
 	"next": "6"
@@ -471,52 +468,53 @@
 	"name": "John",
     "avatar": "jimmy/02.png",
 	"position": "right",
-    "content": "[color=yellow]. . .[/color]",
+    "content": "[color=yellow]. . . Not exactly. [i]SIR[/i].[/color]",
 	"next": "20"
   },
-  "20": {
-	"type": "text",
-	"name": "John",
-    "avatar": "jimmy/02.png",
-	"position": "right",
-    "content": "[color=yellow]Not exactly. [i]SIR[/i].[/color]",
-	"next": "21"
-  },
-   "21": {
+   "20": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "Why not?",
-	"next": "22"
+	"next": "21"
   },
-  "22": {
+  "21": {
 	"type": "text",
 	"name": "John",
     "avatar": "jimmy/02.png",
 	"position": "right",
     "content": "[color=yellow]My console is . . . |in Russian.[/color]",
-	"next": "23"
+	"next": "22"
   },
-  "23": {
+  "22": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "Your console is in Russian?",
-	"next": "24"
+	"next": "23"
   },
-   "24": {
+   "23": {
 	"type": "text",
 	"name": "John",
     "avatar": "jimmy/02.png",
 	"position": "right",
     "content": "[color=yellow]My console appear to be in Russian. [i]SIR[/i].[/color]",
-	"next": "25"
+	"next": "24"
   },
-  "25": {
+  "24": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": ". . . And can you explain why your console is in Russian, John?",
+	"next": "25"
+  },
+  "25": {
+	"type": "text",
+	"name": "John",
+    "avatar": "jimmy/02.png",
+	"position": "right",
+	"animation_out": "move_out",
+    "content": "[color=yellow]No.[/color]",
 	"next": "26"
   },
   "26": {
@@ -524,55 +522,54 @@
 	"name": "John",
     "avatar": "jimmy/02.png",
 	"position": "right",
+	"animation_in": "move_in",
 	"animation_out": "move_out",
-    "content": "[color=yellow]No.[/color]",
+    "content": "[color=yellow][i]SIR[/i].[/color]",
 	"next": "27"
   },
   "27": {
 	"type": "text",
-	"name": "John",
-    "avatar": "jimmy/02.png",
-	"position": "right",
-	"animation_in": "move_in",
-	"animation_out": "move_out",
-    "content": "[color=yellow][i]SIR[/i].[/color]",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": ".| .| .|",
 	"next": "28"
   },
   "28": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
-    "content": ".| .| .|",
+    "content": "Do you know anything about this, Barry?",
 	"next": "29"
   },
   "29": {
-	"type": "text",
-	"name": "Lieutenant",
-	"position": "left",
-    "content": "Do you know anything about this, Barry?",
-	"next": "30"
-  },
-  "30": {
     "type": "text",
 	"name": "Barry",
 	"position": "right",
     "content": "[color=lime]Um. . .[/color]",
-	"next": "31"
+	"next": "30"
   },
-  "31": {
+  "30": {
     "type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_in": "move_in",
     "content": "[color=lime]Possibly.[/color]",
-	"next": "32"
+	"next": "31"
   },
-  "32": {
+  "31": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "I really need a clearer answer than that Barry. Why is John's console in Russian?",
+	"next": "32"
+  },
+  "32": {
+    "type": "text",
+	"name": "Barry",
+    "avatar": "barry/barry.png",
+	"position": "right",
+    "content": "[color=lime]Well, it was an accident.[/color]",
 	"next": "33"
   },
   "33": {
@@ -580,7 +577,7 @@
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
-    "content": "[color=lime]Well, it was an accident.[/color]",
+    "content": "[color=lime]I was bored.[/color]",
 	"next": "34"
   },
   "34": {
@@ -588,7 +585,7 @@
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
-    "content": "[color=lime]I was bored.[/color]",
+    "content": "[color=lime]So I was looking for a new hobby. And I thought hey, why not try learning another language?[/color]",
 	"next": "35"
   },
   "35": {
@@ -596,7 +593,7 @@
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
-    "content": "[color=lime]So I was looking for a new hobby. And I thought hey, why not try learning another language?[/color]",
+    "content": "[color=lime]And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface to Russian to see what it looked like.[/color]",
 	"next": "36"
   },
   "36": {
@@ -604,7 +601,7 @@
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
-    "content": "[color=lime]And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface to Russian to see what it looked like.[/color]",
+    "content": "[color=lime]And I couldn't quite work out how to switch it back.[/color]",
 	"next": "37"
   },
   "37": {
@@ -612,55 +609,47 @@
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
-    "content": "[color=lime]And I couldn't quite work out how to switch it back.[/color]",
+    "content": "[color=lime]It turns out language immersion takes a fairly long time.[/color]",
 	"next": "38"
   },
   "38": {
-    "type": "text",
-	"name": "Barry",
-    "avatar": "barry/barry.png",
-	"position": "right",
-    "content": "[color=lime]It turns out language immersion takes a fairly long time.[/color]",
-	"next": "39"
-  },
-  "39": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "You said you switched the [i]SHIP'S COMPUTER[/i] interface?",
-	"next": "40"
+	"next": "39"
   },
-  "40": {
+  "39": {
     "type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=lime]Uh, yes Sir.[/color]",
+	"next": "40"
+  },
+  "40": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "So that's going to affect everyone's cons. . .",
 	"next": "41"
   },
   "41": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
-    "content": "So that's going to affect everyone's cons. . .",
+    "content": ".| .| .|",
 	"next": "42"
   },
   "42": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
-    "content": ".| .| .|",
+    "content": "Oh Barry, you idiot.",
 	"next": "43"
   },
   "43": {
-	"type": "text",
-	"name": "Lieutenant",
-	"position": "left",
-    "content": "Oh Barry, you idiot.",
-	"next": "44"
-  },
-  "44": {
     "type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
@@ -668,9 +657,9 @@
 	"animation_in": "move_in",
 	"animation_out": "move_out",
     "content": "[color=lime]I feel really bad about it Sir.[/color]",
-	"next": "45"
+	"next": "44"
   },
-  "45": {
+  "44": {
 	"type": "text",
 	"name": "John",
     "avatar": "jimmy/02.png",
@@ -678,23 +667,23 @@
 	"animation_in": "move_in",
 	"animation_out": "move_out",
     "content": "[color=yellow]Computer's voice recognition should still be working though.[/color]",
-	"next": "46"
+	"next": "45"
   },
-  "46": {
+  "45": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "COMPUTER!",
-	"next": "47"
+	"next": "46"
   },
-  "47": {
+  "46": {
 	"type": "text",
 	"name": "КОМПЮТЕР",
 	"position": "left",
     "content": "[color=#00f1ff]ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ![/color]",
-	"next": "48"
+	"next": "47"
   },
-  "48": {
+  "47": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
