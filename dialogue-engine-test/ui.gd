@@ -18,6 +18,11 @@ func _physics_process(delta): # Just to update the Variables label
 
 func press_next():
 	dialogue.next()
+	
+#Function to listen out for enter key
+func _process(delta):
+	if Input.is_action_just_released("ui_accept"):
+		dialogue.next()
 
 
 func init_a():
