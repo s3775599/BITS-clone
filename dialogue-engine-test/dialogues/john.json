@@ -10,10 +10,10 @@
                 "John, what should we do?", 
                 "John, I need your help.",
                 "I'm scared, John."],
-    "next": ["1_a",
+    "next": ["1",
              "2_a",
              "3_a",
-             "4_a"]
+             "4"]
   },
   "repeat": {
     "type": "question",
@@ -26,10 +26,17 @@
                 "John, what should we do?", 
                 "John, I need your help.",
                 "I'm scared, John."],
-    "next": ["1_a",
+    "next": ["1",
              "2_a",
              "3_a",
-             "4_a"]
+             "4"]
+  },
+  "1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "John, you have to fix this.",
+	"next": "1_a"
   },
   "1_a": {
     "type": "question",
@@ -39,9 +46,30 @@
     "options": ["Yes.",
                 "No.",
                 "I think you're the only one here who can."],
-    "next": ["1_a_1",
-             "1_a_2",
-             "1_a_3"]
+    "next": ["a1_a_1",
+             "a1_a_2",
+             "a1_a_3"]
+  },
+  "a1_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Yes.",
+	"next": "1_a_1"
+  },
+  "a1_a_2": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "No.",
+	"next": "1_a_2"
+  },
+  "a1_a_3": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I think you're the only one here who can.",
+	"next": "1_a_3"
   },
   "1_a_1": {
     "type": "question",
@@ -51,9 +79,30 @@
     "options": ["You could use your enormous brain.",
                 "You could find someone who can help.",
                 "You could try talking to the computer."],
-    "next": ["1_a_1_a",
-             "1_a_1_b",
-             "1_a_1_c"]
+    "next": ["a1_a_1_a",
+             "a1_a_1_b",
+             "a1_a_1_c"]
+  },
+  "a1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You could use your enormous brain.",
+	"next": "1_a_1_a"
+  },
+  "a1_a_1_b": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You could find someone who can help.",
+	"next": "1_a_1_b"
+  },
+  "a1_a_1_c": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You could try talking to the computer.",
+	"next": "1_a_1_c"
   },
   "1_a_1_a": {
     "type": "question",
@@ -63,9 +112,30 @@
     "options": ["A big thank you and a firm handshake.",
                 "The League's appreciation for all your hard work over the years.",
                 "That attitude isn't helping the team now, is it?"],
-    "next": ["1_a_1_a_1",
-             "1_a_1_a_2",
-             "1_a_1_a_3"]
+    "next": ["a1_a_1_a_1",
+             "a1_a_1_a_2",
+             "a1_a_1_a_3"]
+  },
+  "a1_a_1_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "A big thank you and a firm handshake.",
+	"next": "1_a_1_a_1"
+  },
+  "a1_a_1_a_2": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "The League's appreciation for all your hard work over the years.",
+	"next": "1_a_1_a_2"
+  },
+  "a1_a_1_a_3": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "That attitude isn't helping the team now, is it?",
+	"next": "1_a_1_a_3"
   },
   "1_a_1_a_1": {
     "type": "text",
@@ -96,16 +166,44 @@
 	"animation_in": "on",
 	"position": "right",
     "text": "[color=yellow]What's my surname?[/color]",
-    "options": ["Smith",
-                "McCruthers",
+    "options": ["Smith.",
+                "McCruthers.",
                 "John.",
                 "Brzęczyszczykiewicz."],
     "next": ["1_a_1_a_2_a_1_a",
-             "no",
              "1_a_1_a_2_a_1_b",
-             "no"]
+             "1_a_1_a_2_a_1_c",
+             "1_a_1_a_2_a_1_d"]
   },
   "1_a_1_a_2_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Smith.",
+	"next": "1_a_1_a_2_a_1_a_1"
+  },
+    "1_a_1_a_2_a_1_b": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "McCruthers.",
+	"next": "no"
+  },
+    "1_a_1_a_2_a_1_c": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "John.",
+	"next": "1_a_1_a_2_a_1_c_1"
+  },
+    "1_a_1_a_2_a_1_d": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Brzęczyszczykiewicz.",
+	"next": "no"
+  },
+  "1_a_1_a_2_a_1_a_1": {
     "type": "text",
 	"name": "John",
 	"avatar": "jimmy/02.png",
@@ -121,7 +219,7 @@
 	"position": "right",
     "content": "[color=yellow]No.[/color]"
   },
-  "1_a_1_a_2_a_1_b": {
+  "1_a_1_a_2_a_1_c_1": {
     "type": "text",
 	"name": "John",
 	"avatar": "jimmy/02.png",
@@ -156,7 +254,7 @@
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
-	"content": "No",
+	"content": "No.",
 	"next": "1_a_1_c_a_1"
   },
   "1_a_1_c_a_1": {
@@ -209,9 +307,30 @@
     "options": ["You're our only hope!",
                 "We can't do it without you!",
                 "The fate of the League rests on your shoulders."],
-    "next": ["answerno",
-             "answerno",
-             "answerno"]
+    "next": ["1_a_3_a",
+             "1_a_3_b",
+             "1_a_3_c"]
+  },
+  "1_a_3_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You're our only hope!",
+	"next": "answerno"
+  },
+    "1_a_3_b": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "We can't do it without you!",
+	"next": "answerno"
+  },
+  "1_a_3_c": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "The fate of the League rests on your shoulders.",
+	"next": "answerno"
   },
   "answerno": {
     "type": "text",
@@ -229,9 +348,30 @@
     "options": ["I don't think he can.",
                 "I don't think he wants to.",
                 "I think he's caused enough damage for one day."],
-    "next": ["2_a_1",
-             "2_a_2",
-             "2_a_3"]
+    "next": ["a2_a_1",
+             "a2_a_2",
+             "a2_a_3"]
+  },
+  "a2_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I don't think he can.",
+	"next": "2_a_1"
+  },
+  "a2_a_2": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I don't think he wants to.",
+	"next": "2_a_2"
+  },
+  "a2_a_3": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I think he's caused enough damage for one day.",
+	"next": "2_a_3"
   },
   "2_a_1": {
     "type": "text",
@@ -265,9 +405,30 @@
     "options": ["I thought you might have some ideas.",
                 "I don't know.",
                 "You're an engineer, aren't you?"],
-    "next": ["3_a_1",
-             "3_a_2",
-             "3_a_3"]
+    "next": ["a3_a_1",
+             "a3_a_2",
+             "a3_a_3"]
+  },
+  "a3_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I thought you might have some ideas.",
+	"next": "3_a_1"
+  },
+  "a3_a_2": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I don't know.",
+	"next": "3_a_2"
+  },
+  "a3_a_3": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "You're an engineer, aren't you?",
+	"next": "3_a_3"
   },
   "3_a_1": {
     "type": "text",
@@ -313,8 +474,23 @@
     "text": "[color=yellow]But sure. \"Engineer\".[/color]",
     "options": ["I bet you could fix it.",
                 "Can you think of some way to fix this?"],
-    "next": ["3_a_3_a_1_a_1",
-             "3_a_3_a_1_a_2"]
+    "next": ["a3_a_3_a_1_a_1",
+             "a3_a_3_a_1_a_2"]
+  },
+  
+  "a3_a_3_a_1_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I bet you could fix it.",
+	"next": "3_a_3_a_1_a_1"
+  },
+  "a3_a_3_a_1_a_2": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "Can you think of some way to fix this?",
+	"next": "3_a_3_a_1_a_2"
   },
   "3_a_3_a_1_a_1": {
     "type": "question",
@@ -326,11 +502,46 @@
                 "What about lubricating the flux probes?",
                 "What if you restart the synaptic motivators?",
                 "What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],
-    "next": ["3_a_3_a_1_a_1_a",
-            "3_a_3_a_1_a_1_b",
-            "3_a_3_a_1_a_1_c",
-            "3_a_3_a_1_a_1_d",
-            "3_a_3_a_1_a_1_e"]
+    "next": ["a3_a_3_a_1_a_1_a",
+             "a3_a_3_a_1_a_1_b",
+             "a3_a_3_a_1_a_1_c",
+             "a3_a_3_a_1_a_1_d",
+             "a3_a_3_a_1_a_1_e"]
+  },
+  "a3_a_3_a_1_a_1_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "What if you align the phase manifold?",
+	"next": "3_a_3_a_1_a_1_a"
+  },
+  "a3_a_3_a_1_a_1_b": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "What if you check the combustion seals?",
+	"next": "3_a_3_a_1_a_1_b"
+  },
+  "a3_a_3_a_1_a_1_c": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "What about lubricating the flux probes?",
+	"next": "3_a_3_a_1_a_1_c"
+  },
+  "a3_a_3_a_1_a_1_d": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "What if you restart the synaptic motivators?",
+	"next": "3_a_3_a_1_a_1_d"
+  },
+  "a3_a_3_a_1_a_1_e": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?",
+	"next": "3_a_3_a_1_a_1_e"
   },
   "3_a_3_a_1_a_1_a": {
     "type": "text",
@@ -453,6 +664,13 @@
 	"animation_out": "move_out",
 	"position": "right",
     "content": "[color=yellow]Hey! It looks like . . . |that's fixed it a bit![/color]@[John has fixed the computer interface by 10% ]"
+  },
+  "4": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+	"content": "I'm scared, John.",
+	"next": "4_a"
   },
   "4_a": {
     "type": "text",
