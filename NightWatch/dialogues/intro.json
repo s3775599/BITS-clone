@@ -55,7 +55,7 @@
   "7": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
     "position": "right",
     "animation_in": "move_in",
 	"content": "[color=yellow]It's fine, it's whatever.[/color]",
@@ -71,7 +71,7 @@
   "9": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
     "position": "right",
     "animation_in": "shake_regular_medium",
 	"animation_out": "move_out",
@@ -102,7 +102,7 @@
 	"10_a_1": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "move_in",
 	"animation_out": "move_out",
@@ -129,7 +129,7 @@
   "10_b_1": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "move_in",
     "content": "[color=yellow]Oh no, not that. Please, anything but that.[/color]",
@@ -163,7 +163,7 @@
 	"type": "text",
 	"name": "John",
 	"position": "right",
-	"avatar": "jimmy/02.png",
+	"avatar": "john/john.png",
 	"animation_out": "move_out",
     "content": "[color=yellow]Oh, it's a hoot.[/color]",
 	"next": "10"
@@ -222,7 +222,7 @@
 	"type": "text",
 	"name": "John",
 	"position": "right",
-	"avatar": "jimmy/02.png",
+	"avatar": "john/john.png",
 	"animation_out": "move_out",
     "content": "[color=yellow]That doesn't sounds as bad as you might think, actually.[/color]",
 	"next": "10"
@@ -237,7 +237,7 @@
   "10_c_1": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "move_in",
     "content": "[color=yellow]Yes I'm sure.[/color]",
@@ -282,7 +282,7 @@
   "10_c_1_a_1_a_1_a_1": {
 	"type": "text",
 	"name": "John",
-	"avatar": "jimmy/02.png",
+	"avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "shake_strong_medium",
     "content": "[color=yellow][b][i]YES.[/i][/b][/color]",
@@ -298,7 +298,7 @@
   "10_c_1_a_1_a_1_a_1_a_1": {
 	"type": "text",
 	"name": "John",
-	"avatar": "jimmy/02.png",
+	"avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "shake_strong_medium",
     "content": "[color=yellow][b]OKAY FINE.[/b][/color]",
@@ -314,7 +314,7 @@
   "10_c_1_a_1_a_1_a_1_a_1_a_1": {
 	"type": "text",
 	"name": "John",
-	"avatar": "jimmy/02.png",
+	"avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "shake_strong_medium",
 	"animation_out": "move_out",
@@ -484,7 +484,7 @@
   "13": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "move_in",
     "content": "[color=yellow]Probably fine. [i]SIR[/i].[/color]",
@@ -500,7 +500,7 @@
   "15": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
     "content": "[color=yellow]The system diagnostic looks same as before, like I said. [i]SIR[/i].[/color]",
 	"next": "16"
@@ -515,7 +515,7 @@
   "17": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
     "content": "[color=yellow]It [i]LOOKS[/i] like it [b][i]IS[/i][/b] the same. [i]SIR[/i].[/color]",
 	"next": "18"
@@ -530,7 +530,7 @@
   "19": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
     "content": "[color=yellow]. . . Not exactly. [i]SIR[/i].[/color]",
 	"next": "20"
@@ -545,7 +545,7 @@
   "21": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
     "content": "[color=yellow]My console is . . . |in Russian.[/color]",
 	"next": "22"
@@ -560,7 +560,7 @@
    "23": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
     "content": "[color=yellow]My console appear to be in Russian. [i]SIR[/i].[/color]",
 	"next": "24"
@@ -575,7 +575,7 @@
   "25": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_out": "move_out",
     "content": "[color=yellow]No.[/color]",
@@ -584,7 +584,7 @@
   "26": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "move_in",
 	"animation_out": "move_out",
@@ -726,7 +726,7 @@
   "44": {
 	"type": "text",
 	"name": "John",
-    "avatar": "jimmy/02.png",
+    "avatar": "john/john.png",
 	"position": "right",
 	"animation_in": "move_in",
 	"animation_out": "move_out",
