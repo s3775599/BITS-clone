@@ -92,7 +92,14 @@
 			 "10_c",
 			 "10_d"]
   },
-	"10_a": {
+  "10_a": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "What's gotten into you two?", 
+	"next": "10_a_1"
+  },
+	"10_a_1": {
 	"type": "text",
 	"name": "John",
     "avatar": "jimmy/02.png",
@@ -100,9 +107,9 @@
 	"animation_in": "move_in",
 	"animation_out": "move_out",
     "content": "[color=yellow]Nothing.[/color]",
-	"next": "10_a_1"
+	"next": "10_a_1_a"
   },
-	"10_a_1": {
+	"10_a_1_a": {
 	"type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
@@ -113,32 +120,46 @@
 	"next": "10"
   },
   "10_b": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "One more outburst like that and I'll have to file a report of insubordination!", 
+	"next": "10_b_1"
+  },
+  "10_b_1": {
 	"type": "text",
 	"name": "John",
     "avatar": "jimmy/02.png",
 	"position": "right",
 	"animation_in": "move_in",
     "content": "[color=yellow]Oh no, not that. Please, anything but that.[/color]",
-	"next": "10_b_1"
+	"next": "10_b_1_a"
   },
-  "10_b_1": {
+  "10_b_1_a": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "John you are an Engineer in the Australian National Astrophysics League. What does that mean to you?", 
-	"next": "10_b_1_a"
+	"next": "10_b_1_a_1"
   },
-  "10_b_1_a": {
+  "10_b_1_a_1": {
 	"type": "question",
 	"name": "John",
 	"position": "right",
 	"text": "[color=yellow]It means I get to spend the best years of my life in deep space.[/color]",
 	"options": ["Exactly! It's the adventure of a lifetime!",
 				"You don't sound very enthusiastic."],
-	"next": ["10_b_1_a_1",
-			 "10_b_1_a_2"]
+	"next": ["10_b_1_a_1_a",
+			 "10_b_1_a_1_b"]
   },
-  "10_b_1_a_1": {
+  "10_b_1_a_1_a": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "Exactly! It's the adventure of a lifetime!", 
+	"next": "10_b_1_a_1_a_1"
+  },
+  "10_b_1_a_1_a_1": {
 	"type": "text",
 	"name": "John",
 	"position": "right",
@@ -147,50 +168,57 @@
     "content": "[color=yellow]Oh, it's a hoot.[/color]",
 	"next": "10"
   },
-  "10_b_1_a_2": {
+  "10_b_1_a_1_b": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "You don't sound very enthusiastic.", 
+	"next": "10_b_1_a_1_b_1"
+  },
+  "10_b_1_a_1_b_1": {
 	"type": "text",
 	"name": "John",
 	"position": "right",
     "content": "[color=yellow]I wonder why.[/color]",
-	"next": "10_b_1_a_2_a"
+	"next": "10_b_1_a_1_b_1_a"
   },
-  "10_b_1_a_2_a": {
+  "10_b_1_a_1_b_1_a": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "If you don't like it, you can always quit.", 
-	"next": "10_b_1_a_2_a_1"
+	"next": "10_b_1_a_1_b_1_a_1"
   },
-  "10_b_1_a_2_a_1": {
+  "10_b_1_a_1_b_1_a_1": {
 	"type": "text",
 	"name": "John",	
 	"position": "right",
 	"animation_in": "shake_regular_short",
     "content": "[color=yellow]Wait, really?[/color]",
-	"next": "10_b_1_a_2_a_1_a"
+	"next": "10_b_1_a_1_b_1_a_1_a"
   },
-  "10_b_1_a_2_a_1_a": {
+  "10_b_1_a_1_b_1_a_1_a": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "Of course. But that means you won't have access to any ship-distributed food.", 
-	"next": "10_b_1_a_2_a_1_a_1"
+	"next": "10_b_1_a_1_b_1_a_1_a_1"
   },
-  "10_b_1_a_2_a_1_a_1": {
+  "10_b_1_a_1_b_1_a_1_a_1": {
 	"type": "text",
 	"name": "John",
 	"position": "right",
     "content": "[color=yellow]Oh.[/color]",
-	"next": "10_b_1_a_2_a_1_a_1_a"
+	"next": "10_b_1_a_1_b_1_a_1_a_1_a"
   },
-  "10_b_1_a_2_a_1_a_1_a": {
+  "10_b_1_a_1_b_1_a_1_a_1_a": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "Or oxygen.", 
-	"next": "10_b_1_a_2_a_1_a_1_a_1"
+	"next": "10_b_1_a_1_b_1_a_1_a_1_a_1"
   },
-  "10_b_1_a_2_a_1_a_1_a_1": {
+  "10_b_1_a_1_b_1_a_1_a_1_a_1": {
 	"type": "text",
 	"name": "John",
 	"position": "right",
@@ -294,6 +322,14 @@
 	"next": "11"
   },
   "10_d": {
+    "type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "Well that's good to know.", 
+	"next": "10a_d",
+  },
+  
+  "10a_d": {
 	"type": "question",
 	"name": "Barry",
 	"avatar": "barry/barry.png",
@@ -311,63 +347,70 @@
 			 "10_d_4"]
   },
   "10_d_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "What are you talking about?", 
+	"next": "10_d_1",
+  },
+  "10_d_1_a": {
     "type": "text",
 	"name": "Barry",
 	"position": "right",
     "content": "[color=lime]You chew my ear off when I talk like that but he gets away with anything.[/color]",
-	"next": "10_d_1_a"
+	"next": "10_d_1_a_1"
   },
-  "10_d_1_a": {
+  "10_d_1_a_1": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "That's not true.", 
-	"next": "10_d_1_a_1",
+	"next": "10_d_1_a_1_a",
   },
-  "10_d_1_a_1": {
+  "10_d_1_a_1_a": {
 	"type": "text",
 	"name": "Barry",
 	"position": "right",
     "content": "[color=lime]Yes it is.[/color]",
-	"next": "10_d_1_a_1_a"
-  },
-  "10_d_1_a_1_a": {
-	"type": "text",
-	"name": "Lieutenant",
-	"position": "left",
-    "content": "No it isn't.", 
 	"next": "10_d_1_a_1_a_1"
   },
   "10_d_1_a_1_a_1": {
 	"type": "text",
-	"name": "Barry",
-	"position": "right",
-    "content": "[color=lime]Yes it is.[/color]",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "No it isn't.", 
 	"next": "10_d_1_a_1_a_1_a"
   },
   "10_d_1_a_1_a_1_a": {
 	"type": "text",
-	"name": "Lieutenant",
-	"position": "left",
-    "content": "No it isn't.", 
+	"name": "Barry",
+	"position": "right",
+    "content": "[color=lime]Yes it is.[/color]",
 	"next": "10_d_1_a_1_a_1_a_1"
   },
   "10_d_1_a_1_a_1_a_1": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "No it isn't.", 
+	"next": "10_d_1_a_1_a_1_a_1_a"
+  },
+  "10_d_1_a_1_a_1_a_1_a": {
 	"type": "text",
 	"name": "Barry",
 	"position": "right",
 	"animation_in": "shake_regular_long",
     "content": "[color=lime]Yes it is![/color]",
-	"next": "10_d_1_a_1_a_1_a_1_a"
+	"next": "10_d_1_a_1_a_1_a_1_a_1"
   },
-  "10_d_1_a_1_a_1_a_1_a": {
+  "10_d_1_a_1_a_1_a_1_a_1": {
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
     "content": "Who's Lieutenant?", 
-	"next": "10_d_1_a_1_a_1_a_1_a_1"
+	"next": "10_d_1_a_1_a_1_a_1_a_1_a"
   },
-  "10_d_1_a_1_a_1_a_1_a_1": {
+  "10_d_1_a_1_a_1_a_1_a_1_a": {
 	"type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
@@ -377,6 +420,13 @@
 	"next": "10"
   },
   "10_d_2": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "No.", 
+	"next": "10_d_2_1",
+  },
+  "10_d_2_1": {
     "type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
@@ -386,6 +436,13 @@
 	"next": "10"
   },
   "10_d_3": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "Of course not.", 
+	"next": "10_d_3_1",
+  },
+  "10_d_3_1": {
     "type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
@@ -395,6 +452,13 @@
 	"next": "10"
   },
   "10_d_4": {
+	"type": "text",
+	"name": "Lieutenant",
+	"position": "left",
+    "content": "Yes.", 
+	"next": "10_d_4_1",
+  },
+  "10_d_4_1": {
     "type": "text",
 	"name": "Barry",
     "avatar": "barry/barry.png",
@@ -680,7 +744,7 @@
 	"type": "text",
 	"name": "КОМПЮТЕР",
 	"position": "left",
-    "content": "[color=#00f1ff]ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ![/color]",
+    "content": "[color=#00f1ff][b]ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ![/b][/color]",
 	"next": "47"
   },
   "47": {

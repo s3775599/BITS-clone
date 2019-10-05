@@ -15,9 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot Open Dialogue"
+config/name="The Night Watch"
 run/main_scene="res://Console_miniGame.tscn"
-boot_splash/image="res://img/ui/splash_screen.png"
 config/icon="res://icon.png"
 
 [autoload]
@@ -28,6 +27,7 @@ PROGRESS="*res://progress.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/resizable=false
 
 [gui]
 
