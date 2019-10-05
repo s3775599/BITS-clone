@@ -1,16 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Console_miniGame.gd" type="Script" id=1]
 [ext_resource path="res://res/images/console.png" type="Texture" id=2]
 [ext_resource path="res://res/images/console_barry.png" type="Texture" id=3]
 [ext_resource path="res://buttons.gd" type="Script" id=4]
-[ext_resource path="res://res/fonts/Razor_s.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://res/music/Katyusha.ogg" type="AudioStream" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
-
-[sub_resource type="DynamicFont" id=1]
-size = 96
-outline_color = Color( 0.505882, 0.0392157, 0.0392157, 1 )
-font_data = ExtResource( 5 )
 
 [node name="Console" type="Node"]
 script = ExtResource( 1 )
@@ -31,58 +26,10 @@ centered = false
 position = Vector2( 412.813, 102.1 )
 script = ExtResource( 4 )
 
-[node name="Control" type="Control" parent="buttons"]
-margin_left = -159.541
-margin_top = 609.443
-margin_right = 881.459
-margin_bottom = 869.443
-
-[node name="WinLabel" type="Label" parent="buttons/Control"]
-visible = false
-margin_right = 1009.0
-margin_bottom = 187.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.752941, 0.592157, 0.207843, 1 )
-custom_colors/font_outline_modulate = Color( 0.815686, 0.0784314, 0.0784314, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 10
-custom_constants/shadow_offset_y = 5
-text = "SOLVED"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="CodeLabel" type="Label" parent="buttons/Control"]
-margin_top = -164.705
-margin_right = 1009.0
-margin_bottom = 22.295
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.752941, 0.592157, 0.207843, 1 )
-custom_colors/font_outline_modulate = Color( 0.815686, 0.0784314, 0.0784314, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 10
-custom_constants/shadow_offset_y = 5
-align = 1
-valign = 1
-uppercase = true
-
-[node name="FailLabel" type="Label" parent="buttons/Control"]
-visible = false
-margin_right = 1009.0
-margin_bottom = 187.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.752941, 0.592157, 0.207843, 1 )
-custom_colors/font_outline_modulate = Color( 0.815686, 0.0784314, 0.0784314, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 10
-custom_constants/shadow_offset_y = 5
-text = "FAIL!!!"
-align = 1
-valign = 1
-uppercase = true
+[node name="Katyusha" type="AudioStreamPlayer" parent="buttons"]
+stream = ExtResource( 5 )
 
 [node name="topLeft" type="CollisionPolygon2D" parent="buttons"]
-editor/display_folded = true
 polygon = PoolVector2Array( -1.95972, 13.9655, -13.9345, 174.679, 175.14, 174.049, 180.813, 1.99081, 1.19153, -1.16043 )
 
 [node name="icon" type="Sprite" parent="buttons/topLeft"]
@@ -136,6 +83,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
 [node name="botRight" type="CollisionPolygon2D" parent="buttons"]
+editor/display_folded = true
 position = Vector2( 549.976, 236.841 )
 polygon = PoolVector2Array( -27.2772, 5.38895, -21.3064, 181.195, 177.056, 181.859, 159.807, -5.88919, -25.9504, -6.55261 )
 
