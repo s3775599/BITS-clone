@@ -50,7 +50,7 @@ var frame_position : String = 'bottom' # Use to 'top' or 'bottom' to change the 
 var frame_margin_vertical : int = 10 # Vertical space (in pixels) between the dialogue box and the window border
 var label_margin : int = 20 # Space (in pixels) between the dialogue frame border and the text
 var enable_continue_indicator : bool = true # Enable or disable the 'continue_indicator' animation when the text is completely displayed. If typewritter effect is disabled it will always be visible on every dialogue block.
-var sprite_offset : Vector2 = Vector2(110, 100) # Used for polishing avatars' position. Can use negative values.
+var sprite_offset : Vector2 = Vector2(0, 0) # Used for polishing avatars' position. Can use negative values.
 var name_offset : Vector2 = Vector2(-10, -15) # Offsets the name labels relative to the frame borders.
 var show_names : bool = true # Turn on and off the character name labels
 # END OF SETUP #
@@ -450,7 +450,7 @@ func check_names(block):
 
 
 func check_animation(block):
-	reset_sprites()
+	#reset_sprites()
 	if block.has('avatar'):
 		if block.has('animation_in'):
 			animate_sprite(block['position'], block['avatar'], block['animation_in'])
@@ -751,3 +751,13 @@ func _on_Sprite_Timer_timeout():
 	set_physics_process(false)
 	on_animation = false
 	shaking = false
+
+func _on_Choices_mouse_entered():
+	current_choice = current_choice - 1 if current_choice > 0 else number_choices
+	choices.get_child(current_choice).self_modulate = active_choice
+	
+
+
+func _on_Choices_mouse_exited():
+	choices.get_child(current_choice).self_modulate = inactive_choice
+	

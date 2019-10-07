@@ -36,7 +36,7 @@ func _process(delta):
 		solved = false
 	if clicked[0] == 0 and clicked[1] == 1 and clicked[2] == 0:
 		$Katyusha.play()
-	print(clicked)
+		print(clicked)
 
 
 # This handles the input, it will cycle the current clicked position in the array
