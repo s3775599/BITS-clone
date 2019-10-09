@@ -11,8 +11,8 @@
                 "John, I need your help.",
                 "I'm scared, John."],
     "next": ["1",
-             "2_a",
-             "3_a",
+             "2",
+             "3",
              "4"]
   },
   "repeat": {
@@ -340,6 +340,13 @@
 	"position": "right",
     "content": "[color=yellow]Wow, it's so nice to be needed only when you can't ask the stupid computer for help first. The answer is no.[/color]"
   },
+  "2": {
+    "type": "text",
+    "name": "Lieutenant",
+    "position": "left",
+    "content": "John, what should we do?",
+    "next": "2_a"
+    },
   "2_a": {
     "type": "question",
 	"name": "John",
@@ -397,6 +404,14 @@
 	"position": "right",
     "content": "[color=yellow]He broke it, he can fix it. That's all I'm going to say about it.[/color]"
   },
+  "3": {
+    "type": "text",
+    "name": "Lieutenant",
+    "position": "left",
+    "content": "John, I need your help.",
+    "next": "3_a"
+    },
+
   "3_a": {
     "type": "question",
 	"name": "John",
@@ -608,7 +623,7 @@
 	"type": "text",
 	"name": "Lieutenant",
 	"position": "left",
-	"content": "I bet you're disappointed that the League reduced you to a button-pushing errand-boy",
+	"content": "I bet you're disappointed that the League reduced you to a button-pushing errand-boy.",
 	"next": "3_a_3_a_1_a_2_a_1_a_1"
   },
   "3_a_3_a_1_a_2_a_1_a_1": {
