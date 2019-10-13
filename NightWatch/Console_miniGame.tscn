@@ -36,7 +36,8 @@ script = ExtResource( 4 )
 stream = ExtResource( 5 )
 
 [node name="topLeft" type="CollisionPolygon2D" parent="buttons"]
-polygon = PoolVector2Array( -1.95972, 13.9655, -13.9345, 174.679, 175.14, 174.049, 180.813, 1.99081, 1.19153, -1.16043 )
+position = Vector2( 208.074, -19.1332 )
+polygon = PoolVector2Array( -5.00635, 3.51185, -18.4418, 179.099, 175.214, 180.952, 182.163, 4.90173 )
 
 [node name="icon" type="Sprite" parent="buttons/topLeft"]
 modulate = Color( 0.705882, 0.862745, 0.478431, 1 )
@@ -46,8 +47,8 @@ texture = ExtResource( 6 )
 
 [node name="topMiddle" type="CollisionPolygon2D" parent="buttons"]
 editor/display_folded = true
-position = Vector2( 233.524, 6.63419 )
-polygon = PoolVector2Array( -16.6625, -6.55261, -19.3162, 167.927, 250.696, 167.927, 245.389, -3.89894, 76.8798, -5.88919 )
+position = Vector2( 432.472, 109.916 )
+polygon = PoolVector2Array( 26.1565, -14.443, 23.5157, 173.931, 224.653, 174.371, 219.812, -11.8022 )
 
 [node name="icon2" type="Sprite" parent="buttons/topMiddle"]
 modulate = Color( 0, 0.133333, 1, 1 )
@@ -57,8 +58,8 @@ texture = ExtResource( 6 )
 
 [node name="topRight" type="CollisionPolygon2D" parent="buttons"]
 editor/display_folded = true
-position = Vector2( 534.054, 2.65367 )
-polygon = PoolVector2Array( -19.9796, 11.3597, -13.9345, 174.679, 172.412, 174.561, 159.807, 2.07184, -18.6527, 1.40842 )
+position = Vector2( 739.736, -11.6962 )
+polygon = PoolVector2Array( -19.233, -0.662224, -12.1909, 177.149, 179.264, 175.829, 162.979, 2.85879 )
 
 [node name="icon" type="Sprite" parent="buttons/topRight"]
 modulate = Color( 1, 0, 0, 1 )
@@ -68,8 +69,8 @@ texture = ExtResource( 6 )
 
 [node name="botLeft" type="CollisionPolygon2D" parent="buttons"]
 editor/display_folded = true
-position = Vector2( -11.9415, 236.178 )
-polygon = PoolVector2Array( -7.37457, -3.89893, -21.3064, 181.195, 177.056, 181.859, 183.027, -4.56235, -7.37457, -4.56235 )
+position = Vector2( 196.133, 224.22 )
+polygon = PoolVector2Array( -24.1052, 183.144, 177.89, 184.533, 184.376, -9.12228, -9.74329, -10.9753 )
 
 [node name="icon" type="Sprite" parent="buttons/botLeft"]
 modulate = Color( 1, 0, 0.890196, 1 )
@@ -78,8 +79,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
 [node name="botMiddle" type="CollisionPolygon2D" parent="buttons"]
-editor/display_folded = true
-position = Vector2( 228.217, 236.178 )
+position = Vector2( 438.683, 542.31 )
 polygon = PoolVector2Array( -16.6625, -6.55261, -21.3064, 181.195, 262.638, 181.859, 257.33, -4.56235, 76.8798, -5.88919 )
 
 [node name="icon" type="Sprite" parent="buttons/botMiddle"]
@@ -90,8 +90,8 @@ texture = ExtResource( 6 )
 
 [node name="botRight" type="CollisionPolygon2D" parent="buttons"]
 editor/display_folded = true
-position = Vector2( 549.976, 236.841 )
-polygon = PoolVector2Array( -27.2772, 5.38895, -21.3064, 181.195, 177.056, 181.859, 159.807, -5.88919, -25.9504, -6.55261 )
+position = Vector2( 758.05, 224.883 )
+polygon = PoolVector2Array( -29.1843, -10.1359, -22.1423, 184.84, 177.056, 181.859, 163.151, -10.1359 )
 
 [node name="icon" type="Sprite" parent="buttons/botRight"]
 position = Vector2( 65.7307, 89.7449 )
