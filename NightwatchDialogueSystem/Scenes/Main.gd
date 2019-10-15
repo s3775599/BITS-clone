@@ -5,13 +5,13 @@ var john_close = false
 var barry_close = false
 
 func _process(delta):
-	pass
-#	if john_close or barry_close:
-#		$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
-#		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
-#		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('464646'))
-#		if john_close:
-#			$CanvasLayer/JohnPopup.popup()
+	#pass
+	if john_close or barry_close:
+		$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
+		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
+		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('464646'))
+		#if john_close:
+		#	$CanvasLayer/JohnPopup.popup()
 
 
 func _input(event):
@@ -193,6 +193,9 @@ func _on_JohnPopup_button_id(button_id):
 	if button_id == "end":
 		john_close = false
 		$CanvasLayer/JohnPopup.hide()
+		$BackgroundArea/BackgroundSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
 		$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideOut')
 	else:
 		var next_dialogue = john_dialogues(button_id)
