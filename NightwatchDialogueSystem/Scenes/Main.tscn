@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://JohnClose.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BarryClose.tscn" type="PackedScene" id=6]
 [ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
@@ -157,6 +158,8 @@ anchor_bottom = 1.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 8 )]
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
@@ -164,3 +167,4 @@ anchor_bottom = 1.0
 [connection signal="mouse_entered" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
 [connection signal="button_id" from="CanvasLayer/JohnPopup" to="." method="_on_JohnPopup_button_id"]
+[connection signal="button_id" from="CanvasLayer/BarryPopup" to="." method="_on_BarryPopup_button_id"]

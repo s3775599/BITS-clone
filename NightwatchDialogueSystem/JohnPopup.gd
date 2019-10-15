@@ -36,7 +36,6 @@ func set_button_labels(dialogue_size, dialogue_lines):
 	if dialogue_size > 1:
 		$NinePatchRect2/VBoxContainer/Button.set_text(dialogue_lines[0][1])
 		$NinePatchRect2/VBoxContainer/Button.button_id = dialogue_lines[1][1]
-		#print($NinePatchRect2/VBoxContainer/Button.button_id)
 		if dialogue_size > 2:
 			$NinePatchRect2/VBoxContainer/Button2.set_text(dialogue_lines[0][2])
 			$NinePatchRect2/VBoxContainer/Button2.button_id = dialogue_lines[1][2]

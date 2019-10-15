@@ -56,12 +56,22 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 			barry_close = false
 		$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideIn')
 		john_close = true
-		show_john_dialogue()
 		can_click = false
-
+		show_john_dialogue()
+		
 
 func _on_BarryConsole_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click == true:
+		if john_close:
+			$BackgroundArea/JohnClose/AnimationPlayer.play('BarryCloseSlideOut')
+			barry_close = false
+		$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideIn')
+		barry_close = true
+		can_click = false
+		show_barry_dialogue()
+		
+#func _on_BarryConsole_input_event(viewport, event, shape_idx):
+#	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click == true:
 #		if john_close:
 #			$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideOut')
 #			john_close = false
@@ -69,12 +79,16 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 #		barry_close = true
 #		$BackgroundArea/BarryPopup.popup()
 #		can_click = false
-		pass
+#		show_barry_dialogue()
 
 
 func show_john_dialogue():
 	$CanvasLayer/JohnPopup.show()
 	$CanvasLayer/JohnPopup.set_text(john_dialogues("1"))
+
+func show_barry_dialogue():
+	$CanvasLayer/BarryPopup.show()
+	$CanvasLayer/BarryPopup.set_text(barry_dialogues("1"))
 
 
 func dialogue(dialogue_lines):
@@ -162,7 +176,7 @@ func john_dialogues(id):
 		"3a3a1a2a1":
 			return [["...","..."],["0","3a3a1a2a1a"]]
 		"3a3a1a2a1a":
-			return [["I bet you're diappointed that the League reduced you to a button-pushing errand-boy","..."],["0","3a3a1a2a1a1"]]
+			return [["I bet you're disappointed that the League reduced you to a button-pushing errand-boy","..."],["0","3a3a1a2a1a1"]]
 		"3a3a1a2a1a1":
 			return [["...","..."],["0","3a3a1a2a1a1a"]]
 		"3a3a1a2a1a1a":
@@ -180,16 +194,28 @@ func john_dialogues(id):
 
 func barry_dialogues(id):
 	match id:
-		"0":
+		"1":
 			return [["Yes Sir, Lieutenant Sir?" , "I'm very disappointed in you, Barry.", "How could you do this, Barry?", "Barry, you need to fix this.", "I don't understand, Barry..."], ["0", "1a", "2a", "3a", "4a"]]
+		"1a":
+			return [["I don't know how this could have happened, Sir.", "That's a bit difficult to believe, Barry.", "We,, we need to find a way to fix it now.", "I imagine it had something to do with you fiddling with computer settings you have no business interfering with."], ["0", "1a1", "1a2", "1a3"]]
 
-
-
-
+func _on_BarryPopup_button_id(button_id):
+	print("button_id = ", button_id)
+	if button_id == "end":
+		barry_close = false
+		$CanvasLayer/BarryPopup.hide()
+		$BackgroundArea/BackgroundSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/BarryConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideOut')
+	else:
+		var next_dialogue = barry_dialogues(button_id)
+		print("next_dialogue = ", next_dialogue)
+		$CanvasLayer/BarryPopup.set_text(next_dialogue)
 
 
 func _on_JohnPopup_button_id(button_id):
-	print("buton_id = ", button_id)
+	print("button_id = ", button_id)
 	if button_id == "end":
 		john_close = false
 		$CanvasLayer/JohnPopup.hide()
