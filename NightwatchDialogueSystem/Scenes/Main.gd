@@ -73,12 +73,12 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 
 
 func show_john_dialogue():
-	$CanvasLayer/JohnPopup.popup()
+	$CanvasLayer/JohnPopup.show()
 	$CanvasLayer/JohnPopup.set_text(john_dialogues("1"))
 
 
 func dialogue(dialogue_lines):
-	$CanvasLayer/JohnPopup.popup()
+	$CanvasLayer/JohnPopup.show()
 
 
 func john_dialogues(id):
@@ -174,7 +174,7 @@ func john_dialogues(id):
 		"smash":
 			return [["SMASH CONSOLE... LIKE HARD.","..."],["0","fix"]]
 		"fix":
-			return [["Hey! It looks like . . . That's fixed it a bit!","John has fixed the computer interface by 10%"],["0","end"]]
+			return [["Hey! It looks like . . . That's fixed it a bit!","John has fixed the computer interface by 25%"],["0","end"]]
 		"4a":
 			return [["Oh, Give me a break.","[ -- end -- ]"],["0","end"]]
 
