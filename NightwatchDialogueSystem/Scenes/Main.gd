@@ -170,25 +170,19 @@ func john_dialogues(id):
 		"3a3a1a1d":
 			return [["I don't think I could begin to explain in simple terms why that wouldn't work.","[ -- end -- ]"],["0","end"]]
 		"3a3a1a1e":
-			return [["Yes I thought about that, but we don;t have enough methylaluniminestricate to counter the secondary neurotrioxin-3 inversion.","[ -- end -- ]"],["0","end"]]
+			return [["Yes I thought about that, but we don't have enough methylaluniminestricate to counter the secondary neurotrioxin-3 inversion.","[ -- end -- ]"],["0","end"]]
 		"3a3a1a2":
 			return [["I don't thank a lowly \"engineer\" has any busness fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer","I bet you really hate that computer"],["0","3a3a1a2a1"]]
 		"3a3a1a2a1":
-			return [["...","..."],["0","3a3a1a2a1a"]]
+			return [[". . .", "I bet you're disappointed that the League reduced you to a button-pushing errand-boy"], ["0","3a3a1a2a1a"]]
 		"3a3a1a2a1a":
-			return [["I bet you're disappointed that the League reduced you to a button-pushing errand-boy","..."],["0","3a3a1a2a1a1"]]
+			return [[". . . ", "I bet you feel like you really wasted your youth on all that study."], ["0","3a3a1a2a1a1"]]
 		"3a3a1a2a1a1":
-			return [["...","..."],["0","3a3a1a2a1a1a"]]
-		"3a3a1a2a1a1a":
-			return [["I bet you feel like you really wasted your youth on all that study.","..."],["0","3a3a1a2a1a1a1"]]
-		"3a3a1a2a1a1a1":
-			return [["...","..."],["0","3a3a1a2a1a1a1a"]]
-		"3a3a1a2a1a1a1a":
-			return [["I bet you'd really like to show this computer how you really feel.","smash computer"],["0","smash"]]
+			return [[". . .", "I bet you'd really like to show this computer how you really feel."], ["0","smash"]]
 		"smash":
-			return [["SMASH CONSOLE... LIKE HARD.","..."],["0","fix"]]
+			return [["SMASH CONSOLE... LIKE HARD!","[ -- continue -- ]"],["0","fix"]]
 		"fix":
-			return [["Hey! It looks like . . . That's fixed it a bit!","John has fixed the computer interface by 25%"],["0","end"]]
+			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- John has fixed the computer interface by 25% -- ]"],["0","end"]]
 		"4a":
 			return [["Oh, Give me a break.","[ -- end -- ]"],["0","end"]]
 
@@ -197,7 +191,7 @@ func barry_dialogues(id):
 		"1":
 			return [["Yes Sir, Lieutenant Sir?" , "I'm very disappointed in you, Barry.", "How could you do this, Barry?", "Barry, you need to fix this.", "I don't understand, Barry..."], ["0", "1a", "2a", "3a", "4a"]]
 		"1a":
-			return [["I don't know how this could have happened, Sir.", "That's a bit difficult to believe, Barry.", "We,, we need to find a way to fix it now.", "I imagine it had something to do with you fiddling with computer settings you have no business interfering with."], ["0", "1a1", "1a2", "1a3"]]
+			return [["I don't know how this could have happened, Sir.", "That's a bit difficult to believe, Barry.", "Well, we need to find a way to fix it now.", "I imagine it had something to do with you fiddling with computer settings you have no business interfering with."], ["0", "1a1", "1a2", "1a3"]]
 
 func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
