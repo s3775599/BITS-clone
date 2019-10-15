@@ -11,6 +11,7 @@ func set_text(dialogue_lines):
 	$NinePatchRect2/VBoxContainer/Button4.visible = false
 
 	var dialogue_size = dialogue_lines[0].size()
+	print("dialogue_size = ", dialogue_size)
 	set_button_visibility(dialogue_size)
 	set_button_labels(dialogue_size, dialogue_lines)
 	$NinePatchRect2/RichTextLabel.bbcode_text = String(dialogue_lines[0][0])

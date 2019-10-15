@@ -124,6 +124,7 @@ position = Vector2( 512.006, 300.007 )
 scale = Vector2( 0.266665, 0.27777 )
 
 [node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 512.006, 300.007 )
 scale = Vector2( 0.266665, 0.27777 )
 

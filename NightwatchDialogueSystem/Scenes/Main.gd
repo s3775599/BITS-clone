@@ -74,7 +74,7 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 
 func show_john_dialogue():
 	$CanvasLayer/JohnPopup.popup()
-	$CanvasLayer/JohnPopup.set_text(john_dialogues("0"))
+	$CanvasLayer/JohnPopup.set_text(john_dialogues("1"))
 
 
 func dialogue(dialogue_lines):
@@ -83,7 +83,7 @@ func dialogue(dialogue_lines):
 
 func john_dialogues(id):
 	match id:
-		"0":
+		"1":
 			return [["Yes SIR what is it now SIR?" , "John, you have to fix this.", "John, what should we do?", "John, I need your help", "I'm scared, John"], ["0", "1a", "2a", "3a", "4a"]]
 		"1a":
 			return [["Me? You want me to fix this?", "Yes.", "No.", "I think you're the only one who can."], ["0", "1a1", "1a2", "1a3"]]
@@ -118,12 +118,70 @@ func john_dialogues(id):
 		"1a1c1a1":
 			return [["Well, neither do I.", "[ -- end --]"],["0", "end"]]
 		"1a2":
-			return [["Then what are you bothering me for? Go and tell Barry to fix it", "[ -- end -- ]"], ["0", "end"]]
+			return [["Then what are you bothering me for? Go and tell Barry to fix it.", "[ -- end -- ]"], ["0", "end"]]
 		"1a3":
 			return [["You're probably right.", "You're our only hope!", "We can't do it without you!", "The fate of the League rests on your shoulders!"], ["0", "answerno", "answerno", "answerno"]]
 		"answerno":
 			return [["Wow, it's so nice to be needed only when you can't ask the stupid computer for help first. The answer is no.", "[ -- end -- ]"], ["0", "end"]]
+		"2a":
+			return [["I think you should get Barry to fix the problem he caused.","I dont think he can.","I don't think he wants to.","I think he's caused enough damage for one day."],["0","2a1","2a2","2a3"]]
+		"2a1":
+			return [["I'm sure he'll work it out eventually.", "[ -- end -- ]"], ["0", "end"]]
+		"2a2":
+			return [["I know how he feels.", "[ -- end -- ]"], ["0","end"]]
+		"2a3":
+			return [["He broke it, he can fix it. That's all I'm going to say about it.", "[ -- end -- ]"],["0","end"]]
+		"3a":
+			return [["What on Canopus do you think I can do about this?","I thought you might have some ideas.","I don't know.","You're an engineer, aren't you?"],["0","3a1","3a2","3a3"]]
+		"3a1":
+			return [["That's some inspirational leadership right there.","[ -- end -- ]"],["0","end"]]
+		"3a2":
+			return [["Well, neither do I.","[ -- end -- ]"],["0", "end"]]
+		"3a3":
+			return [["You could say I'm an \"engineer\". You could also say that I modelled a nuclear reactor out of pinebark when I was 12, I have a first-class degree in quantum propulsion systems, and I was headhunted by the Australian National Astrophysics League before I'd even taken my final exams with promises of overseeing the biggest and most powerful engines humanity had ever devised.","..."],["0","3a3a"]]
+		"3a3a":
+			return [["Then these stupid AI computers came along and now I press buttons all day asking the computer to find answers to things I devoted my life to studying, and the only tech I'm allowed to go anywhere near is the coffee machine.","..."],["0","3a3a1"]]
+		"3a3a1":
+			return [["And we ran out of coffee three years ago.","..."],["0","3a3a1a"]]
+		"3a3a1a":
+			return [["But sure. \"Engineer\".","I bet you could fix it.","Can you think of some way to fix this?"],["0","3a3a1a1","3a3a1a2"]]
+		"3a3a1a1":
+			return [["I bet you I'm not going to.","What if you align the phase manifold?","What if you check the combustion seals?","What about lubricating the flux probes?","What if you restart the synaptic motivators?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],["0","3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
+		"3a3a1a1a":
+			return [["We don't have enough titanium.","[ -- end -- ]"],["0","end"]]
+		"3a3a1a1b":
+			return [["I am NOT going into the reactor chamber again.","[ -- end -- ]"],["0","end"]]
+		"3a3a1a1c":
+			return [["We used the last of the WD40 on the squeaky chair in the comms room.","[ -- end -- ]"],["0","end"]]
+		"3a3a1a1d":
+			return [["I don't think I could begin to explain in simple terms why that wouldn't work.","[ -- end -- ]"],["0","end"]]
+		"3a3a1a1e":
+			return [["Yes I thought about that, but we don;t have enough methylaluniminestricate to counter the secondary neurotrioxin-3 inversion.","[ -- end -- ]"],["0","end"]]
+		"3a3a1a2":
+			return [["I don't thank a lowly \"engineer\" has any busness fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer","I bet you really hate that computer"],["0","3a3a1a2a1"]]
+		"3a3a1a2a1":
+			return [["...","..."],["0","3a3a1a2a1a"]]
+		"3a3a1a2a1a":
+			return [["I bet you're diappointed that the League reduced you to a button-pushing errand-boy","..."],["0","3a3a1a2a1a1"]]
+		"3a3a1a2a1a1":
+			return [["...","..."],["0","3a3a1a2a1a1a"]]
+		"3a3a1a2a1a1a":
+			return [["I bet you feel like you really wasted your youth on all that study.","..."],["0","3a3a1a2a1a1a1"]]
+		"3a3a1a2a1a1a1":
+			return [["...","..."],["0","3a3a1a2a1a1a1a"]]
+		"3a3a1a2a1a1a1a":
+			return [["I bet you'd really like to show this computer how you really feel.","smash computer"],["0","smash"]]
+		"smash":
+			return [["SMASH CONSOLE... LIKE HARD.","..."],["0","fix"]]
+		"fix":
+			return [["Hey! It looks like . . . That's fixed it a bit!","John has fixed the computer interface by 10%"],["0","end"]]
+		"4a":
+			return [["Oh, Give me a break.","[ -- end -- ]"],["0","end"]]
 
+func barry_dialogues(id):
+	match id:
+		"0":
+			return [["Yes Sir, Lieutenant Sir?" , "I'm very disappointed in you, Barry.", "How could you do this, Barry?", "Barry, you need to fix this.", "I don't understand, Barry..."], ["0", "1a", "2a", "3a", "4a"]]
 
 
 
@@ -131,11 +189,12 @@ func john_dialogues(id):
 
 
 func _on_JohnPopup_button_id(button_id):
-	print(button_id)
+	print("buton_id = ", button_id)
 	if button_id == "end":
 		john_close = false
 		$CanvasLayer/JohnPopup.hide()
 		$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideOut')
 	else:
 		var next_dialogue = john_dialogues(button_id)
+		print("next_dialogue = ", next_dialogue)
 		$CanvasLayer/JohnPopup.set_text(next_dialogue)

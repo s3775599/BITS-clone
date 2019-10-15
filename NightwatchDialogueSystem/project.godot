@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="MyVersion"
+config/name="The Night Watch"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
