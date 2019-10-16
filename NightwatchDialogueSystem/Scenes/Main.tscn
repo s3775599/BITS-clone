@@ -1,17 +1,22 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
-[ext_resource path="res://JohnConsole.tscn" type="PackedScene" id=3]
-[ext_resource path="res://BarryConsole.tscn" type="PackedScene" id=4]
-[ext_resource path="res://JohnClose.tscn" type="PackedScene" id=5]
-[ext_resource path="res://BarryClose.tscn" type="PackedScene" id=6]
-[ext_resource path="res://GFX/ak-47.png" type="Texture" id=7]
-[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=8]
-[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GFX/russianText.png" type="Texture" id=3]
+[ext_resource path="res://GFX/ak-47.png" type="Texture" id=4]
+[ext_resource path="res://GFX/russianFlag.png" type="Texture" id=5]
+[ext_resource path="res://JohnConsole.tscn" type="PackedScene" id=6]
+[ext_resource path="res://BarryConsole.tscn" type="PackedScene" id=7]
+[ext_resource path="res://JohnClose.tscn" type="PackedScene" id=8]
+[ext_resource path="res://BarryClose.tscn" type="PackedScene" id=9]
+[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 37.1971, 54.8029 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "BarryConsoleFastIn"
@@ -105,9 +110,6 @@ tracks/0/keys = {
 "values": [ Vector2( 515, 300.007 ), Vector2( 1200, 300.007 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 37.1971, 54.8029 )
-
 [node name="Main" type="Control"]
 script = ExtResource( 1 )
 
@@ -115,7 +117,7 @@ script = ExtResource( 1 )
 position = Vector2( -0.197113, -0.197075 )
 
 [node name="BackgroundSprite" type="Sprite" parent="BackgroundArea"]
-position = Vector2( 512.006, 300.007 )
+position = Vector2( 511.791, 299.841 )
 scale = Vector2( 0.266665, 0.27777 )
 texture = ExtResource( 2 )
 
@@ -124,36 +126,28 @@ visible = false
 position = Vector2( 510.414, 299.073 )
 shape = SubResource( 1 )
 
-[node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 3 )]
-position = Vector2( 512.006, 300.007 )
-scale = Vector2( 0.266665, 0.27777 )
+[node name="Images" type="Node2D" parent="BackgroundArea"]
 
-[node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 4 )]
-editor/display_folded = true
-position = Vector2( 512.006, 300.007 )
-scale = Vector2( 0.266665, 0.27777 )
+[node name="RussianText" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 609.418, 176.177 )
+texture = ExtResource( 3 )
+texture_scale = Vector2( 5, 3 )
+polygon = PoolVector2Array( -1.24127, -0.585846, 3.05151, 108.665, 109.298, 106.09, 101.141, 0.0580597 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryConsole"]
-anims/BarryConsoleFastIn = SubResource( 2 )
-anims/BarryConsoleSlowOut = SubResource( 3 )
+[node name="AK47" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 329.643, 49.5638 )
+rotation = 0.00046379
+texture = ExtResource( 4 )
+texture_offset = Vector2( 0, -25 )
+texture_scale = Vector2( 6, 3 )
+polygon = PoolVector2Array( -1.24127, -0.585846, -7.80945, 95.0813, 93.9093, 95.8718, 97.3351, 0.214005 )
 
-[node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 5 )]
-editor/display_folded = true
-position = Vector2( -120, 300.007 )
-scale = Vector2( 0.266665, 0.27777 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/JohnClose"]
-anims/JohnCloseSlideIn = SubResource( 4 )
-anims/JohnCloseSlideOut = SubResource( 5 )
-
-[node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 6 )]
-editor/display_folded = true
-position = Vector2( 1176, 300.007 )
-scale = Vector2( 0.266665, 0.27777 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryClose"]
-anims/BarryCloseSlideIn = SubResource( 6 )
-anims/BarryCloseSlideOut = SubResource( 7 )
+[node name="RussianFlag" type="Polygon2D" parent="BackgroundArea/Images"]
+modulate = Color( 0.921569, 0.882353, 0.882353, 1 )
+position = Vector2( 320.571, 176.459 )
+texture = ExtResource( 5 )
+texture_scale = Vector2( 5, 1.75 )
+polygon = PoolVector2Array( -0.840729, -0.550095, -9.47708, 106.74, 98.9754, 106.906, 101.633, -0.0518494 )
 
 [node name="Console" type="Node2D" parent="BackgroundArea"]
 position = Vector2( 315, 317 )
@@ -173,7 +167,7 @@ editor/display_folded = true
 position = Vector2( -11, 101 )
 
 [node name="Button2Area" type="CollisionPolygon2D" parent="BackgroundArea/Console/Button2"]
-position = Vector2( 18, 38 )
+position = Vector2( 14.8421, 53.7895 )
 scale = Vector2( 2.10805, 3.32323 )
 build_mode = 1
 polygon = PoolVector2Array( -23.1508, 19.0168, 50.3771, 19.0168, 50.3771, -9.8708, -11.7658, -9.8708 )
@@ -183,7 +177,7 @@ editor/display_folded = true
 position = Vector2( 277, 7 )
 
 [node name="Lever1Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever1"]
-position = Vector2( -25, 101 )
+position = Vector2( -27.105, 115 )
 scale = Vector2( 1, 1.68757 )
 shape = SubResource( 8 )
 
@@ -192,16 +186,40 @@ editor/display_folded = true
 position = Vector2( 370, 8 )
 
 [node name="Lever2Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever2"]
-position = Vector2( -25, 101 )
+position = Vector2( -11.316, 115 )
 scale = Vector2( 1, 1.68757 )
 shape = SubResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="BackgroundArea/Console"]
-position = Vector2( 16, -268 )
-rotation = 0.0760276
-scale = Vector2( 0.188276, 0.538668 )
-texture = ExtResource( 7 )
-centered = false
+[node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 6 )]
+position = Vector2( 512.006, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 512.006, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryConsole"]
+anims/BarryConsoleFastIn = SubResource( 2 )
+anims/BarryConsoleSlowOut = SubResource( 3 )
+
+[node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 8 )]
+editor/display_folded = true
+position = Vector2( -120, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/JohnClose"]
+anims/JohnCloseSlideIn = SubResource( 4 )
+anims/JohnCloseSlideOut = SubResource( 5 )
+
+[node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 9 )]
+editor/display_folded = true
+position = Vector2( 1176, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryClose"]
+anims/BarryCloseSlideIn = SubResource( 6 )
+anims/BarryCloseSlideOut = SubResource( 7 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
@@ -209,10 +227,11 @@ anchor_bottom = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 8 )]
-visible = false
+[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = true
 
-[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 9 )]
+[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = true
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]

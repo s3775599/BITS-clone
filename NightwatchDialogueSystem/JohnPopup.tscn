@@ -9,7 +9,6 @@
 [ext_resource path="res://Button4.gd" type="Script" id=7]
 
 [node name="JohnPopup" type="Popup"]
-visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
