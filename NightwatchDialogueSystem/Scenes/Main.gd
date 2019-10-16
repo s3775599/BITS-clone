@@ -5,7 +5,6 @@ var john_close = false
 var barry_close = false
 
 func _process(delta):
-	#pass
 	if john_close or barry_close:
 		$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
 		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
@@ -19,6 +18,8 @@ func _input(event):
 		$BackgroundArea/BarryConsole/AnimationPlayer.play('BarryConsoleSlowOut')
 	if Input.is_action_just_pressed("ui_left"):
 		$BackgroundArea/BarryConsole/AnimationPlayer.play('BarryConsoleFastIn')
+	if Input.is_action_just_pressed("ui_down"):
+		intro()
 	if john_close:
 #		$BackgroundArea/JohnPopup.popup()
 		pass
@@ -33,6 +34,7 @@ func _on_BarryConsole_mouse_entered():
 	else:
 		can_click = false
 
+
 func _on_BarryConsole_mouse_exited():
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1, 1, 1))
 	can_click = true
@@ -43,6 +45,7 @@ func _on_JohnConsole_mouse_entered():
 		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('4d39df'))
 	else:
 		can_click = false
+
 
 func _on_JohnConsole_mouse_exited():
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1, 1, 1))
@@ -69,30 +72,20 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 		barry_close = true
 		can_click = false
 		show_barry_dialogue()
-		
-#func _on_BarryConsole_input_event(viewport, event, shape_idx):
-#	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click == true:
-#		if john_close:
-#			$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideOut')
-#			john_close = false
-#		$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideIn')
-#		barry_close = true
-#		$BackgroundArea/BarryPopup.popup()
-#		can_click = false
-#		show_barry_dialogue()
 
 
 func show_john_dialogue():
 	$CanvasLayer/JohnPopup.show()
 	$CanvasLayer/JohnPopup.set_text(john_dialogues("1"))
 
+
 func show_barry_dialogue():
 	$CanvasLayer/BarryPopup.show()
 	$CanvasLayer/BarryPopup.set_text(barry_dialogues("1"))
 
 
-func dialogue(dialogue_lines):
-	$CanvasLayer/JohnPopup.show()
+#func dialogue(dialogue_lines):
+#	$CanvasLayer/JohnPopup.show()
 
 
 func john_dialogues(id):
@@ -296,6 +289,17 @@ func barry_dialogues(id):
 			return [["A couple of the letters look the same. . .", "Barry, stop talking."], ["0", "understood"]]
 
 
+func intro_dialogues(id):
+	match id:
+		"1":
+			return [["PLAYER: . . .scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?", "[ -- continue -- ]"], ["0", "2"]]
+
+
+func intro():
+	$CanvasLayer/PlayerPopup.show()
+	$CanvasLayer/PlayerPopup.set_text(intro_dialogues("1"))
+
+
 func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
@@ -324,3 +328,15 @@ func _on_JohnPopup_button_id(button_id):
 		var next_dialogue = john_dialogues(button_id)
 		print("next_dialogue = ", next_dialogue)
 		$CanvasLayer/JohnPopup.set_text(next_dialogue)
+
+
+func _on_PlayerPopup_button_id(button_id):
+	print("button_id = ", button_id)
+	if button_id == "end":
+		$CanvasLayer/PlayerPopup.hide()
+		$BackgroundArea/BackgroundSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
+		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
+	else:
+		pass
+		
