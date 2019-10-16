@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/322054__zimbot__engineroomsteady.ogg-918d59743127f86621dbee13267eec22.oggstr"
+
+[deps]
+
+source_file="res://SFX/322054__zimbot__engineroomsteady.ogg"
+dest_files=[ "res://.import/322054__zimbot__engineroomsteady.ogg-918d59743127f86621dbee13267eec22.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

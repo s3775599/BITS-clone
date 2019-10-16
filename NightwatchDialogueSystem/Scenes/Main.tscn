@@ -1,0 +1,254 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://GFX/console.png" type="Texture" id=2]
+[ext_resource path="res://GFX/russianText.png" type="Texture" id=3]
+[ext_resource path="res://GFX/ak-47.png" type="Texture" id=4]
+[ext_resource path="res://GFX/russianFlag.png" type="Texture" id=5]
+[ext_resource path="res://JohnConsole.tscn" type="PackedScene" id=6]
+[ext_resource path="res://BarryConsole.tscn" type="PackedScene" id=7]
+[ext_resource path="res://JohnClose.tscn" type="PackedScene" id=8]
+[ext_resource path="res://BarryClose.tscn" type="PackedScene" id=9]
+[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://PlayerPopup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://JohnDialogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://BarryDialogue.tscn" type="PackedScene" id=14]
+[ext_resource path="res://IntroDialogue.tscn" type="PackedScene" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 513.672, 299.894 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 37.1971, 54.8029 )
+
+[sub_resource type="Animation" id=3]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 740, 300.007 ), Vector2( 512, 300.007 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512.006, 300.007 ), Vector2( 740, 300.007 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -120, 300.007 ), Vector2( 486, 300.007 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 500, 300.007 ), Vector2( -140, 300.007 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1176, 300.007 ), Vector2( 512, 300.007 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 515, 300.007 ), Vector2( 1200, 300.007 ) ]
+}
+
+[node name="Main" type="Control"]
+script = ExtResource( 1 )
+
+[node name="BackgroundArea" type="Area2D" parent="."]
+position = Vector2( -0.197113, -0.197075 )
+
+[node name="BackgroundSprite" type="Sprite" parent="BackgroundArea"]
+position = Vector2( 511.791, 299.841 )
+scale = Vector2( 0.266665, 0.27777 )
+texture = ExtResource( 2 )
+
+[node name="BackgroundCollision" type="CollisionShape2D" parent="BackgroundArea"]
+visible = false
+position = Vector2( 510.414, 299.073 )
+shape = SubResource( 1 )
+
+[node name="Images" type="Node2D" parent="BackgroundArea"]
+editor/display_folded = true
+
+[node name="RussianText" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 609.418, 176.177 )
+texture = ExtResource( 3 )
+texture_scale = Vector2( 5, 3 )
+polygon = PoolVector2Array( -1.24127, -0.585846, 3.05151, 108.665, 109.298, 106.09, 101.141, 0.0580597 )
+
+[node name="AK47" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 329.643, 49.5638 )
+rotation = 0.00046379
+texture = ExtResource( 4 )
+texture_offset = Vector2( 0, -25 )
+texture_scale = Vector2( 6, 3 )
+polygon = PoolVector2Array( -1.24127, -0.585846, -7.80945, 95.0813, 93.9093, 95.8718, 97.3351, 0.214005 )
+
+[node name="RussianFlag" type="Polygon2D" parent="BackgroundArea/Images"]
+modulate = Color( 0.921569, 0.882353, 0.882353, 1 )
+position = Vector2( 320.571, 176.459 )
+texture = ExtResource( 5 )
+texture_scale = Vector2( 5, 1.75 )
+polygon = PoolVector2Array( -0.840729, -0.550095, -9.47708, 106.74, 98.9754, 106.906, 101.633, -0.0518494 )
+
+[node name="Console" type="Node2D" parent="BackgroundArea"]
+editor/display_folded = true
+position = Vector2( 315, 317 )
+
+[node name="Button1" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( 1, 1 )
+
+[node name="Button1Area" type="CollisionPolygon2D" parent="BackgroundArea/Console/Button1"]
+position = Vector2( 18, 38 )
+scale = Vector2( 2.10805, 3.32323 )
+build_mode = 1
+polygon = PoolVector2Array( -18.407, 19.0168, 44.2102, 19.0168, 43.2615, -9.56989, -6.54771, -9.56989 )
+
+[node name="Button2" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( -11, 101 )
+
+[node name="Button2Area" type="CollisionPolygon2D" parent="BackgroundArea/Console/Button2"]
+position = Vector2( 14.8421, 53.7895 )
+scale = Vector2( 2.10805, 3.32323 )
+build_mode = 1
+polygon = PoolVector2Array( -23.1508, 19.0168, 50.3771, 19.0168, 50.3771, -9.8708, -11.7658, -9.8708 )
+
+[node name="Lever1" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( 277, 7 )
+
+[node name="Lever1Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever1"]
+position = Vector2( -27.105, 115 )
+scale = Vector2( 1, 1.68757 )
+shape = SubResource( 2 )
+
+[node name="Lever2" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( 370, 8 )
+
+[node name="Lever2Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever2"]
+position = Vector2( -11.316, 115 )
+scale = Vector2( 1, 1.68757 )
+shape = SubResource( 2 )
+
+[node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 6 )]
+position = Vector2( 512.006, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( 512.006, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryConsole"]
+anims/BarryConsoleFastIn = SubResource( 3 )
+anims/BarryConsoleSlowOut = SubResource( 4 )
+
+[node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 8 )]
+editor/display_folded = true
+position = Vector2( -120, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/JohnClose"]
+anims/JohnCloseSlideIn = SubResource( 5 )
+anims/JohnCloseSlideOut = SubResource( 6 )
+
+[node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 9 )]
+editor/display_folded = true
+position = Vector2( 1176, 300.007 )
+scale = Vector2( 0.266665, 0.27777 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryClose"]
+anims/BarryCloseSlideIn = SubResource( 7 )
+anims/BarryCloseSlideOut = SubResource( 8 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 10 )]
+
+[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+[node name="PlayerPopup" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+[node name="JohnDialogue" parent="." instance=ExtResource( 13 )]
+
+[node name="BarryDialogue" parent="." instance=ExtResource( 14 )]
+
+[node name="IntroDialogue" parent="." instance=ExtResource( 15 )]
+[connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
+[connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
+[connection signal="input_event" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_input_event"]
+[connection signal="mouse_entered" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
+[connection signal="button_id" from="CanvasLayer/JohnPopup" to="." method="_on_JohnPopup_button_id"]
+[connection signal="button_id" from="CanvasLayer/BarryPopup" to="." method="_on_BarryPopup_button_id"]
+[connection signal="button_id" from="CanvasLayer/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]
