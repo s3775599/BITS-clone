@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=11]
 [ext_resource path="res://PlayerPopup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://JohnDialogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://BarryDialogue.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
@@ -231,6 +233,10 @@ anchor_bottom = 1.0
 [node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 11 )]
 
 [node name="PlayerPopup" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+[node name="JohnDialogue" parent="." instance=ExtResource( 13 )]
+
+[node name="BarryDialogue" parent="." instance=ExtResource( 14 )]
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
