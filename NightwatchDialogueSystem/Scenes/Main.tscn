@@ -15,11 +15,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 37.1971, 54.8029 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "BarryConsoleFastIn"
+[sub_resource type="Animation" id=3]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -34,8 +33,7 @@ tracks/0/keys = {
 "values": [ Vector2( 740, 300.007 ), Vector2( 512, 300.007 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "BarryConsoleSlowOut"
+[sub_resource type="Animation" id=4]
 length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -50,7 +48,7 @@ tracks/0/keys = {
 "values": [ Vector2( 512.006, 300.007 ), Vector2( 740, 300.007 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -65,7 +63,7 @@ tracks/0/keys = {
 "values": [ Vector2( -120, 300.007 ), Vector2( 486, 300.007 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -80,7 +78,7 @@ tracks/0/keys = {
 "values": [ Vector2( 500, 300.007 ), Vector2( -140, 300.007 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -95,7 +93,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1176, 300.007 ), Vector2( 512, 300.007 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -179,7 +177,7 @@ position = Vector2( 277, 7 )
 [node name="Lever1Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever1"]
 position = Vector2( -27.105, 115 )
 scale = Vector2( 1, 1.68757 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 
 [node name="Lever2" type="Area2D" parent="BackgroundArea/Console"]
 editor/display_folded = true
@@ -188,7 +186,7 @@ position = Vector2( 370, 8 )
 [node name="Lever2Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever2"]
 position = Vector2( -11.316, 115 )
 scale = Vector2( 1, 1.68757 )
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 
 [node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 6 )]
 position = Vector2( 512.006, 300.007 )
@@ -200,8 +198,8 @@ position = Vector2( 512.006, 300.007 )
 scale = Vector2( 0.266665, 0.27777 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryConsole"]
-anims/BarryConsoleFastIn = SubResource( 2 )
-anims/BarryConsoleSlowOut = SubResource( 3 )
+anims/BarryConsoleFastIn = SubResource( 3 )
+anims/BarryConsoleSlowOut = SubResource( 4 )
 
 [node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 8 )]
 editor/display_folded = true
@@ -209,8 +207,8 @@ position = Vector2( -120, 300.007 )
 scale = Vector2( 0.266665, 0.27777 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/JohnClose"]
-anims/JohnCloseSlideIn = SubResource( 4 )
-anims/JohnCloseSlideOut = SubResource( 5 )
+anims/JohnCloseSlideIn = SubResource( 5 )
+anims/JohnCloseSlideOut = SubResource( 6 )
 
 [node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 9 )]
 editor/display_folded = true
@@ -218,8 +216,8 @@ position = Vector2( 1176, 300.007 )
 scale = Vector2( 0.266665, 0.27777 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BarryClose"]
-anims/BarryCloseSlideIn = SubResource( 6 )
-anims/BarryCloseSlideOut = SubResource( 7 )
+anims/BarryCloseSlideIn = SubResource( 7 )
+anims/BarryCloseSlideOut = SubResource( 8 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
@@ -228,7 +226,6 @@ anchor_bottom = 1.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 10 )]
-visible = true
 
 [node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 11 )]
 visible = true

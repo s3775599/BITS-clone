@@ -67,8 +67,8 @@ size_flags_vertical = 3
 script = ExtResource( 4 )
 
 [node name="buttonLabel" type="Label" parent="NinePatchRect2/VBoxContainer/Button"]
+margin_top = 10.0
 margin_right = 449.0
-margin_bottom = 155.0
 align = 1
 autowrap = true
 
@@ -81,8 +81,8 @@ size_flags_vertical = 3
 script = ExtResource( 5 )
 
 [node name="button2Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button2"]
+margin_top = 10.0
 margin_right = 449.0
-margin_bottom = 155.0
 align = 1
 autowrap = true
 
@@ -95,8 +95,8 @@ size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="button3Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button3"]
+margin_top = 10.0
 margin_right = 449.0
-margin_bottom = 155.0
 align = 1
 autowrap = true
 
@@ -109,8 +109,8 @@ size_flags_vertical = 3
 script = ExtResource( 7 )
 
 [node name="button4Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button4"]
+margin_top = 10.0
 margin_right = 449.0
-margin_bottom = 155.0
 align = 1
 autowrap = true
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button" to="." method="_on_Button_pressed"]
