@@ -56,15 +56,29 @@ func intro_dialogues(id):
 		"i11b1a1b1a":
 			return [["Wait, really?", "[ -- continue -- ]"], ["0", "i11b1a1b1a1"]]
 		"i11b1a1b1a1":
-			return [["", "Of course. But that means you won't have access to any ship-distrbuted food."], ["0", "i11b1a1b1a1a"]]
+			return [["", "Of course. But that means you won't have access to any ship-distributed food."], ["0", "i11b1a1b1a1a"]]
 		"i11b1a1b1a1a":
 			return [["Oh.", "[ -- continue -- ]"], ["0", "i11b1a1b1a1a1"]]
 		"i11b1a1b1a1a1":
 			return [["", "Or Oxygen."], ["0", "i11b1a1b1a1a1a"]]
 		"i11b1a1b1a1a1a":
-			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["0", "11a"]]
+			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["0", "i11"]]
 		"i11c":
-			return
+			return [["", "Are you sure nothing's changed?"], ["0", "i11c1"]]
+		"i11c1":
+			return [["Yes, I'm sure.", "[ -- continue -- ]"], ["0", "i11c1a"]]
+		"i11c1a":
+			return [["", "Are you really sure?"], ["0", "i11c1a1"]]
+		"i11c1a1":
+			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["0", "i11c1a1a"]]
+		"i11c1a1a":
+			return [["", "Are you really REALLY extra sure?"], ["0", "i11c1a1a1"]]
+		"i11c1a1a1":
+			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["0", "i11c1a1a1a"]]
+		"i11c1a1a1a":
+			return [["", "Are you really REALLY super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-of-the-airlock extra sure?"], ["0", "i11c1a1a1a1"]]
+		"i11c1a1a1a1":
+			return [["YES.", "[ -- continue -- ]"], ["0", "i11c1a1a1a1"]]
 		"i11d":
 			return
 
@@ -120,8 +134,19 @@ func intro_sequence(button_id):
 		"i11b1a1a":
 			player_to_john(button_id)
 		"i11b1a1b":
+			player_to_john(button_id)
+		"i11b1a1b1":
 			john_to_player(button_id)
-
+		"i11b1a1b1a":
+			player_to_john(button_id)
+		"i11b1a1b1a1":
+			john_to_player(button_id)
+		"i11b1a1b1a1a":
+			player_to_john(button_id)
+		"i11b1a1b1a1a1":
+			john_to_player(button_id)
+		"i11b1a1b1a1a1a":
+			player_to_john(button_id)
 
 # sets the dialogue box transition from the Player to Barry
 func player_to_barry(button_id):
