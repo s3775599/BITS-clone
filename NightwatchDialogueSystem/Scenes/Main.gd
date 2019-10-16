@@ -11,8 +11,6 @@ func _process(delta):
 		$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
 		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
 		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('464646'))
-		#if john_close:
-		#	$CanvasLayer/JohnPopup.popup()
 
 
 func _input(event):
@@ -82,16 +80,17 @@ func show_barry_dialogue():
 	$CanvasLayer/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
 
 
-func intro_dialogues(id):
-	match id:
-		"1":
-			return [["PLAYER: . . .scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?", "[ -- continue -- ]"], ["0", "2"]]
-
-
 func intro():
 	$CanvasLayer/PlayerPopup.show()
 	$CanvasLayer/PlayerPopup.set_text(intro_dialogues("1"))
 
+
+func intro_dialogues(id):
+	match id:
+		"1":
+			return [["PLAYER: . . .scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?", "[ -- continue -- ]"], ["0", "2"]]
+		"2":
+			return [["Everything's fine mate.", "[ -- continue -- ]"], ["0", "3"]]
 
 func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
@@ -131,5 +130,13 @@ func _on_PlayerPopup_button_id(button_id):
 		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
 		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
 	else:
-		pass
+		match button_id:
+			"2":
+				$CanvasLayer/PlayerPopup.hide()
+				$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideIn')
+				barry_close = true
+				can_click = false
+				$CanvasLayer/BarryPopup.show()
+				$CanvasLayer/BarryPopup.set_text(intro_dialogues(button_id))
+			
 		
