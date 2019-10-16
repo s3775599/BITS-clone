@@ -9,7 +9,6 @@
 [ext_resource path="res://Button4.gd" type="Script" id=7]
 
 [node name="JohnPopup" type="Popup"]
-visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -64,19 +63,34 @@ margin_bottom = -6.0
 [node name="Button" type="Button" parent="NinePatchRect2/VBoxContainer"]
 visible = false
 margin_right = 448.0
-margin_bottom = 20.0
+margin_bottom = 154.0
+grow_horizontal = 2
+rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "placeholder"
 script = ExtResource( 4 )
+
+[node name="buttonLabel" type="Label" parent="NinePatchRect2/VBoxContainer/Button"]
+margin_right = 40.0
+margin_bottom = 14.0
+align = 1
+autowrap = true
 
 [node name="Button2" type="Button" parent="NinePatchRect2/VBoxContainer"]
 visible = false
+margin_top = 79.0
 margin_right = 448.0
-margin_bottom = 20.0
+margin_bottom = 154.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
+
+[node name="button2Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button2"]
+margin_top = -79.0
+margin_right = 40.0
+margin_bottom = -65.0
+align = 1
+autowrap = true
 
 [node name="Button3" type="Button" parent="NinePatchRect2/VBoxContainer"]
 visible = false
@@ -86,6 +100,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 6 )
 
+[node name="button3Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button3"]
+margin_right = 40.0
+margin_bottom = 14.0
+align = 1
+autowrap = true
+
 [node name="Button4" type="Button" parent="NinePatchRect2/VBoxContainer"]
 visible = false
 margin_right = 448.0
@@ -93,6 +113,12 @@ margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 7 )
+
+[node name="button4Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button4"]
+margin_right = 40.0
+margin_bottom = 14.0
+align = 1
+autowrap = true
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]

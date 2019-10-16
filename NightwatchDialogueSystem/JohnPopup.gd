@@ -34,22 +34,21 @@ func set_button_labels(dialogue_size, dialogue_lines):
 	if dialogue_size == 1:
 		return
 	if dialogue_size > 1:
-		$NinePatchRect2/VBoxContainer/Button.set_text(dialogue_lines[0][1])
+		$NinePatchRect2/VBoxContainer/Button/buttonLabel.set_text(dialogue_lines[0][1])
 		$NinePatchRect2/VBoxContainer/Button.button_id = dialogue_lines[1][1]
 		if dialogue_size > 2:
-			$NinePatchRect2/VBoxContainer/Button2.set_text(dialogue_lines[0][2])
+			$NinePatchRect2/VBoxContainer/Button2/button2Label.set_text(dialogue_lines[0][2])
 			$NinePatchRect2/VBoxContainer/Button2.button_id = dialogue_lines[1][2]
 			if dialogue_size > 3:
-				$NinePatchRect2/VBoxContainer/Button3.set_text(dialogue_lines[0][3])
+				$NinePatchRect2/VBoxContainer/Button3/button3Label.set_text(dialogue_lines[0][3])
 				$NinePatchRect2/VBoxContainer/Button3.button_id = dialogue_lines[1][3]
 				if dialogue_size > 4:
-					$NinePatchRect2/VBoxContainer/Button4.set_text(dialogue_lines[0][4])
+					$NinePatchRect2/VBoxContainer/Button4/button4Label.set_text(dialogue_lines[0][4])
 					$NinePatchRect2/VBoxContainer/Button4.button_id = dialogue_lines[1][4]
 
 
 func _on_Button_pressed():
 	button_id = $NinePatchRect2/VBoxContainer/Button.button_id
-	print(button_id)
 	emit_signal("button_id", button_id)
 
 
