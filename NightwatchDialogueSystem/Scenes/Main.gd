@@ -3,6 +3,7 @@ extends Control
 var can_click = true
 var john_close = false
 var barry_close = false
+onready var intro_dialogue = get_node("IntroDialogue")
 onready var john_dialogue = get_node("JohnDialogue")
 onready var barry_dialogue = get_node("BarryDialogue")
 
@@ -82,15 +83,8 @@ func show_barry_dialogue():
 
 func intro():
 	$CanvasLayer/PlayerPopup.show()
-	$CanvasLayer/PlayerPopup.set_text(intro_dialogues("1"))
+	$CanvasLayer/PlayerPopup.set_text(intro_dialogue.intro_dialogues("1"))
 
-
-func intro_dialogues(id):
-	match id:
-		"1":
-			return [["PLAYER: . . .scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?", "[ -- continue -- ]"], ["0", "2"]]
-		"2":
-			return [["Everything's fine mate.", "[ -- continue -- ]"], ["0", "3"]]
 
 func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
@@ -130,6 +124,7 @@ func _on_PlayerPopup_button_id(button_id):
 		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
 		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
 	else:
+		intro_dialogue.intro_dialogues(button_id)
 		match button_id:
 			"2":
 				$CanvasLayer/PlayerPopup.hide()
@@ -137,6 +132,6 @@ func _on_PlayerPopup_button_id(button_id):
 				barry_close = true
 				can_click = false
 				$CanvasLayer/BarryPopup.show()
-				$CanvasLayer/BarryPopup.set_text(intro_dialogues(button_id))
-			
-		
+				$CanvasLayer/BarryPopup.set_text(intro_dialogue.intro_dialogues(button_id))
+
+
