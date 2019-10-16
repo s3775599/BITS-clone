@@ -11,8 +11,6 @@ onready var barry_dialogue = get_node("BarryDialogue")
 func _process(delta):
 	if john_close or barry_close or player_close:
 		darken_background()
-	else:
-		normalise_background()
 
 
 func _input(event):
@@ -70,6 +68,7 @@ func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
 		hide_barry()
+		normalise_background()
 	elif button_id[0] == "i":
 		intro_dialogue.intro_sequence(button_id)
 	else:
@@ -81,6 +80,7 @@ func _on_JohnPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
 		hide_john()
+		normalise_background()
 	else:
 		var next_dialogue = john_dialogue.john_dialogues(button_id)
 		$CanvasLayer/JohnPopup.set_text(next_dialogue)
@@ -88,7 +88,13 @@ func _on_JohnPopup_button_id(button_id):
 
 func _on_PlayerPopup_button_id(button_id):
 	if button_id == "end":
-		hide_player()
+		if player_close:
+			hide_player()
+		if john_close:
+			hide_john()
+		if barry_close:
+			hide_barry()
+		normalise_background()
 	else:
 		intro_dialogue.intro_sequence(button_id)
 

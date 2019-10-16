@@ -10,11 +10,11 @@ onready var john_anim = get_node("/root/Main/BackgroundArea/JohnClose/AnimationP
 func intro_dialogues(id):
 	match id:
 		"i1":
-			return [["PLAYER: . . .scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?", "[ -- continue -- ]"], ["0", "i2"]]
+			return [["PLAYER: . . . scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?", "[ -- continue -- ]"], ["0", "i2"]]
 		"i2":
 			return [["Everything's fine mate.", "[ -- continue -- ]"], ["0", "i3"]]
 		"i3":
-			return [["PLAYER: I beg you pardon, Barry?", "[ -- continue --]"], ["0", "i4"]]
+			return [["PLAYER: I beg your pardon, Barry?", "[ -- continue --]"], ["0", "i4"]]
 		"i4":
 			return [["All good.", "[ -- continue --]"], ["0", "i5"]]
 		"i5":
@@ -24,7 +24,7 @@ func intro_dialogues(id):
 		"i7":
 			return [["Systems report, John?", "[ -- continue -- ]"], ["0", "i8"]]
 		"i8":
-			return [["It's fine, it's whatever.", "[ -- continue -- ]"], ["0", "i9"]]
+			return [["It's fine, it's whatever.", "[ -- continue -- ]"], ["0", "end"]]
 
 func intro_sequence(button_id):
 	intro_dialogues(button_id)
@@ -46,6 +46,9 @@ func intro_sequence(button_id):
 		"i8":
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
+			main_script.john_close = false
+			main_script.barry_close = false
+			main_script.player_close = false
 
 
 func player_to_barry(button_id):
