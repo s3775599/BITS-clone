@@ -131,12 +131,14 @@ shape = SubResource( 1 )
 [node name="Images" type="Node2D" parent="BackgroundArea"]
 
 [node name="RussianText" type="Polygon2D" parent="BackgroundArea/Images"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
 position = Vector2( 609.418, 176.177 )
 texture = ExtResource( 3 )
 texture_scale = Vector2( 5, 3 )
 polygon = PoolVector2Array( -1.24127, -0.585846, 3.05151, 108.665, 109.298, 106.09, 101.141, 0.0580597 )
 
 [node name="AK47" type="Polygon2D" parent="BackgroundArea/Images"]
+modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
 position = Vector2( 329.643, 49.5638 )
 rotation = 0.00046379
 texture = ExtResource( 4 )
