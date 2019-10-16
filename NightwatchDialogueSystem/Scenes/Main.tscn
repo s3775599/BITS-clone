@@ -129,6 +129,7 @@ position = Vector2( 510.414, 299.073 )
 shape = SubResource( 1 )
 
 [node name="Images" type="Node2D" parent="BackgroundArea"]
+editor/display_folded = true
 
 [node name="RussianText" type="Polygon2D" parent="BackgroundArea/Images"]
 modulate = Color( 0.662745, 0.662745, 0.662745, 1 )
@@ -154,6 +155,7 @@ texture_scale = Vector2( 5, 1.75 )
 polygon = PoolVector2Array( -0.840729, -0.550095, -9.47708, 106.74, 98.9754, 106.906, 101.633, -0.0518494 )
 
 [node name="Console" type="Node2D" parent="BackgroundArea"]
+editor/display_folded = true
 position = Vector2( 315, 317 )
 
 [node name="Button1" type="Area2D" parent="BackgroundArea/Console"]
@@ -230,6 +232,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 10 )]
 
