@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://JohnPopup.gd" type="Script" id=1]
+[ext_resource path="res://DialoguePopup.gd" type="Script" id=1]
 [ext_resource path="res://GFX/metalPanel_plate.png" type="Texture" id=2]
 [ext_resource path="res://GFX/glassPanel.png" type="Texture" id=3]
 [ext_resource path="res://Button.gd" type="Script" id=4]
