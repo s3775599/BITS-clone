@@ -32,7 +32,7 @@ func intro_dialogues(id):
 		"i10":
 			return [["What? What do you want me to say? It's exactly the same as it was last shift. We haven't done anything since the last shift. It's all the same as the last shift.", "[ -- continue -- ]"], ["0", "i11"]]
 		"i11":
-			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Wee that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
+			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
 		"i11a":
 			return [["Nothing.", "[ -- continue -- ]"], ["0", "i11a1"]]
 		"i11a1":
@@ -41,6 +41,28 @@ func intro_dialogues(id):
 			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Wee that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
 		"i11b":
 			return [["Oh no, not that. Anything but that.", "[ -- continue -- ]"], ["0", "i11b1"]]
+		"i11b1":
+			return [["", "John, you are an Engineer in the Australian National Astrophysics League. What does that mean to you?"], ["0", "i11b1a"]]
+		"i11b1a":
+			return [["It means I get to spend the best years of my life in deep space.", "[ -- continue -- ]"], ["0", "i11b1a1"]]
+		"i11b1a1":
+			return [["", "Exactly! It's the adventure of a lifetime!", "You don't sound very enthusiastic."], ["0", "i11b1a1a", "i11b1a1b"]]
+		"i11b1a1a":
+			return [["Oh, it's a hoot.", "[ -- continue -- ]"], ["0", "i11"]]
+		"i11b1a1b":
+			return [["Gee I wonder why.", "[ -- continue -- ]"], ["0", "i11b1a1b1"]]
+		"i11b1a1b1":
+			return [["", "If you don't like it, you can always quit."], ["0", "i11b1a1b1a"]]
+		"i11b1a1b1a":
+			return [["Wait, really?", "[ -- continue -- ]"], ["0", "i11b1a1b1a1"]]
+		"i11b1a1b1a1":
+			return [["", "Of course. But that means you won't have access to any ship-distrbuted food."], ["0", "i11b1a1b1a1a"]]
+		"i11b1a1b1a1a":
+			return [["Oh.", "[ -- continue -- ]"], ["0", "i11b1a1b1a1a1"]]
+		"i11b1a1b1a1a1":
+			return [["", "Or Oxygen."], ["0", "i11b1a1b1a1a1a"]]
+		"i11b1a1b1a1a1a":
+			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["0", "11a"]]
 		"i11c":
 			return
 		"i11d":
@@ -89,12 +111,16 @@ func intro_sequence(button_id):
 		"i11b":
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
-		
-		
-		
-#			main_script.john_close = false
-#			main_script.barry_close = false
-#			main_script.player_close = false
+		"i11b1":
+			john_to_player(button_id)
+		"i11b1a":
+			player_to_john(button_id)
+		"i11b1a1":
+			john_to_player(button_id)
+		"i11b1a1a":
+			player_to_john(button_id)
+		"i11b1a1b":
+			john_to_player(button_id)
 
 
 # sets the dialogue box transition from the Player to Barry
@@ -123,6 +149,7 @@ func john_to_player(button_id):
 	john_popup.hide()
 	player_popup.show()
 	player_popup.set_text(intro_dialogues(button_id))
+
 
 func john_to_barry(button_id):
 	john_popup.hide()

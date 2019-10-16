@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://DialoguePopup.gd" type="Script" id=1]
 [ext_resource path="res://GFX/metalPanel_plate.png" type="Texture" id=2]
 [ext_resource path="res://GFX/glassPanel.png" type="Texture" id=3]
 [ext_resource path="res://Button.gd" type="Script" id=4]
+[ext_resource path="res://Button2.gd" type="Script" id=5]
+[ext_resource path="res://Button3.gd" type="Script" id=6]
+[ext_resource path="res://Button4.gd" type="Script" id=7]
 
 [node name="PlayerPopup" type="Popup"]
-visible = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -77,7 +79,7 @@ margin_right = 464.0
 margin_bottom = 110.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="button2Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button2"]
 anchor_right = 1.0
@@ -92,7 +94,7 @@ margin_right = 464.0
 margin_bottom = 167.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="button3Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button3"]
 anchor_right = 1.0
@@ -107,7 +109,7 @@ margin_right = 464.0
 margin_bottom = 224.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 4 )
+script = ExtResource( 7 )
 
 [node name="button4Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button4"]
 anchor_right = 1.0
@@ -116,6 +118,6 @@ margin_top = 4.0
 align = 1
 autowrap = true
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button2" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button3" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button4" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button4" to="." method="_on_Button4_pressed"]
