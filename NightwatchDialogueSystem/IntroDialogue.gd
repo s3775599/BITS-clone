@@ -1,4 +1,5 @@
 extends Node
+
 onready var main_script = get_node("/root/Main")
 onready var player_popup = get_node("/root/Main/CanvasLayer/PlayerPopup")
 onready var barry_popup = get_node("/root/Main/CanvasLayer/BarryPopup")

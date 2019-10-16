@@ -91,21 +91,6 @@ func _on_PlayerPopup_button_id(button_id):
 		hide_player()
 	else:
 		intro_dialogue.intro_sequence(button_id)
-#		intro_dialogue.intro_dialogues(button_id)
-#		match button_id:
-#			"i2":
-#				$CanvasLayer/PlayerPopup.hide()
-#				show_barry()
-#				$CanvasLayer/BarryPopup.set_text(intro_dialogue.intro_dialogues(button_id))
-
-
-#func intro_sequence(button_id):
-#	intro_dialogue.intro_dialogues(button_id)
-#	match button_id:
-#		"i2":
-#			$CanvasLayer/PlayerPopup.hide()
-#			show_barry()
-#			$CanvasLayer/BarryPopup.set_text(intro_dialogue.intro_dialogues(button_id))
 
 
 func darken_background():
