@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://BarryConsole.tscn" type="PackedScene" id=4]
 [ext_resource path="res://JohnClose.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BarryClose.tscn" type="PackedScene" id=6]
-[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=7]
-[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GFX/ak-47.png" type="Texture" id=7]
+[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
@@ -104,6 +105,9 @@ tracks/0/keys = {
 "values": [ Vector2( 515, 300.007 ), Vector2( 1200, 300.007 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 37.1971, 54.8029 )
+
 [node name="Main" type="Control"]
 script = ExtResource( 1 )
 
@@ -151,15 +155,63 @@ scale = Vector2( 0.266665, 0.27777 )
 anims/BarryCloseSlideIn = SubResource( 6 )
 anims/BarryCloseSlideOut = SubResource( 7 )
 
+[node name="Console" type="Node2D" parent="BackgroundArea"]
+position = Vector2( 315, 317 )
+
+[node name="Button1" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( 1, 1 )
+
+[node name="Button1Area" type="CollisionPolygon2D" parent="BackgroundArea/Console/Button1"]
+position = Vector2( 18, 38 )
+scale = Vector2( 2.10805, 3.32323 )
+build_mode = 1
+polygon = PoolVector2Array( -18.407, 19.0168, 44.2102, 19.0168, 43.2615, -9.56989, -6.54771, -9.56989 )
+
+[node name="Button2" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( -11, 101 )
+
+[node name="Button2Area" type="CollisionPolygon2D" parent="BackgroundArea/Console/Button2"]
+position = Vector2( 18, 38 )
+scale = Vector2( 2.10805, 3.32323 )
+build_mode = 1
+polygon = PoolVector2Array( -23.1508, 19.0168, 50.3771, 19.0168, 50.3771, -9.8708, -11.7658, -9.8708 )
+
+[node name="Lever1" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( 277, 7 )
+
+[node name="Lever1Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever1"]
+position = Vector2( -25, 101 )
+scale = Vector2( 1, 1.68757 )
+shape = SubResource( 8 )
+
+[node name="Lever2" type="Area2D" parent="BackgroundArea/Console"]
+editor/display_folded = true
+position = Vector2( 370, 8 )
+
+[node name="Lever2Area" type="CollisionShape2D" parent="BackgroundArea/Console/Lever2"]
+position = Vector2( -25, 101 )
+scale = Vector2( 1, 1.68757 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="BackgroundArea/Console"]
+position = Vector2( 16, -268 )
+rotation = 0.0760276
+scale = Vector2( 0.188276, 0.538668 )
+texture = ExtResource( 7 )
+centered = false
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 7 )]
+[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 8 )]
 
-[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 8 )]
+[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
