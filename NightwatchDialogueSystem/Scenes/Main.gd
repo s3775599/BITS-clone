@@ -20,12 +20,8 @@ func _input(event):
 		$BackgroundArea/BarryConsole/AnimationPlayer.play('BarryConsoleFastIn')
 	if Input.is_action_just_pressed("ui_down"):
 		intro()
-	if john_close:
-#		$BackgroundArea/JohnPopup.popup()
-		pass
-	if barry_close:
-#		$BackgroundArea/BarryPopup.popup()
-		pass
+	if john_close or barry_close:
+		can_click = false
 
 	
 func _on_BarryConsole_mouse_entered():
