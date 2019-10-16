@@ -89,9 +89,14 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
 [node name="botRight" type="CollisionPolygon2D" parent="buttons"]
+<<<<<<< Updated upstream
 editor/display_folded = true
 position = Vector2( 758.05, 224.883 )
 polygon = PoolVector2Array( -29.1843, -10.1359, -22.1423, 184.84, 177.056, 181.859, 163.151, -10.1359 )
+=======
+position = Vector2( 549.976, 236.841 )
+polygon = PoolVector2Array( -27.2772, 5.38895, -21.3064, 181.195, 177.056, 181.859, 159.807, -5.88919, -25.9504, -6.55261 )
+>>>>>>> Stashed changes
 
 [node name="icon" type="Sprite" parent="buttons/botRight"]
 position = Vector2( 65.7307, 89.7449 )
@@ -103,10 +108,11 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ConsoleScreen" type="HSplitContainer" parent="Control"]
-margin_left = 313.0
-margin_top = 577.0
-margin_right = 1201.0
-margin_bottom = 991.0
+margin_left = 581.827
+margin_top = 569.208
+margin_right = 1469.83
+margin_bottom = 983.208
+rect_scale = Vector2( 0.84, 1 )
 
 [node name="TextScroll" type="VBoxContainer" parent="Control/ConsoleScreen"]
 margin_bottom = 414.0
