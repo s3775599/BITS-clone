@@ -210,6 +210,7 @@ anchor_bottom = 1.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
 
 [node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
