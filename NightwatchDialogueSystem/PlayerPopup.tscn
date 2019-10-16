@@ -1,17 +1,18 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://PlayerPopup.gd" type="Script" id=1]
+[ext_resource path="res://DialoguePopup.gd" type="Script" id=1]
 [ext_resource path="res://GFX/metalPanel_plate.png" type="Texture" id=2]
 [ext_resource path="res://GFX/glassPanel.png" type="Texture" id=3]
 [ext_resource path="res://Button.gd" type="Script" id=4]
 
 [node name="PlayerPopup" type="Popup"]
+visible = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -240.0
-margin_top = -120.0
+margin_top = -240.0
 margin_right = 240.0
 script = ExtResource( 1 )
 
@@ -49,28 +50,72 @@ margin_bottom = -8.0
 bbcode_enabled = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -224.0
-margin_top = -44.0
-margin_right = 224.0
-margin_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="NinePatchRect2/VBoxContainer"]
-margin_right = 448.0
-margin_bottom = 38.0
+margin_right = 464.0
+margin_bottom = 53.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
 
 [node name="buttonLabel" type="Label" parent="NinePatchRect2/VBoxContainer/Button"]
-margin_top = 10.0
-margin_right = 449.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 4.0
+align = 1
+autowrap = true
+
+[node name="Button2" type="Button" parent="NinePatchRect2/VBoxContainer"]
+margin_top = 57.0
+margin_right = 464.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="button2Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+align = 1
+autowrap = true
+
+[node name="Button3" type="Button" parent="NinePatchRect2/VBoxContainer"]
+margin_top = 114.0
+margin_right = 464.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="button3Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+align = 1
+autowrap = true
+
+[node name="Button4" type="Button" parent="NinePatchRect2/VBoxContainer"]
+margin_top = 171.0
+margin_right = 464.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="button4Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
 align = 1
 autowrap = true
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button2" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button3" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button4" to="." method="_on_Button_pressed"]
