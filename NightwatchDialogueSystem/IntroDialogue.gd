@@ -154,6 +154,50 @@ func intro_dialogues(id):
 			return [["No.", "[ -- continue -- ]"], ["0", "i27"]]
 		"i27":
 			return [["'SIR'.", "[ -- continue -- ]"], ["0", "i28"]]
+		"i28":
+			return [["", " . . . "], ["0", "i29"]]
+		"i29":
+			return [["", "Do you know anything about this, Barry?"], ["0", "i30"]]
+		"i30":
+			return [["Um . . .", "[ -- continue -- ]"], ["0", "i31"]]
+		"i31":
+			return [["Possibly.", "[ -- continue -- ]"], ["0", "i32"]]
+		"i32":
+			return [["", "I really need a better answer than that, Barry. Why is John's console in Russian?"], ["0", "i33"]]
+		"i33":
+			return [["Well, it was an accident.", "[ -- continue -- ]"], ["0", "i34"]]
+		"i34":
+			return [["I was bored.", "[ -- continue -- ]"], ["0", "i35"]]
+		"i35":
+			return [["So I was looking for a new hobby. And I thought hey, why not try learning another language?", "[ -- continue -- ]"], ["0", "i36"]]
+		"i36":
+			return [["And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface into Russian.", "[ -- continue -- ]"], ["0", "i37"]]
+		"i37":
+			return [["And I couldn't quite work out how to switch it back.", "[ -- continue -- ]"], ["0", "i38"]]
+		"i38":
+			return [["It turns out language immersion takes a fairly long time.", "[ -- continue -- ]"], ["0", "i39"]]
+		"i39":
+			return [["", "You said you switched the SHIP'S COMPUTER INTERFACE into Russian?"], ["0", "i40"]]
+		"i40":
+			return [["Uh, yes Sir.", "[ -- continue -- ]"], ["0", "i41"]]
+		"i41":
+			return [["", "But that's going to affect everyone's cons. . ."], ["0", "i42"]]
+		"i42":
+			return [["", ". . ."], ["0", "i43"]]
+		"i43":
+			return [["", "Oh Barry, you idiot."], ["0", "i44"]]
+		"i44":
+			return [["I feel really bad about it, Sir.", "[ -- console -- ]"], ["0", "i45"]]
+		"i45":
+			return [["Computer's voice recognition should still be working though.", "[ -- continue -- ]"], ["0", "i46"]]
+		"i46":
+			return [["", "COMPUTER!"], ["0", "i47"]]
+		"i47":
+			return [["", "{ KOMPYUTER } CHEGO? DAVAY BYSTREE, YA ZANYAT!"], ["0", "i48"]]
+		"i48":
+			return [["", "Barry, you complete idiot."], ["0", "end"]]
+
+
 
 # the sequence of dialogue and animations/transitions in the intro
 func intro_sequence(button_id):
@@ -310,6 +354,58 @@ func intro_sequence(button_id):
 		"i27":
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
+		"i28":
+			john_anim.play('JohnCloseSlideOut')
+			john_to_player(button_id)
+		"i29":
+			john_to_player(button_id)
+		"i30":
+			barry_console_anim.play('BarryConsoleFastIn')
+			player_to_barry(button_id)
+		"i31":
+			barry_anim.play('BarryCloseSlideIn')
+			player_to_barry(button_id)
+		"i32":
+			barry_to_player(button_id)
+		"i33":
+			player_to_barry(button_id)
+		"i34":
+			player_to_barry(button_id)
+		"i35":
+			player_to_barry(button_id)
+		"i36":
+			player_to_barry(button_id)
+		"i37":
+			player_to_barry(button_id)
+		"i38":
+			player_to_barry(button_id)
+		"i39":
+			barry_to_player(button_id)
+		"i40":
+			player_to_barry(button_id)
+		"i41":
+			barry_to_player(button_id)
+			barry_anim.play('BarryCloseSlideOut')
+		"i42":
+			barry_to_player(button_id)
+		"i43":
+			barry_to_player(button_id)
+		"i44":
+			barry_anim.play('BarryCloseSlideIn')
+			player_to_barry(button_id)
+		"i45":
+			barry_popup.hide()
+			barry_anim.play('BarryCloseSlideOut')
+			john_anim.play('JohnCloseSlideIn')
+			player_to_john(button_id)
+		"i46":
+			john_anim.play('JohnCloseSlideOut')
+			john_to_player(button_id)
+		"i47":
+			john_to_player(button_id)
+		"i48":
+			john_to_player(button_id)
+
 
 # sets the dialogue box transition from the Player to Barry
 func player_to_barry(button_id):
