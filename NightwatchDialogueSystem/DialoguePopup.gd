@@ -47,19 +47,25 @@ func set_button_labels(dialogue_size, dialogue_lines):
 					$NinePatchRect2/VBoxContainer/Button4.button_id = dialogue_lines[1][4]
 
 
+func emit_button_signal(button_id):
+	emit_signal("button_id", button_id)
+
+
 func _on_Button_pressed():
 	button_id = $NinePatchRect2/VBoxContainer/Button.button_id
-	emit_signal("button_id", button_id)
+	emit_button_signal(button_id)
 
 
 func _on_Button2_pressed():
 	button_id = $NinePatchRect2/VBoxContainer/Button2.button_id
-	emit_signal("button_id", $NinePatchRect2/VBoxContainer/Button2.button_id)
+	emit_button_signal(button_id)
 
 
 func _on_Button3_pressed():
-	emit_signal("button_id", $NinePatchRect2/VBoxContainer/Button3.button_id)
+	button_id = $NinePatchRect2/VBoxContainer/Button3.button_id
+	emit_button_signal(button_id)
 
 
 func _on_Button4_pressed():
-	emit_signal("button_id", $NinePatchRect2/VBoxContainer/Button4.button_id)
+	button_id = $NinePatchRect2/VBoxContainer/Button4.button_id
+	emit_button_signal(button_id)

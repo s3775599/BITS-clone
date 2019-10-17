@@ -6,6 +6,7 @@ onready var player_popup = get_node("/root/Main/CanvasLayer/PlayerPopup")
 onready var barry_popup = get_node("/root/Main/CanvasLayer/BarryPopup")
 onready var john_popup = get_node("/root/Main/CanvasLayer/JohnPopup")
 onready var barry_anim = get_node("/root/Main/BackgroundArea/BarryClose/AnimationPlayer")
+onready var barry_console_anim = get_node("/root/Main/BackgroundArea/BarryConsole/AnimationPlayer")
 onready var john_anim = get_node("/root/Main/BackgroundArea/JohnClose/AnimationPlayer")
 
 # all the intro dialogue lines
@@ -64,23 +65,95 @@ func intro_dialogues(id):
 		"i11b1a1b1a1a1a":
 			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["0", "i11"]]
 		"i11c":
-			return [["", "Are you sure nothing's changed?"], ["0", "i11c1"]]
+			return [["Yes, I'm sure.", "[ -- continue -- ]"], ["0", "i11c1"]]
 		"i11c1":
-			return [["Yes, I'm sure.", "[ -- continue -- ]"], ["0", "i11c1a"]]
+			return [["", "Are you really sure?"], ["0", "i11c1a"]]
 		"i11c1a":
-			return [["", "Are you really sure?"], ["0", "i11c1a1"]]
+			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["0", "i11c1a1"]]
 		"i11c1a1":
-			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["0", "i11c1a1a"]]
+			return [["", "Are you really REALLY extra sure?"], ["0", "i11c1a1a"]]
 		"i11c1a1a":
-			return [["", "Are you really REALLY extra sure?"], ["0", "i11c1a1a1"]]
+			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["0", "i11c1a1a1"]]
 		"i11c1a1a1":
-			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["0", "i11c1a1a1a"]]
+			return [["", "Are you really REALLY super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-of-the-airlock extra sure?"], ["0", "i11c1a1a1a"]]
 		"i11c1a1a1a":
-			return [["", "Are you really REALLY super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-of-the-airlock extra sure?"], ["0", "i11c1a1a1a1"]]
-		"i11c1a1a1a1":
 			return [["YES.", "[ -- continue -- ]"], ["0", "i11c1a1a1a1"]]
+		"i11c1a1a1a1":
+			return [["", "Check your console anyway."], ["0", "i11c1a1a1a1a"]]
+		"i11c1a1a1a1a":
+			return [["OKAY FINE.", "[ -- continue -- ]"], ["0", "i11c1a1a1a1a1"]]
+		"i11c1a1a1a1a1":
+			return [["", "'Sir'."], ["0", "i11c1a1a1a1a1a"]]
+		"i11c1a1a1a1a1a":
+			return [[". . . 'SIR'.", "[ -- continue -- ]"], ["0", "i12"]]
 		"i11d":
-			return
+			return [["Playing favourites, are we?", "[ -- continue -- ]"], ["0", "i11d1"]]
+		"i11d1":
+			return [["", "What are you talking about?", "No.", "Of course not.", "Yes."], ["0", "i11d1a", "i11d1b", "i11d1c", "i11d1d"]]
+		"i11d1a":
+			return [["You chew my ear off when I talk like that, but he gets away with anything.", "[ -- continue -- ]"], ["0", "i11d1a1"]]
+			
+		"i11d1a1":
+			return [["", "That's not true."], ["0", "i11d1a1a"]]
+			
+		"i11d1a1a":
+			return [["Yes it is.", "[ -- continue -- ]"], ["0", "i11d1a1a1"]]
+			
+		"i11d1a1a1":
+			return [["", "No it isn't."], ["0", "i11d1a1a1a"]]
+			
+		"i11d1a1a1a":
+			return [["Yes it is!", "[ -- continue -- ]"], ["0", "i11d1a1a1a1"]]
+			
+		"i11d1a1a1a1":
+			return [["", "No it isn't."], ["0", "i11d1a1a1a1a"]]
+			
+		"i11d1a1a1a1a":
+			return [["YES IT IS!", "[ -- continue -- ]"], ["0", "i11d1a1a1a1a1"]]
+			
+		"i11d1a1a1a1a1":
+			return [["", "Who's Lieutenant?"], ["0", "i11d1a1a1a1a1a"]]
+			
+		"i11d1a1a1a1a1a":
+			return [[". . . you are.", "[ -- continue -- ]"], ["0", "i11r"]]
+		"i11d1b":
+			return [["It sure looks like it.", "[ -- continue -- ]"], ["0", "i11r"]]
+		"i11d1c":
+			return [["Yeah, right.", "[ -- continue -- ]"], ["0", "i11r"]]
+		"i11d1d":
+			return [["I knew it.", "[ -- continue -- ]"], ["0", "i11r"]]
+		"i12":
+			return [["See? Everything's . . . ", "[ -- continue -- ]"], ["0", "i13"]]
+		"i13":
+			return [["", "Everything's . . .?"], ["0", "i14"]]
+		"i14":
+			return [["Probably fine. SIR.", "[ -- continue -- ]"], ["", "i15"]]
+		"i15":
+			return [["", "Could you be a bit clearer on what you mean by 'probably', John?"], ["0", "i16"]]
+		"i16":
+			return [["The system diagnostic looks the same as before, like I said. SIR.", "[ -- continue -- ]"], ["0", "i17"]]
+		"i17":
+			return [["", "It LOOKS the same, or it IS the same?"], ["0", "i18"]]
+		"i18":
+			return [["It LOOKS like it IS the same. SIR", "[ -- continue -- ]"], ["0", "i19"]]
+		"i19":
+			return [["", "So can you CONFIRM that it IS the same?"], ["0", "i20"]]
+		"i20":
+			return [[". . .not exactly. SIR.", "[ -- continue -- ]"], ["0", "i21"]]
+		"i21":
+			return [["", "Why not?"], ["0", "i22"]]
+		"i22":
+			return [["My console is . . . in Russian.", "[ -- continue -- ]"], ["0", "i23"]]
+		"i23":
+			return [["", "Your console is in Russian?"], ["0", "i24"]]
+		"i24":
+			return [["My console appears to be in Russian. SIR.", "[ -- continue -- ]"], ["0", "i25"]]
+		"i25":
+			return [["", "And can you explain why your console is in Russian, John?"], ["0", "i26"]]
+		"i26":
+			return [["No.", "[ -- continue -- ]"], ["0", "i27"]]
+		"i27":
+			return [["'SIR'.", "[ -- continue -- ]"], ["0", "i28"]]
 
 # the sequence of dialogue and animations/transitions in the intro
 func intro_sequence(button_id):
@@ -146,6 +219,96 @@ func intro_sequence(button_id):
 		"i11b1a1b1a1a1":
 			john_to_player(button_id)
 		"i11b1a1b1a1a1a":
+			player_to_john(button_id)
+		"i11c":
+			player_to_john(button_id)
+			john_anim.play('JohnCloseSlideIn')
+		"i11c1":
+			john_to_player(button_id)
+		"i11c1a":
+			player_to_john(button_id)
+		"i11c1a1":
+			john_to_player(button_id)
+		"i11c1a1a":
+			player_to_john(button_id)
+		"i11c1a1a1":
+			john_to_player(button_id)
+		"i11c1a1a1a":
+			player_to_john(button_id)
+		"i11c1a1a1a1":
+			john_to_player(button_id)
+		"i11c1a1a1a1a":
+			player_to_john(button_id)
+		"i11c1a1a1a1a1":
+			john_to_player(button_id)
+		"i11c1a1a1a1a1a":
+			player_to_john(button_id)
+		"i11d":
+			barry_anim.play('BarryCloseSlideIn')
+			player_to_barry(button_id)
+		"i11d1":
+			barry_to_player(button_id)
+		"i11d1a":
+			player_to_barry(button_id)
+		"i11d1a1":
+			barry_to_player(button_id)
+		"i11d1a1a":
+			player_to_barry(button_id)
+		"i11d1a1a1":
+			barry_to_player(button_id)
+		"i11d1a1a1a":
+			player_to_barry(button_id)
+		"i11d1a1a1a1":
+			barry_to_player(button_id)
+		"i11d1a1a1a1a":
+			player_to_barry(button_id)
+		"i11d1a1a1a1a1":
+			barry_to_player(button_id)
+		"i11d1a1a1a1a1a":
+			player_to_barry(button_id)
+		"i11d1b":
+			player_to_barry(button_id)
+		"i11d1c":
+			player_to_barry(button_id)
+		"i11d1d":
+			player_to_barry(button_id)
+			john_anim.play('JohnCloseSlideOut')
+		"i12":
+			john_anim.play('JohnCloseSlideOut')
+			player_to_john(button_id)
+		"i13":
+			john_to_player(button_id)
+		"i14":
+			john_anim.play('JohnCloseSlideIn')
+			barry_console_anim.play('BarryConsoleSlowOut')
+			player_to_john(button_id)
+		"i15":
+			john_to_player(button_id)
+		"i16":
+			player_to_john(button_id)
+		"i17":
+			john_to_player(button_id)
+		"i18":
+			player_to_john(button_id)
+		"i19":
+			john_to_player(button_id)
+		"i20":
+			player_to_john(button_id)
+		"i21":
+			john_to_player(button_id)
+		"i22":
+			player_to_john(button_id)
+		"i23":
+			john_to_player(button_id)
+		"i24":
+			player_to_john(button_id)
+		"i25":
+			john_to_player(button_id)
+		"i26":
+			john_anim.play('JohnCloseSlideOut')
+			player_to_john(button_id)
+		"i27":
+			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
 
 # sets the dialogue box transition from the Player to Barry
