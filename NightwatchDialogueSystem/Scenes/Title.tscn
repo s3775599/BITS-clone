@@ -15,7 +15,7 @@
 script = ExtResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
-scale = Vector2( 0.355547, 0.370387 )
+scale = Vector2( 0.313654, 0.326695 )
 texture = ExtResource( 2 )
 centered = false
 __meta__ = {
@@ -23,51 +23,55 @@ __meta__ = {
 }
 
 [node name="NewGameArea" type="Area2D" parent="."]
-editor/display_folded = true
+position = Vector2( -10.1459, 55.4409 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="NewGameCol" type="CollisionShape2D" parent="NewGameArea"]
+visible = false
 position = Vector2( 512, 220 )
 scale = Vector2( 15, -2.5 )
 shape = SubResource( 1 )
 
 [node name="NewGameSprite" type="Sprite" parent="NewGameArea"]
-position = Vector2( 512, 220 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 515.865, 220.92 )
+scale = Vector2( 0.531, 0.563 )
 texture = ExtResource( 3 )
 
 [node name="AboutGameArea" type="Area2D" parent="."]
-editor/display_folded = true
+position = Vector2( -7.45428, 45.2985 )
+scale = Vector2( 0.99737, 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AboutGameCol" type="CollisionShape2D" parent="AboutGameArea"]
+visible = false
 position = Vector2( 512, 280 )
 scale = Vector2( 18, -2.5 )
 shape = SubResource( 1 )
 
 [node name="AboutGameSprite" type="Sprite" parent="AboutGameArea"]
-position = Vector2( 512, 280 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 511.447, 279.816 )
+scale = Vector2( 0.531471, 0.545602 )
 texture = ExtResource( 4 )
 
 [node name="ExitGameArea" type="Area2D" parent="."]
-editor/display_folded = true
+position = Vector2( -5.50317, 33.775 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="ExitGameCol" type="CollisionShape2D" parent="ExitGameArea"]
+visible = false
 position = Vector2( 512, 350 )
 scale = Vector2( 15, -2.5 )
 shape = SubResource( 1 )
 
 [node name="ExitGameSprite" type="Sprite" parent="ExitGameArea"]
-position = Vector2( 512, 350 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 512.555, 350.555 )
+scale = Vector2( 0.53017, 0.523954 )
 texture = ExtResource( 5 )
 
 [node name="SFXRollOver" type="AudioStreamPlayer2D" parent="."]

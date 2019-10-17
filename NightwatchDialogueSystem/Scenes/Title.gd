@@ -11,7 +11,8 @@ func _on_NewGameArea_input_event(viewport, event, shape_idx):
 
 
 func _on_AboutGameArea_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
+	if Input.is_mouse_button_pressed(BUTTON_LEFT):
+		get_tree().change_scene("res://Scenes/About.tscn")
 
 
 func _on_ExitGameArea_input_event(viewport, event, shape_idx):
