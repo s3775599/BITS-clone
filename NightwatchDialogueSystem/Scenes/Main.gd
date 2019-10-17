@@ -14,6 +14,9 @@ onready var john_dialogue = get_node("JohnDialogue")
 onready var barry_dialogue = get_node("BarryDialogue")
 
 
+func _ready():
+	intro()
+
 # this function updates every frame
 func _process(delta):
 	# darkens background when a dialogue is active
@@ -31,10 +34,10 @@ func _input(event):
 	if Input.is_action_just_pressed("ui_left"):
 		$BackgroundArea/BarryConsole/AnimationPlayer.play('BarryConsoleFastIn')
 	# initiates Intro dialogue
+	if Input.is_action_just_pressed("ui_cancel"):
+		close_dialogues()
 	if Input.is_action_just_pressed("ui_down"):
 		intro()
-#	if Input.is_action_just_pressed("ui_up"):
-#		$CanvasLayer/JohnPopup.rect_size = Vector2(480, 220)
 
 
 # mouseover signal on Barry at the console
@@ -87,8 +90,7 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
-		hide_barry()
-		normalise_background()
+		close_dialogues()
 	elif button_id[0] == "i":
 		intro_dialogue.intro_sequence(button_id)
 	else:
@@ -100,8 +102,7 @@ func _on_BarryPopup_button_id(button_id):
 func _on_JohnPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
-		hide_john()
-		normalise_background()
+		close_dialogues()
 	elif button_id[0] == "i":
 		intro_dialogue.intro_sequence(button_id)
 	else:
@@ -113,16 +114,20 @@ func _on_JohnPopup_button_id(button_id):
 func _on_PlayerPopup_button_id(button_id):
 	# ends the dialogue if the last button signal was "end"
 	if button_id == "end":
-		if player_close:
-			hide_player()
-		if john_close:
-			hide_john()
-		if barry_close:
-			hide_barry()
-		normalise_background()
+		close_dialogues()
 	else:
 		# calls the next line of dialogue
 		intro_dialogue.intro_sequence(button_id)
+
+
+func close_dialogues():
+	if player_close:
+			hide_player()
+	if john_close:
+			hide_john()
+	if barry_close:
+			hide_barry()
+	normalise_background()
 
 
 # makes the background dark
