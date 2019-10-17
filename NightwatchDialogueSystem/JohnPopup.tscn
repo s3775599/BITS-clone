@@ -9,6 +9,7 @@
 [ext_resource path="res://Button4.gd" type="Script" id=7]
 
 [node name="JohnPopup" type="Popup"]
+visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -35,6 +36,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = -8.0
 margin_bottom = -8.0
+size_flags_vertical = 3
 texture = ExtResource( 3 )
 patch_margin_left = 12
 patch_margin_top = 12
@@ -63,8 +65,6 @@ margin_bottom = -6.0
 [node name="Button" type="Button" parent="NinePatchRect2/VBoxContainer"]
 margin_right = 448.0
 margin_bottom = 45.0
-grow_horizontal = 2
-rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 4 )
@@ -112,10 +112,8 @@ size_flags_vertical = 3
 script = ExtResource( 7 )
 
 [node name="button4Label" type="Label" parent="NinePatchRect2/VBoxContainer/Button4"]
-margin_left = 1.0
 margin_top = 10.0
-margin_right = 450.0
-margin_bottom = 158.0
+margin_right = 449.0
 align = 1
 autowrap = true
 [connection signal="pressed" from="NinePatchRect2/VBoxContainer/Button" to="." method="_on_Button_pressed"]

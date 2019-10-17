@@ -33,6 +33,8 @@ func _input(event):
 	# initiates Intro dialogue
 	if Input.is_action_just_pressed("ui_down"):
 		intro()
+#	if Input.is_action_just_pressed("ui_up"):
+#		$CanvasLayer/JohnPopup.rect_size = Vector2(480, 220)
 
 
 # mouseover signal on Barry at the console
