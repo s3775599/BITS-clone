@@ -9,9 +9,9 @@
 [ext_resource path="res://BarryConsole.tscn" type="PackedScene" id=7]
 [ext_resource path="res://JohnClose.tscn" type="PackedScene" id=8]
 [ext_resource path="res://BarryClose.tscn" type="PackedScene" id=9]
-[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=10]
-[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=11]
-[ext_resource path="res://PlayerPopup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://PlayerPopup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://BarryPopup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://JohnPopup.tscn" type="PackedScene" id=12]
 [ext_resource path="res://JohnDialogue.tscn" type="PackedScene" id=13]
 [ext_resource path="res://BarryDialogue.tscn" type="PackedScene" id=14]
 [ext_resource path="res://IntroDialogue.tscn" type="PackedScene" id=15]
@@ -232,12 +232,11 @@ anchor_bottom = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 10 )]
-visible = false
+[node name="PlayerPopup" parent="CanvasLayer" instance=ExtResource( 10 )]
 
-[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 11 )]
+[node name="BarryPopup" parent="CanvasLayer" instance=ExtResource( 11 )]
 
-[node name="PlayerPopup" parent="CanvasLayer" instance=ExtResource( 12 )]
+[node name="JohnPopup" parent="CanvasLayer" instance=ExtResource( 12 )]
 
 [node name="JohnDialogue" parent="." instance=ExtResource( 13 )]
 
@@ -250,6 +249,6 @@ visible = false
 [connection signal="input_event" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
+[connection signal="button_id" from="CanvasLayer/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]
 [connection signal="button_id" from="CanvasLayer/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="CanvasLayer/JohnPopup" to="." method="_on_JohnPopup_button_id"]
-[connection signal="button_id" from="CanvasLayer/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]

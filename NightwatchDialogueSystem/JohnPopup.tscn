@@ -16,8 +16,6 @@ anchor_bottom = 0.5
 margin_left = -460.0
 margin_top = -160.0
 margin_bottom = 160.0
-grow_horizontal = 2
-grow_vertical = 2
 rect_min_size = Vector2( 460, 0 )
 script = ExtResource( 1 )
 
@@ -74,11 +72,8 @@ bbcode_text = "PLACEHOLDER"
 text = "PLACEHOLDER"
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer"]
-margin_top = 124.0
 margin_right = 460.0
 margin_bottom = 320.0
-grow_horizontal = 2
-grow_vertical = 2
 rect_min_size = Vector2( 0, 120 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -98,11 +93,12 @@ margin_bottom = -6.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect2/MarginContainer"]
 margin_right = 448.0
-margin_bottom = 184.0
+margin_bottom = 308.0
+alignment = 2
 
 [node name="Button" type="Button" parent="VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer"]
 margin_right = 448.0
-margin_bottom = 43.0
+margin_bottom = 74.0
 size_flags_vertical = 3
 script = ExtResource( 4 )
 
@@ -114,9 +110,9 @@ align = 1
 autowrap = true
 
 [node name="Button2" type="Button" parent="VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer"]
-margin_top = 47.0
+margin_top = 78.0
 margin_right = 448.0
-margin_bottom = 90.0
+margin_bottom = 152.0
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
@@ -128,9 +124,9 @@ align = 1
 autowrap = true
 
 [node name="Button3" type="Button" parent="VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer"]
-margin_top = 94.0
+margin_top = 156.0
 margin_right = 448.0
-margin_bottom = 137.0
+margin_bottom = 230.0
 size_flags_vertical = 3
 script = ExtResource( 6 )
 
@@ -142,9 +138,9 @@ align = 1
 autowrap = true
 
 [node name="Button4" type="Button" parent="VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer"]
-margin_top = 141.0
+margin_top = 234.0
 margin_right = 448.0
-margin_bottom = 184.0
+margin_bottom = 308.0
 size_flags_vertical = 3
 script = ExtResource( 7 )
 
