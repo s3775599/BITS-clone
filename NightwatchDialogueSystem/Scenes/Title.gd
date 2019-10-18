@@ -12,7 +12,15 @@ func _on_NewGameArea_input_event(viewport, event, shape_idx):
 
 func _on_AboutGameArea_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		get_tree().change_scene("res://Scenes/About.tscn")
+		toggle_about()
+
+func _on_Back_pressed():
+	toggle_about()
+
+func toggle_about():
+	print("toggle about")
+	$AboutCtrl.visible = not $AboutCtrl.visible
+	$Buttons.visible = not $Buttons.visible
 
 
 func _on_ExitGameArea_input_event(viewport, event, shape_idx):
@@ -43,9 +51,5 @@ func _on_ExitGameArea_mouse_entered():
 
 func _on_ExitGameArea_mouse_exited():
 	$ExitGameArea/ExitGameSprite.set_modulate(Color(1,1,1))
-
-
-
-
 
 
