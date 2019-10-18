@@ -39,7 +39,7 @@ func intro_dialogues(id):
 		"i11a1":
 			return [["Nothing.", "[ -- continue -- ]"], ["0", "i11r"]]
 		"i11r":
-			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Wee that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
+			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
 		"i11b":
 			return [["Oh no, not that. Anything but that.", "[ -- continue -- ]"], ["0", "i11b1"]]
 		"i11b1":
@@ -316,7 +316,6 @@ func intro_sequence(button_id):
 			player_to_barry(button_id)
 		"i11d1d":
 			player_to_barry(button_id)
-			john_anim.play('JohnCloseSlideOut')
 		"i12":
 			john_anim.play('JohnCloseSlideOut')
 			player_to_john(button_id)
