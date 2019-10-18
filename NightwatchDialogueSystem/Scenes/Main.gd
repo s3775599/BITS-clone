@@ -120,13 +120,20 @@ func _on_PlayerPopup_button_id(button_id):
 		intro_dialogue.intro_sequence(button_id)
 
 
+# initiates the Intro dialogue
+func intro():
+	show_player()
+	# calls the first Intro dialogue lines from the intro_dialogue script
+	$CanvasLayer/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))
+
+
 func close_dialogues():
 	if player_close:
-			hide_player()
+		hide_player()
 	if john_close:
-			hide_john()
+		hide_john()
 	if barry_close:
-			hide_barry()
+		hide_barry()
 	normalise_background()
 
 
@@ -194,10 +201,3 @@ func hide_player():
 	$CanvasLayer/PlayerPopup.hide()
 	player_close = false
 	can_click = true
-
-
-# initiates the Intro dialogue
-func intro():
-	show_player()
-	# calls the first Intro dialogue lines from the intro_dialogue script
-	$CanvasLayer/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))

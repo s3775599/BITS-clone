@@ -25,16 +25,16 @@ func set_button_visibility(n):
 	if n == 1:
 		return
 	if n > 1:
-		$VBoxContainer.rect_size = Vector2(460, 20)
+		$VBoxContainer.rect_size = Vector2(460, 80)
 		$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button.visible = true
 		if n > 2:
-			$VBoxContainer.rect_size = Vector2(460, 150)
+			$VBoxContainer.rect_size = Vector2(460, 220)
 			$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button2.visible = true
 			if n > 3:
-				$VBoxContainer.rect_size = Vector2(460, 200)
+				$VBoxContainer.rect_size = Vector2(460, 300)
 				$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button3.visible = true
 				if n > 4:
-					$VBoxContainer.rect_size = Vector2(460, 280)
+					$VBoxContainer.rect_size = Vector2(460, 360)
 					$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button4.visible = true
 
 

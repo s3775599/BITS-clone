@@ -9,6 +9,10 @@ onready var barry_anim = get_node("/root/Main/BackgroundArea/BarryClose/Animatio
 onready var barry_console_anim = get_node("/root/Main/BackgroundArea/BarryConsole/AnimationPlayer")
 onready var john_anim = get_node("/root/Main/BackgroundArea/JohnClose/AnimationPlayer")
 
+
+func _ready():
+	main_script.player_close = true
+
 # all the intro dialogue lines
 func intro_dialogues(id):
 	match id:
@@ -203,6 +207,7 @@ func intro_dialogues(id):
 func intro_sequence(button_id):
 	match button_id:
 		"i2":
+			main_script.barry_close = true
 			barry_anim.play('BarryCloseSlideIn')
 			# the previous dialogue and current dialogue is from the Player to Barry
 			player_to_barry(button_id)
@@ -216,10 +221,12 @@ func intro_sequence(button_id):
 		"i6":
 			player_to_barry(button_id)
 		"i7":
+			main_script.barry_close = false
 			barry_anim.play('BarryCloseSlideOut')
 			barry_to_player(button_id)
 		"i8":
 			# the previous dialogue and current dialogue is from the Player to John
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
 		"i9":
@@ -227,19 +234,25 @@ func intro_sequence(button_id):
 		"i10":
 			player_to_john(button_id)
 		"i11":
+			main_script.john_close = false
 			john_anim.play('JohnCloseSlideOut')
 			john_to_player(button_id)
 		"i11a":
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
 		"i11a1":
+			main_script.john_close = false
 			john_anim.play('JohnCloseSlideOut')
 			john_to_barry(button_id)
+			main_script.barry_close = true
 			barry_anim.play('BarryCloseSlideIn')
 		"i11r":
+			main_script.barry_close = false
 			barry_anim.play('BarryCloseSlideOut')
 			barry_to_player(button_id)
 		"i11b":
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
 		"i11b1":
@@ -266,6 +279,7 @@ func intro_sequence(button_id):
 			player_to_john(button_id)
 		"i11c":
 			player_to_john(button_id)
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 		"i11c1":
 			john_to_player(button_id)
@@ -288,6 +302,7 @@ func intro_sequence(button_id):
 		"i11c1a1a1a1a1a":
 			player_to_john(button_id)
 		"i11d":
+			main_script.barry_close = true
 			barry_anim.play('BarryCloseSlideIn')
 			player_to_barry(button_id)
 		"i11d1":
@@ -317,11 +332,13 @@ func intro_sequence(button_id):
 		"i11d1d":
 			player_to_barry(button_id)
 		"i12":
+			main_script.john_close = false
 			john_anim.play('JohnCloseSlideOut')
 			player_to_john(button_id)
 		"i13":
 			john_to_player(button_id)
 		"i14":
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 			barry_console_anim.play('BarryConsoleSlowOut')
 			player_to_john(button_id)
@@ -348,12 +365,15 @@ func intro_sequence(button_id):
 		"i25":
 			john_to_player(button_id)
 		"i26":
+			main_script.john_close = false
 			john_anim.play('JohnCloseSlideOut')
 			player_to_john(button_id)
 		"i27":
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
 		"i28":
+			main_script.john_close = false
 			john_anim.play('JohnCloseSlideOut')
 			john_to_player(button_id)
 		"i29":
@@ -362,6 +382,7 @@ func intro_sequence(button_id):
 			barry_console_anim.play('BarryConsoleFastIn')
 			player_to_barry(button_id)
 		"i31":
+			main_script.barry_close = true
 			barry_anim.play('BarryCloseSlideIn')
 			player_to_barry(button_id)
 		"i32":
@@ -384,20 +405,25 @@ func intro_sequence(button_id):
 			player_to_barry(button_id)
 		"i41":
 			barry_to_player(button_id)
+			main_script.barry_close = false
 			barry_anim.play('BarryCloseSlideOut')
 		"i42":
 			barry_to_player(button_id)
 		"i43":
 			barry_to_player(button_id)
 		"i44":
+			main_script.barry_close = true
 			barry_anim.play('BarryCloseSlideIn')
 			player_to_barry(button_id)
 		"i45":
 			barry_popup.hide()
+			main_script.barry_close = false
 			barry_anim.play('BarryCloseSlideOut')
+			main_script.john_close = true
 			john_anim.play('JohnCloseSlideIn')
 			player_to_john(button_id)
 		"i46":
+			main_script.john_close = false
 			john_anim.play('JohnCloseSlideOut')
 			john_to_player(button_id)
 		"i47":
