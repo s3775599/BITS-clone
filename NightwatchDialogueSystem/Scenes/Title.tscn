@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Title.gd" type="Script" id=1]
 [ext_resource path="res://GFX/titleBG.jpg" type="Texture" id=2]
@@ -8,8 +8,15 @@
 [ext_resource path="res://SFX/rollover6.ogg" type="AudioStream" id=6]
 [ext_resource path="res://SFX/click3.ogg" type="AudioStream" id=7]
 [ext_resource path="res://SFX/338065__geronimogeronimo__space-alarm.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/About.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="InputEventAction" id=2]
+action = "\"ui_cancel\""
+
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
 
 [node name="Title" type="Node2D"]
 script = ExtResource( 1 )
@@ -83,6 +90,26 @@ stream = ExtResource( 7 )
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
+
+[node name="AboutCtrl" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Buttons" type="Control" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 312.0
+margin_top = 500.0
+margin_right = 712.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 400, 80 )
+
+[node name="Back" type="Button" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+shortcut = SubResource( 3 )
+text = "Back Button"
 [connection signal="input_event" from="NewGameArea" to="." method="_on_NewGameArea_input_event"]
 [connection signal="mouse_entered" from="NewGameArea" to="." method="_on_NewGameArea_mouse_entered"]
 [connection signal="mouse_exited" from="NewGameArea" to="." method="_on_NewGameArea_mouse_exited"]
@@ -92,3 +119,4 @@ autoplay = true
 [connection signal="input_event" from="ExitGameArea" to="." method="_on_ExitGameArea_input_event"]
 [connection signal="mouse_entered" from="ExitGameArea" to="." method="_on_ExitGameArea_mouse_entered"]
 [connection signal="mouse_exited" from="ExitGameArea" to="." method="_on_ExitGameArea_mouse_exited"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]

@@ -1,10 +1,4 @@
-[gd_scene load_steps=3 format=2]
-
-[sub_resource type="InputEventAction" id=3]
-action = "\"ui_cancel\""
-
-[sub_resource type="ShortCut" id=2]
-shortcut = SubResource( 3 )
+[gd_scene format=2]
 
 [node name="AboutCtrl" type="Control"]
 margin_right = 40.0
@@ -271,21 +265,3 @@ text = "s3779053"
 align = 1
 valign = 1
 uppercase = true
-
-[node name="Buttons" type="Control" parent="About"]
-visible = false
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 312.0
-margin_top = 500.0
-margin_right = 712.0
-margin_bottom = 580.0
-rect_min_size = Vector2( 400, 80 )
-
-[node name="Back" type="Button" parent="About/Buttons"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-shortcut = SubResource( 2 )
-text = "Back Button"
-[connection signal="pressed" from="About/Buttons/Back" to="About" method="_on_Button_pressed"]
