@@ -64,6 +64,7 @@ texture_scale = Vector2( 5, 1.75 )
 polygon = PoolVector2Array( -0.840729, -0.550095, -9.47708, 106.74, 98.9754, 106.906, 101.633, -0.0518494 )
 
 [node name="Console" type="Node2D" parent="BackgroundArea"]
+editor/display_folded = true
 position = Vector2( 315, 317 )
 
 [node name="Button1" type="Area2D" parent="BackgroundArea/Console"]
@@ -104,36 +105,20 @@ position = Vector2( -11.316, 115 )
 scale = Vector2( 1, 1.68757 )
 shape = SubResource( 2 )
 
-[node name="JohnConsole" type="Area2D" parent="BackgroundArea" instance=ExtResource( 6 )]
-position = Vector2( 1920.01, -479.992 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 6 )]
 
-[node name="BarryConsole" type="Area2D" parent="BackgroundArea" instance=ExtResource( 7 )]
-position = Vector2( -896.005, -479.989 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 7 )]
 
-[node name="BarryClose" type="Area2D" parent="BackgroundArea" instance=ExtResource( 8 )]
-position = Vector2( 2532.95, 292.198 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 8 )]
 
-[node name="JohnClose" type="Area2D" parent="BackgroundArea" instance=ExtResource( 9 )]
-position = Vector2( -133.077, 276.607 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 9 )]
 
 [node name="Popups" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="BarryPopup" parent="Popups" instance=ExtResource( 10 )]
+visible = false
 
 [node name="JohnPopup" parent="Popups" instance=ExtResource( 11 )]
 

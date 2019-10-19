@@ -4,22 +4,6 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "BarryCloseSlideIn"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("BarryCloseSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -1350, 0 ), Vector2( -2055, 0 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "BarryCloseSlideOut"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("BarryCloseSprite:position")
@@ -29,6 +13,22 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1350, 0 ), Vector2( -2055, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "BarryCloseSlideOut"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BarryCloseSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -2055, 0 ), Vector2( -1350, 0 ) ]

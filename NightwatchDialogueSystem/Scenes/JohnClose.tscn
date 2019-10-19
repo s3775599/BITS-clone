@@ -4,22 +4,6 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "JohnCloseSlideIn"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("JohnCloseSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 675, 0 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "JohnCloseSlideOut"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("JohnCloseSprite:position")
@@ -29,6 +13,22 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 675, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "JohnCloseSlideOut"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("JohnCloseSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 675, 0 ), Vector2( 0, 0 ) ]

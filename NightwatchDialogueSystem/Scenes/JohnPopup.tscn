@@ -9,12 +9,14 @@
 [ext_resource path="res://Scripts/Button4.gd" type="Script" id=7]
 
 [node name="JohnPopup" type="Popup"]
+visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -460.0
+margin_left = -472.0
 margin_top = -180.0
+margin_right = -12.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 460, 0 )
 script = ExtResource( 1 )
