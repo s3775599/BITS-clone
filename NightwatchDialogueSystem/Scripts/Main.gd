@@ -9,9 +9,9 @@ var barry_close = false
 var player_close = false
 
 # Godot's way of storing a Node as a variable
-onready var intro_dialogue = get_node("IntroDialogue")
-onready var john_dialogue = get_node("JohnDialogue")
-onready var barry_dialogue = get_node("BarryDialogue")
+onready var intro_dialogue = get_node("Dialogues/IntroDialogue")
+onready var john_dialogue = get_node("Dialogues/JohnDialogue")
+onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 
 
 func _ready():
@@ -74,7 +74,7 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 		if barry_close:
 			hide_barry()
 		show_john()
-		$CanvasLayer/JohnPopup.set_text(john_dialogue.john_dialogues("1"))
+		$Popups/JohnPopup.set_text(john_dialogue.john_dialogues("1"))
 
 
 # mouse click signals on John at the console
@@ -83,7 +83,7 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 		if john_close:
 			hide_john()
 		show_barry()
-		$CanvasLayer/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
+		$Popups/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
 
 
 # collects id of pressed button from Barry dialogue
@@ -95,7 +95,7 @@ func _on_BarryPopup_button_id(button_id):
 		intro_dialogue.intro_sequence(button_id)
 	else:
 		var next_dialogue = barry_dialogue.barry_dialogues(button_id)
-		$CanvasLayer/BarryPopup.set_text(next_dialogue)
+		$Popups/BarryPopup.set_text(next_dialogue)
 
 
 # collects id of pressed button from John dialogue
@@ -107,7 +107,7 @@ func _on_JohnPopup_button_id(button_id):
 		intro_dialogue.intro_sequence(button_id)
 	else:
 		var next_dialogue = john_dialogue.john_dialogues(button_id)
-		$CanvasLayer/JohnPopup.set_text(next_dialogue)
+		$Popups/JohnPopup.set_text(next_dialogue)
 
 
 # collects id of pressed button from Player dialogue
@@ -124,7 +124,7 @@ func _on_PlayerPopup_button_id(button_id):
 func intro():
 	show_player()
 	# calls the first Intro dialogue lines from the intro_dialogue script
-	$CanvasLayer/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))
+	$Popups/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))
 
 
 func close_dialogues():
@@ -162,7 +162,7 @@ func show_barry():
 	$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideIn')
 	barry_close = true
 	can_click = false
-	$CanvasLayer/BarryPopup.show()
+	$Popups/BarryPopup.show()
 
 
 # shows John's close-up and dialogue box
@@ -170,19 +170,19 @@ func show_john():
 	$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideIn')
 	john_close = true
 	can_click = false
-	$CanvasLayer/JohnPopup.show()
+	$Popups/JohnPopup.show()
 
 
 # shows player dialogue box
 func show_player():
 	player_close = true
 	can_click = false
-	$CanvasLayer/PlayerPopup.show()
+	$Popups/PlayerPopup.show()
 
 
 # hides Barry's close-up and dialogue box
 func hide_barry():
-	$CanvasLayer/BarryPopup.hide()
+	$Popups/BarryPopup.hide()
 	$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideOut')
 	barry_close = false
 	can_click = true
@@ -190,7 +190,7 @@ func hide_barry():
 
 # hides John's close-up and dialogue box
 func hide_john():
-	$CanvasLayer/JohnPopup.hide()
+	$Popups/JohnPopup.hide()
 	$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideOut')
 	john_close = false
 	can_click = true
@@ -198,6 +198,6 @@ func hide_john():
 
 # hides Player's dialogue box
 func hide_player():
-	$CanvasLayer/PlayerPopup.hide()
+	$Popups/PlayerPopup.hide()
 	player_close = false
 	can_click = true

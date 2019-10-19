@@ -2,7 +2,7 @@ extends Popup
 
 signal button_id
 
-onready var player_popup = get_node('/root/Main/CanvasLayer/PlayerPopup')
+onready var player_popup = get_node('/root/Main/Popups/PlayerPopup')
 
 var button_id
 var vbox_size = Vector2()

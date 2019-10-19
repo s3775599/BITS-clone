@@ -2,9 +2,9 @@ extends Node
 
 # gets Nodes from the main scene as variables
 onready var main_script = get_node("/root/Main")
-onready var player_popup = get_node("/root/Main/CanvasLayer/PlayerPopup")
-onready var barry_popup = get_node("/root/Main/CanvasLayer/BarryPopup")
-onready var john_popup = get_node("/root/Main/CanvasLayer/JohnPopup")
+onready var player_popup = get_node("/root/Main/Popups/PlayerPopup")
+onready var barry_popup = get_node("/root/Main/Popups/BarryPopup")
+onready var john_popup = get_node("/root/Main/Popups/JohnPopup")
 onready var barry_anim = get_node("/root/Main/BackgroundArea/BarryClose/AnimationPlayer")
 onready var barry_console_anim = get_node("/root/Main/BackgroundArea/BarryConsole/AnimationPlayer")
 onready var john_anim = get_node("/root/Main/BackgroundArea/JohnClose/AnimationPlayer")

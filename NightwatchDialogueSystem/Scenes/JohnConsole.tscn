@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GFX/console_john.png" type="Texture" id=1]
+
+[node name="JohnConsole" type="Area2D"]
+position = Vector2( 1920.01, -479.992 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="JohnConsoleSprite" type="Sprite" parent="."]
+position = Vector2( -1408, 780 )
+scale = Vector2( 0.266668, 0.277778 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -1920.98, 662.089, -1897.18, 662.089, -1868.62, 679.542, -1843.24, 747.769, -1827.37, 750.943, -1843.24, 865.183, -1771.84, 898.504, -1724.24, 979.424, -1714.72, 922.304, -1657.6, 934.997, -1671.88, 1084.15, -1922.57, 1080.97 )
