@@ -17,189 +17,189 @@ func _ready():
 func intro_dialogues(id):
 	match id:
 		"i1":
-			return [["", ". . . scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?"], ["0", "i2"]]
+			return [["", ". . . scanning Quadrant 3, 216 to 322 degrees. Delta V looks good. Report on Quadrant 1, how are we looking Barry?"], ["i2"]]
 		"i2":
-			return [["Everything's fine mate.", "[ -- continue -- ]"], ["0", "i3"]]
+			return [["Everything's fine mate.", "[ -- continue -- ]"], ["i3"]]
 		"i3":
-			return [["", "I beg your pardon, Barry?"], ["0", "i4"]]
+			return [["", "I beg your pardon, Barry?"], ["i4"]]
 		"i4":
-			return [["All good.", "[ -- continue --]"], ["0", "i5"]]
+			return [["All good.", "[ -- continue --]"], ["i5"]]
 		"i5":
-			return [["", "Barry, I know we've been out here a long time but that doesn't give you license to drop protocol whenever you feel like it. Got it?"], ["0", "i6"]]
+			return [["", "Barry, I know we've been out here a long time but that doesn't give you license to drop protocol whenever you feel like it. Got it?"], ["i6"]]
 		"i6":
-			return [["{sigh} Yes [i]SIR[/i] Lieutenant [i]SIR[/i] sorry [i]SIR[/i].", "[ -- continue -- ]"], ["0", "i7"]]
+			return [["{sigh} Yes SIR Lieutenant SIR sorry SIR.", "[ -- continue -- ]"], ["i7"]]
 		"i7":
-			return [["", "Systems report, John?"], ["0", "i8"]]
+			return [["", "Systems report, John?"], ["i8"]]
 		"i8":
-			return [["It's fine, it's whatever.", "[ -- continue -- ]"], ["0", "i9"]]
+			return [["It's fine, it's whatever.", "[ -- continue -- ]"], ["i9"]]
 		"i9":
-			return [["", "JOHN."], ["0", "i10"]]
+			return [["", "JOHN."], ["i10"]]
 		"i10":
-			return [["What? What do you want me to say? It's exactly the same as it was last shift. We haven't done anything since the last shift. It's all the same as the last shift.", "[ -- continue -- ]"], ["0", "i11"]]
+			return [["What? What do you want me to say? It's exactly the same as it was last shift. We haven't done anything since the last shift. It's all the same as the last shift.", "[ -- continue -- ]"], ["i11"]]
 		"i11":
-			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
+			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["i11a", "i11b", "i11c", "i11d"]]
 		"i11a":
-			return [["Nothing.", "[ -- continue -- ]"], ["0", "i11a1"]]
+			return [["Nothing.", "[ -- continue -- ]"], ["i11a1"]]
 		"i11a1":
-			return [["Nothing.", "[ -- continue -- ]"], ["0", "i11r"]]
+			return [["Nothing.", "[ -- continue -- ]"], ["i11r"]]
 		"i11r":
-			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["0", "i11a", "i11b", "i11c", "i11d"]]
+			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["i11a", "i11b", "i11c", "i11d"]]
 		"i11b":
-			return [["Oh no, not that. Anything but that.", "[ -- continue -- ]"], ["0", "i11b1"]]
+			return [["Oh no, not that. Anything but that.", "[ -- continue -- ]"], ["i11b1"]]
 		"i11b1":
-			return [["", "John, you are an Engineer in the Australian National Astrophysics League. What does that mean to you?"], ["0", "i11b1a"]]
+			return [["", "John, you are an Engineer in the Australian National Astrophysics League. What does that mean to you?"], ["i11b1a"]]
 		"i11b1a":
-			return [["It means I get to spend the best years of my life in deep space.", "[ -- continue -- ]"], ["0", "i11b1a1"]]
+			return [["It means I get to spend the best years of my life in deep space.", "[ -- continue -- ]"], ["i11b1a1"]]
 		"i11b1a1":
-			return [["", "Exactly! It's the adventure of a lifetime!", "You don't sound very enthusiastic."], ["0", "i11b1a1a", "i11b1a1b"]]
+			return [["", "Exactly! It's the adventure of a lifetime!", "You don't sound very enthusiastic."], ["i11b1a1a", "i11b1a1b"]]
 		"i11b1a1a":
-			return [["Oh, it's a hoot.", "[ -- continue -- ]"], ["0", "i11"]]
+			return [["Oh, it's a hoot.", "[ -- continue -- ]"], ["i11"]]
 		"i11b1a1b":
-			return [["Gee I wonder why.", "[ -- continue -- ]"], ["0", "i11b1a1b1"]]
+			return [["Gee I wonder why.", "[ -- continue -- ]"], ["i11b1a1b1"]]
 		"i11b1a1b1":
-			return [["", "If you don't like it, you can always quit."], ["0", "i11b1a1b1a"]]
+			return [["", "If you don't like it, you can always quit."], ["i11b1a1b1a"]]
 		"i11b1a1b1a":
-			return [["Wait, really?", "[ -- continue -- ]"], ["0", "i11b1a1b1a1"]]
+			return [["Wait, really?", "[ -- continue -- ]"], ["i11b1a1b1a1"]]
 		"i11b1a1b1a1":
-			return [["", "Of course. But that means you won't have access to any ship-distributed food."], ["0", "i11b1a1b1a1a"]]
+			return [["", "Of course. But that means you won't have access to any ship-distributed food."], ["i11b1a1b1a1a"]]
 		"i11b1a1b1a1a":
-			return [["Oh.", "[ -- continue -- ]"], ["0", "i11b1a1b1a1a1"]]
+			return [["Oh.", "[ -- continue -- ]"], ["i11b1a1b1a1a1"]]
 		"i11b1a1b1a1a1":
-			return [["", "Or oxygen."], ["0", "i11b1a1b1a1a1a"]]
+			return [["", "Or oxygen."], ["i11b1a1b1a1a1a"]]
 		"i11b1a1b1a1a1a":
-			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["0", "i11"]]
+			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["i11"]]
 		"i11c":
-			return [["Yes, I'm sure.", "[ -- continue -- ]"], ["0", "i11c1"]]
+			return [["Yes, I'm sure.", "[ -- continue -- ]"], ["i11c1"]]
 		"i11c1":
-			return [["", "Are you really sure?"], ["0", "i11c1a"]]
+			return [["", "Are you really sure?"], ["i11c1a"]]
 		"i11c1a":
-			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["0", "i11c1a1"]]
+			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["i11c1a1"]]
 		"i11c1a1":
-			return [["", "Are you really REALLY extra sure?"], ["0", "i11c1a1a"]]
+			return [["", "Are you really REALLY extra sure?"], ["i11c1a1a"]]
 		"i11c1a1a":
-			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["0", "i11c1a1a1"]]
+			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["i11c1a1a1"]]
 		"i11c1a1a1":
-			return [["", "Are you really REALLY super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-of-the-airlock extra sure?"], ["0", "i11c1a1a1a"]]
+			return [["", "Are you really REALLY super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-of-the-airlock extra sure?"], ["i11c1a1a1a"]]
 		"i11c1a1a1a":
-			return [["YES.", "[ -- continue -- ]"], ["0", "i11c1a1a1a1"]]
+			return [["YES.", "[ -- continue -- ]"], ["i11c1a1a1a1"]]
 		"i11c1a1a1a1":
-			return [["", "Check your console anyway."], ["0", "i11c1a1a1a1a"]]
+			return [["", "Check your console anyway."], ["i11c1a1a1a1a"]]
 		"i11c1a1a1a1a":
-			return [["OKAY FINE.", "[ -- continue -- ]"], ["0", "i11c1a1a1a1a1"]]
+			return [["OKAY FINE.", "[ -- continue -- ]"], ["i11c1a1a1a1a1"]]
 		"i11c1a1a1a1a1":
-			return [["", "'Sir'."], ["0", "i11c1a1a1a1a1a"]]
+			return [["", "'Sir'."], ["i11c1a1a1a1a1a"]]
 		"i11c1a1a1a1a1a":
-			return [[". . . 'SIR'.", "[ -- continue -- ]"], ["0", "i12"]]
+			return [[". . . 'SIR'.", "[ -- continue -- ]"], ["i12"]]
 		"i11d":
-			return [["Playing favourites, are we?", "[ -- continue -- ]"], ["0", "i11d1"]]
+			return [["Playing favourites, are we?", "[ -- continue -- ]"], ["i11d1"]]
 		"i11d1":
-			return [["", "What are you talking about?", "No.", "Of course not.", "Yes."], ["0", "i11d1a", "i11d1b", "i11d1c", "i11d1d"]]
+			return [["", "What are you talking about?", "No.", "Of course not.", "Yes."], ["i11d1a", "i11d1b", "i11d1c", "i11d1d"]]
 		"i11d1a":
-			return [["You chew my ear off when I talk like that, but he gets away with anything.", "[ -- continue -- ]"], ["0", "i11d1a1"]]
+			return [["You chew my ear off when I talk like that, but he gets away with anything.", "[ -- continue -- ]"], ["i11d1a1"]]
 			
 		"i11d1a1":
-			return [["", "That's not true."], ["0", "i11d1a1a"]]
+			return [["", "That's not true."], ["i11d1a1a"]]
 			
 		"i11d1a1a":
-			return [["Yes it is.", "[ -- continue -- ]"], ["0", "i11d1a1a1"]]
+			return [["Yes it is.", "[ -- continue -- ]"], ["i11d1a1a1"]]
 			
 		"i11d1a1a1":
-			return [["", "No it isn't."], ["0", "i11d1a1a1a"]]
+			return [["", "No it isn't."], ["i11d1a1a1a"]]
 			
 		"i11d1a1a1a":
-			return [["Yes it is!", "[ -- continue -- ]"], ["0", "i11d1a1a1a1"]]
+			return [["Yes it is!", "[ -- continue -- ]"], ["i11d1a1a1a1"]]
 			
 		"i11d1a1a1a1":
-			return [["", "No it isn't."], ["0", "i11d1a1a1a1a"]]
+			return [["", "No it isn't."], ["i11d1a1a1a1a"]]
 			
 		"i11d1a1a1a1a":
-			return [["YES IT IS!", "[ -- continue -- ]"], ["0", "i11d1a1a1a1a1"]]
+			return [["YES IT IS!", "[ -- continue -- ]"], ["i11d1a1a1a1a1"]]
 			
 		"i11d1a1a1a1a1":
-			return [["", "Who's Lieutenant?"], ["0", "i11d1a1a1a1a1a"]]
+			return [["", "Who's Lieutenant?"], ["i11d1a1a1a1a1a"]]
 			
 		"i11d1a1a1a1a1a":
-			return [[". . . you are.", "[ -- continue -- ]"], ["0", "i11r"]]
+			return [[". . . you are.", "[ -- continue -- ]"], ["i11r"]]
 		"i11d1b":
-			return [["It sure looks like it.", "[ -- continue -- ]"], ["0", "i11r"]]
+			return [["It sure looks like it.", "[ -- continue -- ]"], ["i11r"]]
 		"i11d1c":
-			return [["Yeah, right.", "[ -- continue -- ]"], ["0", "i11r"]]
+			return [["Yeah, right.", "[ -- continue -- ]"], ["i11r"]]
 		"i11d1d":
-			return [["I knew it.", "[ -- continue -- ]"], ["0", "i11r"]]
+			return [["I knew it.", "[ -- continue -- ]"], ["i11r"]]
 		"i12":
-			return [["See? Everything's . . . ", "[ -- continue -- ]"], ["0", "i13"]]
+			return [["See? Everything's . . . ", "[ -- continue -- ]"], ["i13"]]
 		"i13":
-			return [["", "Everything's . . .?"], ["0", "i14"]]
+			return [["", "Everything's . . .?"], ["i14"]]
 		"i14":
-			return [["Probably fine. SIR.", "[ -- continue -- ]"], ["", "i15"]]
+			return [["Probably fine. SIR.", "[ -- continue -- ]"], ["i15"]]
 		"i15":
-			return [["", "Could you be a bit clearer on what you mean by 'probably', John?"], ["0", "i16"]]
+			return [["", "Could you be a bit clearer on what you mean by 'probably', John?"], ["i16"]]
 		"i16":
-			return [["The system diagnostic looks the same as before, like I said. SIR.", "[ -- continue -- ]"], ["0", "i17"]]
+			return [["The system diagnostic looks the same as before, like I said. SIR.", "[ -- continue -- ]"], ["i17"]]
 		"i17":
-			return [["", "It LOOKS the same, or it IS the same?"], ["0", "i18"]]
+			return [["", "It LOOKS the same, or it IS the same?"], ["i18"]]
 		"i18":
-			return [["It LOOKS like it IS the same. SIR", "[ -- continue -- ]"], ["0", "i19"]]
+			return [["It LOOKS like it IS the same. SIR", "[ -- continue -- ]"], ["i19"]]
 		"i19":
-			return [["", "So can you CONFIRM that it IS the same?"], ["0", "i20"]]
+			return [["", "So can you CONFIRM that it IS the same?"], ["i20"]]
 		"i20":
-			return [[". . .not exactly. SIR.", "[ -- continue -- ]"], ["0", "i21"]]
+			return [[". . .not exactly. SIR.", "[ -- continue -- ]"], ["i21"]]
 		"i21":
-			return [["", "Why not?"], ["0", "i22"]]
+			return [["", "Why not?"], ["i22"]]
 		"i22":
-			return [["My console is . . . in Russian.", "[ -- continue -- ]"], ["0", "i23"]]
+			return [["My console is . . . in Russian.", "[ -- continue -- ]"], ["i23"]]
 		"i23":
-			return [["", "Your console is in Russian?"], ["0", "i24"]]
+			return [["", "Your console is in Russian?"], ["i24"]]
 		"i24":
-			return [["My console appears to be in Russian. SIR.", "[ -- continue -- ]"], ["0", "i25"]]
+			return [["My console appears to be in Russian. SIR.", "[ -- continue -- ]"], ["i25"]]
 		"i25":
-			return [["", "And can you explain why your console is in Russian, John?"], ["0", "i26"]]
+			return [["", "And can you explain why your console is in Russian, John?"], ["i26"]]
 		"i26":
-			return [["No.", "[ -- continue -- ]"], ["0", "i27"]]
+			return [["No.", "[ -- continue -- ]"], ["i27"]]
 		"i27":
-			return [["'SIR'.", "[ -- continue -- ]"], ["0", "i28"]]
+			return [["'SIR'.", "[ -- continue -- ]"], ["i28"]]
 		"i28":
-			return [["", " . . . "], ["0", "i29"]]
+			return [["", " . . . "], ["i29"]]
 		"i29":
-			return [["", "Do you know anything about this, Barry?"], ["0", "i30"]]
+			return [["", "Do you know anything about this, Barry?"], ["i30"]]
 		"i30":
-			return [["Um . . .", "[ -- continue -- ]"], ["0", "i31"]]
+			return [["Um . . .", "[ -- continue -- ]"], ["i31"]]
 		"i31":
-			return [["Possibly.", "[ -- continue -- ]"], ["0", "i32"]]
+			return [["Possibly.", "[ -- continue -- ]"], ["i32"]]
 		"i32":
-			return [["", "I really need a better answer than that, Barry. Why is John's console in Russian?"], ["0", "i33"]]
+			return [["", "I really need a better answer than that, Barry. Why is John's console in Russian?"], ["i33"]]
 		"i33":
-			return [["Well, it was an accident.", "[ -- continue -- ]"], ["0", "i34"]]
+			return [["Well, it was an accident.", "[ -- continue -- ]"], ["i34"]]
 		"i34":
-			return [["I was bored.", "[ -- continue -- ]"], ["0", "i35"]]
+			return [["I was bored.", "[ -- continue -- ]"], ["i35"]]
 		"i35":
-			return [["So I was looking for a new hobby. And I thought hey, why not try learning another language?", "[ -- continue -- ]"], ["0", "i36"]]
+			return [["So I was looking for a new hobby. And I thought hey, why not try learning another language?", "[ -- continue -- ]"], ["i36"]]
 		"i36":
-			return [["And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface into Russian.", "[ -- continue -- ]"], ["0", "i37"]]
+			return [["And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface into Russian.", "[ -- continue -- ]"], ["i37"]]
 		"i37":
-			return [["And I couldn't quite work out how to switch it back.", "[ -- continue -- ]"], ["0", "i38"]]
+			return [["And I couldn't quite work out how to switch it back.", "[ -- continue -- ]"], ["i38"]]
 		"i38":
-			return [["It turns out language immersion takes a fairly long time.", "[ -- continue -- ]"], ["0", "i39"]]
+			return [["It turns out language immersion takes a fairly long time.", "[ -- continue -- ]"], ["i39"]]
 		"i39":
-			return [["", "You said you switched the SHIP'S COMPUTER INTERFACE into Russian?"], ["0", "i40"]]
+			return [["", "You said you switched the SHIP'S COMPUTER INTERFACE into Russian?"], ["i40"]]
 		"i40":
-			return [["Uh, yes Sir.", "[ -- continue -- ]"], ["0", "i41"]]
+			return [["Uh, yes Sir.", "[ -- continue -- ]"], ["i41"]]
 		"i41":
-			return [["", "But that's going to affect everyone's cons. . ."], ["0", "i42"]]
+			return [["", "But that's going to affect everyone's cons. . ."], ["i42"]]
 		"i42":
-			return [["", ". . ."], ["0", "i43"]]
+			return [["", ". . ."], ["i43"]]
 		"i43":
-			return [["", "Oh Barry, you idiot."], ["0", "i44"]]
+			return [["", "Oh Barry, you idiot."], ["i44"]]
 		"i44":
-			return [["I feel really bad about it, Sir.", "[ -- console -- ]"], ["0", "i45"]]
+			return [["I feel really bad about it, Sir.", "[ -- console -- ]"], ["i45"]]
 		"i45":
-			return [["Computer's voice recognition should still be working though.", "[ -- continue -- ]"], ["0", "i46"]]
+			return [["Computer's voice recognition should still be working though.", "[ -- continue -- ]"], ["i46"]]
 		"i46":
-			return [["", "COMPUTER!"], ["0", "i47"]]
+			return [["", "COMPUTER!"], ["i47"]]
 		"i47":
-			return [["", "{ KOMPYUTER } CHEGO? DAVAY BYSTREE, YA ZANYAT!"], ["0", "i48"]]
+			return [["", "{ KOMPYUTER } CHEGO? DAVAY BYSTREE, YA ZANYAT!"], ["i48"]]
 		"i48":
-			return [["", "Barry, you complete idiot."], ["0", "end"]]
+			return [["", "Barry, you complete idiot."], ["end"]]
 
 
 
