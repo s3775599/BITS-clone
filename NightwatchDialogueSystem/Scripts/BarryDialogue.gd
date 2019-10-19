@@ -23,7 +23,7 @@ func barry_dialogues(id):
 		"understood":
 			return [["Understood, Sir. Sorry, sir.", "[ -- end -- ]"], ["0", "end"]]
 		"2a1b":
-			return [["Really, Sir?", "No, Barry, you colossal moron."], ["0", "understood"]]
+			return [["Really, Sir?", "No, Barry, you colossal moron. [ -- end -- ]"], ["0", "end"]]
 		"3a":
 			return [["I know Sir. I'm working on it.", "Let me know how you get on.", "What are you doing to fix it?", "Do you know what's going to happen if you don't sort this out?"], ["0", "3a1", "3a2", "3a3"]]
 		"3a1":
@@ -50,9 +50,10 @@ func barry_dialogues(id):
 			return [["Um . . . not completely, Sir. But it looks a bit better. I'll keep working on it.", "[ -- Barry has fixed the console by 25% -- ]"], ["0", "end"]]
 		"3a2b2":
 			return [["Are you sure, Sir?", "Yes.", "No."], ["0", "3a2b2a", "3a2b2b"]]
+		"3a2b2a":
+			return [["Okay, Sir . . here goes . . .", "[ -- continue -- ]"], ["0", "3a2b2a1"]]
 		"3a2b2a1":
-			return [["Okay, Sir . . here goes . . .", "[ -- continue -- ]"], ["0", "3a2b2a1a"]]
-		"3a2b2a1a":
+			# code to turn on annoying music/flashing light/eject Barry/another effect goes here
 			return [["Well, so much for that.", "[ -- end --] ** NOTE TO QA possibility here for humourous effect eg. Barry is ejected, or music start playing and can't be turned off etc."], ["0", "end"]]
 		"3a2b2b":
 			return [["Okay Sir. Let me know when you want me to do something, Sir.", "[ -- end -- ]"], ["0", "end"]]
@@ -69,13 +70,13 @@ func barry_dialogues(id):
 		"3a3":
 			return [["I can imagine, Sir.", "Can you imagine not being able to order those spicy kebabs from the food dispenser?", "Can you imagine not being able to activate the turbolift to get back to your quarters?", "Can you imagine the crew collectively stuffing you into the airlock?", "Can you imagine what the rest of the crew is going to do to us if they find out?"], ["0", "3a3a", "3a3b", "3a3c", "3a3d"]]
 		"3a3a":
-			return [["Oh, no . . . or the samosas!", "Get to work, Barry"], ["0", "understood"]]
+			return [["Oh, no . . . or the samosas!", "Get to work, Barry. [ -- end -- ]"], ["0", "end"]]
 		"3a3b":
-			return [["So we're stuck here?", "And getting angrier by the minute."], ["0", "understood"]]
+			return [["So we're stuck here?", "And getting angrier by the minute. [ -- end -- ]"], ["0", "end"]]
 		"3a3c":
-			return [["But they won't be able to open the outer doors without a voice confirmation.", "I'm sure they'd figure something out."], ["0", "understood"]]
+			return [["But they won't be able to open the outer doors without a voice confirmation.", "I'm sure they'd figure something out. [ -- end -- ]"], ["0", "end"]]
 		"3a3d":
-			return [["I don't want to think about it.", "Soon you won't have a choice."], ["0", "understood"]]
+			return [["I don't want to think about it.", "Soon you won't have a choice. [ -- end -- ]"], ["0", "end"]]
 		"4a":
 			return [["Don't understand what, Sir?", "How could you change the language settings like that? Didn't it need an admin password?", "Why did you think you could learn a new language so quickly?", "Why didn't you tell us as soon as it happened?"], ["0", "4a1", "4a2", "4a3"]]
 		"4a1":
@@ -97,9 +98,9 @@ func barry_dialogues(id):
 		"4a2":
 			return [["I heard that when you go to a new country you learn the language really quickly.", "How quickly?", "Changing the computer interface isn't anything like going to a new country."], ["0", "4a2a", "4a2b"]]
 		"4a2a":
-			return [["Uh, I don't know. I guess . . . a few months instead of a few years?", "Barry, stop talking."], ["0", "understood"]]
+			return [["Uh, I don't know. I guess . . . a few months instead of a few years?", "Barry, stop talking. [ -- end -- ]"], ["0", "end"]]
 		"4a2b":
-			return [["Yes, Sir. I realised that after about three seconds.", "Barry, stop talking."], ["0", "understood"]]
+			return [["Yes, Sir. I realised that after about three seconds.", "Barry, stop talking. [ -- end -- ]"], ["0", "end"]]
 		"4a3":
 			return [["I was a bit embarrassed and hoped maybe it wouldn't be that noticeable. . .", "You thought we wouldn't notice that the computer was IN ANOTHER LANGUAGE?"], ["0", "4a3a"]]
 		"4a3a":
@@ -107,4 +108,4 @@ func barry_dialogues(id):
 		"4a3a1":
 			return [["A little bit. . .", "Barry."], ["0", "4a3a1a"]]
 		"4a3a1a":
-			return [["A couple of the letters look the same. . .", "Barry, stop talking."], ["0", "understood"]]
+			return [["A couple of the letters look the same. . .", "Barry, stop talking. [ -- end -- ]"], ["0", "end"]]

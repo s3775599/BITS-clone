@@ -1,9 +1,9 @@
 extends Control
 
-# checks is a dialogue can be initiated (i.e. none already active)
+# Checks is a dialogue can be initiated (i.e. none already active)
 var can_click = true
 
-# booleans to identify current active dialogue
+# Booleans to identify current active dialogue
 var john_close = false
 var barry_close = false
 var player_close = false
@@ -15,9 +15,11 @@ onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 
 
 func _ready():
+	$BackgroundArea/Images.visible = false
+	$AnimationPlayer.play('FadeIn')
 	intro()
 
-# this function updates every frame
+# This function updates every frame
 func _process(delta):
 	# darkens background when a dialogue is active
 	if john_close or barry_close or player_close:
@@ -25,22 +27,20 @@ func _process(delta):
 		can_click = false
 
 
-# checks all input signals
+# Checks all input signals
 func _input(event):
-	# initiates Barry dialogue
-	if Input.is_action_just_pressed("ui_right"):
-		$BackgroundArea/BarryConsole/AnimationPlayer.play('BarryConsoleSlowOut')
-	#initiates John dialogue
-	if Input.is_action_just_pressed("ui_left"):
-		$BackgroundArea/BarryConsole/AnimationPlayer.play('BarryConsoleFastIn')
-	# initiates Intro dialogue
+	# Quits from the current dialogue
 	if Input.is_action_just_pressed("ui_cancel"):
+		if $BackgroundArea/Images.visible == false:
+			$BackgroundArea/Images.visible = true
+		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
 		close_dialogues()
+	# Manually starts the intro dialogue (for testing purposes)
 	if Input.is_action_just_pressed("ui_down"):
 		intro()
 
 
-# mouseover signal on Barry at the console
+# Mouseover signal on Barry at the console
 func _on_BarryConsole_mouse_entered():
 	if not barry_close:
 		$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('4d39df'))
@@ -48,13 +48,13 @@ func _on_BarryConsole_mouse_entered():
 		can_click = false
 
 
-# mouseoff signal on Barry at the console
+# Mouseoff signal on Barry at the console
 func _on_BarryConsole_mouse_exited():
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1, 1, 1))
 	can_click = true
 
 
-# mouseover signal on John at the console
+# Mouseover signal on John at the console
 func _on_JohnConsole_mouse_entered():
 	if not john_close:
 		$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('4d39df'))
@@ -62,13 +62,13 @@ func _on_JohnConsole_mouse_entered():
 		can_click = false
 
 
-# mouseoff signal on John at the console
+# Mouseoff signal on John at the console
 func _on_JohnConsole_mouse_exited():
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1, 1, 1))
 	can_click = true
 
 
-# mouse click signals on John at the console
+# Mouse click signals on John at the console
 func _on_JohnConsole_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click == true:
 		if barry_close:
@@ -77,7 +77,7 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 		$Popups/JohnPopup.set_text(john_dialogue.john_dialogues("1"))
 
 
-# mouse click signals on John at the console
+# Mouse click signals on John at the console
 func _on_BarryConsole_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click == true:
 		if john_close:
@@ -86,7 +86,7 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 		$Popups/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
 
 
-# collects id of pressed button from Barry dialogue
+# Collects id of pressed button from Barry dialogue
 func _on_BarryPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
@@ -98,7 +98,7 @@ func _on_BarryPopup_button_id(button_id):
 		$Popups/BarryPopup.set_text(next_dialogue)
 
 
-# collects id of pressed button from John dialogue
+# Collects id of pressed button from John dialogue
 func _on_JohnPopup_button_id(button_id):
 	print("button_id = ", button_id)
 	if button_id == "end":
@@ -110,23 +110,27 @@ func _on_JohnPopup_button_id(button_id):
 		$Popups/JohnPopup.set_text(next_dialogue)
 
 
-# collects id of pressed button from Player dialogue
+# Collects id of pressed button from Player dialogue
 func _on_PlayerPopup_button_id(button_id):
-	# ends the dialogue if the last button signal was "end"
+	# Ends the dialogue if the last button signal was "end"
 	if button_id == "end":
+		if $BackgroundArea/Images.visible == false:
+			$BackgroundArea/Images.visible = true
+		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
 		close_dialogues()
 	else:
-		# calls the next line of dialogue
+		# Calls the next line of dialogue
 		intro_dialogue.intro_sequence(button_id)
 
 
-# initiates the Intro dialogue
+# Initiates the Intro dialogue
 func intro():
 	show_player()
-	# calls the first Intro dialogue lines from the intro_dialogue script
+	# Calls the first Intro dialogue lines from the intro_dialogue script
 	$Popups/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))
 
 
+# Closes all currently running dialogues
 func close_dialogues():
 	if player_close:
 		hide_player()
@@ -137,7 +141,7 @@ func close_dialogues():
 	normalise_background()
 
 
-# makes the background dark
+# Makes the background dark (for when a dialogue is running)
 func darken_background():
 	$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
@@ -147,7 +151,7 @@ func darken_background():
 	$BackgroundArea/Images/RussianText.set_modulate(Color('464646'))
 
 
-# restores the darkened background
+# Restores the darkened background
 func normalise_background():
 	$BackgroundArea/BackgroundSprite.set_modulate(Color(1,1,1))
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
@@ -157,7 +161,7 @@ func normalise_background():
 	$BackgroundArea/Images/RussianText.set_modulate(Color(1,1,1))
 
 
-# shows Barry's close-up and dialogue box
+# Shows Barry's close-up and dialogue box
 func show_barry():
 	$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideIn')
 	barry_close = true
@@ -165,7 +169,7 @@ func show_barry():
 	$Popups/BarryPopup.show()
 
 
-# shows John's close-up and dialogue box
+# Shows John's close-up and dialogue box
 func show_john():
 	$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideIn')
 	john_close = true
@@ -173,14 +177,14 @@ func show_john():
 	$Popups/JohnPopup.show()
 
 
-# shows player dialogue box
+# Shows player dialogue box
 func show_player():
 	player_close = true
 	can_click = false
 	$Popups/PlayerPopup.show()
 
 
-# hides Barry's close-up and dialogue box
+# Hides Barry's close-up and dialogue box
 func hide_barry():
 	$Popups/BarryPopup.hide()
 	$BackgroundArea/BarryClose/AnimationPlayer.play('BarryCloseSlideOut')
@@ -188,7 +192,7 @@ func hide_barry():
 	can_click = true
 
 
-# hides John's close-up and dialogue box
+# Hides John's close-up and dialogue box
 func hide_john():
 	$Popups/JohnPopup.hide()
 	$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideOut')
@@ -196,7 +200,7 @@ func hide_john():
 	can_click = true
 
 
-# hides Player's dialogue box
+# Hides Player's dialogue box
 func hide_player():
 	$Popups/PlayerPopup.hide()
 	player_close = false

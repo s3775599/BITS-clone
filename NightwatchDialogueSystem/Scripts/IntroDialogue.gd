@@ -65,7 +65,7 @@ func intro_dialogues(id):
 		"i11b1a1b1a1a":
 			return [["Oh.", "[ -- continue -- ]"], ["0", "i11b1a1b1a1a1"]]
 		"i11b1a1b1a1a1":
-			return [["", "Or Oxygen."], ["0", "i11b1a1b1a1a1a"]]
+			return [["", "Or oxygen."], ["0", "i11b1a1b1a1a1a"]]
 		"i11b1a1b1a1a1a":
 			return [["Now all things considered, that doesn't sound so bad.", "[ -- continue -- ]"], ["0", "i11"]]
 		"i11c":
