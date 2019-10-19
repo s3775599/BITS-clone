@@ -131,6 +131,7 @@ shape = SubResource( 2 )
 [node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 9 )]
 
 [node name="Popups" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -141,6 +142,7 @@ margin_bottom = 40.0
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 12 )]
 
 [node name="Dialogues" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="IntroDialogue" parent="Dialogues" instance=ExtResource( 13 )]
 

@@ -44,6 +44,8 @@ func intro_dialogues(id):
 			return [["Nothing.", "[ -- continue -- ]"], ["i11r"]]
 		"i11r":
 			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["i11a", "i11b", "i11c", "i11d"]]
+		"i11s":
+			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["i11a", "i11b", "i11c", "i11d"]]
 		"i11b":
 			return [["Oh no, not that. Anything but that.", "[ -- continue -- ]"], ["i11b1"]]
 		"i11b1":
@@ -125,7 +127,7 @@ func intro_dialogues(id):
 		"i11d1c":
 			return [["Yeah, right.", "[ -- continue -- ]"], ["i11r"]]
 		"i11d1d":
-			return [["I knew it.", "[ -- continue -- ]"], ["i11r"]]
+			return [[". . .", "[ -- continue -- ]"], ["i11s"]]
 		"i12":
 			return [["See? Everything's . . . ", "[ -- continue -- ]"], ["i13"]]
 		"i13":
@@ -250,6 +252,10 @@ func intro_sequence(button_id):
 		"i11r":
 			main_script.barry_close = false
 			barry_anim.play('BarryCloseSlideOut')
+			barry_to_player(button_id)
+		"i11s":
+			main_script.barry_close = false
+			barry_anim.play('BarryCloseSlowOut')
 			barry_to_player(button_id)
 		"i11b":
 			main_script.john_close = true
