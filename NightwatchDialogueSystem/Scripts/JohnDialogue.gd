@@ -65,7 +65,7 @@ func john_dialogues(id):
 		"3a3a1a":
 			return [["But sure. 'Engineer'.","I bet you could fix it.","Can you think of some way to fix this?"],["3a3a1a1","3a3a1a2"]]
 		"3a3a1a1":
-			return [["I bet you I'm not going to.","What if you align the phase manifold?","What if you check the combustion seals?","What about lubricating the flux probes?","What if you restart the synaptic motivators?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],["3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
+			return [["I bet you I'm not going to.","What if you align the phase manifold?","What if you check the combustion seals?","What about lubricating the flux probes?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],["3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
 		"3a3a1a1a":
 			return [["We don't have enough titanium.","[ -- end -- ]"],["end"]]
 		"3a3a1a1b":
@@ -73,11 +73,9 @@ func john_dialogues(id):
 		"3a3a1a1c":
 			return [["We used the last of the WD40 on the squeaky chair in the comms room.","[ -- end -- ]"],["end"]]
 		"3a3a1a1d":
-			return [["I don't think I could begin to explain in simple terms why that wouldn't work.","[ -- end -- ]"],["end"]]
-		"3a3a1a1e":
 			return [["Yes I thought about that, but we don't have enough methylaluniminestricate to counter the secondary neurotrioxin-3 inversion.","[ -- end -- ]"],["end"]]
 		"3a3a1a2":
-			return [["I don't thank a lowly \"engineer\" has any busness fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer","I bet you really hate that computer"],["3a3a1a2a1"]]
+			return [["I don't think a lowly 'engineer' has any business fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer","I bet you really hate that computer"],["3a3a1a2a1"]]
 		"3a3a1a2a1":
 			return [[". . .", "I bet you're disappointed that the League reduced you to a button-pushing errand-boy"], ["3a3a1a2a1a"]]
 		"3a3a1a2a1a":

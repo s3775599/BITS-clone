@@ -131,7 +131,6 @@ shape = SubResource( 2 )
 [node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 9 )]
 
 [node name="Popups" type="Control" parent="."]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
