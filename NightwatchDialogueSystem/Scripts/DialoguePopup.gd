@@ -7,19 +7,25 @@ onready var player_popup = get_node('/root/Main/Popups/PlayerPopup')
 var button_id
 var vbox_size = Vector2()
 var popup_size = Vector2()
+var printing = false
+var button_selected = false
+
 
 func set_text(dialogue_lines):
+	button_selected = false
 	$VBoxContainer/NinePatchRect/MarginContainer/NinePatchRect/MarginContainer/RichTextLabel.bbcode_text = String("")
 	$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button.visible = false
 	$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button2.visible = false
 	$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button3.visible = false
 	$VBoxContainer/NinePatchRect2/MarginContainer/VBoxContainer/Button4.visible = false
 	if player_popup.visible == true:
-		$VBoxContainer/NinePatchRect/.visible = false
+		$VBoxContainer/NinePatchRect.visible = false
 	var dialogue_size = dialogue_lines[0].size()
 	set_button_visibility(dialogue_size)
 	set_button_labels(dialogue_size, dialogue_lines)
+	
 	typewriter_text(dialogue_lines[0][0])
+
 
 """
 The following function is code adapted from:
@@ -31,17 +37,25 @@ The following function is code adapted from:
 
 """
 func typewriter_text(text):
+	
 	#create a timer to print text like a typewriter
 	var t = Timer.new()
 	t.set_wait_time(.005)
 	t.set_one_shot(true)
 	self.add_child(t)
-
 	for letter in text:
-		t.start()
-		print(letter)
-		$VBoxContainer/NinePatchRect/MarginContainer/NinePatchRect/MarginContainer/RichTextLabel.bbcode_text += String(letter)
-		yield(t, "timeout")
+		if button_selected:
+			$VBoxContainer/NinePatchRect/MarginContainer/NinePatchRect/MarginContainer/RichTextLabel.bbcode_text = String(text)
+			break
+		else:
+			printing = true
+			t.start()
+			print(letter)
+			$VBoxContainer/NinePatchRect/MarginContainer/NinePatchRect/MarginContainer/RichTextLabel.bbcode_text += String(letter)
+			yield(t, "timeout")
+	printing = false
+	
+		
 """ 
 """
 
@@ -80,7 +94,9 @@ func set_button_labels(dialogue_size, dialogue_lines):
 
 
 func emit_button_signal(button_id):
-	emit_signal("button_id", button_id)
+	button_selected = true
+	if not printing:
+		emit_signal("button_id", button_id)
 
 
 func _on_Button_pressed():

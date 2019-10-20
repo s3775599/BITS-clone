@@ -57,13 +57,13 @@ func john_dialogues(id):
 		"3a2":
 			return [["Well, neither do I.","[ -- end -- ]"],["end"]]
 		"3a3":
-			return [["You could say I'm an \"engineer\". You could also say that I modelled a nuclear reactor out of pinebark when I was 12, I have a first-class degree in quantum propulsion systems, and I was headhunted by the Australian National Astrophysics League before I'd even taken my final exams with promises of overseeing the biggest and most powerful engines humanity had ever devised.","..."],["3a3a"]]
+			return [["You could say I'm an 'engineer'. You could also say that I modelled a nuclear reactor out of pinebark when I was 12, I have a first-class degree in quantum propulsion systems, and I was headhunted by the Australian National Astrophysics League before I'd even taken my final exams with promises of overseeing the biggest and most powerful engines humanity had ever devised.","..."],["3a3a"]]
 		"3a3a":
 			return [["Then these stupid AI computers came along and now I press buttons all day asking the computer to find answers to things I devoted my life to studying, and the only tech I'm allowed to go anywhere near is the coffee machine.","..."],["3a3a1"]]
 		"3a3a1":
 			return [["And we ran out of coffee three years ago.","..."],["3a3a1a"]]
 		"3a3a1a":
-			return [["But sure. \"Engineer\".","I bet you could fix it.","Can you think of some way to fix this?"],["3a3a1a1","3a3a1a2"]]
+			return [["But sure. 'Engineer'.","I bet you could fix it.","Can you think of some way to fix this?"],["3a3a1a1","3a3a1a2"]]
 		"3a3a1a1":
 			return [["I bet you I'm not going to.","What if you align the phase manifold?","What if you check the combustion seals?","What about lubricating the flux probes?","What if you restart the synaptic motivators?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],["3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
 		"3a3a1a1a":
