@@ -45,8 +45,8 @@ patch_margin_bottom = 20
 
 [node name="DisplayGlass" type="NinePatchRect" parent="VBoxContainer/DisplayRect"]
 light_mask = 3
-margin_left = 6.0
-margin_top = 6.0
+margin_left = 4.0
+margin_top = 4.0
 margin_right = 454.0
 margin_bottom = 134.0
 texture = ExtResource( 4 )
@@ -65,6 +65,7 @@ bbcode_text = "PLACEHOLDER"
 text = "PLACEHOLDER"
 
 [node name="ButtonRect" type="NinePatchRect" parent="VBoxContainer"]
+self_modulate = Color( 0.235294, 0.235294, 0.235294, 1 )
 margin_top = 144.0
 margin_right = 460.0
 margin_bottom = 350.0

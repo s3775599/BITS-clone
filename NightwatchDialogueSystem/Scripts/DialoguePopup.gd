@@ -24,9 +24,6 @@ var printing = false
 var button_selected = false
 var quit_button = false
 
-func _ready():
-	quit_button = false
-
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -34,6 +31,7 @@ func _input(event):
 
 # This functon gets dialogue lines as a param and prints it to the dialogue box and buttons
 func set_text(dialogue_lines):
+	quit_button = false
 	button_selected = false
 	# Hides all buttons by default
 	button1.visible = false
@@ -71,7 +69,7 @@ func typewriter_text(text):
 	# Prints each individual letter according to Timer length
 	for letter in text:
 		# If a button has been selected, print the remaining text to the dialogue window
-		if button_selected or quit_button:
+		if button_selected: # or quit_button:
 			display_text.bbcode_text = String(text)
 			break
 		else:
@@ -92,6 +90,8 @@ func set_button_visibility(n):
 	# Because the buttons expand to fill the VBoxContainer, the VBoxContainer itself is adjusted
 	# according to how many buttons there are.
 	if n > 1:
+		# Adjusts the button display for the player or NPC dialogues, taking into account
+		# the size of the NPCs' dialogue display window
 		if player_popup.visible:
 			$VBoxContainer.rect_size = Vector2(460, 120)
 		else:
