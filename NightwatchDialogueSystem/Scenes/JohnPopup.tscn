@@ -14,14 +14,14 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [node name="JohnPopup" type="Popup"]
+visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -472.0
-margin_top = -180.0
-margin_right = -12.0
-margin_bottom = 180.0
+margin_left = -460.0
+margin_top = -175.0
+margin_bottom = 175.0
 rect_min_size = Vector2( 460, 0 )
 theme = SubResource( 2 )
 script = ExtResource( 2 )
@@ -29,6 +29,8 @@ script = ExtResource( 2 )
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 alignment = 2
 
 [node name="DisplayRect" type="NinePatchRect" parent="VBoxContainer"]
@@ -43,35 +45,23 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DisplayRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="DisplayGlass" type="NinePatchRect" parent="VBoxContainer/DisplayRect"]
+light_mask = 3
 margin_left = 6.0
 margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-
-[node name="DisplayGlass" type="NinePatchRect" parent="VBoxContainer/DisplayRect/MarginContainer"]
-light_mask = 3
-margin_right = 448.0
-margin_bottom = 128.0
+margin_right = 454.0
+margin_bottom = 134.0
 texture = ExtResource( 4 )
 patch_margin_left = 20
 patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DisplayRect/MarginContainer/DisplayGlass"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="DisplayText" type="RichTextLabel" parent="VBoxContainer/DisplayRect/DisplayGlass"]
 margin_left = 12.0
 margin_top = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
-
-[node name="DisplayText" type="RichTextLabel" parent="VBoxContainer/DisplayRect/MarginContainer/DisplayGlass/MarginContainer"]
-margin_right = 424.0
-margin_bottom = 104.0
+margin_right = 436.0
+margin_bottom = 116.0
 bbcode_enabled = true
 bbcode_text = "PLACEHOLDER"
 text = "PLACEHOLDER"
@@ -79,8 +69,7 @@ text = "PLACEHOLDER"
 [node name="ButtonRect" type="NinePatchRect" parent="VBoxContainer"]
 margin_top = 144.0
 margin_right = 460.0
-margin_bottom = 360.0
-rect_min_size = Vector2( 0, 60 )
+margin_bottom = 350.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -89,86 +78,79 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonRect"]
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer/ButtonRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-
-[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer/ButtonRect/MarginContainer"]
-margin_right = 448.0
-margin_bottom = 204.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_vertical = 3
 alignment = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_right = 448.0
-margin_bottom = 48.0
+[node name="Button" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_right = 452.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="Button2" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_top = 52.0
-margin_right = 448.0
-margin_bottom = 100.0
+[node name="Button2" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_top = 50.0
+margin_right = 452.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button2"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="Button3" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_top = 104.0
-margin_right = 448.0
-margin_bottom = 152.0
+[node name="Button3" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_top = 100.0
+margin_right = 452.0
+margin_bottom = 146.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button3"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="Button4" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_top = 156.0
-margin_right = 448.0
-margin_bottom = 204.0
+[node name="Button4" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_top = 150.0
+margin_right = 452.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button4"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button4" to="." method="_on_Button4_pressed"]

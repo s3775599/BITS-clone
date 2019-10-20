@@ -3,15 +3,15 @@ extends Popup
 signal button_id
 
 onready var player_popup = get_node('/root/Main/Popups/PlayerPopup')
-onready var display_text = get_node('VBoxContainer/DisplayRect/MarginContainer/DisplayGlass/MarginContainer/DisplayText')
-onready var button1 = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button')
-onready var button2 = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button2')
-onready var button3 = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button3')
-onready var button4 = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button4')
-onready var button1_label = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button/Label')
-onready var button2_label = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button2/Label')
-onready var button3_label = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button3/Label')
-onready var button4_label = get_node('VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button4/Label')
+onready var display_text = get_node('VBoxContainer/DisplayRect/DisplayGlass/DisplayText')
+onready var button1 = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button')
+onready var button2 = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button2')
+onready var button3 = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button3')
+onready var button4 = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button4')
+onready var button1_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button/Label')
+onready var button2_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button2/Label')
+onready var button3_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button3/Label')
+onready var button4_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button4/Label')
 
 # Sets an ID for a selected dialogue button
 var button_id
@@ -35,15 +35,14 @@ func _input(event):
 # This functon gets dialogue lines as a param and prints it to the dialogue box and buttons
 func set_text(dialogue_lines):
 	button_selected = false
-	display_text.bbcode_text = String("")
 	# Hides all buttons by default
 	button1.visible = false
 	button2.visible = false
 	button3.visible = false
 	button4.visible = false
 	# If the dialogue is the player's box (in the intro), only show the buttons window
-	if player_popup.visible == true:
-		$VBoxContainer/DisplayRect.visible = false
+	if player_popup.visible == false:
+		display_text.bbcode_text = String("")
 	# Gets the number of dialogue lines and button responses
 	var dialogue_size = dialogue_lines[0].size()
 	# Display appripriate number of buttons
@@ -93,17 +92,30 @@ func set_button_visibility(n):
 	# Because the buttons expand to fill the VBoxContainer, the VBoxContainer itself is adjusted
 	# according to how many buttons there are.
 	if n > 1:
-		$VBoxContainer.rect_size = Vector2(460, 100)
+		if player_popup.visible:
+			$VBoxContainer.rect_size = Vector2(460, 120)
+		else:
+			$VBoxContainer.rect_size = Vector2(460, 240)
 		button1.visible = true
 		if n > 2:
-			$VBoxContainer.rect_size = Vector2(460, 240)
+			if player_popup.visible:
+				$VBoxContainer.rect_size = Vector2(460, 260)
+			else:
+				$VBoxContainer.rect_size = Vector2(460, 300)
 			button2.visible = true
 			if n > 3:
-				$VBoxContainer.rect_size = Vector2(460, 300)
+				if player_popup.visible:
+					$VBoxContainer.rect_size = Vector2(460, 300)
+				else:
+					$VBoxContainer.rect_size = Vector2(460, 320)
 				button3.visible = true
 				if n > 4:
-					$VBoxContainer.rect_size = Vector2(460, 360)
+					if player_popup.visible:
+						$VBoxContainer.rect_size = Vector2(460, 340)
+					else:
+						$VBoxContainer.rect_size = Vector2(460, 360)
 					button4.visible = true
+
 
 
 func set_button_labels(dialogue_size, dialogue_lines):

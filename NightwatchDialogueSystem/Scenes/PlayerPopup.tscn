@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GFX/Fonts/Px437_IBM_PS2thin4.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/DialoguePopup.gd" type="Script" id=2]
 [ext_resource path="res://GFX/metalPanel_plate.png" type="Texture" id=3]
-[ext_resource path="res://GFX/glassPanel.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Button.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Button.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -14,6 +13,7 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [node name="PlayerPopup" type="Popup"]
+visible = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -21,73 +21,21 @@ anchor_bottom = 1.0
 margin_left = -230.0
 margin_top = -360.0
 margin_right = 230.0
-margin_bottom = -12.0
+margin_bottom = -10.0
 rect_min_size = Vector2( 460, 0 )
 theme = SubResource( 2 )
 script = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -230.0
-margin_top = -360.0
-margin_right = 230.0
 grow_horizontal = 0
 grow_vertical = 0
 alignment = 2
 
-[node name="DisplayRect" type="NinePatchRect" parent="VBoxContainer"]
-self_modulate = Color( 0.235294, 0.235294, 0.235294, 1 )
-margin_right = 460.0
-margin_bottom = 120.0
-rect_min_size = Vector2( 0, 140 )
-size_flags_horizontal = 3
-texture = ExtResource( 3 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DisplayRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-
-[node name="DisplayGlass" type="NinePatchRect" parent="VBoxContainer/DisplayRect/MarginContainer"]
-light_mask = 3
-margin_right = 448.0
-margin_bottom = 108.0
-texture = ExtResource( 4 )
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/DisplayRect/MarginContainer/DisplayGlass"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = -8.0
-
-[node name="DisplayText" type="RichTextLabel" parent="VBoxContainer/DisplayRect/MarginContainer/DisplayGlass/MarginContainer"]
-margin_right = 432.0
-margin_bottom = 92.0
-bbcode_enabled = true
-bbcode_text = "PLACEHOLDER"
-text = "PLACEHOLDER"
-
 [node name="ButtonRect" type="NinePatchRect" parent="VBoxContainer"]
-margin_top = 124.0
 margin_right = 460.0
-margin_bottom = 360.0
-rect_min_size = Vector2( 0, 60 )
+margin_bottom = 350.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -96,86 +44,79 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ButtonRect"]
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer/ButtonRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = 6.0
-margin_right = -6.0
-margin_bottom = -6.0
-
-[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer/ButtonRect/MarginContainer"]
-margin_right = 448.0
-margin_bottom = 224.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_vertical = 3
 alignment = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_right = 448.0
-margin_bottom = 53.0
+[node name="Button" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_right = 452.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="Button2" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_top = 57.0
-margin_right = 448.0
-margin_bottom = 110.0
+[node name="Button2" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_top = 86.0
+margin_right = 452.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button2"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="Button3" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_top = 114.0
-margin_right = 448.0
-margin_bottom = 167.0
+[node name="Button3" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_top = 172.0
+margin_right = 452.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button3"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
 
-[node name="Button4" type="Button" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer"]
-margin_top = 171.0
-margin_right = 448.0
-margin_bottom = 224.0
+[node name="Button4" type="Button" parent="VBoxContainer/ButtonRect/ButtonContainer"]
+margin_top = 258.0
+margin_right = 452.0
+margin_bottom = 342.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button4"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 444.0
-margin_bottom = 40.0
+[node name="Label" type="Label" parent="VBoxContainer/ButtonRect/ButtonContainer/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "placeholder button 1"
 align = 1
 valign = 1
 autowrap = true
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonRect/MarginContainer/ButtonContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonRect/ButtonContainer/Button4" to="." method="_on_Button4_pressed"]
