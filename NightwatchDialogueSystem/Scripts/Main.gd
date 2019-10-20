@@ -15,7 +15,7 @@ onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 
 
 func _ready():
-	$BackgroundArea/Images.visible = false
+	#$BackgroundArea/Images.visible = false
 	$AnimationPlayer.play('FadeIn')
 	intro()
 
@@ -31,13 +31,15 @@ func _process(delta):
 func _input(event):
 	# Quits from the current dialogue
 	if Input.is_action_just_pressed("ui_cancel"):
-		if $BackgroundArea/Images.visible == false:
-			$BackgroundArea/Images.visible = true
+#		if $BackgroundArea/Images.visible == false:
+#			$BackgroundArea/Images.visible = true
 		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
 		close_dialogues()
 	# Manually starts the intro dialogue (for testing purposes)
 	if Input.is_action_just_pressed("ui_down"):
 		intro()
+	if Input.is_action_pressed("ui_left"):
+		$ConsoleMiniGame.visible = not $ConsoleMiniGame.visible
 
 
 # Mouseover signal on Barry at the console
@@ -146,9 +148,9 @@ func darken_background():
 	$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('464646'))
-	$BackgroundArea/Images/AK47.set_modulate(Color('464646'))
-	$BackgroundArea/Images/RussianFlag.set_modulate(Color('464646'))
-	$BackgroundArea/Images/RussianText.set_modulate(Color('464646'))
+#	$BackgroundArea/Images/AK47.set_modulate(Color('464646'))
+#	$BackgroundArea/Images/RussianFlag.set_modulate(Color('464646'))
+#	$BackgroundArea/Images/RussianText.set_modulate(Color('464646'))
 
 
 # Restores the darkened background
@@ -156,9 +158,9 @@ func normalise_background():
 	$BackgroundArea/BackgroundSprite.set_modulate(Color(1,1,1))
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
-	$BackgroundArea/Images/AK47.set_modulate(Color(1,1,1))
-	$BackgroundArea/Images/RussianFlag.set_modulate(Color(1,1,1))
-	$BackgroundArea/Images/RussianText.set_modulate(Color(1,1,1))
+#	$BackgroundArea/Images/AK47.set_modulate(Color(1,1,1))
+#	$BackgroundArea/Images/RussianFlag.set_modulate(Color(1,1,1))
+#	$BackgroundArea/Images/RussianText.set_modulate(Color(1,1,1))
 
 
 # Shows Barry's close-up and dialogue box
