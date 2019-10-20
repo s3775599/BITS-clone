@@ -22,7 +22,15 @@ var popup_size = Vector2()
 var printing = false
 # Boolean to indicate if a button has been clicked
 var button_selected = false
+var quit_button = false
 
+func _ready():
+	quit_button = false
+
+
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		quit_button = true
 
 # This functon gets dialogue lines as a param and prints it to the dialogue box and buttons
 func set_text(dialogue_lines):
@@ -64,7 +72,7 @@ func typewriter_text(text):
 	# Prints each individual letter according to Timer length
 	for letter in text:
 		# If a button has been selected, print the remaining text to the dialogue window
-		if button_selected:
+		if button_selected or quit_button:
 			display_text.bbcode_text = String(text)
 			break
 		else:
@@ -91,10 +99,10 @@ func set_button_visibility(n):
 			$VBoxContainer.rect_size = Vector2(460, 240)
 			button2.visible = true
 			if n > 3:
-				$VBoxContainer.rect_size = Vector2(460, 340)
+				$VBoxContainer.rect_size = Vector2(460, 300)
 				button3.visible = true
 				if n > 4:
-					$VBoxContainer.rect_size = Vector2(460, 460)
+					$VBoxContainer.rect_size = Vector2(460, 360)
 					button4.visible = true
 
 

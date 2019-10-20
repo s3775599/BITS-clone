@@ -65,7 +65,7 @@ func john_dialogues(id):
 		"3a3a1a":
 			return [["But sure. 'Engineer'.","I bet you could fix it.","Can you think of some way to fix this?"],["3a3a1a1","3a3a1a2"]]
 		"3a3a1a1":
-			return [["I bet you I'm not going to.","What if you align the phase manifold?","What if you check the combustion seals?","What about lubricating the flux probes?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine to trigger a hydrolygesic feedback decouplement?"],["3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
+			return [["I bet you I'm not going to.","What if you align the phase manifold?","Did you check the combustion seals?","What about lubricating the flux probes?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine?"],["3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
 		"3a3a1a1a":
 			return [["We don't have enough titanium.","[ -- end -- ]"],["end"]]
 		"3a3a1a1b":
