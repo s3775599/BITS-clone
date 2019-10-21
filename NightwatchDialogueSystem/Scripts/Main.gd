@@ -7,19 +7,25 @@ var can_click = true
 var john_close = false
 var barry_close = false
 var player_close = false
+
+#vars for console puzzle
 var code_array = []
+onready var russian_text = get_node("BackgroundArea/Images/RussianText")
+onready var russian_flag = get_node("BackgroundArea/Images/RussianFlag")
+onready var ak47 = get_node("BackgroundArea/Images/AK47")
+onready var barryImage = get_node("BackgroundArea/Images/Barry")
+onready var images = [russian_text,russian_flag,ak47,barryImage]
 
 # Godot's way of storing a Node as a variable
 onready var intro_dialogue = get_node("Dialogues/IntroDialogue")
 onready var john_dialogue = get_node("Dialogues/JohnDialogue")
 onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
+onready var console = get_node("BackgroundArea/Console")
 
 
 func _ready():
-	#$BackgroundArea/Images.visible = false
 	$AnimationPlayer.play('FadeIn')
 	intro()
-	print(generate_console_codes())
 
 
 # This function updates every frame
@@ -28,48 +34,23 @@ func _process(delta):
 	if john_close or barry_close or player_close:
 		darken_background()
 		can_click = false
-
-
-func generate_console_codes():
-	var code
-	for i in range(4):
-		code = $CombinationGenerator.generate_combination()
-		if code != [0, 0, 0, 0]:
-			for c in code_array:
-				if c == code:
-					code = $CombinationGenerator.generate_combination()
-			code_array.append(code)
-		else:
-			i += 1
-	return code_array
-
-
-#func generate_console_codes():
-#	var code
-#	var code_array = []
-#	for i in range(4):
-#		code = $CombinationGenerator.generate_combination()
-#		if code == [0, 0, 0, 0]:
-#			code = $CombinationGenerator.generate_combination()
-#		else:
-#			code_array.append(code)
-#	return code_array
+	
+	# End Game condition
+	if len(console.code_array) == 0:
+		print("GAME COMPLETE..... START OUTRO!!!")
 
 
 # Checks all input signals
 func _input(event):
 	# Quits from the current dialogue
 	if Input.is_action_just_pressed("ui_cancel"):
-#		if $BackgroundArea/Images.visible == false:
-#			$BackgroundArea/Images.visible = true
+		if $BackgroundArea/Images.visible == false:
+			$BackgroundArea/Images.visible = true
 		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
 		close_dialogues()
 	# Manually starts the intro dialogue (for testing purposes)
 	if Input.is_action_just_pressed("ui_down"):
 		intro()
-	if Input.is_action_pressed("ui_left"):
-		$ConsoleMiniGame.visible = not $ConsoleMiniGame.visible
-
 
 # Mouseover signal on Barry at the console
 func _on_BarryConsole_mouse_entered():
@@ -84,7 +65,6 @@ func _on_BarryConsole_mouse_exited():
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1, 1, 1))
 	can_click = true
 
-
 # Mouseover signal on John at the console
 func _on_JohnConsole_mouse_entered():
 	if not john_close:
@@ -92,12 +72,10 @@ func _on_JohnConsole_mouse_entered():
 	else:
 		can_click = false
 
-
 # Mouseoff signal on John at the console
 func _on_JohnConsole_mouse_exited():
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1, 1, 1))
 	can_click = true
-
 
 # Mouse click signals on John at the console
 func _on_JohnConsole_input_event(viewport, event, shape_idx):
@@ -107,7 +85,6 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 		show_john()
 		$Popups/JohnPopup.set_text(john_dialogue.john_dialogues("1"))
 
-
 # Mouse click signals on John at the console
 func _on_BarryConsole_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT) and can_click == true:
@@ -115,7 +92,6 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 			hide_john()
 		show_barry()
 		$Popups/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
-
 
 # Collects id of pressed button from Barry dialogue
 func _on_BarryPopup_button_id(button_id):
@@ -128,7 +104,6 @@ func _on_BarryPopup_button_id(button_id):
 		var next_dialogue = barry_dialogue.barry_dialogues(button_id)
 		$Popups/BarryPopup.set_text(next_dialogue)
 
-
 # Collects id of pressed button from John dialogue
 func _on_JohnPopup_button_id(button_id):
 	print("button_id = ", button_id)
@@ -139,7 +114,6 @@ func _on_JohnPopup_button_id(button_id):
 	else:
 		var next_dialogue = john_dialogue.john_dialogues(button_id)
 		$Popups/JohnPopup.set_text(next_dialogue)
-
 
 # Collects id of pressed button from Player dialogue
 func _on_PlayerPopup_button_id(button_id):
@@ -153,13 +127,11 @@ func _on_PlayerPopup_button_id(button_id):
 		# Calls the next line of dialogue
 		intro_dialogue.intro_sequence(button_id)
 
-
 # Initiates the Intro dialogue
 func intro():
 	show_player()
 	# Calls the first Intro dialogue lines from the intro_dialogue script
 	$Popups/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))
-
 
 # Closes all currently running dialogues
 func close_dialogues():
@@ -171,26 +143,27 @@ func close_dialogues():
 		hide_barry()
 	normalise_background()
 
-
 # Makes the background dark (for when a dialogue is running)
 func darken_background():
 	$BackgroundArea/BackgroundSprite.set_modulate(Color('464646'))
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color('464646'))
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color('464646'))
-#	$BackgroundArea/Images/AK47.set_modulate(Color('464646'))
-#	$BackgroundArea/Images/RussianFlag.set_modulate(Color('464646'))
-#	$BackgroundArea/Images/RussianText.set_modulate(Color('464646'))
-
+	$BackgroundArea/Images/AK47.set_modulate(Color('464646'))
+	$BackgroundArea/Images/RussianFlag.set_modulate(Color('464646'))
+	$BackgroundArea/Images/RussianText.set_modulate(Color('464646'))
+	$BackgroundArea/Images/Barry.set_modulate(Color('464646'))
+	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('464646'))
 
 # Restores the darkened background
 func normalise_background():
 	$BackgroundArea/BackgroundSprite.set_modulate(Color(1,1,1))
 	$BackgroundArea/BarryConsole/BarryConsoleSprite.set_modulate(Color(1,1,1))
 	$BackgroundArea/JohnConsole/JohnConsoleSprite.set_modulate(Color(1,1,1))
-#	$BackgroundArea/Images/AK47.set_modulate(Color(1,1,1))
-#	$BackgroundArea/Images/RussianFlag.set_modulate(Color(1,1,1))
-#	$BackgroundArea/Images/RussianText.set_modulate(Color(1,1,1))
-
+	$BackgroundArea/Images/AK47.set_modulate(Color(1,1,1))
+	$BackgroundArea/Images/RussianFlag.set_modulate(Color(1,1,1))
+	$BackgroundArea/Images/RussianText.set_modulate(Color(1,1,1))
+	$BackgroundArea/Images/Barry.set_modulate(Color(1,1,1))
+	$BackgroundArea/Images/MiddleScreen.set_modulate(Color(1,1,1))
 
 # Shows Barry's close-up and dialogue box
 func show_barry():
@@ -199,7 +172,6 @@ func show_barry():
 	can_click = false
 	$Popups/BarryPopup.show()
 
-
 # Shows John's close-up and dialogue box
 func show_john():
 	$BackgroundArea/JohnClose/AnimationPlayer.play('JohnCloseSlideIn')
@@ -207,13 +179,11 @@ func show_john():
 	can_click = false
 	$Popups/JohnPopup.show()
 
-
 # Shows player dialogue box
 func show_player():
 	player_close = true
 	can_click = false
 	$Popups/PlayerPopup.show()
-
 
 # Hides Barry's close-up and dialogue box
 func hide_barry():
@@ -222,7 +192,6 @@ func hide_barry():
 	barry_close = false
 	can_click = true
 
-
 # Hides John's close-up and dialogue box
 func hide_john():
 	$Popups/JohnPopup.hide()
@@ -230,9 +199,21 @@ func hide_john():
 	john_close = false
 	can_click = true
 
-
 # Hides Player's dialogue box
 func hide_player():
 	$Popups/PlayerPopup.hide()
 	player_close = false
 	can_click = true
+
+# Link to signal sent from Console.gd if a match is found
+func _on_Console_found():
+	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('61a735'))
+	get_rand_image().visible = false
+
+func get_rand_image():
+	for x in len(images):
+		if images[x].visible:
+			return images[x]
+
+func _on_Console_not_found():
+	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('b42727'))

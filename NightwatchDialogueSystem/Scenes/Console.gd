@@ -8,33 +8,41 @@ var four = false
 var code_array = []
 var current_code = []
 
+signal found
+signal not_found
+
 func _ready():
 	toggle_lights()
 	print("codes: " + String(generate_console_codes()))
+	check_match()
 
 
-func _input(event):
-	if Input.is_action_just_pressed("ui_down"):
-		print("current code: " + String(current_code))
+#func _input(event):
+#	if Input.is_action_just_pressed("ui_down"):
+#		print("current code: " + String(current_code))
 
 func _process(delta):
-	check_match()
+	pass
 
 func _on_One_pressed():
 	one = not one
 	toggle_lights()
+	check_match()
 
 func _on_Two_pressed():
 	two = not two
 	toggle_lights()
+	check_match()
 
 func _on_Three_pressed():
 	three = not three
 	toggle_lights()
+	check_match()
 
 func _on_Four_pressed():
 	four = not four
 	toggle_lights()
+	check_match()
 
 
 func generate_combination():
@@ -107,6 +115,9 @@ func check_match():
 	for code in code_array:
 		if current_code == code:
 			print("found a code: " + String(code))
+			emit_signal("found")
 			code_index = code_array.find(code)
 			code_array.remove(code_index)
 			print("codes: " + String(code_array))
+		else:
+			emit_signal("not_found")

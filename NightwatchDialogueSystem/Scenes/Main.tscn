@@ -1,19 +1,24 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/BarryPopup.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/IntroDialogue.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GFX/russianText.png" type="Texture" id=5]
+[ext_resource path="res://GFX/ak-47.png" type="Texture" id=6]
+[ext_resource path="res://GFX/russianFlag.png" type="Texture" id=7]
+[ext_resource path="res://GFX/small_barry.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Console.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BarryPopup.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/IntroDialogue.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
@@ -54,45 +59,92 @@ shape = SubResource( 1 )
 
 [node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 4 )]
 
-[node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 5 )]
+[node name="Images" type="Node2D" parent="BackgroundArea"]
+position = Vector2( -0.399715, -0.332535 )
+z_as_relative = false
 
-[node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 6 )]
+[node name="RussianText" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 609.418, 176.177 )
+texture = ExtResource( 5 )
+texture_scale = Vector2( 5, 3 )
+polygon = PoolVector2Array( -1.24127, -0.585846, 3.05151, 108.665, 109.298, 106.09, 101.141, 0.0580597 )
+
+[node name="AK47" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 329.643, 49.5638 )
+rotation = 0.00046379
+texture = ExtResource( 6 )
+texture_offset = Vector2( 0, -25 )
+texture_scale = Vector2( 6, 3 )
+polygon = PoolVector2Array( -1.24127, -0.585846, -7.80945, 95.0813, 93.9093, 95.8718, 97.3351, 0.214005 )
+
+[node name="RussianFlag" type="Polygon2D" parent="BackgroundArea/Images"]
+modulate = Color( 0.921569, 0.882353, 0.882353, 1 )
+position = Vector2( 320.571, 176.459 )
+texture = ExtResource( 7 )
+texture_scale = Vector2( 5, 1.75 )
+polygon = PoolVector2Array( -0.840729, -0.550095, -9.47708, 106.74, 98.9754, 106.906, 101.633, -0.0518494 )
+
+[node name="Barry" type="Polygon2D" parent="BackgroundArea/Images"]
+position = Vector2( 605.188, 50.2625 )
+texture = ExtResource( 8 )
+texture_offset = Vector2( -5, 1 )
+texture_scale = Vector2( 1.5, 1.5 )
+polygon = PoolVector2Array( 0.286072, 0.433083, 3.61694, 97.2308, 103.765, 96.456, 95.6312, 2.01464 )
+
+[node name="MiddleScreen" type="Polygon2D" parent="BackgroundArea/Images"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 465.909, 110.595 )
+scale = Vector2( 1.00478, 1.00486 )
+polygon = PoolVector2Array( -0.454865, -0.414879, -1.74899, 102.146, 102.701, 102.518, 100.377, 0.710739 )
+
+[node name="Console" parent="BackgroundArea" instance=ExtResource( 9 )]
+margin_left = 308.798
+margin_top = 341.431
+margin_right = 308.798
+margin_bottom = 341.431
+rect_scale = Vector2( 0.393725, 0.479872 )
+
+[node name="BarryClose" parent="BackgroundArea" instance=ExtResource( 10 )]
+
+[node name="JohnClose" parent="BackgroundArea" instance=ExtResource( 11 )]
 
 [node name="Popups" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="BarryPopup" parent="Popups" instance=ExtResource( 7 )]
+[node name="BarryPopup" parent="Popups" instance=ExtResource( 12 )]
 visible = false
 
-[node name="JohnPopup" parent="Popups" instance=ExtResource( 8 )]
+[node name="JohnPopup" parent="Popups" instance=ExtResource( 13 )]
 visible = false
 
-[node name="PlayerPopup" parent="Popups" instance=ExtResource( 9 )]
+[node name="PlayerPopup" parent="Popups" instance=ExtResource( 14 )]
 visible = false
 
 [node name="Dialogues" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="IntroDialogue" parent="Dialogues" instance=ExtResource( 10 )]
+[node name="IntroDialogue" parent="Dialogues" instance=ExtResource( 15 )]
 
-[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 11 )]
+[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 16 )]
 
-[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 12 )]
+[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 17 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 2 )
 
-[node name="ConsoleMiniGame" parent="." instance=ExtResource( 13 )]
+[node name="ConsoleMiniGame" parent="." instance=ExtResource( 18 )]
 visible = false
 
-[node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
+[node name="CombinationGenerator" parent="." instance=ExtResource( 19 )]
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
 [connection signal="input_event" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
+[connection signal="found" from="BackgroundArea/Console" to="." method="_on_Console_found"]
+[connection signal="not_found" from="BackgroundArea/Console" to="." method="_on_Console_not_found"]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]

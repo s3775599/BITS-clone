@@ -1,3 +1,3 @@
-extends Button
+extends TextureButton
 
 var id = 1
