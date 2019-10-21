@@ -118,8 +118,6 @@ func check_match():
 			code_index = code_array.find(code)
 			code_array.remove(code_index)
 			print("codes: " + String(code_array))
-		else:
-			found = false
 	
 	if found:
 		emit_signal("found")
