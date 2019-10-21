@@ -60,6 +60,7 @@ shape = SubResource( 1 )
 [node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 4 )]
 
 [node name="Images" type="Node2D" parent="BackgroundArea"]
+editor/display_folded = true
 position = Vector2( -0.399715, -0.332535 )
 z_as_relative = false
 

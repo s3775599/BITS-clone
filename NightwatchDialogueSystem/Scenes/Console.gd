@@ -14,8 +14,6 @@ signal not_found
 func _ready():
 	toggle_lights()
 	print("codes: " + String(generate_console_codes()))
-	check_match()
-
 
 #func _input(event):
 #	if Input.is_action_just_pressed("ui_down"):
@@ -112,12 +110,18 @@ func get_current_code():
 
 func check_match():
 	var code_index
+	var found = false
 	for code in code_array:
 		if current_code == code:
 			print("found a code: " + String(code))
-			emit_signal("found")
+			found = true
 			code_index = code_array.find(code)
 			code_array.remove(code_index)
 			print("codes: " + String(code_array))
 		else:
-			emit_signal("not_found")
+			found = false
+	
+	if found:
+		emit_signal("found")
+	else:
+		emit_signal("not_found")
