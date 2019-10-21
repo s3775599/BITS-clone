@@ -207,6 +207,7 @@ func hide_player():
 
 # Link to signal sent from Console.gd if a match is found
 func _on_Console_found():
+	print("Got signal found")
 	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('61a735'))
 	get_rand_image().visible = false
 
@@ -216,4 +217,5 @@ func get_rand_image():
 			return images[x]
 
 func _on_Console_not_found():
+	print("Got signal not found")
 	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('b42727'))
