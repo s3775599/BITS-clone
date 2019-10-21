@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 513.672, 299.894 )
@@ -34,14 +35,12 @@ tracks/0/keys = {
 }
 
 [node name="Main" type="Control"]
-modulate = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
 [node name="BackgroundArea" type="Area2D" parent="."]
 position = Vector2( 0.399715, 0.332535 )
 
 [node name="BackgroundSprite" type="Sprite" parent="BackgroundArea"]
-modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 511.791, 299.841 )
 scale = Vector2( 0.266665, 0.27777 )
 texture = ExtResource( 2 )
@@ -64,10 +63,13 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="BarryPopup" parent="Popups" instance=ExtResource( 7 )]
+visible = false
 
 [node name="JohnPopup" parent="Popups" instance=ExtResource( 8 )]
+visible = false
 
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 9 )]
+visible = false
 
 [node name="Dialogues" type="Node" parent="."]
 editor/display_folded = true
@@ -83,6 +85,8 @@ anims/FadeIn = SubResource( 2 )
 
 [node name="ConsoleMiniGame" parent="." instance=ExtResource( 13 )]
 visible = false
+
+[node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
 [connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]

@@ -1,0 +1,147 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Console.gd" type="Script" id=1]
+[ext_resource path="res://GFX/dotWhite.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ConsoleButton1.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/ConsoleButton2.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/ConsoleButton3.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/ConsoleButton4.gd" type="Script" id=6]
+
+[node name="Console" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -704.0
+margin_bottom = -400.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 320.0
+margin_bottom = 200.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 4
+
+[node name="OneOn" type="TextureRect" parent="Panel/GridContainer"]
+margin_right = 77.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="TwoOn" type="TextureRect" parent="Panel/GridContainer"]
+margin_left = 81.0
+margin_right = 158.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="ThreeOn" type="TextureRect" parent="Panel/GridContainer"]
+margin_left = 162.0
+margin_right = 239.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="FourOn" type="TextureRect" parent="Panel/GridContainer"]
+margin_left = 243.0
+margin_right = 320.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="ConsoleButton1" type="Button" parent="Panel/GridContainer"]
+margin_top = 68.0
+margin_right = 77.0
+margin_bottom = 132.0
+focus_mode = 0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )
+
+[node name="ConsoleButton2" type="Button" parent="Panel/GridContainer"]
+margin_left = 81.0
+margin_top = 68.0
+margin_right = 158.0
+margin_bottom = 132.0
+focus_mode = 0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="ConsoleButton3" type="Button" parent="Panel/GridContainer"]
+margin_left = 162.0
+margin_top = 68.0
+margin_right = 239.0
+margin_bottom = 132.0
+focus_mode = 0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+
+[node name="ConsoleButton4" type="Button" parent="Panel/GridContainer"]
+margin_left = 243.0
+margin_top = 68.0
+margin_right = 320.0
+margin_bottom = 132.0
+focus_mode = 0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 6 )
+
+[node name="OneOff" type="TextureRect" parent="Panel/GridContainer"]
+margin_top = 136.0
+margin_right = 77.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="TwoOff" type="TextureRect" parent="Panel/GridContainer"]
+margin_left = 81.0
+margin_top = 136.0
+margin_right = 158.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="ThreeOff" type="TextureRect" parent="Panel/GridContainer"]
+margin_left = 162.0
+margin_top = 136.0
+margin_right = 239.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+
+[node name="FourOff" type="TextureRect" parent="Panel/GridContainer"]
+margin_left = 243.0
+margin_top = 136.0
+margin_right = 320.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 4
+[connection signal="pressed" from="Panel/GridContainer/ConsoleButton1" to="." method="_on_One_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ConsoleButton2" to="." method="_on_Two_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ConsoleButton3" to="." method="_on_Three_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/ConsoleButton4" to="." method="_on_Four_pressed"]

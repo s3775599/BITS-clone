@@ -7,6 +7,7 @@ var can_click = true
 var john_close = false
 var barry_close = false
 var player_close = false
+var code_array = []
 
 # Godot's way of storing a Node as a variable
 onready var intro_dialogue = get_node("Dialogues/IntroDialogue")
@@ -18,6 +19,8 @@ func _ready():
 	#$BackgroundArea/Images.visible = false
 	$AnimationPlayer.play('FadeIn')
 	intro()
+	print(generate_console_codes())
+
 
 # This function updates every frame
 func _process(delta):
@@ -25,6 +28,32 @@ func _process(delta):
 	if john_close or barry_close or player_close:
 		darken_background()
 		can_click = false
+
+
+func generate_console_codes():
+	var code
+	for i in range(4):
+		code = $CombinationGenerator.generate_combination()
+		if code != [0, 0, 0, 0]:
+			for c in code_array:
+				if c == code:
+					code = $CombinationGenerator.generate_combination()
+			code_array.append(code)
+		else:
+			i += 1
+	return code_array
+
+
+#func generate_console_codes():
+#	var code
+#	var code_array = []
+#	for i in range(4):
+#		code = $CombinationGenerator.generate_combination()
+#		if code == [0, 0, 0, 0]:
+#			code = $CombinationGenerator.generate_combination()
+#		else:
+#			code_array.append(code)
+#	return code_array
 
 
 # Checks all input signals

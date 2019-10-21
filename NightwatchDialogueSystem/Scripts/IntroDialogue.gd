@@ -25,7 +25,7 @@ func intro_dialogues(id):
 		"i4":
 			return [["All good.", "[ -- continue --]"], ["i5"]]
 		"i5":
-			return [["", "Barry, I know we've been out here a long time but that doesn't give you license to drop protocol whenever you feel like it. Got it?"], ["i6"]]
+			return [["", "Barry, I know we've been out here a long time but that doesn't give you licence to drop protocol whenever you feel like it. Got it?"], ["i6"]]
 		"i6":
 			return [["{sigh} Yes SIR Lieutenant SIR sorry SIR.", "[ -- continue -- ]"], ["i7"]]
 		"i7":
@@ -81,7 +81,7 @@ func intro_dialogues(id):
 		"i11c1a1a":
 			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["i11c1a1a1"]]
 		"i11c1a1a1":
-			return [["", "Are you really REALLY super-duper positive cross-my-EVA-suit-and-hope-to-be-blown-out-of-the-airlock extra sure?"], ["i11c1a1a1a"]]
+			return [["", "Are you really REALLY super-duper positive cross my EVA suit and hope to be blown out of the airlock extra sure?"], ["i11c1a1a1a"]]
 		"i11c1a1a1a":
 			return [["YES.", "[ -- continue -- ]"], ["i11c1a1a1a1"]]
 		"i11c1a1a1a1":
@@ -98,28 +98,20 @@ func intro_dialogues(id):
 			return [["", "What are you talking about?", "No.", "Of course not.", "Yes."], ["i11d1a", "i11d1b", "i11d1c", "i11d1d"]]
 		"i11d1a":
 			return [["You chew my ear off when I talk like that, but he gets away with anything.", "[ -- continue -- ]"], ["i11d1a1"]]
-			
 		"i11d1a1":
 			return [["", "That's not true."], ["i11d1a1a"]]
-			
 		"i11d1a1a":
 			return [["Yes it is.", "[ -- continue -- ]"], ["i11d1a1a1"]]
-			
 		"i11d1a1a1":
 			return [["", "No it isn't."], ["i11d1a1a1a"]]
-			
 		"i11d1a1a1a":
 			return [["Yes it is!", "[ -- continue -- ]"], ["i11d1a1a1a1"]]
-			
 		"i11d1a1a1a1":
 			return [["", "No it isn't."], ["i11d1a1a1a1a"]]
-			
 		"i11d1a1a1a1a":
 			return [["YES IT IS!", "[ -- continue -- ]"], ["i11d1a1a1a1a1"]]
-			
 		"i11d1a1a1a1a1":
 			return [["", "Who's Lieutenant?"], ["i11d1a1a1a1a1a"]]
-			
 		"i11d1a1a1a1a1a":
 			return [[". . . you are.", "[ -- continue -- ]"], ["i11r"]]
 		"i11d1b":
@@ -199,7 +191,7 @@ func intro_dialogues(id):
 		"i46":
 			return [["", "COMPUTER!"], ["i47"]]
 		"i47":
-			return [["", "{ KOMPYUTER } CHEGO? DAVAY BYSTREE, YA ZANYAT!"], ["i48"]]
+			return [["", "{ КОМПЮТЕР } ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ!"], ["i48"]]
 		"i48":
 			return [["", "Barry, you complete idiot."], ["end"]]
 
