@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://GFX/console.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GFX/russianText.png" type="Texture" id=5]
 [ext_resource path="res://GFX/ak-47.png" type="Texture" id=6]
 [ext_resource path="res://GFX/russianFlag.png" type="Texture" id=7]
@@ -20,11 +20,27 @@
 [ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=19]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "AirlockWarning"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.8, 0.231373, 0.231373, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 513.672, 299.894 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "FadeIn"
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -50,14 +66,17 @@ position = Vector2( 511.791, 299.841 )
 scale = Vector2( 0.266665, 0.27777 )
 texture = ExtResource( 2 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundArea/BackgroundSprite"]
+anims/AirlockWarning = SubResource( 1 )
+
 [node name="BackgroundCollision" type="CollisionShape2D" parent="BackgroundArea"]
 visible = false
 position = Vector2( 510.414, 299.073 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
-[node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 3 )]
+[node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 3 )]
 
-[node name="BarryConsole" parent="BackgroundArea" instance=ExtResource( 4 )]
+[node name="JohnConsole" parent="BackgroundArea" instance=ExtResource( 4 )]
 
 [node name="Images" type="Node2D" parent="BackgroundArea"]
 editor/display_folded = true
@@ -132,20 +151,22 @@ editor/display_folded = true
 [node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 17 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 2 )
+anims/FadeIn = SubResource( 3 )
 
 [node name="ConsoleMiniGame" parent="." instance=ExtResource( 18 )]
 visible = false
 
 [node name="CombinationGenerator" parent="." instance=ExtResource( 19 )]
-[connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
-[connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
-[connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
 [connection signal="input_event" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_input_event"]
 [connection signal="mouse_entered" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
 [connection signal="mouse_exited" from="BackgroundArea/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
+[connection signal="input_event" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_input_event"]
+[connection signal="mouse_entered" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_entered"]
+[connection signal="mouse_exited" from="BackgroundArea/JohnConsole" to="." method="_on_JohnConsole_mouse_exited"]
 [connection signal="found" from="BackgroundArea/Console" to="." method="_on_Console_found"]
 [connection signal="not_found" from="BackgroundArea/Console" to="." method="_on_Console_not_found"]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]
+
+[editable path="BackgroundArea/BarryConsole"]

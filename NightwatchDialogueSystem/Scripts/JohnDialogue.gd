@@ -1,5 +1,7 @@
 extends Node
 
+onready var background_anim = get_node('/root/Main/BackgroundArea/BackgroundSprite/AnimationPlayer')
+
 func john_dialogues(id):
 	match id:
 		"1":
@@ -88,3 +90,31 @@ func john_dialogues(id):
 			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- John has fixed the computer interface by 25% -- ]"],["end"]]
 		"4a":
 			return [["Oh, Give me a break.","[ -- end -- ]"],["end"]]
+			
+# Barry's airlock accident lines
+		"airlock1":
+			return [["SIR WHAT HAPPENED? WHERE'S BARRY?", "I TOLD HIM TO PLAY AROUND WITH SOME BUTTONS!", "HE WAS PLAYING AROUND WITH SOME BUTTONS!", "I TOLD HIM NOT TO PLAY AROUND WITH ANY BUTTONS!", "I HAVE ABSOLUTELY NO IDEA!"], ["airlock1a", "airlock1b", "whatnow", "whatnow"]]
+		"airlock1a":
+			return [["YOU DID WHAT?? WHY DID YOU TELL HIM TO DO THAT?", "I DIDN'T HAVE ANY BETTER IDEAS!", "HE DIDN'T HAVE ANY BETTER IDEAS!"], ["whatnow", "whatnow"]]
+		"airlock1b":
+			return [["HE WAS WHAT?? WHY WAS HE DOING THAT?", "I TOLD HIM TO!", "I TRIED TO STOP HIM BUT I WAS TOO LATE!"], ["airlock1a", "whatnow"]]
+		"whatnow":
+			return [["WELL WHAT ARE WE SUPPOSED TO DO NOW?", "YOU HAVE TO CLOSE THE AIRLOCK!", "YOU HAVE TO RESCUE BARRY!"], ["airlock3", "no"]]
+		"airlock3":
+			return [["HOW DO YOU EXPECT ME TO DO THAT?", "YOU HAVE TO PLAY AROUND WITH THE CONSOLE!"], ["airlock4"]]
+		"no":
+			return [["YOU WANT ME TO WHAT?? I'M NOT GOING OUT THERE, ARE YOU CRAZY? I'M NOT EVEN WEARING AN EVA SUIT!", "YOU HAVE TO CLOSE THE AIRLOCK, THEN!"], ["airlock3"]]
+		"airlock4":
+			return [["YOU DID SEE WHAT HAPPENED TO BARRY, RIGHT?", "THERE'S NO OTHER WAY!", "WHAT'S THE WORST THAT CAN HAPPEN NOW?"], ["airlock5", "airlock4b"]]
+		"airlock4b":
+			return [["ASK BARRY!", "THERE'S NO OTHER WAY!"], ["airlock5"]]
+		"airlock5":
+			return [["I REALLY HATE THIS JOB.", "[ -- continue -- ]"], ["airlock_close"]]
+
+
+		"airlock7":
+			return [["Looks like that's fixed it.", "Well done, John!", "My ears are ringing."], ["airlock7a", "airlock7b"]]
+		"airlock7a":
+			return [["Yeah. Thanks.", "[ -- end -- ]"], ["end"]]
+		"airlock7b":
+			return [["And we lost Barry, Sir.", ["[ -- end -- ]"]], ["end"]]

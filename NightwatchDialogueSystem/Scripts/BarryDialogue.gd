@@ -1,5 +1,10 @@
 extends Node
 
+onready var barry_console_anim = get_node('/root/Main/BackgroundArea/BarryConsole/AnimationPlayer')
+onready var barry_close_anim = get_node('/root/Main/BackgroundArea/BarryClose/AnimationPlayer')
+onready var background_anim = get_node('/root/Main/BackgroundArea/BackgroundSprite/AnimationPlayer')
+onready var main_script = get_node('root/Main')
+
 func barry_dialogues(id):
 	match id:
 		"1":
@@ -31,9 +36,32 @@ func barry_dialogues(id):
 		"3a2":
 			return [["I'm going to try something . . .", "What's that?", "Wait, I have an idea.", "Whatever it is, Barry, you'd better have a good plan."], ["3a2a", "3a2b", "3a2c"]]
 		"3a2a":
-			return [["I'm going to try pressing a button.", "[ -- continue -- ]"], ["3a2a1"]]
-		"3a2a1":
-			return [[". . . nope. Nothing.", "[ -- end -- ]"], ["end"]] 
+			return [["I'm going to try pressing a button.", "Are you sure that's a good idea?", "I don't think that's a good idea.", "Okay, try that."], ["3a2a1a", "3a2a1b", "3a2a1c"]]
+		"3a2a1a":
+			return [["Honestly Sir, No. But I'm not sure what else to try.", "[ -- continue -- ]"], ["airlock"]] 
+
+		"3a2a1b":
+			return [["If you say so, Sir.", "[ -- end -- ]"], ["end"]]
+
+		"3a2a1c":
+			return [["Here goes. . .", "[ -- continue -- ]"], ["airlock"]]
+
+		"3a2a1c1":
+			return [[". . . Nothing.", "[ -- end -- ]"], ["i11r"]]
+
+		"airlock":
+			return [["Did you hear that?", "[ -- continue -- ]"], ["airlock2"]]
+		"airlock2":
+			return [["Is that the . . . ?", "[ -- continue -- ]"], ["airlock3"]]
+		"airlock3":
+			background_anim.play('AirlockWarning')
+			barry_close_anim.play('BarryCloseSlideOut')
+			return [["It sounds like the . . ", "[ -- continue -- ]"], ["airlock_warning"]]
+		"airlock_warning":
+			return [[". . . open airlock warning?", "[ -- continue -- ]"], ["airlock_barry"]]
+		"airlock_barry":
+			return [[". . . Is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]
+
 		"3a2b":
 			return [["What's that, Sir?", "What kind of training did you get when you were qualifying to be a pilot?", "Try pushing random buttons.", "I think you should not touch anything and let me and John try to fix this."], ["3a2b1", "3a2b2", "3a2b3"]]
 		"3a2b1":
