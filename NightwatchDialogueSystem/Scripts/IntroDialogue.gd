@@ -73,25 +73,39 @@ func intro_dialogues(id):
 		"i11c":
 			return [["Yes, I'm sure.", "[ -- continue -- ]"], ["i11c1"]]
 		"i11c1":
-			return [["", "Are you really sure?"], ["i11c1a"]]
+			return [["", "Did you look at your console?", "Are you really sure?", "Are you saying that because you're sure, or because you want me to stop asking about it?"], ["i11c1a", "i11c1b", "i11c1c"]]
 		"i11c1a":
-			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["i11c1a1"]]
+			return [["Yes.", "[ -- continue -- ]"], ["i11c1a1"]]
 		"i11c1a1":
-			return [["", "Are you really REALLY extra sure?"], ["i11c1a1a"]]
+			return [["", "Well, okay. As long as you're sure that you're sure.", "John you've been looking directly at me the whole time."], ["i11c1a1a", "i11c1a1b"]]
 		"i11c1a1a":
-			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["i11c1a1a1"]]
+			return [["Yes, I'm sure that I'm sure.", "[ -- continue --]"], ["i11c1a1a1"]]
 		"i11c1a1a1":
-			return [["", "Are you really REALLY super-duper positive cross my EVA suit and hope to be blown out of the airlock extra sure?"], ["i11c1a1a1a"]]
+			return [["", "Surely you wouldn't say that you're sure that you're sure if you weren't really sure, because that sure would be a sure-fire way to ensure the failure of the mission."], ["i11c1a1a1a"]]
 		"i11c1a1a1a":
-			return [["YES.", "[ -- continue -- ]"], ["i11c1a1a1a1"]]
-		"i11c1a1a1a1":
-			return [["", "Check your console anyway."], ["i11c1a1a1a1a"]]
-		"i11c1a1a1a1a":
-			return [["OKAY FINE.", "[ -- continue -- ]"], ["i11c1a1a1a1a1"]]
-		"i11c1a1a1a1a1":
-			return [["", "'Sir'."], ["i11c1a1a1a1a1a"]]
-		"i11c1a1a1a1a1a":
+			return [["I sure would like to end this conversation now.", "[ -- continue --]"], ["i11"]]
+		"i11c1a1b":
+			return [[". . .", "[ -- continue --]"], ["i11"]]
+		"i11c1b":
+			return [["Yes, I'm really sure.", "[ -- continue -- ]"], ["i11c1b1"]]
+		"i11c1b1":
+			return [["", "Are you really REALLY extra sure?"], ["i11c1b1a"]]
+		"i11c1b1a":
+			return [["Yes, I'm really REALLY extra sure. . .", "[ -- continue -- ]"], ["i11c1b1a1"]]
+		"i11c1b1a1":
+			return [["", "Are you really REALLY super-duper positive cross my EVA suit and hope to be blown out of the airlock extra sure?"], ["i11c1b1a1a"]]
+		"i11c1b1a1a":
+			return [["YES.", "[ -- continue -- ]"], ["i11c1b1a1a1"]]
+		"i11c1b1a1a1":
+			return [["", "Check your console anyway."], ["i11c1b1a1a1a"]]
+		"i11c1b1a1a1a":
+			return [["OKAY FINE.", "[ -- continue -- ]"], ["i11c1b1a1a1a1"]]
+		"i11c1b1a1a1a1":
+			return [["", "'Sir'."], ["i11c1b1a1a1a1a"]]
+		"i11c1b1a1a1a1a":
 			return [[". . . 'SIR'.", "[ -- continue -- ]"], ["i12"]]
+		"i11c1c":
+			return [["Both.", "[ -- continue -- ]"], ["i11"]]
 		"i11d":
 			return [["Playing favourites, are we?", "[ -- continue -- ]"], ["i11d1"]]
 		"i11d1":
@@ -285,19 +299,35 @@ func intro_sequence(button_id):
 			player_to_john(button_id)
 		"i11c1a1":
 			john_to_player(button_id)
+			
 		"i11c1a1a":
 			player_to_john(button_id)
+			
 		"i11c1a1a1":
 			john_to_player(button_id)
 		"i11c1a1a1a":
 			player_to_john(button_id)
-		"i11c1a1a1a1":
-			john_to_player(button_id)
-		"i11c1a1a1a1a":
+		"i11c1a1b":
 			player_to_john(button_id)
-		"i11c1a1a1a1a1":
+		"i11c1b":
+			player_to_john(button_id)
+		"i11c1b1":
 			john_to_player(button_id)
-		"i11c1a1a1a1a1a":
+		"i11c1b1a":
+			player_to_john(button_id)
+		"i11c1b1a1":
+			john_to_player(button_id)
+		"i11c1b1a1a":
+			player_to_john(button_id)
+		"i11c1b1a1a1":
+			john_to_player(button_id)
+		"i11c1b1a1a1a":
+			player_to_john(button_id)
+		"i11c1b1a1a1a1":
+			john_to_player(button_id)
+		"i11c1b1a1a1a1a":
+			player_to_john(button_id)
+		"i11c1c":
 			player_to_john(button_id)
 		"i11d":
 			main_script.barry_close = true
