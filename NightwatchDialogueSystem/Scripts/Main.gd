@@ -18,6 +18,7 @@ onready var console = get_node("BackgroundArea/Console")
 
 
 func _ready():
+	Global.current_scene = self
 	Global.intro = false
 	Global.can_click = true
 #	$AnimationPlayer.play('FadeIn')
