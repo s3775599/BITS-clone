@@ -15,6 +15,7 @@ var outro = false
 var player_popup
 var barry_gone = false
 
+
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -38,6 +39,13 @@ func player_button(button_id):
 		close_dialogues()
 	elif button_id == "end_intro":
 		close_dialogues()
+		current_scene.get_node("AnimationPlayer").play("FadeOut")
+		var t = Timer.new()
+		t.set_wait_time(3)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
 		get_tree().change_scene("res://Scenes/Main.tscn")
 	else:
 		# Calls the next line of dialogue

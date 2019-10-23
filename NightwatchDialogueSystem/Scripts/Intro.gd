@@ -22,7 +22,6 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	intro()
-#	get_tree().change_scene("res://Scenes/Main.tscn")
 
 
 func intro():

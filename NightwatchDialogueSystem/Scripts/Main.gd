@@ -21,7 +21,7 @@ func _ready():
 	Global.current_scene = self
 	Global.intro = false
 	Global.can_click = true
-#	$AnimationPlayer.play('FadeIn')
+	$AnimationPlayer.play('FadeIn')
 
 
 # This function updates every frame
