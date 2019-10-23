@@ -31,10 +31,13 @@ func _process(delta):
 func player_button(button_id):
 	# Ends the dialogue if the last button signal was "end"
 	if button_id == "end":
-		if $BackgroundArea/Images.visible == false:
-			$BackgroundArea/Images.visible = true
-		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
+#		if $BackgroundArea/Images.visible == false:
+#			$BackgroundArea/Images.visible = true
+#		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
 		close_dialogues()
+	elif button_id == "end_intro":
+		close_dialogues()
+		get_tree().change_scene("res://Scenes/Main.tscn")
 	else:
 		# Calls the next line of dialogue
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)

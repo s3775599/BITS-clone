@@ -2,6 +2,7 @@ extends Node
 
 # gets Nodes from the main scene as variables
 onready var intro_script = get_node("/root/Intro")
+onready var intro_anim = get_node("/root/Intro/AnimationPlayer")
 onready var player_popup = get_node("/root/Intro/Popups/PlayerPopup")
 onready var barry_popup = get_node("/root/Intro/Popups/BarryPopup")
 onready var john_popup = get_node("/root/Intro/Popups/JohnPopup")
@@ -207,7 +208,7 @@ func intro_dialogues(id):
 		"i47":
 			return [["", "{ КОМПЮТЕР } ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ!"], ["i48"]]
 		"i48":
-			return [["", "Barry, you complete idiot."], ["end"]]
+			return [["", "Barry, you complete idiot."], ["end_intro"]]
 
 
 
@@ -456,6 +457,8 @@ func intro_sequence(button_id):
 			john_to_player(button_id)
 		"i48":
 			john_to_player(button_id)
+		"end_intro":
+			intro_anim.play("FadeOut")
 
 
 # sets the dialogue box transition from the Player to Barry
