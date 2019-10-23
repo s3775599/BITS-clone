@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://GFX/Fonts/Px437_IBM_PS2thin4.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/DialoguePopup.gd" type="Script" id=2]
 [ext_resource path="res://GFX/metalPanel_plate.png" type="Texture" id=3]
 [ext_resource path="res://GFX/glassPanel.png" type="Texture" id=4]
@@ -14,7 +14,6 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [node name="JohnPopup" type="Popup"]
-visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
