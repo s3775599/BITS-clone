@@ -2,7 +2,7 @@ extends Popup
 
 signal button_id
 
-onready var player_popup = get_node('/root/Main/Popups/PlayerPopup')
+#onready var player_popup = get_node('/root/Main/Popups/PlayerPopup')
 onready var display_text = get_node('VBoxContainer/DisplayRect/DisplayGlass/DisplayText')
 onready var button1 = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button')
 onready var button2 = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button2')
@@ -39,7 +39,7 @@ func set_text(dialogue_lines):
 	button3.visible = false
 	button4.visible = false
 	# If the dialogue is the player's box (in the intro), only show the buttons window
-	if player_popup.visible == false:
+	if Global.player_popup.visible == false:
 		display_text.bbcode_text = String("")
 	# Gets the number of dialogue lines and button responses
 	var dialogue_size = dialogue_lines[0].size()
@@ -92,25 +92,25 @@ func set_button_visibility(n):
 	if n > 1:
 		# Adjusts the button display for the player or NPC dialogues, taking into account
 		# the size of the NPCs' dialogue display window
-		if player_popup.visible:
+		if Global.player_popup.visible:
 			$VBoxContainer.rect_size = Vector2(460, 120)
 		else:
 			$VBoxContainer.rect_size = Vector2(460, 240)
 		button1.visible = true
 		if n > 2:
-			if player_popup.visible:
+			if Global.player_popup.visible:
 				$VBoxContainer.rect_size = Vector2(460, 260)
 			else:
 				$VBoxContainer.rect_size = Vector2(460, 300)
 			button2.visible = true
 			if n > 3:
-				if player_popup.visible:
+				if Global.player_popup.visible:
 					$VBoxContainer.rect_size = Vector2(460, 300)
 				else:
 					$VBoxContainer.rect_size = Vector2(460, 320)
 				button3.visible = true
 				if n > 4:
-					if player_popup.visible:
+					if Global.player_popup.visible:
 						$VBoxContainer.rect_size = Vector2(460, 340)
 					else:
 						$VBoxContainer.rect_size = Vector2(460, 360)

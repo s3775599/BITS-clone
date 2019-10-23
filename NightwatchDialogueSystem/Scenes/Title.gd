@@ -7,7 +7,7 @@ extends Node2D
 func _on_NewGameArea_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
 		$SFXSelect.play()
-		get_tree().change_scene("res://Scenes/Main.tscn")
+		get_tree().change_scene("res://Scenes/Intro.tscn")
 
 
 func _on_AboutGameArea_input_event(viewport, event, shape_idx):

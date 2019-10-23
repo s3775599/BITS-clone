@@ -1,8 +1,8 @@
 extends Node
 
-onready var barry_console_anim = get_node('/root/Main/BackgroundArea/BarryConsole/AnimationPlayer')
-onready var barry_close_anim = get_node('/root/Main/BackgroundArea/BarryClose/AnimationPlayer')
-onready var background_anim = get_node('/root/Main/BackgroundArea/BackgroundSprite/AnimationPlayer')
+onready var barry_console_anim = get_node('/root/Main/Crew/BarryConsole/AnimationPlayer')
+onready var barry_close_anim = get_node('/root/Main/Crew/BarryClose/AnimationPlayer')
+onready var background_anim = get_node('/root/Main/AnimationPlayer')
 onready var main_script = get_node('root/Main')
 
 func barry_dialogues(id):
@@ -38,17 +38,13 @@ func barry_dialogues(id):
 		"3a2a":
 			return [["I'm going to try pressing a button.", "Are you sure that's a good idea?", "I don't think that's a good idea.", "Okay, try that."], ["3a2a1a", "3a2a1b", "3a2a1c"]]
 		"3a2a1a":
-			return [["Honestly Sir, No. But I'm not sure what else to try.", "[ -- continue -- ]"], ["airlock"]] 
-
+			return [["Honestly Sir, No. But I'm not sure what else to try.", "I don't think that's a good idea.", "Okay, try that."], ["3a2a1b", "3a2a1c"]] 
 		"3a2a1b":
 			return [["If you say so, Sir.", "[ -- end -- ]"], ["end"]]
-
 		"3a2a1c":
 			return [["Here goes. . .", "[ -- continue -- ]"], ["airlock"]]
-
 		"3a2a1c1":
 			return [[". . . Nothing.", "[ -- end -- ]"], ["i11r"]]
-
 		"airlock":
 			return [["Did you hear that?", "[ -- continue -- ]"], ["airlock2"]]
 		"airlock2":
@@ -60,8 +56,7 @@ func barry_dialogues(id):
 		"airlock_warning":
 			return [[". . . open airlock warning?", "[ -- continue -- ]"], ["airlock_barry"]]
 		"airlock_barry":
-			return [[". . . Is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]
-
+			return [[". . . is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]
 		"3a2b":
 			return [["What's that, Sir?", "What kind of training did you get when you were qualifying to be a pilot?", "Try pushing random buttons.", "I think you should not touch anything and let me and John try to fix this."], ["3a2b1", "3a2b2", "3a2b3"]]
 		"3a2b1":
@@ -75,6 +70,7 @@ func barry_dialogues(id):
 		"3a2b1a1a1":
 			return [[". . . yes . . yes . . . yes! YES! I've got it!", "You've fixed it?"], ["3a2b1a1a1a"]]
 		"3a2b1a1a1a":
+			Global.barry_solved = true
 			return [["Um . . . not completely, Sir. But it looks a bit better. I'll keep working on it.", "[ -- Barry has fixed the console by 25% -- ]"], ["end"]]
 		"3a2b2":
 			return [["Are you sure, Sir?", "Yes.", "No."], ["3a2b2a", "3a2b2b"]]

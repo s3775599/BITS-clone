@@ -1,0 +1,144 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GFX/console.png" type="Texture" id=1]
+[ext_resource path="res://GFX/glassPanel.png" type="Texture" id=2]
+
+[node name="BackgroundIntro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.4765
+margin_top = 9.78147
+margin_right = 10.4764
+margin_bottom = 9.78149
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BackgroundWallpaper" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.950012
+margin_top = -2.85001
+margin_right = -0.950012
+margin_bottom = -2.84998
+texture = ExtResource( 1 )
+expand = true
+
+[node name="LeftRightGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 156.678, 87.2893 )
+scale = Vector2( 1.11039, 1.02164 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 11.2479, 10.8833, 11.5536, 10.3612, 100.18, 11.859, 100.346, 11.8889, 91.3916, 111.306, 91.0149, 111.526, -1.35361, 110.046, -1.61438, 109.794 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="LeftRightImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 156.678, 87.2893 )
+scale = Vector2( 1.11039, 1.02164 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 11.2479, 10.8833, 11.5536, 10.3612, 100.18, 11.859, 100.346, 11.8889, 91.3916, 111.306, 91.0149, 111.526, -1.35361, 110.046, -1.61438, 109.794 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="LeftLeftGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 7.9375, 85.8263 )
+scale = Vector2( 1.11039, 1.02164 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 11.5136, 11.7094, 11.6634, 11.628, 107.78, 10.8893, 107.835, 11.0988, 93.7093, 111.232, 93.5632, 111.292, -4.56641, 109.006, -4.82718, 109.069 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="LeftLeftImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 7.9375, 85.8263 )
+scale = Vector2( 1.11039, 1.02164 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 11.5136, 11.7094, 11.6634, 11.628, 107.78, 10.8893, 107.835, 11.0988, 93.7093, 111.232, 93.5632, 111.292, -4.56641, 109.006, -4.82718, 109.069 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidUpperLeftGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 317.773, 39.5228 )
+scale = Vector2( 1.11039, 1.02164 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 10.1854, 9.52506, 10.2638, 9.2977, 98.3857, 10.0082, 98.4641, 10.1219, 95.5924, 104.113, 95.4437, 104.371, 3.90216, 103.606, 3.74164, 103.467 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidUpperLeftImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 317.773, 39.5228 )
+scale = Vector2( 1.11039, 1.02164 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 10.1854, 9.52506, 10.2638, 9.2977, 98.3857, 10.0082, 98.4641, 10.1219, 95.5924, 104.113, 95.4437, 104.371, 3.90216, 103.606, 3.74164, 103.467 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidLowerLeftGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 313.866, 175.178 )
+scale = Vector2( 1.1034, 1.02572 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 5.65225, 0.889755, 7.48685, 1.06917, 97.8165, 1.15338, 98.4472, 1.60568, 95.7137, 105.307, 94.7131, 105.128, -0.760559, 104.706, -1.686, 104.051 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidLowerLeftImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 313.866, 175.178 )
+scale = Vector2( 1.1034, 1.02572 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 5.65225, 0.889755, 7.48685, 1.06917, 97.8165, 1.15338, 98.4472, 1.60568, 95.7137, 105.307, 94.7131, 105.128, -0.760559, 104.706, -1.686, 104.051 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidMiddleGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 458.667, 110.213 )
+scale = Vector2( 1.11254, 1.03378 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 6.26544, 0.863167, 6.3959, 0.610397, 97.1737, 1.91199, 97.3761, 2.19208, 99.457, 100.307, 98.9955, 100.537, 5.32458, 100.311, 5.19955, 100.025 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidMiddleImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 458.667, 110.213 )
+scale = Vector2( 1.11254, 1.03378 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 6.26544, 0.863167, 6.3959, 0.610397, 97.1737, 1.91199, 97.3761, 2.19208, 99.457, 100.307, 98.9955, 100.537, 5.32458, 100.311, 5.19955, 100.025 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidUpperRightGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 592.954, 43.2623 )
+scale = Vector2( 1.13364, 0.989092 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 10.6815, 7.5445, 10.866, 7.38685, 95.2381, 9.31048, 95.364, 9.49069, 102.398, 104.631, 102.214, 104.883, 14.0751, 105.872, 13.866, 105.53 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidUpperRightImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 592.954, 43.2623 )
+scale = Vector2( 1.13364, 0.989092 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 10.6815, 7.5445, 10.866, 7.38685, 95.2381, 9.31048, 95.364, 9.49069, 102.398, 104.631, 102.214, 104.883, 14.0751, 105.872, 13.866, 105.53 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidLowerRightGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 603.468, 176.658 )
+scale = Vector2( 1.1034, 1.02572 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 5.62048, 0.241791, 5.78662, 0.0630188, 97.1308, 0.138336, 97.3813, 0.3629, 104.104, 102.364, 103.895, 102.588, 9.45087, 104.609, 9.20032, 104.475 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="MidLowerRightImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 603.468, 176.658 )
+scale = Vector2( 1.1034, 1.02572 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 5.62048, 0.241791, 5.78662, 0.0630188, 97.1308, 0.138336, 97.3813, 0.3629, 104.104, 102.364, 103.895, 102.588, 9.45087, 104.609, 9.20032, 104.475 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="RightLeftGlass" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 747.954, 92.2622 )
+scale = Vector2( 1.13364, 0.989092 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 10.4389, 10.1427, 10.6135, 9.94263, 92.4333, 10.2094, 92.8407, 10.6763, 104.492, 109.771, 104.103, 109.799, 19.1603, 111.249, 18.8683, 111.221 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="RightLeftImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 747.954, 92.2622 )
+scale = Vector2( 1.13364, 0.989092 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 10.4389, 10.1427, 10.6135, 9.94263, 92.4333, 10.2094, 92.8407, 10.6763, 104.492, 109.771, 104.103, 109.799, 19.1603, 111.249, 18.8683, 111.221 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )
+
+[node name="RightRightImage" type="Polygon2D" parent="BackgroundWallpaper"]
+position = Vector2( 880.114, 91.2869 )
+scale = Vector2( 1.13364, 0.989092 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 11.6257, 11.3899, 11.7415, 11.2572, 88.7721, 12.3521, 89.5107, 12.7754, 105.669, 109.185, 104.839, 109.502, 25.1495, 110.685, 24.8819, 110.323 )
+uv = PoolVector2Array( 0.91, 3.6875, 3.66, 0.1875, 96.41, 0.6875, 99.66, 3.4375, 99.75, 96.1875, 96.25, 100.188, 4, 100.188, 0, 95.6875 )

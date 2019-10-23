@@ -1,6 +1,8 @@
 extends Node
 
 onready var background_anim = get_node('/root/Main/BackgroundArea/BackgroundSprite/AnimationPlayer')
+onready var main_script = get_node('/root/Main/')
+
 
 func john_dialogues(id):
 	match id:
@@ -87,6 +89,7 @@ func john_dialogues(id):
 		"smash":
 			return [["SMASH CONSOLE... LIKE HARD!","[ -- continue -- ]"],["fix"]]
 		"fix":
+			main_script.john_solved = true
 			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- John has fixed the computer interface by 25% -- ]"],["end"]]
 		"4a":
 			return [["Oh, Give me a break.","[ -- end -- ]"],["end"]]
@@ -110,11 +113,10 @@ func john_dialogues(id):
 			return [["ASK BARRY!", "THERE'S NO OTHER WAY!"], ["airlock5"]]
 		"airlock5":
 			return [["I REALLY HATE THIS JOB.", "[ -- continue -- ]"], ["airlock_close"]]
-
-
 		"airlock7":
 			return [["Looks like that's fixed it.", "Well done, John!", "My ears are ringing."], ["airlock7a", "airlock7b"]]
 		"airlock7a":
 			return [["Yeah. Thanks.", "[ -- end -- ]"], ["end"]]
 		"airlock7b":
-			return [["And we lost Barry, Sir.", ["[ -- end -- ]"]], ["end"]]
+			Global.barry_gone = true
+			return [["Right. And we've lost Barry, Sir.", "[ -- end -- ]"], ["end"]]
