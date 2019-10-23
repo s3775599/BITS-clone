@@ -7,6 +7,7 @@ onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 onready var t = $Timer
 
 func _ready():
+	Global.current_scene = self
 	Global.intro = true
 	$AnimationPlayer.play("FadeIn")
 	t.set_wait_time(3)

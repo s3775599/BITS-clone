@@ -28,6 +28,7 @@ func _process(delta):
 #	if outro:
 #		player_popup = get_node('/root/Outro/Popups/PlayerPopup')
 
+
 func player_button(button_id):
 	# Ends the dialogue if the last button signal was "end"
 	if button_id == "end":
