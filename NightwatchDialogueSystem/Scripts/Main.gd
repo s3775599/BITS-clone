@@ -117,15 +117,13 @@ func john_fix_airlock():
 	Global.john_close = false
 	Global.can_click = false
 	Global.hide_john()
-	t.set_wait_time(4)
+	t.set_wait_time(5)
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")
 	$AnimationPlayer.stop(true)
-#	darken_background()
-	$BackgroundMain.set_modulate(Color('464646'))
-	$Crew/BarryConsole.set_modulate(Color('464646'))
-	$Crew/JohnConsole.set_modulate(Color('464646'))
+	self.set_modulate(Color(1, 1, 1))
+	darken_background()
 	Global.show_john()
 	$Popups/JohnPopup.set_text(john_dialogue.john_dialogues("airlock7"))
 
@@ -146,6 +144,7 @@ func darken_background():
 	$BackgroundMain.set_modulate(Color('464646'))
 	$Crew/JohnConsole.set_modulate(Color('464646'))
 	$Crew/BarryConsole.set_modulate(Color('464646'))
+	$Panel.set_modulate(Color('464646'))
 
 
 # Restores the darkened background
@@ -153,24 +152,7 @@ func normalise_background():
 	$BackgroundMain.set_modulate(Color(1,1,1))
 	$Crew/JohnConsole.set_modulate(Color(1,1,1))
 	$Crew/BarryConsole.set_modulate(Color(1,1,1))
-
-#
-## Link to signal sent from Console.gd if a match is found
-#func _on_Console_found():
-#	print("Got signal found")
-#	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('61a735'))
-#	get_rand_image().visible = false
-#
-#
-#func get_rand_image():
-#	for x in len(images):
-#		if images[x].visible:
-#			return images[x]
-#
-#
-#func _on_Console_not_found():
-#	print("Got signal not found")
-#	$BackgroundArea/Images/MiddleScreen.set_modulate(Color('b42727'))
+	$Panel.set_modulate(Color(1,1,1))
 
 
 func _on_JohnConsole_mouse_entered():
