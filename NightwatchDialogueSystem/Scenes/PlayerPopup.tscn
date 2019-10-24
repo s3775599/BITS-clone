@@ -13,7 +13,6 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [node name="PlayerPopup" type="Popup"]
-visible = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -37,6 +36,7 @@ alignment = 2
 self_modulate = Color( 0.235294, 0.235294, 0.235294, 1 )
 margin_right = 460.0
 margin_bottom = 350.0
+grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=1]
-
-[node name="Control" type="Node"]
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="JohnConsole" parent="Area2D" instance=ExtResource( 1 )]

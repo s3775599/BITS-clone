@@ -107,11 +107,11 @@ func set_button_visibility(n):
 				if Global.player_popup.visible:
 					$VBoxContainer.rect_size = Vector2(460, 300)
 				else:
-					$VBoxContainer.rect_size = Vector2(460, 320)
+					$VBoxContainer.rect_size = Vector2(460, 340)
 				button3.visible = true
 				if n > 4:
 					if Global.player_popup.visible:
-						$VBoxContainer.rect_size = Vector2(460, 340)
+						$VBoxContainer.rect_size = Vector2(460, 360)
 					else:
 						$VBoxContainer.rect_size = Vector2(460, 360)
 					button4.visible = true

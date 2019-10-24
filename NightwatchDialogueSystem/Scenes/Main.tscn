@@ -60,7 +60,6 @@ margin_bottom = 40.0
 [node name="JohnPopup" parent="Popups" instance=ExtResource( 4 )]
 
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 5 )]
-visible = false
 
 [node name="Crew" type="Node2D" parent="."]
 

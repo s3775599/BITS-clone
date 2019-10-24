@@ -22,6 +22,7 @@ func _ready():
 	Global.intro = false
 	Global.can_click = true
 	$AnimationPlayer.play('FadeIn')
+	play_russian_text()
 
 
 # This function updates every frame
@@ -192,3 +193,36 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 			Global.hide_john()
 		Global.show_barry()
 		$Popups/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
+
+func play_russian_text():
+	var node = $BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText
+	var russian_text = ["Он благополучно избегнул встречи с своею хозяйкой на лестнице. Каморка его приходилась под самою кровлей высокого пятиэтажного дома и походила более на шкаф, чем на квартиру. Квартирная же хозяйка его, у которой он нанимал эту каморку с обедом и прислугой", "помещалась одною лестницей ниже, в отдельной квартире, и каждый раз, при выходе на улицу, ему непременно надо было проходить мимо хозяйкиной кухни, почти всегда настежь отворенной на лестницу. И каждый раз молодой человек, проходя мимо, чувствовал какое-то болезненное и", "трусливое ощущение, которого стыдился и от которого морщился. Он был должен кругом хозяйке и боялся с нею встретиться. Не то чтоб он был так труслив и забит, совсем даже напротив; но с некоторого времени он был в раздражительном и напряженном состоянии, похожем на ипохондрию."]
+#	var text = "Он благополучно избегнул встречи с своею хозяйкой на лестнице. Каморка его приходилась под самою кровлей высокого пятиэтажного дома и походила более на шкаф, чем на квартиру. Квартирная же хозяйка его, у которой он нанимал эту каморку с обедом и прислугой"
+	while true:
+		for text in russian_text:
+			background_text_display(text, node)
+			t.set_wait_time(5)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+
+
+func background_text_display(text, display_node):
+	$BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText.bbcode_text = String("")
+	#create a timer to print text like a typewriter
+	var t = Timer.new()
+	t.set_wait_time(.005)
+	t.set_one_shot(true)
+	self.add_child(t)
+	for letter in text:
+		t.start()
+		print(letter)
+		display_node.bbcode_text += String(letter)
+		yield(t, "timeout")
+
+
+
+
+
+
