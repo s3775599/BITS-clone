@@ -89,8 +89,8 @@ func john_dialogues(id):
 		"smash":
 			return [["SMASH CONSOLE... LIKE HARD!","[ -- continue -- ]"],["fix"]]
 		"fix":
-			main_script.john_solved = true
-			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- John has fixed the computer interface by 25% -- ]"],["end"]]
+			Global.john_solved = true
+			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- end -- ]"],["solved"]]
 		"4a":
 			return [["Oh, Give me a break.","[ -- end -- ]"],["end"]]
 			

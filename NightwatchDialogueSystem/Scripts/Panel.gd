@@ -11,7 +11,6 @@ var found_codes = []
 
 func _ready():
 	toggle_lights()
-	print($Sprite/GridContainer/ConsoleButton1.id)
 	code_array = generate_console_codes()
 	print("codes: " + String(code_array))
 
@@ -50,47 +49,46 @@ func generate_combination():
 
 func toggle_lights():
 	if one:
-		$Sprite/GridContainer/ConsoleButton1.id = 1
-		$Sprite/GridContainer/OneZero.set_modulate(Color('ff2828'))
-		$Sprite/GridContainer/OneOne.set_modulate(Color('ffffff'))
+		$GridContainer/ConsoleButton1.id = 1
+		$GridContainer/OneZero.set_modulate(Color('ff2828'))
+		$GridContainer/OneOne.set_modulate(Color('ffffff'))
 	else:
-		$Sprite/GridContainer/ConsoleButton1.id = 0
-		$Sprite/GridContainer/OneZero.set_modulate(Color('ffffff'))
-		$Sprite/GridContainer/OneOne.set_modulate(Color('ff2828'))
+		$GridContainer/ConsoleButton1.id = 0
+		$GridContainer/OneZero.set_modulate(Color('ffffff'))
+		$GridContainer/OneOne.set_modulate(Color('ff2828'))
 	if two:
-		$Sprite/GridContainer/ConsoleButton2.id = 1
-		$Sprite/GridContainer/TwoZero.set_modulate(Color('ff2828'))
-		$Sprite/GridContainer/TwoOne.set_modulate(Color('ffffff'))
+		$GridContainer/ConsoleButton2.id = 1
+		$GridContainer/TwoZero.set_modulate(Color('ff2828'))
+		$GridContainer/TwoOne.set_modulate(Color('ffffff'))
 	else:
-		$Sprite/GridContainer/ConsoleButton2.id = 0
-		$Sprite/GridContainer/TwoZero.set_modulate(Color('ffffff'))
-		$Sprite/GridContainer/TwoOne.set_modulate(Color('ff2828'))
+		$GridContainer/ConsoleButton2.id = 0
+		$GridContainer/TwoZero.set_modulate(Color('ffffff'))
+		$GridContainer/TwoOne.set_modulate(Color('ff2828'))
 	if three:
-		$Sprite/GridContainer/ConsoleButton3.id = 1
-		$Sprite/GridContainer/ThreeZero.set_modulate(Color('ff2828'))
-		$Sprite/GridContainer/ThreeOne.set_modulate(Color('ffffff'))
+		$GridContainer/ConsoleButton3.id = 1
+		$GridContainer/ThreeZero.set_modulate(Color('ff2828'))
+		$GridContainer/ThreeOne.set_modulate(Color('ffffff'))
 	else:
-		$Sprite/GridContainer/ConsoleButton3.id = 0
-		$Sprite/GridContainer/ThreeZero.set_modulate(Color('ffffff'))
-		$Sprite/GridContainer/ThreeOne.set_modulate(Color('ff2828'))
+		$GridContainer/ConsoleButton3.id = 0
+		$GridContainer/ThreeZero.set_modulate(Color('ffffff'))
+		$GridContainer/ThreeOne.set_modulate(Color('ff2828'))
 	if four:
-		$Sprite/GridContainer/ConsoleButton4.id = 1
-		$Sprite/GridContainer/FourZero.set_modulate(Color('ff2828'))
-		$Sprite/GridContainer/FourOne.set_modulate(Color('ffffff'))
+		$GridContainer/ConsoleButton4.id = 1
+		$GridContainer/FourZero.set_modulate(Color('ff2828'))
+		$GridContainer/FourOne.set_modulate(Color('ffffff'))
 	else:
-		$Sprite/GridContainer/ConsoleButton4.id = 0
-		$Sprite/GridContainer/FourZero.set_modulate(Color('ffffff'))
-		$Sprite/GridContainer/FourOne.set_modulate(Color('ff2828'))
+		$GridContainer/ConsoleButton4.id = 0
+		$GridContainer/FourZero.set_modulate(Color('ffffff'))
+		$GridContainer/FourOne.set_modulate(Color('ff2828'))
 	get_current_code()
-	print(code_array)
 
 
 func get_current_code():
 	current_code = []
-	current_code.append($Sprite/GridContainer/ConsoleButton1.id)
-	current_code.append($Sprite/GridContainer/ConsoleButton2.id)
-	current_code.append($Sprite/GridContainer/ConsoleButton3.id)
-	current_code.append($Sprite/GridContainer/ConsoleButton4.id)
+	current_code.append($GridContainer/ConsoleButton1.id)
+	current_code.append($GridContainer/ConsoleButton2.id)
+	current_code.append($GridContainer/ConsoleButton3.id)
+	current_code.append($GridContainer/ConsoleButton4.id)
 
 
 func check_match():
@@ -98,11 +96,9 @@ func check_match():
 	for code in code_array:
 		if current_code == code:
 			found_codes.append(code)
-			print("found codes:" + String(found_codes))
-#			print("found a code: " + String(code))
 			code_index = code_array.find(code)
 			code_array.remove(code_index)
-#			print("codes: " + String(code_array))
+
 
 func _on_ConsoleButton1_pressed():
 	one = not one

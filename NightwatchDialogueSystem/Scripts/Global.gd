@@ -7,13 +7,13 @@ var barry_close = false
 var player_close = false
 var can_click = false
 var barry_airlock = false
-var john_solved = false
-var barry_false = false
 var player_visible = false
 var intro = false
 var outro = false
 var player_popup
 var barry_gone = false
+var john_solved = false
+var barry_solved = false
 
 
 func _ready():

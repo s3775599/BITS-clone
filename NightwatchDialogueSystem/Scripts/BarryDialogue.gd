@@ -71,7 +71,7 @@ func barry_dialogues(id):
 			return [[". . . yes . . yes . . . yes! YES! I've got it!", "You've fixed it?"], ["3a2b1a1a1a"]]
 		"3a2b1a1a1a":
 			Global.barry_solved = true
-			return [["Um . . . not completely, Sir. But it looks a bit better. I'll keep working on it.", "[ -- Barry has fixed the console by 25% -- ]"], ["end"]]
+			return [["Um . . . not completely, Sir. But it looks a bit better. I'll keep working on it.", "[ -- end -- ]"], ["solved"]]
 		"3a2b2":
 			return [["Are you sure, Sir?", "Yes.", "No."], ["3a2b2a", "3a2b2b"]]
 		"3a2b2a":

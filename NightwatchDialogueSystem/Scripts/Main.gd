@@ -10,18 +10,26 @@ onready var t = $Timer
 #onready var barryImage = get_node("ConsoleMiniGame/Images/Barry")
 #onready var images = [russian_text,russian_flag,ak47,barryImage]
 
+
+onready var image1 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage')
+onready var image2 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperRightImage')
+onready var image3 = get_node('BackgroundMain/BackgroundWallpaper/CentreLowerLeftImage')
+onready var image4 = get_node('BackgroundMain/BackgroundWallpaper/CentreLowerRightImage')
+
 # Godot's way of storing a Node as a variable
 onready var intro_dialogue = get_node("Dialogues/IntroDialogue")
 onready var john_dialogue = get_node("Dialogues/JohnDialogue")
 onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 onready var console = get_node("BackgroundArea/Console")
 
+
 func _ready():
 	Global.current_scene = self
 	Global.intro = false
 	Global.can_click = true
 	$AnimationPlayer.play('FadeIn')
-	play_russian_text()
+	play_russian_text1()
+	play_russian_text2()
 	
 
 
@@ -29,6 +37,7 @@ func _ready():
 func _process(delta):
 	display_current_code()
 	display_found_codes()
+	check_for_completion()
 	# darkens background when a dialogue is active
 	if Global.john_close or Global.barry_close or Global.player_close:
 		darken_background()
@@ -54,12 +63,13 @@ func _input(event):
 
 # Collects id of pressed button from John dialogue
 func _on_JohnPopup_button_id(button_id):
-	print("button_id = ", button_id)
 	if button_id == "end":
 		Global.close_dialogues()
 		normalise_background()
 	elif button_id == "airlock_close":
 		john_fix_airlock()
+	elif button_id == "solved":
+		dialogue_solved()
 	else:
 		var next_dialogue = john_dialogue.john_dialogues(button_id)
 		$Popups/JohnPopup.set_text(next_dialogue)
@@ -67,12 +77,13 @@ func _on_JohnPopup_button_id(button_id):
 
 # Collects id of pressed button from Barry dialogue
 func _on_BarryPopup_button_id(button_id):
-	print("button_id = ", button_id)
 	if button_id == "end":
 		Global.close_dialogues()
 		normalise_background()
 	elif button_id == "airlock_barry_out":
 		airlock_barry_out()
+	elif button_id == "solved":
+		dialogue_solved()
 	else:
 		var next_dialogue = barry_dialogue.barry_dialogues(button_id)
 		$Popups/BarryPopup.set_text(next_dialogue)
@@ -82,13 +93,13 @@ func display_found_codes():
 	var all_found = []
 	for code in $Panel.found_codes:
 		all_found.append(PoolStringArray(code).join("-"))
-		print(all_found)
 #		all_found.remove(all_found[code][-1])
 	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/FoundCodes.bbcode_text = PoolStringArray(all_found).join("")
 
 
 func display_current_code():
 	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/CurrentSequence.bbcode_text = PoolStringArray($Panel.current_code).join("-")
+
 
 func airlock_barry_out():
 	Global.barry_close = false
@@ -169,7 +180,7 @@ func normalise_background():
 
 
 func _on_JohnConsole_mouse_entered():
-	if not Global.john_close:
+	if not Global.john_close or not Global.barry_close and not Global.john_solved:
 		$Crew/JohnConsole/JohnConsoleSprite.set_modulate(Color('4d39df'))
 	else:
 		Global.can_click = false
@@ -189,7 +200,7 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 
 
 func _on_BarryConsole_mouse_entered():
-	if not Global.barry_close:
+	if not Global.barry_close or not Global.john_close and not Global.barry_solved:
 		$Crew/BarryConsole/BarryConsoleSprite.set_modulate(Color('4d39df'))
 	else:
 		Global.can_click = false
@@ -207,25 +218,38 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 		Global.show_barry()
 		$Popups/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
 
-func play_russian_text():
-	var node = $BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText
-	var russian_text = ["Он благополучно избегнул встречи с своею хозяйкой на лестнице. Каморка его приходилась под самою кровлей высокого пятиэтажного дома и походила более на шкаф, чем на квартиру. Квартирная же хозяйка его, у которой он нанимал эту каморку с обедом и прислугой", "помещалась одною лестницей ниже, в отдельной квартире, и каждый раз, при выходе на улицу, ему непременно надо было проходить мимо хозяйкиной кухни, почти всегда настежь отворенной на лестницу. И каждый раз молодой человек, проходя мимо, чувствовал какое-то болезненное и", "трусливое ощущение, которого стыдился и от которого морщился. Он был должен кругом хозяйке и боялся с нею встретиться. Не то чтоб он был так труслив и забит, совсем даже напротив; но с некоторого времени он был в раздражительном и напряженном состоянии, похожем на ипохондрию."]
-#	var text = "Он благополучно избегнул встречи с своею хозяйкой на лестнице. Каморка его приходилась под самою кровлей высокого пятиэтажного дома и походила более на шкаф, чем на квартиру. Квартирная же хозяйка его, у которой он нанимал эту каморку с обедом и прислугой"
+
+func play_russian_text1():
+	var text_node_1 = $BackgroundMain/BackgroundWallpaper/LeftRightGlass/RussianText1
+	var master_i_margarita = ["Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, появились два", "гражданина. Первый из них, одетый в летнюю серенькую пару, был маленького роста, упитан, лыс, свою приличную шляпу", "пирожком нес в руке, а на хорошо выбритом лице его помещались сверхъестественных размеров очки в черной", "роговой оправе. Второй – плечистый, рыжеватый, вихрастый молодой человек в заломленной на затылок", "клетчатой кепке – был в ковбойке, жеваных белых брюках и в черных тапочках.Первый был не кто иной, как", "Михаил Александрович Берлиоз, председатель правления одной из крупнейших московских литературных ассоциаций,", "сокращенно именуемой МАССОЛИТ, и редактор толстого художественного журнала, а молодой спутник его – поэт", "Иван Николаевич Понырев, пишущий под псевдонимом Бездомный."]
 	while true:
-		for text in russian_text:
-			background_text_display(text, node)
-			t.set_wait_time(5)
+		for text in master_i_margarita:
+			background_text_display(text, text_node_1, .1)
+			t.set_wait_time(7)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()
 			yield(t, "timeout")
 
 
-func background_text_display(text, display_node):
-	$BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText.bbcode_text = String("")
+func play_russian_text2():
+	var text_node_2 = $BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText2
+	var prestupleniye_i_nakazaniye = ["Он благополучно избегнул встречи с своею хозяйкой на лестнице. Каморка его приходилась под самою кровлей", "высокого пятиэтажного дома и походила более на шкаф, чем на квартиру. Квартирная же хозяйка его, у которой он", "нанимал эту каморку с обедом и прислугой, помещалась одною лестницей ниже, в отдельной квартире, и каждый раз,", "при выходе на улицу, ему непременно надо было проходить мимо хозяйкиной кухни, почти всегда настежь", "отворенной на лестницу. И каждый раз молодой человек, проходя мимо, чувствовал какое-то болезненное и трусливое", "ощущение, которого стыдился и от которого морщился. Он был должен кругом хозяйке и боялся с нею встретиться."]
+	while true:
+		for text in prestupleniye_i_nakazaniye:
+			background_text_display(text, text_node_2, .005)
+			t.set_wait_time(3)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+
+
+func background_text_display(text, display_node, wait_time):
+	display_node.bbcode_text = String("")
 	#create a timer to print text like a typewriter
 	var t = Timer.new()
-	t.set_wait_time(.005)
+	t.set_wait_time(wait_time)
 	t.set_one_shot(true)
 	self.add_child(t)
 	for letter in text:
@@ -234,23 +258,34 @@ func background_text_display(text, display_node):
 		yield(t, "timeout")
 
 
+func check_for_completion():
+	match $Panel.found_codes.size():
+		1:
+			$BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage.visible = false
+		2:
+			$BackgroundMain/BackgroundWallpaper/CentreUpperRightImage.visible = false
+		3:
+			$BackgroundMain/BackgroundWallpaper/CentreLowerLeftImage.visible = false
+		4:
+			$BackgroundMain/BackgroundWallpaper/CentreLowerRightImage.visible = false
+			goto_outro()
+		0:
+			pass
 
 
+func dialogue_solved():
+	$Panel.found_codes.append($Panel.code_array[0])
+	$Panel.code_array.remove(0)
+	Global.close_dialogues()
+	normalise_background()
 
 
-
-
-func _on_ConsoleButton1_pressed():
-	pass # Replace with function body.
-
-
-func _on_ConsoleButton2_pressed():
-	pass # Replace with function body.
-
-
-func _on_ConsoleButton3_pressed():
-	pass # Replace with function body.
-
-
-func _on_ConsoleButton4_pressed():
-	pass # Replace with function body.
+func goto_outro():
+	$AnimationPlayer.play("FadeOut")
+	var t = Timer.new()
+	t.set_wait_time(4)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	get_tree().change_scene("res://Scenes/Title.tscn")

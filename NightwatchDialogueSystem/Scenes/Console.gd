@@ -53,15 +53,16 @@ func generate_combination():
 
 func generate_console_codes():
 	var code
-	for i in range(4):
-		code = generate_combination()
-		if code != [0, 0, 0, 0]:
-			for c in code_array:
-				if c == code:
-					code = generate_combination()
-			code_array.append(code)
-		else:
-			i += 1
+	while code_array.size() < 4:
+		for i in range(4):
+			code = generate_combination()
+			if code == [0, 0, 0, 0]:
+				i += 1
+			else:
+				for c in code_array:
+					if c == code:
+						code = generate_combination()
+				code_array.append(code)
 	return code_array
 
 func toggle_lights():

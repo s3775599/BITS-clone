@@ -1,18 +1,19 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/BarryPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ConsoleButton1.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AirlockWarning"
@@ -47,7 +48,24 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
 [node name="Main" type="Control"]
+modulate = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
 [node name="BackgroundMain" parent="." instance=ExtResource( 2 )]
@@ -62,34 +80,191 @@ margin_bottom = 40.0
 
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 5 )]
 
+[node name="Panel" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+
+[node name="GridContainer" parent="Panel" index="0"]
+margin_left = -730.12
+margin_top = 383.76
+margin_right = -622.12
+margin_bottom = 511.76
+
+[node name="Label" parent="Panel/GridContainer" index="0"]
+margin_right = 24.0
+
+[node name="Label2" parent="Panel/GridContainer" index="1"]
+margin_left = 28.0
+margin_right = 52.0
+
+[node name="Label3" parent="Panel/GridContainer" index="2"]
+margin_left = 56.0
+margin_right = 80.0
+
+[node name="Label4" parent="Panel/GridContainer" index="3"]
+margin_left = 84.0
+margin_right = 108.0
+
+[node name="OneZero" parent="Panel/GridContainer" index="4"]
+margin_right = 24.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+
+[node name="TwoZero" parent="Panel/GridContainer" index="5"]
+margin_left = 28.0
+margin_right = 52.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="ThreeZero" parent="Panel/GridContainer" index="6"]
+margin_left = 56.0
+margin_right = 80.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="FourZero" parent="Panel/GridContainer" index="7"]
+margin_left = 84.0
+margin_right = 108.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="ConsoleButton1" parent="Panel/GridContainer" index="8"]
+margin_top = 52.0
+margin_right = 24.0
+margin_bottom = 76.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = false
+
+[node name="ConsoleButton2" parent="Panel/GridContainer" index="9"]
+margin_left = 28.0
+margin_top = 52.0
+margin_right = 52.0
+margin_bottom = 76.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = false
+script = ExtResource( 7 )
+
+[node name="ConsoleButton3" parent="Panel/GridContainer" index="10"]
+margin_left = 56.0
+margin_top = 52.0
+margin_right = 80.0
+margin_bottom = 76.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = false
+script = ExtResource( 7 )
+
+[node name="ConsoleButton4" parent="Panel/GridContainer" index="11"]
+margin_left = 84.0
+margin_top = 52.0
+margin_right = 108.0
+margin_bottom = 76.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = false
+script = ExtResource( 7 )
+
+[node name="OneOne" parent="Panel/GridContainer" index="12"]
+margin_top = 80.0
+margin_right = 24.0
+margin_bottom = 104.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="TwoOne" parent="Panel/GridContainer" index="13"]
+margin_left = 28.0
+margin_top = 80.0
+margin_right = 52.0
+margin_bottom = 104.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="ThreeOne" parent="Panel/GridContainer" index="14"]
+margin_left = 56.0
+margin_top = 80.0
+margin_right = 80.0
+margin_bottom = 104.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="FourOne" parent="Panel/GridContainer" index="15"]
+margin_left = 84.0
+margin_top = 80.0
+margin_right = 108.0
+margin_bottom = 104.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand = false
+stretch_mode = 1
+
+[node name="Label5" parent="Panel/GridContainer" index="16"]
+margin_top = 108.0
+margin_right = 24.0
+margin_bottom = 128.0
+
+[node name="Label6" parent="Panel/GridContainer" index="17"]
+margin_left = 28.0
+margin_top = 108.0
+margin_right = 52.0
+margin_bottom = 128.0
+
+[node name="Label7" parent="Panel/GridContainer" index="18"]
+margin_left = 56.0
+margin_top = 108.0
+margin_right = 80.0
+margin_bottom = 128.0
+
+[node name="Label8" parent="Panel/GridContainer" index="19"]
+margin_left = 84.0
+margin_top = 108.0
+margin_right = 108.0
+margin_bottom = 128.0
+
 [node name="Crew" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="JohnConsole" parent="Crew" instance=ExtResource( 6 )]
+[node name="JohnConsole" parent="Crew" instance=ExtResource( 8 )]
 
-[node name="BarryConsole" parent="Crew" instance=ExtResource( 7 )]
+[node name="BarryConsole" parent="Crew" instance=ExtResource( 9 )]
 
-[node name="JohnClose" parent="Crew" instance=ExtResource( 8 )]
+[node name="JohnClose" parent="Crew" instance=ExtResource( 10 )]
 editor/display_folded = true
 
-[node name="BarryClose" parent="Crew" instance=ExtResource( 9 )]
+[node name="BarryClose" parent="Crew" instance=ExtResource( 11 )]
 
 [node name="Dialogues" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 10 )]
+[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 12 )]
 
-[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 11 )]
+[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 13 )]
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AirlockWarning = SubResource( 1 )
 anims/FadeIn = SubResource( 2 )
+anims/FadeOut = SubResource( 3 )
 
-[node name="CombinationGenerator" parent="." instance=ExtResource( 12 )]
-
-[node name="Panel" parent="." instance=ExtResource( 13 )]
+[node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]
@@ -99,17 +274,13 @@ anims/FadeIn = SubResource( 2 )
 [connection signal="input_event" from="Crew/BarryConsole" to="." method="_on_BarryConsole_input_event"]
 [connection signal="mouse_entered" from="Crew/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
 [connection signal="mouse_exited" from="Crew/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
-[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton1" to="." method="_on_ConsoleButton1_pressed"]
-[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton2" to="." method="_on_ConsoleButton2_pressed"]
-[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton3" to="." method="_on_ConsoleButton3_pressed"]
-[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton4" to="." method="_on_ConsoleButton4_pressed"]
 
 [editable path="BackgroundMain"]
+
+[editable path="Panel"]
 
 [editable path="Crew/JohnConsole"]
 
 [editable path="Crew/BarryConsole"]
 
 [editable path="Crew/JohnClose"]
-
-[editable path="Panel"]
