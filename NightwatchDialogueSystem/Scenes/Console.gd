@@ -13,29 +13,29 @@ signal not_found
 
 func _ready():
 	toggle_lights()
-	print("codes: " + String(generate_console_codes()))
 
-#func _input(event):
-#	if Input.is_action_just_pressed("ui_down"):
-#		print("current code: " + String(current_code))
 
 func _process(delta):
 	pass
+
 
 func _on_One_pressed():
 	one = not one
 	toggle_lights()
 	check_match()
 
+
 func _on_Two_pressed():
 	two = not two
 	toggle_lights()
 	check_match()
 
+
 func _on_Three_pressed():
 	three = not three
 	toggle_lights()
 	check_match()
+
 
 func _on_Four_pressed():
 	four = not four
@@ -54,16 +54,14 @@ func generate_combination():
 func generate_console_codes():
 	var code
 	while code_array.size() < 4:
-		for i in range(4):
-			code = generate_combination()
-			if code == [0, 0, 0, 0]:
-				i += 1
-			else:
-				for c in code_array:
-					if c == code:
-						code = generate_combination()
+		code = generate_combination()
+		print("rolled code:" + String(code))
+		for c in code_array:
+			if c == code or c == [0, 0, 0, 0]:
 				code_array.append(code)
+	print(code_array)
 	return code_array
+
 
 func toggle_lights():
 	if one:
@@ -119,7 +117,6 @@ func check_match():
 			code_index = code_array.find(code)
 			code_array.remove(code_index)
 			print("codes: " + String(code_array))
-	
 	if found:
 		emit_signal("found")
 	else:

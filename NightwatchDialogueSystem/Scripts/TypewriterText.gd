@@ -16,7 +16,7 @@ func typewriter_text(display_text):
 	t.set_one_shot(true)
 	self.add_child(t)
 	# Prints each individual letter according to Timer length
-	for letter in text:
+	for letter in display_text:
 			t.start()
 			print(letter)
 			display_text.bbcode_text += String(letter)

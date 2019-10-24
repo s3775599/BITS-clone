@@ -28,9 +28,9 @@ func _ready():
 	Global.intro = false
 	Global.can_click = true
 	$AnimationPlayer.play('FadeIn')
+	# Plays the scrolling Russian text in the background
 	play_russian_text1()
 	play_russian_text2()
-	
 
 
 # This function updates every frame
@@ -43,17 +43,11 @@ func _process(delta):
 		darken_background()
 		Global.can_click = false
 
-#	# End Game condition
-#	if len(console.code_array) == 0:
-#		print("GAME COMPLETE..... START OUTRO!!!")
-
 
 # Checks all input signals
 func _input(event):
 	# Quits from the current dialogue
 	if Input.is_action_just_pressed("ui_cancel"):
-#		if $BackgroundArea/Images.visible == false:
-#			$BackgroundArea/Images.visible = true
 		normalise_background()
 		Global.close_dialogues()
 	# Manually starts the intro dialogue (for testing purposes)
@@ -180,7 +174,7 @@ func normalise_background():
 
 
 func _on_JohnConsole_mouse_entered():
-	if not Global.john_close or not Global.barry_close and not Global.john_solved:
+	if not Global.john_close and not Global.john_solved:
 		$Crew/JohnConsole/JohnConsoleSprite.set_modulate(Color('4d39df'))
 	else:
 		Global.can_click = false
@@ -200,7 +194,7 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 
 
 func _on_BarryConsole_mouse_entered():
-	if not Global.barry_close or not Global.john_close and not Global.barry_solved:
+	if not Global.barry_close and not Global.barry_solved:
 		$Crew/BarryConsole/BarryConsoleSprite.set_modulate(Color('4d39df'))
 	else:
 		Global.can_click = false
@@ -283,7 +277,7 @@ func dialogue_solved():
 func goto_outro():
 	$AnimationPlayer.play("FadeOut")
 	var t = Timer.new()
-	t.set_wait_time(4)
+	t.set_wait_time(3)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
