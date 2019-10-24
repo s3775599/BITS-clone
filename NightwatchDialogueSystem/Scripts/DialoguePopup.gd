@@ -75,7 +75,6 @@ func typewriter_text(text):
 		else:
 			printing = true
 			t.start()
-			print(letter)
 			display_text.bbcode_text += String(letter)
 			yield(t, "timeout")
 	printing = false

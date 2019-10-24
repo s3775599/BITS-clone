@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AirlockWarning"
@@ -46,7 +48,6 @@ tracks/0/keys = {
 }
 
 [node name="Main" type="Control"]
-modulate = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
 [node name="BackgroundMain" parent="." instance=ExtResource( 2 )]
@@ -62,6 +63,7 @@ margin_bottom = 40.0
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 5 )]
 
 [node name="Crew" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="JohnConsole" parent="Crew" instance=ExtResource( 6 )]
 
@@ -84,6 +86,10 @@ editor/display_folded = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AirlockWarning = SubResource( 1 )
 anims/FadeIn = SubResource( 2 )
+
+[node name="CombinationGenerator" parent="." instance=ExtResource( 12 )]
+
+[node name="Panel" parent="." instance=ExtResource( 13 )]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]
@@ -93,6 +99,10 @@ anims/FadeIn = SubResource( 2 )
 [connection signal="input_event" from="Crew/BarryConsole" to="." method="_on_BarryConsole_input_event"]
 [connection signal="mouse_entered" from="Crew/BarryConsole" to="." method="_on_BarryConsole_mouse_entered"]
 [connection signal="mouse_exited" from="Crew/BarryConsole" to="." method="_on_BarryConsole_mouse_exited"]
+[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton1" to="." method="_on_ConsoleButton1_pressed"]
+[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton2" to="." method="_on_ConsoleButton2_pressed"]
+[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton3" to="." method="_on_ConsoleButton3_pressed"]
+[connection signal="pressed" from="Panel/Sprite/GridContainer/ConsoleButton4" to="." method="_on_ConsoleButton4_pressed"]
 
 [editable path="BackgroundMain"]
 
@@ -101,3 +111,5 @@ anims/FadeIn = SubResource( 2 )
 [editable path="Crew/BarryConsole"]
 
 [editable path="Crew/JohnClose"]
+
+[editable path="Panel"]

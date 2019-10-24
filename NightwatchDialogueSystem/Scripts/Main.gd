@@ -3,7 +3,7 @@ extends Control
 onready var t = $Timer
 
 #vars for console puzzle
-var code_array = []
+#var code_array = []
 #onready var russian_text = get_node("ConsoleMiniGame/Images/RussianText")
 #onready var russian_flag = get_node("ConsoleMiniGame/Images/RussianFlag")
 #onready var ak47 = get_node("ConsoleMiniGame/Images/AK47")
@@ -16,22 +16,24 @@ onready var john_dialogue = get_node("Dialogues/JohnDialogue")
 onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 onready var console = get_node("BackgroundArea/Console")
 
-
 func _ready():
 	Global.current_scene = self
 	Global.intro = false
 	Global.can_click = true
 	$AnimationPlayer.play('FadeIn')
 	play_russian_text()
+	
 
 
 # This function updates every frame
 func _process(delta):
+	display_current_code()
+	display_found_codes()
 	# darkens background when a dialogue is active
 	if Global.john_close or Global.barry_close or Global.player_close:
 		darken_background()
 		Global.can_click = false
-#
+
 #	# End Game condition
 #	if len(console.code_array) == 0:
 #		print("GAME COMPLETE..... START OUTRO!!!")
@@ -76,11 +78,22 @@ func _on_BarryPopup_button_id(button_id):
 		$Popups/BarryPopup.set_text(next_dialogue)
 
 
+func display_found_codes():
+	var all_found = []
+	for code in $Panel.found_codes:
+		all_found.append(PoolStringArray(code).join("-"))
+		print(all_found)
+#		all_found.remove(all_found[code][-1])
+	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/FoundCodes.bbcode_text = PoolStringArray(all_found).join("")
+
+
+func display_current_code():
+	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/CurrentSequence.bbcode_text = PoolStringArray($Panel.current_code).join("-")
+
 func airlock_barry_out():
 	Global.barry_close = false
 	Global.can_click = false
 	$Popups/BarryPopup.hide()
-	
 	t.set_wait_time(0.5)
 	t.set_one_shot(true)
 	self.add_child(t)
@@ -217,7 +230,6 @@ func background_text_display(text, display_node):
 	self.add_child(t)
 	for letter in text:
 		t.start()
-		print(letter)
 		display_node.bbcode_text += String(letter)
 		yield(t, "timeout")
 
@@ -226,3 +238,19 @@ func background_text_display(text, display_node):
 
 
 
+
+
+func _on_ConsoleButton1_pressed():
+	pass # Replace with function body.
+
+
+func _on_ConsoleButton2_pressed():
+	pass # Replace with function body.
+
+
+func _on_ConsoleButton3_pressed():
+	pass # Replace with function body.
+
+
+func _on_ConsoleButton4_pressed():
+	pass # Replace with function body.
