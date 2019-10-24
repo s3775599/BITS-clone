@@ -12,7 +12,7 @@ var found_codes = []
 func _ready():
 	toggle_lights()
 	code_array = generate_console_codes()
-	print("codes: " + String(code_array))
+	print(code_array)
 
 
 func _process(delta):
@@ -25,18 +25,15 @@ func _input(event):
 
 
 func generate_console_codes():
-    var code
-    var code_array = []
-    for i in range(4):
-        code = get_node('/root/Main/CombinationGenerator').generate_combination()
-        if code != [0, 0, 0, 0]:
-            for c in code_array:
-                if c == code:
-                    code = get_node('/root/Main/CombinationGenerator').generate_combination()
-            code_array.append(code)
-        else:
-            i += 1
-    return code_array
+	var code
+	while code_array.size() < 4:
+		code = get_node('/root/Main/CombinationGenerator').generate_combination()
+		if code != [0, 0, 0, 0]:
+			for c in code_array:
+				if c == code:
+					code = get_node('/root/Main/CombinationGenerator').generate_combination()
+			code_array.append(code)
+	return code_array
 
 
 func generate_combination():
