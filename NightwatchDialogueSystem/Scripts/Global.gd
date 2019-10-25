@@ -15,6 +15,9 @@ var barry_gone = false
 var john_solved = false
 var barry_solved = false
 
+var code_array = []
+var current_code = []
+var found_codes = []
 
 func _ready():
 	var root = get_tree().get_root()
@@ -33,9 +36,6 @@ func _process(delta):
 func player_button(button_id):
 	# Ends the dialogue if the last button signal was "end"
 	if button_id == "end":
-#		if $BackgroundArea/Images.visible == false:
-#			$BackgroundArea/Images.visible = true
-#		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
 		close_dialogues()
 	elif button_id == "end_intro":
 		close_dialogues()
@@ -48,17 +48,24 @@ func player_button(button_id):
 		yield(t, "timeout")
 		get_tree().change_scene("res://Scenes/Main.tscn")
 	else:
+#		if intro:
 		# Calls the next line of dialogue
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
+#		else:
+#			current_scene.get_node('Dialogues/OutroDialogue').intro_sequence(button_id)
 
 
 func john_button(button_id):
 	if button_id == "end":
 		close_dialogues()
+		if not intro and not outro:
+			current_scene.normalise_background()
 	elif button_id[0] == "i":
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
 	elif button_id == "airlock_close":
 		current_scene.john_fix_airlock()
+	elif button_id == "solved":
+		current_scene.dialogue_solved()
 	else:
 		var next_dialogue = current_scene.get_node('Dialogues/JohnDialogue').john_dialogues(button_id)
 		$Popups/JohnPopup.set_text(next_dialogue)
@@ -67,13 +74,14 @@ func john_button(button_id):
 func barry_button(button_id):
 	if button_id == "end":
 		Global.close_dialogues()
-		#
-		# change scene to main
-		#
+		if not intro and not outro:
+			current_scene.normalise_background()
 	elif button_id[0] == "i":
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
 	elif button_id == "airlock_barry_out":
 		current_scene.airlock_barry_out()
+	elif button_id == "solved":
+		current_scene.dialogue_solved()
 	else:
 		var next_dialogue = current_scene.get_node('Dialogues/BarryDialogue').barry_dialogues(button_id)
 		$Popups/BarryPopup.set_text(next_dialogue)
@@ -133,3 +141,11 @@ func hide_player():
 	current_scene.get_node('Popups/PlayerPopup').hide()
 	player_close = false
 	can_click = true
+
+
+func get_current_code():
+	current_code = []
+	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton1').id)
+	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton2').id)
+	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton3').id)
+	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton4').id)

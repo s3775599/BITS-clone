@@ -13,7 +13,7 @@
 [ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AirlockWarning"
@@ -71,6 +71,7 @@ script = ExtResource( 1 )
 editor/display_folded = true
 
 [node name="Popups" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -264,7 +265,7 @@ anims/AirlockWarning = SubResource( 1 )
 anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 
-[node name="CombinationGenerator" parent="." instance=ExtResource( 14 )]
+[node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]

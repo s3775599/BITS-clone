@@ -5,43 +5,10 @@ var two = false
 var three = false
 var four = false
 
-var code_array = []
-var current_code = []
-var found_codes = []
 
 func _ready():
 	toggle_lights()
-	code_array = generate_console_codes()
-	print(code_array)
-
-
-func _process(delta):
-	check_match()
-
-
-func _input(event):
-	if Input.is_action_just_pressed("ui_down"):
-		print("current code: " + String(current_code))
-
-
-func generate_console_codes():
-	var code
-	while code_array.size() < 4:
-		code = get_node('/root/Main/CombinationGenerator').generate_combination()
-		if code != [0, 0, 0, 0]:
-			for c in code_array:
-				if c == code:
-					code = get_node('/root/Main/CombinationGenerator').generate_combination()
-			code_array.append(code)
-	return code_array
-
-
-func generate_combination():
-	var combination = []
-	for number in range(4):
-		randomize()
-		combination.append(randi() % 2)
-	return combination
+#	code_array = generate_console_codes()
 
 
 func toggle_lights():
@@ -77,24 +44,7 @@ func toggle_lights():
 		$GridContainer/ConsoleButton4.id = 0
 		$GridContainer/FourZero.set_modulate(Color('ffffff'))
 		$GridContainer/FourOne.set_modulate(Color('ff2828'))
-	get_current_code()
-
-
-func get_current_code():
-	current_code = []
-	current_code.append($GridContainer/ConsoleButton1.id)
-	current_code.append($GridContainer/ConsoleButton2.id)
-	current_code.append($GridContainer/ConsoleButton3.id)
-	current_code.append($GridContainer/ConsoleButton4.id)
-
-
-func check_match():
-	var code_index
-	for code in code_array:
-		if current_code == code:
-			found_codes.append(code)
-			code_index = code_array.find(code)
-			code_array.remove(code_index)
+	Global.get_current_code()
 
 
 func _on_ConsoleButton1_pressed():

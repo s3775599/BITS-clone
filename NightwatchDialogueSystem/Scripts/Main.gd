@@ -2,31 +2,24 @@ extends Control
 
 onready var t = $Timer
 
-#vars for console puzzle
-#var code_array = []
-#onready var russian_text = get_node("ConsoleMiniGame/Images/RussianText")
-#onready var russian_flag = get_node("ConsoleMiniGame/Images/RussianFlag")
-#onready var ak47 = get_node("ConsoleMiniGame/Images/AK47")
-#onready var barryImage = get_node("ConsoleMiniGame/Images/Barry")
-#onready var images = [russian_text,russian_flag,ak47,barryImage]
-
-
-onready var image1 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage')
-onready var image2 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperRightImage')
-onready var image3 = get_node('BackgroundMain/BackgroundWallpaper/CentreLowerLeftImage')
-onready var image4 = get_node('BackgroundMain/BackgroundWallpaper/CentreLowerRightImage')
-
 # Godot's way of storing a Node as a variable
 onready var intro_dialogue = get_node("Dialogues/IntroDialogue")
 onready var john_dialogue = get_node("Dialogues/JohnDialogue")
 onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 onready var console = get_node("BackgroundArea/Console")
 
+# Images on the central panels
+onready var image1 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage')
+onready var image2 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperRightImage')
+onready var image3 = get_node('BackgroundMain/BackgroundWallpaper/CentreLowerLeftImage')
+onready var image4 = get_node('BackgroundMain/BackgroundWallpaper/CentreLowerRightImage')
+
 
 func _ready():
 	Global.current_scene = self
 	Global.intro = false
 	Global.can_click = true
+	Global.code_array = $ConsoleMiniGame.generate_console_codes()
 	$AnimationPlayer.play('FadeIn')
 	# Plays the scrolling Russian text in the background
 	play_russian_text1()
@@ -57,42 +50,23 @@ func _input(event):
 
 # Collects id of pressed button from John dialogue
 func _on_JohnPopup_button_id(button_id):
-	if button_id == "end":
-		Global.close_dialogues()
-		normalise_background()
-	elif button_id == "airlock_close":
-		john_fix_airlock()
-	elif button_id == "solved":
-		dialogue_solved()
-	else:
-		var next_dialogue = john_dialogue.john_dialogues(button_id)
-		$Popups/JohnPopup.set_text(next_dialogue)
+	Global.john_button(button_id)
 
 
 # Collects id of pressed button from Barry dialogue
 func _on_BarryPopup_button_id(button_id):
-	if button_id == "end":
-		Global.close_dialogues()
-		normalise_background()
-	elif button_id == "airlock_barry_out":
-		airlock_barry_out()
-	elif button_id == "solved":
-		dialogue_solved()
-	else:
-		var next_dialogue = barry_dialogue.barry_dialogues(button_id)
-		$Popups/BarryPopup.set_text(next_dialogue)
+	Global.barry_button(button_id)
 
 
 func display_found_codes():
 	var all_found = []
-	for code in $Panel.found_codes:
+	for code in Global.found_codes:
 		all_found.append(PoolStringArray(code).join("-"))
-#		all_found.remove(all_found[code][-1])
 	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/FoundCodes.bbcode_text = PoolStringArray(all_found).join("")
 
 
 func display_current_code():
-	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/CurrentSequence.bbcode_text = PoolStringArray($Panel.current_code).join("-")
+	$BackgroundMain/BackgroundWallpaper/CentreMiddleGlass/CurrentSequence.bbcode_text = PoolStringArray(Global.current_code).join("-")
 
 
 func airlock_barry_out():
@@ -127,18 +101,6 @@ func john_fix_airlock():
 	Global.show_john()
 	$Popups/JohnPopup.set_text(john_dialogue.john_dialogues("airlock7"))
 
-
-# Collects id of pressed button from Player dialogue
-func _on_PlayerPopup_button_id(button_id):
-	# Ends the dialogue if the last button signal was "end"
-	if button_id == "end":
-		if $BackgroundArea/Images.visible == false:
-			$BackgroundArea/Images.visible = true
-		$BackgroundArea/BackgroundSprite.set_modulate(Color('ffffff'))
-		Global.close_dialogues()
-	else:
-		# Calls the next line of dialogue
-		intro_dialogue.intro_sequence(button_id)
 
 func darken_background():
 	$BackgroundMain.set_modulate(Color('464646'))
@@ -235,7 +197,7 @@ func background_text_display(text, display_node, wait_time):
 
 
 func check_for_completion():
-	match $Panel.found_codes.size():
+	match Global.found_codes.size():
 		1:
 			$BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage.visible = false
 		2:
