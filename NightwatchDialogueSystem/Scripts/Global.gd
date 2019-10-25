@@ -87,7 +87,7 @@ func john_button(button_id):
 		current_scene.dialogue_solved()
 	else:
 		var next_dialogue = current_scene.get_node('Dialogues/JohnDialogue').john_dialogues(button_id)
-		$Popups/JohnPopup.set_text(next_dialogue)
+		current_scene.get_node('Popups/JohnPopup').set_text(next_dialogue)
 
 
 func barry_button(button_id):
@@ -103,7 +103,7 @@ func barry_button(button_id):
 		current_scene.dialogue_solved()
 	else:
 		var next_dialogue = current_scene.get_node('Dialogues/BarryDialogue').barry_dialogues(button_id)
-		$Popups/BarryPopup.set_text(next_dialogue)
+		current_scene.get_node('Popups/BarryPopup').set_text(next_dialogue)
 
 
 # Closes all currently running dialogues

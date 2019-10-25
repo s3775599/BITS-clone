@@ -212,8 +212,8 @@ func check_for_completion():
 
 
 func dialogue_solved():
-	$Panel.found_codes.append($Panel.code_array[0])
-	$Panel.code_array.remove(0)
+	Global.found_codes.append(Global.code_array[0])
+	Global.code_array.remove(0)
 	Global.close_dialogues()
 	normalise_background()
 
