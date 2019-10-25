@@ -8,7 +8,7 @@ var four = false
 
 func _ready():
 	toggle_lights()
-#	code_array = generate_console_codes()
+
 
 
 func toggle_lights():
@@ -44,7 +44,17 @@ func toggle_lights():
 		$GridContainer/ConsoleButton4.id = 0
 		$GridContainer/FourZero.set_modulate(Color('ffffff'))
 		$GridContainer/FourOne.set_modulate(Color('ff2828'))
-	Global.get_current_code()
+	get_current_code()
+
+
+
+func get_current_code():
+#	current_scene.get_current_code()
+	Global.current_code = []
+	Global.current_code.append($GridContainer/ConsoleButton1.id)
+	Global.current_code.append($GridContainer/ConsoleButton2.id)
+	Global.current_code.append($GridContainer/ConsoleButton3.id)
+	Global.current_code.append($GridContainer/ConsoleButton4.id)
 
 
 func _on_ConsoleButton1_pressed():

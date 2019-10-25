@@ -23,6 +23,11 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel") and intro:
+		close_dialogues()
+		scene_change("res://Scenes/Main.tscn")
+
 
 func _process(delta):
 	if intro:
@@ -39,20 +44,34 @@ func player_button(button_id):
 		close_dialogues()
 	elif button_id == "end_intro":
 		close_dialogues()
-		current_scene.get_node("AnimationPlayer").play("FadeOut")
-		var t = Timer.new()
-		t.set_wait_time(3)
-		t.set_one_shot(true)
-		self.add_child(t)
-		t.start()
-		yield(t, "timeout")
-		get_tree().change_scene("res://Scenes/Main.tscn")
+		scene_change("res://Scenes/Main.tscn")
+#		current_scene.get_node("AnimationPlayer").play("FadeOut")
+#		var t = Timer.new()
+#		t.set_wait_time(3)
+#		t.set_one_shot(true)
+#		self.add_child(t)
+#		t.start()
+#		yield(t, "timeout")
+#		current_scene = null
+#		get_tree().change_scene("res://Scenes/Main.tscn")
 	else:
 #		if intro:
 		# Calls the next line of dialogue
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
 #		else:
 #			current_scene.get_node('Dialogues/OutroDialogue').intro_sequence(button_id)
+
+
+func scene_change(scene_path):
+	current_scene.get_node("AnimationPlayer").play("FadeOut")
+	var t = Timer.new()
+	t.set_wait_time(3)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	current_scene = null
+	get_tree().change_scene(scene_path)
 
 
 func john_button(button_id):
@@ -141,11 +160,3 @@ func hide_player():
 	current_scene.get_node('Popups/PlayerPopup').hide()
 	player_close = false
 	can_click = true
-
-
-func get_current_code():
-	current_code = []
-	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton1').id)
-	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton2').id)
-	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton3').id)
-	current_code.append(current_scene.get_node('Panel/GridContainer/ConsoleButton4').id)

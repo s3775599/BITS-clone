@@ -48,16 +48,6 @@ func _input(event):
 		get_tree().change_scene("res://Scenes/Intro.tscn")
 
 
-# Collects id of pressed button from John dialogue
-func _on_JohnPopup_button_id(button_id):
-	Global.john_button(button_id)
-
-
-# Collects id of pressed button from Barry dialogue
-func _on_BarryPopup_button_id(button_id):
-	Global.barry_button(button_id)
-
-
 func display_found_codes():
 	var all_found = []
 	for code in Global.found_codes:
@@ -117,11 +107,21 @@ func normalise_background():
 	$Panel.set_modulate(Color(1,1,1))
 
 
+# Collects id of pressed button from John dialogue
+func _on_JohnPopup_button_id(button_id):
+	Global.john_button(button_id)
+
+
+# Collects id of pressed button from Barry dialogue
+func _on_BarryPopup_button_id(button_id):
+	Global.barry_button(button_id)
+
+
 func _on_JohnConsole_mouse_entered():
-	if not Global.john_close and not Global.john_solved:
-		$Crew/JohnConsole/JohnConsoleSprite.set_modulate(Color('4d39df'))
-	else:
+	if  Global.john_close or Global.barry_close or Global.john_solved:
 		Global.can_click = false
+	else:
+		$Crew/JohnConsole/JohnConsoleSprite.set_modulate(Color('4d39df'))
 
 
 func _on_JohnConsole_mouse_exited():
@@ -138,10 +138,10 @@ func _on_JohnConsole_input_event(viewport, event, shape_idx):
 
 
 func _on_BarryConsole_mouse_entered():
-	if not Global.barry_close and not Global.barry_solved:
-		$Crew/BarryConsole/BarryConsoleSprite.set_modulate(Color('4d39df'))
-	else:
+	if Global.barry_close or Global.john_close or Global.barry_solved:
 		Global.can_click = false
+	else:
+		$Crew/BarryConsole/BarryConsoleSprite.set_modulate(Color('4d39df'))
 
 
 func _on_BarryConsole_mouse_exited():
