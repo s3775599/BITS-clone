@@ -7,32 +7,31 @@ margin_bottom = 40.0
 [node name="About" type="Node2D" parent="."]
 
 [node name="GroupInfo" type="Control" parent="About"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 65.374
-margin_top = 275.0
-margin_right = 65.374
-margin_bottom = 275.0
+margin_left = 78.374
+margin_top = 343.0
+margin_right = 78.374
+margin_bottom = 343.0
 rect_scale = Vector2( 25.4095, 5.74516 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="About/GroupInfo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.06779
-margin_top = 0.262367
-margin_right = 798.932
-margin_bottom = 40.2624
+margin_left = -3.15183
+margin_top = 20.1311
+margin_right = 796.848
+margin_bottom = 78.1311
 rect_min_size = Vector2( 800, 40 )
 rect_scale = Vector2( 0.0535269, 0.382411 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="About/GroupInfo/HBoxContainer"]
 margin_right = 132.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="About/GroupInfo/HBoxContainer/HBoxContainer"]
 margin_right = 124.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer/VBoxContainer"]
@@ -64,16 +63,16 @@ uppercase = true
 [node name="VSeparator" type="VSeparator" parent="About/GroupInfo/HBoxContainer/HBoxContainer"]
 margin_left = 128.0
 margin_right = 132.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="About/GroupInfo/HBoxContainer"]
 margin_left = 136.0
 margin_right = 239.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="About/GroupInfo/HBoxContainer/HBoxContainer2"]
 margin_right = 95.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer2/VBoxContainer"]
@@ -105,16 +104,16 @@ uppercase = true
 [node name="VSeparator" type="VSeparator" parent="About/GroupInfo/HBoxContainer/HBoxContainer2"]
 margin_left = 99.0
 margin_right = 103.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="About/GroupInfo/HBoxContainer"]
 margin_left = 243.0
 margin_right = 377.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="About/GroupInfo/HBoxContainer/HBoxContainer3"]
 margin_right = 126.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer3/VBoxContainer"]
@@ -146,16 +145,16 @@ uppercase = true
 [node name="VSeparator" type="VSeparator" parent="About/GroupInfo/HBoxContainer/HBoxContainer3"]
 margin_left = 130.0
 margin_right = 134.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="About/GroupInfo/HBoxContainer"]
 margin_left = 381.0
 margin_right = 483.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="About/GroupInfo/HBoxContainer/HBoxContainer5"]
 margin_right = 94.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer5/VBoxContainer"]
@@ -187,16 +186,16 @@ uppercase = true
 [node name="VSeparator" type="VSeparator" parent="About/GroupInfo/HBoxContainer/HBoxContainer5"]
 margin_left = 98.0
 margin_right = 102.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="About/GroupInfo/HBoxContainer"]
 margin_left = 487.0
 margin_right = 609.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="About/GroupInfo/HBoxContainer/HBoxContainer6"]
 margin_right = 114.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer6/VBoxContainer"]
@@ -228,19 +227,19 @@ uppercase = true
 [node name="VSeparator2" type="VSeparator" parent="About/GroupInfo/HBoxContainer/HBoxContainer6"]
 margin_left = 118.0
 margin_right = 122.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="About/GroupInfo/HBoxContainer"]
 margin_left = 613.0
 margin_right = 697.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="About/GroupInfo/HBoxContainer/HBoxContainer7"]
 margin_right = 84.0
-margin_bottom = 40.0
+margin_bottom = 58.0
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer7/VBoxContainer"]
+[node name="RichTextLabel3" type="Label" parent="About/GroupInfo/HBoxContainer/HBoxContainer7/VBoxContainer"]
 margin_right = 84.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
@@ -262,6 +261,49 @@ margin_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 text = "s3779053"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Paragraph container" type="HBoxContainer" parent="About/GroupInfo"]
+margin_left = -2.80525
+margin_top = -53.9612
+margin_right = 37.1947
+margin_bottom = -13.9612
+rect_scale = Vector2( 0.0157542, 0.518297 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="About/GroupInfo/Paragraph container"]
+margin_right = 2501.0
+margin_bottom = 125.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="Label" parent="About/GroupInfo/Paragraph container/VBoxContainer2"]
+margin_right = 2501.0
+margin_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+text = "Coffee poured? Uniform adjusted? A final glance in the mirror? You are about to start your shift as the Leading Officer in charge of the USS Bon Scott, creeping along through space. It's night time, well in space it's always night, and a skeleton crew keep the ship ticking along. The Night Watch begins.
+
+The Night Watch is a indie proof of concept Adventure game created and developed by the Building IT Systems SP3 2019 student group also called \"The Night Watch\". Team Leader Jeff Reynolds keeps us on target, with the backing of the development team of Michael Seymour, Paul Atkins, Lee van den Blink, Daniel Burke and Paul McKercher.
+
+The game was developed using the open-source engine Godot 3.1.1. with special mention of the lead programmers Michael Seymour and Paul Atkins. The beautiful stylistic artwork was designed by Daniel Burke (and special mention to the volunteer human models).
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="About/GroupInfo/Paragraph container/VBoxContainer2"]
+margin_top = 103.0
+margin_right = 2501.0
+margin_bottom = 107.0
+
+[node name="RichTextLabel2" type="Label" parent="About/GroupInfo/Paragraph container/VBoxContainer2"]
+margin_top = 111.0
+margin_right = 2501.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+text = "S3791201"
 align = 1
 valign = 1
 uppercase = true
