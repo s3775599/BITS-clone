@@ -9,6 +9,8 @@ onready var t = $Timer
 func _ready():
 	Global.current_scene = self
 	Global.outro = true
+	if Global.barry_gone:
+		$Crew/BarryConsole/AnimationPlayer.play('BarryAirlock')
 	$AnimationPlayer.play("FadeIn")
 	t.set_wait_time(3)
 	t.set_one_shot(true)
@@ -22,7 +24,6 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	outro()
-
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_select"):

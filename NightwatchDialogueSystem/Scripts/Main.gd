@@ -226,4 +226,4 @@ func goto_outro():
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")
-	get_tree().change_scene("res://Scenes/Title.tscn")
+	get_tree().change_scene("res://Scenes/Outro.tscn")
