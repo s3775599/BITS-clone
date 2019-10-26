@@ -8,7 +8,7 @@ onready var main_script = get_node('root/Main')
 func barry_dialogues(id):
 	match id:
 		"1":
-			return [["Yes Sir, Lieutenant Sir?" , "I'm very disappointed in you, Barry.", "How could you do this, Barry?", "Barry, you need to fix this.", "I don't understand, Barry..."], ["1a", "2a", "3a", "4a"]]
+			return [["Yes Sir, Lieutenant Sir?" , "I'm very disappointed in you, Barry.", "How could you do this, Barry?", "Barry, this is serious. We need you to fix this.", "I don't understand, Barry..."], ["1a", "2a", "3a", "4a"]]
 		"1a":
 			return [["I don't know how this could have happened, Sir.", "That's a bit difficult to believe, Barry.", "Well, we need to find a way to fix it now.", "I imagine it had something to do with you fiddling with computer settings you have no business interfering with."], ["1a1", "1a2", "1a3"]]
 		"1a1":
@@ -16,11 +16,11 @@ func barry_dialogues(id):
 		"1a2":
 			return [["Yes, Sir. I'm working on it right now, Sir.", "[ -- end -- ]"], ["end"]]
 		"1a3":
-			return [["Uh, true", "[ -- end --]"], ["end"]]
+			return [["Well . . . yes, you have a point.", "[ -- end --]"], ["end"]]
 		"2a":
 			return [["I didn't mean to do it, Sir.", "You didn't mean to make the computer virtually impossible to use, this jeopardising the crew, the mission and the ship?"], ["2a1"]]
 		"2a1":
-			return [["Uh, that's correct Sir.", "Well that's great. As long as you're sorry.", "I'm pleased to hear it. I was about to put you on report, but since you're so sincerely sorry, I'll let you off."], ["2a1a", "2a1b"]]
+			return [["Uh, that's correct Sir.", "Well that's great. As long as you're sorry.", "I'm pleased to hear it. I was about to put you on reprimand, but since you're so sincerely sorry, I'll let you off."], ["2a1a", "2a1b"]]
 		"2a1a":
 			return [["I am, Sir. Very sorry, Sir.", "[ -- continue -- ]"], ["2a1a1"]]
 		"2a1a1":
@@ -30,9 +30,7 @@ func barry_dialogues(id):
 		"2a1b":
 			return [["Really, Sir?", "No, Barry, you colossal moron. [ -- end -- ]"], ["end"]]
 		"3a":
-			return [["I know Sir. I'm working on it.", "Let me know how you get on.", "What are you doing to fix it?", "Do you know what's going to happen if you don't sort this out?"], ["3a1", "3a2", "3a3"]]
-		"3a1":
-			return [["Yes, Sir. I will, Sir.", "[ -- end -- ]"], ["end"]]
+			return [["I know Sir. I'm working on it.", "What are you doing to fix it?", "Do you know what's going to happen if you don't sort this out?"], ["3a2", "3a3"]]
 		"3a2":
 			return [["I'm going to try something . . .", "What's that?", "Wait, I have an idea.", "Whatever it is, Barry, you'd better have a good plan."], ["3a2a", "3a2b", "3a2c"]]
 		"3a2a":
@@ -64,7 +62,7 @@ func barry_dialogues(id):
 		"3a2b1a":
 			return [[". . . what about navigation, Sir?", "You must have learned about observing your surroundings, noticing minor details and shanges of scenery?"], ["3a2b1a1"]]
 		"3a2b1a1":
-			return [["Uh, yes Sir, I suppose so.", "If you replay the scene in your head, can you visualise the console again? All the keys and screens you saw to change the language the first time?"], ["3a2b1a1a"]]
+			return [["Uh, yes Sir, I suppose so.", "If you replay the scene in your head, can you visualise the console again? Everything you saw to change the language the first time?"], ["3a2b1a1a"]]
 		"3a2b1a1a":
 			return [[". . . Actually Sir, I think I just about can.", "[ -- continue -- ]"], ["3a2b1a1a1"]]
 		"3a2b1a1a1":
@@ -78,7 +76,7 @@ func barry_dialogues(id):
 			return [["Okay, Sir . . here goes . . .", "[ -- continue -- ]"], ["3a2b2a1"]]
 		"3a2b2a1":
 			# code to turn on annoying music/flashing light/eject Barry/another effect goes here
-			return [["Well, so much for that.", "[ -- end --] ** NOTE TO QA possibility here for humourous effect eg. Barry is ejected, or music start playing and can't be turned off etc."], ["end"]]
+			return [["Well, so much for that.", "[ -- end --]"], ["end"]]
 		"3a2b2b":
 			return [["Okay Sir. Let me know when you want me to do something, Sir.", "[ -- end -- ]"], ["end"]]
 		"3a2b3":
@@ -130,6 +128,6 @@ func barry_dialogues(id):
 		"4a3a":
 			return [["It kind of looks a bit like English. . .", "Barry."], ["4a3a1"]]
 		"4a3a1":
-			return [["A little bit. . .", "Barry."], ["4a3a1a"]]
+			return [["A little bit. . . it helps if you squint, or don't look directly at it.", "Barry."], ["4a3a1a"]]
 		"4a3a1a":
-			return [["A couple of the letters look the same. . .", "Barry, stop talking. [ -- end -- ]"], ["end"]]
+			return [["A couple of the letters look the same. . .ish?", "Barry, stop talking. [ -- end -- ]"], ["end"]]

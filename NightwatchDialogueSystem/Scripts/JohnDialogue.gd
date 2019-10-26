@@ -19,7 +19,7 @@ func john_dialogues(id):
 		"1a1a2":
 			return [["Oh, spare me.", "Come on John, we all appreciate you here."], ["1a1a2a"]]
 		"1a1a2a":
-			return [["What's my surname?", "Smith.", "McCruthers.", "John", "Brzeczyszczykiewicz."], ["1a1a2a1", "1a1a2a2", "1a1a2a3", "1a1a2a4"]]
+			return [["What's my surname?", "Smith?", "McCruthers?", "John?", "Brzeczyszczykiewicz?"], ["1a1a2a1", "1a1a2a2", "1a1a2a3", "1a1a2a4"]]
 		"1a1a2a1":
 			return [["You're not even trying.", "[ -- end -- ]"],["end"]]
 		"1a1a2a2":
@@ -49,9 +49,9 @@ func john_dialogues(id):
 		"2a":
 			return [["I think you should get Barry to fix the problem he caused.","I dont think he can.","I don't think he wants to.","I think he's caused enough damage for one day."],["2a1","2a2","2a3"]]
 		"2a1":
-			return [["I'm sure he'll work it out eventually.", "[ -- end -- ]"], ["end"]]
+			return [["I believe this is referred to as a 'teachable moment'.", "[ -- end -- ]"], ["end"]]
 		"2a2":
-			return [["I know how he feels.", "[ -- end -- ]"], ["end"]]
+			return [["Well I can relate to that.", "[ -- end -- ]"], ["end"]]
 		"2a3":
 			return [["He broke it, he can fix it. That's all I'm going to say about it.", "[ -- end -- ]"],["end"]]
 		"3a":
@@ -67,13 +67,13 @@ func john_dialogues(id):
 		"3a3a1":
 			return [["And we ran out of coffee three years ago.","..."],["3a3a1a"]]
 		"3a3a1a":
-			return [["But sure. 'Engineer'.","I bet you could fix it.","Can you think of some way to fix this?"],["3a3a1a1","3a3a1a2"]]
+			return [["Well . . . yeah . . . but 'Engineer'.", "I bet you could fix it.","Can you think of some way to fix this?"],["3a3a1a1","3a3a1a2"]]
 		"3a3a1a1":
 			return [["I bet you I'm not going to.","What if you align the phase manifold?","Did you check the combustion seals?","What about lubricating the flux probes?","What about flooding the vac inhibitors with sodium trihydroflurodoxetine?"],["3a3a1a1a","3a3a1a1b","3a3a1a1c","3a3a1a1d","3a3a1a1e"]]
 		"3a3a1a1a":
-			return [["We don't have enough titanium.","[ -- end -- ]"],["end"]]
+			return [["We don't have enough titanium.","[ -- end -- ]"], ["end"]]
 		"3a3a1a1b":
-			return [["I am NOT going into the reactor chamber again.","[ -- end -- ]"],["end"]]
+			return [["I am NOT going into the reactor chamber again.","[ -- end -- ]"], ["end"]]
 		"3a3a1a1c":
 			return [["We used the last of the WD40 on the squeaky chair in the comms room.","[ -- end -- ]"],["end"]]
 		"3a3a1a1d":
@@ -87,7 +87,7 @@ func john_dialogues(id):
 		"3a3a1a2a1a1":
 			return [[". . .", "I bet you'd really like to show this computer how you really feel."], ["smash"]]
 		"smash":
-			return [["SMASH CONSOLE... LIKE HARD!","[ -- continue -- ]"],["fix"]]
+			return [["AAAAARGH!!","[ -- continue -- ]"],["fix"]]
 		"fix":
 			Global.john_solved = true
 			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- end -- ]"],["solved"]]
@@ -108,7 +108,7 @@ func john_dialogues(id):
 		"no":
 			return [["YOU WANT ME TO WHAT?? I'M NOT GOING OUT THERE, ARE YOU CRAZY? I'M NOT EVEN WEARING AN EVA SUIT!", "YOU HAVE TO CLOSE THE AIRLOCK, THEN!"], ["airlock3"]]
 		"airlock4":
-			return [["YOU DID SEE WHAT HAPPENED TO BARRY, RIGHT?", "THERE'S NO OTHER WAY!", "WHAT'S THE WORST THAT CAN HAPPEN NOW?"], ["airlock5", "airlock4b"]]
+			return [["AND END UP LIKE BARRY? NO WAY!", "THERE'S NO OTHER WAY!", "WHAT'S THE WORST THAT CAN HAPPEN NOW?"], ["airlock5", "airlock4b"]]
 		"airlock4b":
 			return [["ASK BARRY!", "THERE'S NO OTHER WAY!"], ["airlock5"]]
 		"airlock5":

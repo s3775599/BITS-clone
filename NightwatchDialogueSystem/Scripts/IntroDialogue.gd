@@ -36,7 +36,7 @@ func intro_dialogues(id):
 		"i9":
 			return [["", "JOHN."], ["i10"]]
 		"i10":
-			return [["What? What do you want me to say? It's exactly the same as it was last shift. We haven't done anything since the last shift. It's all the same as the last shift.", "[ -- continue -- ]"], ["i11"]]
+			return [["What? What do you want me to say? It's exactly the same as it was last shift. We haven't done anything since the last shift. Nothing's changed. Nothing every changes. It's the SAME.", "[ -- continue -- ]"], ["i11"]]
 		"i11":
 			return [["", "What's gotten into you two?", "One more outburst like that and I'll have to file a report of insubordination!", "Are you sure nothing's changed?", "Well that's good to know."], ["i11a", "i11b", "i11c", "i11d"]]
 		"i11a":
@@ -50,7 +50,7 @@ func intro_dialogues(id):
 		"i11b":
 			return [["Oh no, not that. Anything but that.", "[ -- continue -- ]"], ["i11b1"]]
 		"i11b1":
-			return [["", "John, you are an Engineer in the Australian National Astrophysics League. What does that mean to you?"], ["i11b1a"]]
+			return [["", "John, you are an Engineer in the Australian National Astrophysics League. Doesn't that mean anything to you?"], ["i11b1a"]]
 		"i11b1a":
 			return [["It means I get to spend the best years of my life in deep space.", "[ -- continue -- ]"], ["i11b1a1"]]
 		"i11b1a1":
@@ -106,7 +106,7 @@ func intro_dialogues(id):
 		"i11c1b1a1a1a1a":
 			return [[". . . 'SIR'.", "[ -- continue -- ]"], ["i12"]]
 		"i11c1c":
-			return [["Both.", "[ -- continue -- ]"], ["i11"]]
+			return [["Take your pick.", "[ -- continue -- ]"], ["i11"]]
 		"i11d":
 			return [["Playing favourites, are we?", "[ -- continue -- ]"], ["i11d1"]]
 		"i11d1":
@@ -148,7 +148,7 @@ func intro_dialogues(id):
 		"i17":
 			return [["", "It LOOKS the same, or it IS the same?"], ["i18"]]
 		"i18":
-			return [["It LOOKS like it IS the same. SIR", "[ -- continue -- ]"], ["i19"]]
+			return [["It LOOKS the same. SIR", "[ -- continue -- ]"], ["i19"]]
 		"i19":
 			return [["", "So can you CONFIRM that it IS the same?"], ["i20"]]
 		"i20":
@@ -178,21 +178,27 @@ func intro_dialogues(id):
 		"i32":
 			return [["", "I really need a better answer than that, Barry. Why is John's console in Russian?"], ["i33"]]
 		"i33":
-			return [["Well, it was an accident.", "[ -- continue -- ]"], ["i34"]]
+			return [["Well. . . it was an accident.", "[ -- continue -- ]"], ["igo_on"]]
+		"igo_on":
+			return [["", "Go on. . . "], ["i34"]]
 		"i34":
 			return [["I was bored.", "[ -- continue -- ]"], ["i35"]]
 		"i35":
-			return [["So I was looking for a new hobby. And I thought hey, why not try learning another language?", "[ -- continue -- ]"], ["i36"]]
+			return [["So I was looking for a new hobby. And I thought hey, why not try learning another language?", "[ -- continue -- ]"], ["ialways"]]
+		"ialways":
+			return[["And I've always wanted to learn Russian.", "[ -- continue -- ]"], ["i36"]]
 		"i36":
 			return [["And they say immersion is the quickest way to pick up a new language, so I switched the ship's computer interface into Russian.", "[ -- continue -- ]"], ["i37"]]
 		"i37":
-			return [["And I couldn't quite work out how to switch it back.", "[ -- continue -- ]"], ["i38"]]
+			return [["But then I couldn't quite work out how to switch it back. . .", "[ -- continue -- ]"], ["iin_russian"]]
+		"iin_russian":
+			return [["Because of it being in Russian, and everything. . .", "[ -- continue -- ]"], ["i38"]]
 		"i38":
 			return [["It turns out language immersion takes a fairly long time.", "[ -- continue -- ]"], ["i39"]]
 		"i39":
-			return [["", "You said you switched the SHIP'S COMPUTER INTERFACE into Russian?"], ["i40"]]
+			return [["", "Are you saying you switched the ENTIRE SHIP'S COMPUTER INTERFACE?"], ["i40"]]
 		"i40":
-			return [["Uh, yes Sir.", "[ -- continue -- ]"], ["i41"]]
+			return [["Uh. . . yes.", "[ -- continue -- ]"], ["i41"]]
 		"i41":
 			return [["", "But that's going to affect everyone's cons. . ."], ["i42"]]
 		"i42":
@@ -200,7 +206,7 @@ func intro_dialogues(id):
 		"i43":
 			return [["", "Oh Barry, you idiot."], ["i44"]]
 		"i44":
-			return [["I feel really bad about it, Sir.", "[ -- console -- ]"], ["i45"]]
+			return [["I feel really bad about it, Sir.", "[ -- continue -- ]"], ["i45"]]
 		"i45":
 			return [["Computer's voice recognition should still be working though.", "[ -- continue -- ]"], ["i46"]]
 		"i46":
@@ -209,7 +215,6 @@ func intro_dialogues(id):
 			return [["", "{ КОМПЮТЕР } ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ!"], ["i48"]]
 		"i48":
 			return [["", "Barry, you complete idiot."], ["end_intro"]]
-
 
 
 # the sequence of dialogue and animations/transitions in the intro
@@ -416,13 +421,19 @@ func intro_sequence(button_id):
 			barry_to_player(button_id)
 		"i33":
 			player_to_barry(button_id)
+		"igo_on":
+			barry_to_player(button_id)
 		"i34":
 			player_to_barry(button_id)
 		"i35":
 			player_to_barry(button_id)
+		"ialways":
+			player_to_barry(button_id)
 		"i36":
 			player_to_barry(button_id)
 		"i37":
+			player_to_barry(button_id)
+		"iin_russian":
 			player_to_barry(button_id)
 		"i38":
 			player_to_barry(button_id)
