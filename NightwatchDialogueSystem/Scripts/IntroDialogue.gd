@@ -1,6 +1,6 @@
 extends Node
 
-# gets Nodes from the main scene as variables
+# gets Nodes as variables
 onready var intro_script = get_node("/root/Intro")
 onready var intro_anim = get_node("/root/Intro/AnimationPlayer")
 onready var player_popup = get_node("/root/Intro/Popups/PlayerPopup")

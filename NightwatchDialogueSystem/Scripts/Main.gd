@@ -81,7 +81,7 @@ func john_fix_airlock():
 	Global.john_close = false
 	Global.can_click = false
 	Global.hide_john()
-	t.set_wait_time(5)
+	t.set_wait_time(3)
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")

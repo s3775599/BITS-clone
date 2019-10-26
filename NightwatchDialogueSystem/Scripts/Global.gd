@@ -24,30 +24,22 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
 
-func _input(event):
-	if Input.is_action_just_pressed("ui_cancel") and intro:
-		close_dialogues()
-		scene_change("res://Scenes/Main.tscn")
-
 
 func _process(delta):
 	if intro:
 		player_popup = get_node('/root/Intro/Popups/PlayerPopup')
-	elif title:
-		pass
+		player_popup = get_node('/root/Outro/Popups/PlayerPopup')
 	else:
 		player_popup = get_node('/root/Main/Popups/PlayerPopup')
-#	if outro:
-#		player_popup = get_node('/root/Outro/Popups/PlayerPopup')
 
 
 func player_button(button_id):
 	# Ends the dialogue if the last button signal was "end"
 	if button_id == "end":
 		close_dialogues()
-	elif button_id == "end_intro":
+	elif button_id == "end_intro" or button_id == "end_outro":
 		close_dialogues()
-		scene_change("res://Scenes/Main.tscn")
+		scene_change("res://Scenes/Title.tscn")
 #		current_scene.get_node("AnimationPlayer").play("FadeOut")
 #		var t = Timer.new()
 #		t.set_wait_time(3)
@@ -58,22 +50,22 @@ func player_button(button_id):
 #		current_scene = null
 #		get_tree().change_scene("res://Scenes/Main.tscn")
 	else:
-#		if intro:
+		if intro:
 		# Calls the next line of dialogue
-		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
-#		else:
-#			current_scene.get_node('Dialogues/OutroDialogue').intro_sequence(button_id)
+			current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
+		else:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence(button_id)
 
 
 func scene_change(scene_path):
-	current_scene.get_node("AnimationPlayer").play("FadeOut")
+	current_scene.get_node('AnimationPlayer').play("FadeOut")
 	var t = Timer.new()
-	t.set_wait_time(3)
+	t.set_wait_time(5)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")
-	current_scene = null
+#	current_scene = null
 	get_tree().change_scene(scene_path)
 
 
@@ -84,10 +76,17 @@ func john_button(button_id):
 			current_scene.normalise_background()
 	elif button_id[0] == "i":
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
+	elif button_id[0] == "o":
+		current_scene.get_node('Dialogues/OutroDialogue').outro_sequence(button_id)
 	elif button_id == "airlock_close":
 		current_scene.john_fix_airlock()
 	elif button_id == "solved":
 		current_scene.dialogue_solved()
+	elif button_id == "branch1":
+		if barry_gone:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence("oairlock1")
+		else:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence("o3")
 	else:
 		var next_dialogue = current_scene.get_node('Dialogues/JohnDialogue').john_dialogues(button_id)
 		current_scene.get_node('Popups/JohnPopup').set_text(next_dialogue)
@@ -100,6 +99,21 @@ func barry_button(button_id):
 			current_scene.normalise_background()
 	elif button_id[0] == "i":
 		current_scene.get_node('Dialogues/IntroDialogue').intro_sequence(button_id)
+	elif button_id[0] == "o":
+		current_scene.get_node('Dialogues/OutroDialogue').outro_sequence(button_id)
+	elif button_id == "branch2":
+		# Player solved the game without NPC help
+		if not barry_solved and not john_solved:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence("oplayer1")
+		# Player solved game with Barry's help
+		elif barry_solved and not john_solved:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence("obarry1")
+		# Player solved game with John's help
+		elif not barry_solved and john_solved:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence("ojohn1")
+		# Player solved game with both NPC's help
+		elif john_solved and barry_solved:
+			current_scene.get_node('Dialogues/OutroDialogue').outro_sequence("oteam1")
 	elif button_id == "airlock_barry_out":
 		current_scene.airlock_barry_out()
 	elif button_id == "solved":
