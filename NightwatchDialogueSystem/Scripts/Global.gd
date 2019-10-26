@@ -11,7 +11,7 @@ var player_visible = false
 var intro = false
 var outro = false
 var title = false
-var player_popup
+var player_popup = false
 var barry_gone = false
 var john_solved = false
 var barry_solved = false
@@ -28,6 +28,7 @@ func _ready():
 func _process(delta):
 	if intro:
 		player_popup = get_node('/root/Intro/Popups/PlayerPopup')
+	elif outro:
 		player_popup = get_node('/root/Outro/Popups/PlayerPopup')
 	else:
 		player_popup = get_node('/root/Main/Popups/PlayerPopup')
