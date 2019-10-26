@@ -4,6 +4,9 @@ extends Node2D
 # Music file from : https://freesound.org/people/zimbot/sounds/322054/ --- CC Licence
 # Music file from : https://freesound.org/people/GeronimoGeronimo/sounds/338065/ --- CC Licence
 
+func _ready():
+	Global.title = true
+
 func _on_NewGameArea_input_event(viewport, event, shape_idx):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT):
 		$SFXSelect.play()

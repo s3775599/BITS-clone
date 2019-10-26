@@ -10,6 +10,7 @@ var barry_airlock = false
 var player_visible = false
 var intro = false
 var outro = false
+var title = false
 var player_popup
 var barry_gone = false
 var john_solved = false
@@ -32,6 +33,8 @@ func _input(event):
 func _process(delta):
 	if intro:
 		player_popup = get_node('/root/Intro/Popups/PlayerPopup')
+	elif title:
+		pass
 	else:
 		player_popup = get_node('/root/Main/Popups/PlayerPopup')
 #	if outro:
