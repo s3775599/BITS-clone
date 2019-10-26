@@ -40,7 +40,10 @@ func player_button(button_id):
 	# Ends the dialogue if the last button signal was "end"
 	if button_id == "end":
 		close_dialogues()
-	elif button_id == "end_intro" or button_id == "end_outro":
+	elif button_id == "end_intro":
+		close_dialogues()
+		scene_change("res://Scenes/Main.tscn")
+	elif button_id == "end_outro":
 		close_dialogues()
 		scene_change("res://Scenes/Title.tscn")
 	else:
