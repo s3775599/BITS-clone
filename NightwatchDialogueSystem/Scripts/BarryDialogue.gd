@@ -4,6 +4,7 @@ onready var barry_console_anim = get_node('/root/Main/Crew/BarryConsole/Animatio
 onready var barry_close_anim = get_node('/root/Main/Crew/BarryClose/AnimationPlayer')
 onready var background_anim = get_node('/root/Main/AnimationPlayer')
 onready var main_script = get_node('root/Main')
+onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
 
 func barry_dialogues(id):
 	match id:
@@ -46,6 +47,8 @@ func barry_dialogues(id):
 		"airlock":
 			return [["Did you hear that?", "[ -- continue -- ]"], ["airlock2"]]
 		"airlock2":
+			audio_stream_player.stream = load(Global.airlock_warning_alarm)
+			audio_stream_player.play()
 			return [["Is that the . . . ?", "[ -- continue -- ]"], ["airlock3"]]
 		"airlock3":
 			background_anim.play('AirlockWarning')

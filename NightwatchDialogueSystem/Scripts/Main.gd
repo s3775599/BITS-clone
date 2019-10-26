@@ -88,6 +88,11 @@ func john_fix_airlock():
 	$AnimationPlayer.stop(true)
 	self.set_modulate(Color(1, 1, 1))
 	darken_background()
+	$AudioStreamPlayer.stop()
+	t.set_wait_time(1)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
 	Global.show_john()
 	$Popups/JohnPopup.set_text(john_dialogue.john_dialogues("airlock7"))
 

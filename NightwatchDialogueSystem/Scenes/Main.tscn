@@ -267,6 +267,8 @@ anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 
 [node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]

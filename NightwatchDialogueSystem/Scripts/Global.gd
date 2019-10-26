@@ -20,6 +20,8 @@ var code_array = []
 var current_code = []
 var found_codes = []
 
+var airlock_warning_alarm = "res://SFX/airlock_warning.wav"
+
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -41,15 +43,6 @@ func player_button(button_id):
 	elif button_id == "end_intro" or button_id == "end_outro":
 		close_dialogues()
 		scene_change("res://Scenes/Title.tscn")
-#		current_scene.get_node("AnimationPlayer").play("FadeOut")
-#		var t = Timer.new()
-#		t.set_wait_time(3)
-#		t.set_one_shot(true)
-#		self.add_child(t)
-#		t.start()
-#		yield(t, "timeout")
-#		current_scene = null
-#		get_tree().change_scene("res://Scenes/Main.tscn")
 	else:
 		if intro:
 		# Calls the next line of dialogue
