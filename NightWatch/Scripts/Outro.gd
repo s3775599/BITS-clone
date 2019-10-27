@@ -18,7 +18,7 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	$AnimationPlayer.play("LowerLights")
-	t.set_wait_time(1)
+	t.set_wait_time(0.5)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()

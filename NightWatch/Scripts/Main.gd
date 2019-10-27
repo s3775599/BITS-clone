@@ -202,14 +202,30 @@ func background_text_display(text, display_node, wait_time):
 
 
 func check_for_completion():
+	var t = Timer.new()
+	t.set_wait_time(1)
+	t.set_one_shot(true)
+	self.add_child(t)
 	match Global.found_codes.size():
 		1:
+			t.start()
+			$BackgroundMain/AnimationPlayer.play('CentreUpperLeftImageOff')
+			yield(t, "timeout")
 			$BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage.visible = false
 		2:
+			t.start()
+			$BackgroundMain/AnimationPlayer.play('CentreUpperRightImageOff')
+			yield(t, "timeout")
 			$BackgroundMain/BackgroundWallpaper/CentreUpperRightImage.visible = false
 		3:
+			t.start()
+			$BackgroundMain/AnimationPlayer.play('CentreLowerLeftImageOff')
+			yield(t, "timeout")
 			$BackgroundMain/BackgroundWallpaper/CentreLowerLeftImage.visible = false
 		4:
+			t.start()
+			$BackgroundMain/AnimationPlayer.play('CentreLowerRightImageOff')
+			yield(t, "timeout")
 			$BackgroundMain/BackgroundWallpaper/CentreLowerRightImage.visible = false
 			goto_outro()
 		0:
@@ -226,7 +242,7 @@ func dialogue_solved():
 func goto_outro():
 	$AnimationPlayer.play("FadeOut")
 	var t = Timer.new()
-	t.set_wait_time(3)
+	t.set_wait_time(2)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()

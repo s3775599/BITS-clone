@@ -65,11 +65,9 @@ tracks/0/keys = {
 }
 
 [node name="Main" type="Control"]
-modulate = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
 [node name="BackgroundMain" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 
 [node name="Popups" type="Control" parent="."]
 editor/display_folded = true

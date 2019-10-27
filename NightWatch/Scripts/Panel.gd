@@ -10,7 +10,6 @@ func _ready():
 	toggle_lights()
 
 
-
 func toggle_lights():
 	if one:
 		$GridContainer/ConsoleButton1.id = 1
