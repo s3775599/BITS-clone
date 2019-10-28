@@ -21,9 +21,9 @@ func _on_Back_pressed():
 	toggle_about()
 
 func toggle_about():
-	print("toggle about")
 	$AboutCtrl.visible = not $AboutCtrl.visible
 	$Buttons.visible = not $Buttons.visible
+	$Options.visible = not $Options.visible
 
 
 func _on_ExitGameArea_input_event(viewport, event, shape_idx):
@@ -31,28 +31,27 @@ func _on_ExitGameArea_input_event(viewport, event, shape_idx):
 		$SFXSelect.play()
 		get_tree().quit()
 
-
 # Mouse over color changes
 
 func _on_NewGameArea_mouse_entered():
-	$NewGameArea/NewGameSprite.set_modulate(Color('a9a9a9'))
+	$Options/NewGameArea/NewGameSprite.set_modulate(Color('a9a9a9'))
 	$SFXRollOver.play()
 
 func _on_NewGameArea_mouse_exited():
-	$NewGameArea/NewGameSprite.set_modulate(Color(1,1,1))
+	$Options/NewGameArea/NewGameSprite.set_modulate(Color(1,1,1))
 
 func _on_AboutGameArea_mouse_entered():
-	$AboutGameArea/AboutGameSprite.set_modulate(Color('a9a9a9'))
+	$Options/AboutGameArea/AboutGameSprite.set_modulate(Color('a9a9a9'))
 	$SFXRollOver.play()
 
 func _on_AboutGameArea_mouse_exited():
-	$AboutGameArea/AboutGameSprite.set_modulate(Color(1,1,1))
+	$Options/AboutGameArea/AboutGameSprite.set_modulate(Color(1,1,1))
 
 func _on_ExitGameArea_mouse_entered():
-	$ExitGameArea/ExitGameSprite.set_modulate(Color('a9a9a9'))
+	$Options/ExitGameArea/ExitGameSprite.set_modulate(Color('a9a9a9'))
 	$SFXRollOver.play()
 
 func _on_ExitGameArea_mouse_exited():
-	$ExitGameArea/ExitGameSprite.set_modulate(Color(1,1,1))
+	$Options/ExitGameArea/ExitGameSprite.set_modulate(Color(1,1,1))
 
 

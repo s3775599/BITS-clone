@@ -1,6 +1,5 @@
-extends Node2D
+extends Control
 
-
-
-func _on_Button_pressed():
-	titleScreen.toggle_about()
+func _ready():
+	$About/Control/Body.push_align(RichTextLabel.ALIGN_CENTER)
+	print("this is a print")

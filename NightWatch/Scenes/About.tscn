@@ -1,20 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/About.gd" type="Script" id=1]
+[ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GFX/title.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
-size = 15
+size = 18
+outline_size = 1
+outline_color = Color( 0.0666667, 0.117647, 0.533333, 1 )
+extra_spacing_top = 1
 extra_spacing_bottom = 1
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [node name="AboutCtrl" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 1 )
 
 [node name="About" type="Node2D" parent="."]
 
 [node name="GroupInfo" type="Control" parent="About"]
 editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 78.374
@@ -282,15 +289,38 @@ uppercase = true
 
 [node name="Control" type="Control" parent="About"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="About/Control"]
+[node name="Heading" type="RichTextLabel" parent="About/Control"]
 margin_left = 15.0
 margin_top = 15.0
 margin_right = 1025.0
-margin_bottom = 295.0
+margin_bottom = 415.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "Coffee poured? Uniform adjusted? A final glance in the mirror? You are about to start your shift as the Leading Officer in charge of the USS Bon Scott, creeping along through space. It's night time, well in space it's always night, and a skeleton crew keep the ship ticking along. The Night Watch begins.
-
-The Night Watch is a indie proof of concept Adventure game created and developed by the Building IT Systems SP3 2019 student group also called \"The Night Watch\". Team Leader Jeff Reynolds keeps us on target, with the backing of the development team of Michael Seymour, Paul Atkins, Lee van den Blink, Daniel Burke and Paul McKercher.
-
-The game was developed using the open-source engine Godot 3.1.1. with special mention of the lead programmers Michael Seymour and Paul Atkins. The beautiful stylistic artwork was designed by Daniel Burke (and special mention to the volunteer human models).
+text = "The Night Watch is a indie proof of concept Adventure game created and developed by the Building IT Systems SP3 2019 student group also called \"The Night Watch\", using the open-source engine Godot 3.1.1.
 "
+
+[node name="Body" type="RichTextLabel" parent="About/Control"]
+margin_left = 15.0
+margin_top = 260.0
+margin_right = 1025.0
+margin_bottom = 460.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Lead programmer and Designer - Michael Seymour 
+Programmers - Paul Atkins, Paul McKercher, Lee Van den blink
+Lead Artist - Daniel Burke
+Secondary Art - Jeff Reynolds, Lee van den Blink, Paul Atkins
+Sound engineer - Lee van den Blink
+Project Manager - Jeff Reynolds
+Testers - Lee van den Blink [/center]"
+text = "Lead programmer and Designer - Michael Seymour 
+Programmers - Paul Atkins, Paul McKercher, Lee Van den blink
+Lead Artist - Daniel Burke
+Secondary Art - Jeff Reynolds, Lee van den Blink, Paul Atkins
+Sound engineer - Lee van den Blink
+Project Manager - Jeff Reynolds
+Testers - Lee van den Blink "
+
+[node name="NightWatch" type="Sprite" parent="."]
+position = Vector2( 515, 280 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
