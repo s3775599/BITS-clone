@@ -1,5 +1,6 @@
 extends Area2D
 
+# Bools for panel buttons
 var one = false
 var two = false
 var three = false
@@ -7,10 +8,12 @@ var four = false
 
 
 func _ready():
+	# Begins with lights active (all set to '0' [false])
 	toggle_lights()
 
 
 func toggle_lights():
+	# Sets panel light to 1 or 0 positions
 	if one:
 		$GridContainer/ConsoleButton1.id = 1
 		$GridContainer/OneZero.set_modulate(Color('ff2828'))
@@ -46,9 +49,8 @@ func toggle_lights():
 	get_current_code()
 
 
-
+# Checks light positions and adds to the global array
 func get_current_code():
-#	current_scene.get_current_code()
 	Global.current_code = []
 	Global.current_code.append($GridContainer/ConsoleButton1.id)
 	Global.current_code.append($GridContainer/ConsoleButton2.id)
@@ -56,8 +58,11 @@ func get_current_code():
 	Global.current_code.append($GridContainer/ConsoleButton4.id)
 
 
+# Signals to toggle lights
 func _on_ConsoleButton1_pressed():
+	# Toggles boolean var
 	one = not one
+	# Updates lights
 	toggle_lights()
 
 
