@@ -51,7 +51,7 @@ scale = Vector2( 15, -2.5 )
 shape = SubResource( 1 )
 
 [node name="NewGameSprite" type="Sprite" parent="Options/NewGameArea"]
-position = Vector2( 521, 220 )
+position = Vector2( 521, 240 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 
@@ -68,7 +68,7 @@ position = Vector2( 506.616, 264.181 )
 shape = SubResource( 1 )
 
 [node name="AboutGameSprite" type="Sprite" parent="Options/AboutGameArea"]
-position = Vector2( 530, 240 )
+position = Vector2( 530, 260 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
@@ -84,7 +84,7 @@ position = Vector2( 510, 315 )
 shape = SubResource( 1 )
 
 [node name="ExitGameSprite" type="Sprite" parent="Options/ExitGameArea"]
-position = Vector2( 526, 240 )
+position = Vector2( 526, 260 )
 scale = Vector2( 0.53017, 0.523954 )
 texture = ExtResource( 6 )
 
