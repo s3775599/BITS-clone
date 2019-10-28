@@ -290,37 +290,36 @@ uppercase = true
 [node name="Control" type="Control" parent="About"]
 
 [node name="Heading" type="RichTextLabel" parent="About/Control"]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 1025.0
-margin_bottom = 415.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1950.0
+margin_bottom = 450.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "The Night Watch is a indie proof of concept Adventure game created and developed by the Building IT Systems SP3 2019 student group also called \"The Night Watch\", using the open-source engine Godot 3.1.1.
 "
 
 [node name="Body" type="RichTextLabel" parent="About/Control"]
-margin_left = 15.0
-margin_top = 260.0
-margin_right = 1025.0
-margin_bottom = 460.0
+margin_left = 455.0
+margin_top = 520.0
+margin_right = 1465.0
+margin_bottom = 720.0
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Lead programmer and Designer - Michael Seymour 
-Programmers - Paul Atkins, Paul McKercher, Lee Van den blink
+bbcode_text = "[center]Lead Programmer and Designer - Michael Seymour
+Programmers - Paul Atkins, Paul McKercher, Lee van den Blink
 Lead Artist - Daniel Burke
 Secondary Art - Jeff Reynolds, Lee van den Blink, Paul Atkins
-Sound engineer - Lee van den Blink
+Sound Engineer - Lee van den Blink
 Project Manager - Jeff Reynolds
-Testers - Lee van den Blink [/center]"
-text = "Lead programmer and Designer - Michael Seymour 
-Programmers - Paul Atkins, Paul McKercher, Lee Van den blink
+Testers - Lee van den Blink, Jeff Reynolds[/center]"
+text = "Lead Programmer and Designer - Michael Seymour
+Programmers - Paul Atkins, Paul McKercher, Lee van den Blink
 Lead Artist - Daniel Burke
 Secondary Art - Jeff Reynolds, Lee van den Blink, Paul Atkins
-Sound engineer - Lee van den Blink
+Sound Engineer - Lee van den Blink
 Project Manager - Jeff Reynolds
-Testers - Lee van den Blink "
+Testers - Lee van den Blink, Jeff Reynolds"
 
 [node name="NightWatch" type="Sprite" parent="."]
-position = Vector2( 515, 280 )
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
+centered = false
