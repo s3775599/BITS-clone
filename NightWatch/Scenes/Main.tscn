@@ -1,19 +1,20 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/BarryPopup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/ConsoleButton1.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GFX/button_notPressed.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/BarryPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/ConsoleButton1.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AirlockWarning"
@@ -124,31 +125,44 @@ position = Vector2( 2803.44, 333.369 )
 position = Vector2( 3274.91, 301.576 )
 
 [node name="BackgroundMainCollisionShape" parent="BackgroundMain" index="1"]
-visible = true
 position = Vector2( 960, 540 )
 scale = Vector2( 1.86939, 1.79214 )
+
+[node name="Area2D" type="Area2D" parent="BackgroundMain"]
+
+[node name="AnimationGlue" type="CollisionPolygon2D" parent="BackgroundMain/Area2D"]
+visible = false
+modulate = Color( 0.435294, 0.203922, 0.203922, 1 )
+position = Vector2( 1019.04, 454.928 )
+polygon = PoolVector2Array( -11.2794, -11.6249, -11.0647, 10.4828, 10.1845, 10.6975, 10.1845, -11.4103 )
+
+[node name="Sprite" type="Sprite" parent="BackgroundMain/Area2D"]
+modulate = Color( 0.501961, 0.447059, 0.447059, 0.45098 )
+position = Vector2( 1019.04, 454 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
 
 [node name="Popups" type="Control" parent="."]
 editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="BarryPopup" parent="Popups" instance=ExtResource( 3 )]
+[node name="BarryPopup" parent="Popups" instance=ExtResource( 4 )]
 
-[node name="JohnPopup" parent="Popups" instance=ExtResource( 4 )]
+[node name="JohnPopup" parent="Popups" instance=ExtResource( 5 )]
 
-[node name="PlayerPopup" parent="Popups" instance=ExtResource( 5 )]
+[node name="PlayerPopup" parent="Popups" instance=ExtResource( 6 )]
 
-[node name="Panel" parent="." instance=ExtResource( 6 )]
+[node name="Panel" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
-position = Vector2( 893.724, 712.462 )
+position = Vector2( 832, 700 )
+scale = Vector2( 1.8, 1.8 )
 
 [node name="GridContainer" parent="Panel" index="0"]
-editor/display_folded = true
 margin_left = 0.0
 margin_top = 0.0
-margin_right = 108.0
-margin_bottom = 128.0
+margin_right = 256.0
+margin_bottom = 256.0
 
 [node name="Label" parent="Panel/GridContainer" index="0"]
 margin_right = 24.0
@@ -215,7 +229,7 @@ margin_bottom = 76.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 expand = false
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="ConsoleButton3" parent="Panel/GridContainer" index="10"]
 margin_left = 56.0
@@ -225,7 +239,7 @@ margin_bottom = 76.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 expand = false
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="ConsoleButton4" parent="Panel/GridContainer" index="11"]
 margin_left = 84.0
@@ -235,7 +249,7 @@ margin_bottom = 76.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 expand = false
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="OneOne" parent="Panel/GridContainer" index="12"]
 margin_top = 80.0
@@ -302,32 +316,34 @@ margin_bottom = 128.0
 [node name="Crew" type="Node2D" parent="."]
 position = Vector2( 0, 550 )
 
-[node name="JohnConsole" parent="Crew" instance=ExtResource( 8 )]
+[node name="JohnConsole" parent="Crew" instance=ExtResource( 9 )]
 editor/display_folded = true
 position = Vector2( 0, -550 )
 
 [node name="CollisionPolygon2D" parent="Crew/JohnConsole" index="1"]
+visible = false
 position = Vector2( 0, 480 )
 polygon = PoolVector2Array( -1.27499, -151.828, 53.841, -131.786, 103.947, -86.6913, 127.329, -13.2033, 135.68, 167.176, 130.669, 212.271, 187.456, 254.026, 275.975, 279.079, 307.709, 332.524, 367.835, 444.427, 387.878, 355.907, 412.93, 334.195, 468.046, 345.886, 481.408, 387.64, 466.376, 427.725, 454.685, 531.276, 459.695, 596.413, 237.561, 598.083, -2.57022, 602.938 )
 
-[node name="BarryConsole" parent="Crew" instance=ExtResource( 9 )]
+[node name="BarryConsole" parent="Crew" instance=ExtResource( 10 )]
 position = Vector2( 0, -550 )
 
 [node name="CollisionPolygon2D" parent="Crew/BarryConsole" index="1"]
+visible = false
 polygon = PoolVector2Array( 1921.88, 308.684, 1831.66, 350.211, 1798.73, 403.194, 1781.54, 565.007, 1801.59, 623.718, 1780.11, 669.541, 1694.19, 705.34, 1655.53, 703.908, 1636.91, 726.82, 1602.55, 746.867, 1550.99, 789.826, 1548.13, 819.898, 1533.81, 841.377, 1510.9, 827.058, 1469.37, 837.081, 1455.05, 852.833, 1462.21, 904.384, 1436.44, 951.639, 1443.6, 1007.49, 1512.33, 1050.45, 1549.56, 1076.22, 1717, 1085.59, 1924.48, 1083.13 )
 
-[node name="JohnClose" parent="Crew" instance=ExtResource( 10 )]
+[node name="JohnClose" parent="Crew" instance=ExtResource( 11 )]
 editor/display_folded = true
 position = Vector2( -550, 0 )
 
-[node name="BarryClose" parent="Crew" instance=ExtResource( 11 )]
+[node name="BarryClose" parent="Crew" instance=ExtResource( 12 )]
 position = Vector2( 2600, 0 )
 
 [node name="Dialogues" type="Node" parent="."]
 
-[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 12 )]
+[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 13 )]
 
-[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 13 )]
+[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 14 )]
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -336,9 +352,10 @@ anims/AirlockWarning = SubResource( 1 )
 anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 
-[node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
+[node name="ConsoleMiniGame" parent="." instance=ExtResource( 15 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="input_event" from="BackgroundMain/Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]

@@ -49,6 +49,8 @@ func _process(delta):
 		player_popup = get_node('/root/Intro/Popups/PlayerPopup')
 	elif outro:
 		player_popup = get_node('/root/Outro/Popups/PlayerPopup')
+	elif title:
+		pass
 	else:
 		player_popup = get_node('/root/Main/Popups/PlayerPopup')
 

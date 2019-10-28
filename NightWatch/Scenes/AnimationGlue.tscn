@@ -1,0 +1,289 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/AnimationGlue.gd" type="Script" id=1]
+[ext_resource path="res://GFX/space-2.png" type="Texture" id=2]
+[ext_resource path="res://GFX/title.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "NightWatch"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("NightWatch/title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 2300, 1500 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NightWatch/title:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NightWatch/title:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "name"
+length = 18.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Names/Paul:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2048, -128 ), Vector2( -128, 1208 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Names/Paul:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3, 5.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Names/Lee:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -128 ), Vector2( 1920, 1080 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Names/Lee:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Names/Daniel:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 6.1, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -128 ), Vector2( 1920, 1080 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Names/Daniel:rect_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 6.1, 9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Names/Jeff:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 9, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2048, -128 ), Vector2( -128, 1208 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Names/Jeff:rect_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 9, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Names/Michael:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 12, 15.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -128, -128 ), Vector2( 1920, 1080 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Names/Michael:rect_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 12, 15.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Names/Atkins:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 15, 18 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2048, -128 ), Vector2( -128, 1208 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Names/Atkins:rect_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 15, 18 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 4 )
+
+[node name="AnimationGlue" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 2048, 1024 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 1024 )
+
+[node name="NightWatch" type="AnimationPlayer" parent="."]
+editor/display_folded = true
+anims/NightWatch = SubResource( 1 )
+
+[node name="title" type="Sprite" parent="NightWatch"]
+position = Vector2( 2300, 1500 )
+rotation = 6.28319
+texture = ExtResource( 3 )
+
+[node name="Names" type="AnimationPlayer" parent="."]
+editor/display_folded = true
+anims/name = SubResource( 2 )
+
+[node name="Lee" type="RichTextLabel" parent="Names"]
+margin_left = 1920.0
+margin_top = 1080.0
+margin_right = 2176.0
+margin_bottom = 1208.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "LEE"
+
+[node name="Paul" type="RichTextLabel" parent="Names"]
+margin_left = -128.0
+margin_top = 1208.0
+margin_right = 384.001
+margin_bottom = 1720.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Paul McKercher"
+
+[node name="Daniel" type="RichTextLabel" parent="Names"]
+margin_left = 1920.0
+margin_top = 1080.0
+margin_right = 2432.0
+margin_bottom = 1592.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Daniel Burke"
+
+[node name="Jeff" type="RichTextLabel" parent="Names"]
+margin_left = -128.0
+margin_top = 1208.0
+margin_right = 384.0
+margin_bottom = 1720.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Jeff Reynolds"
+
+[node name="Michael" type="RichTextLabel" parent="Names"]
+margin_left = 1920.0
+margin_top = 1080.0
+margin_right = 2432.0
+margin_bottom = 1592.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Michael Seymour"
+
+[node name="Atkins" type="RichTextLabel" parent="Names"]
+margin_left = -128.0
+margin_top = 1208.0
+margin_right = 384.0
+margin_bottom = 1720.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/normal_font = SubResource( 3 )
+text = "Paul Atkins"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Exit" type="Timer" parent="."]
+wait_time = 27.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Exit" to="." method="_on_Exit_timeout"]

@@ -325,3 +325,8 @@ func goto_outro():
 	t.start()
 	yield(t, "timeout")
 	get_tree().change_scene("res://Scenes/Outro.tscn")
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) and Global.can_click == true:
+		get_tree().change_scene("res://Scenes/AnimationGlue.tscn")
