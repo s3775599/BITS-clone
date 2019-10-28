@@ -200,7 +200,7 @@ func play_russian_text1():
 	while true:
 		for text in arhipelag_GULAG:
 			background_text_display(text, text_node_1, .03)
-			t.set_wait_time(7)
+			t.set_wait_time(5)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()
@@ -216,7 +216,7 @@ func play_russian_text2():
 	while true:
 		for text in master_i_margarita:
 			background_text_display(text, text_node_2, .1)
-			t.set_wait_time(7)
+			t.set_wait_time(5)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()
@@ -232,7 +232,7 @@ func play_russian_text3():
 	while true:
 		for text in prestupleniye_i_nakazaniye:
 			background_text_display(text, text_node_3, .005)
-			t.set_wait_time(3)
+			t.set_wait_time(5)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()
@@ -247,12 +247,14 @@ func play_russian_text4():
 	var vechera_no_hutorye_bliz_dikanki = ["Как упоителен, как роскошен летний день в Малороссии! Как томительно-жарки те часы,", "когда полдень блещет в тишине и зное и голубой неизмеримый океан, сладострастным куполом нагнувшийся над", "землёю, кажется заснул, весь потонувши в неге, обнимая и сжимая прекрасную в воздушных объятиях своих! На нём ни облака.", "В поле ни речи. Всё как будто умерло; вверху только, в небесной глубине, дрожит жаворонок, и серебряные", "песни летят по воздушным ступеням на влюблённую землю, да изредка крик чайки или звонкий голос перепела", "отдаётся в степи. Лениво и бездумно, будто гуляющие без цели, стоят подоблачные дубы, и ослепительные удары", "солнечных лучей зажигают целые живописные массы листьев, накидывая на другие тёмную, как ночь, тень,", "по которой только при сильном ветре прыщет золото. Изумруды, топазы, яхонты эфирных насекомых сыплются", "над пёстрыми огородами, осеняемыми статными подсолнечниками. Серые стога сена и золотые снопы", "хлеба станом располагаются в поле и кочуют по его неизмеримости. Нагнувшиеся от тяжести плодов", "широкие ветви черешен, слив, яблонь, груш; небо, его чистое зеркало — река в зелёных, гордо", "поднятых рамах… как полно сладострастия и неги малороссийское лето!"]
 	while true:
 		for text in vechera_no_hutorye_bliz_dikanki:
-			background_text_display(text, text_node_4, .075)
-			t.set_wait_time(7)
+			background_text_display(text, text_node_4, .05)
+			t.set_wait_time(5)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()
 			yield(t, "timeout")
+
+func _set_anchor():
 
 
 # Manages both texts refresh rate

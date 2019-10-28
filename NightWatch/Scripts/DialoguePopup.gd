@@ -41,6 +41,7 @@ func set_text(dialogue_lines):
 	# If the dialogue is the player's box (in the intro), only show the buttons window
 	if Global.player_popup.visible == false:
 		display_text.bbcode_text = String("")
+		
 	# Gets the number of dialogue lines and button responses
 	var dialogue_size = dialogue_lines[0].size()
 	# Display appripriate number of buttons
@@ -51,15 +52,15 @@ func set_text(dialogue_lines):
 	typewriter_text(dialogue_lines[0][0])
 
 
-"""
-The following function is code adapted from:
-
-	Godotengine.org. (2017). 
-	Writing to screen one letter at a time like a typewriter? - Godot Engine - Q&A. [online] 
-	Available at: https://godotengine.org/qa/17327/writing-to-screen-one-letter-at-a-time-like-a-typewriter 
-	[Accessed 19 Oct. 2019].
-
-"""
+#
+# The following function is code adapted from:
+#
+# Godotengine.org. (2017). 
+# Writing to screen one letter at a time like a typewriter? - Godot Engine - Q&A. [online] 
+# Available at: https://godotengine.org/qa/17327/writing-to-screen-one-letter-at-a-time-like-a-typewriter 
+# [Accessed 19 Oct. 2019].
+#
+#
 func typewriter_text(text):
 	# Create a timer to print text like a typewriter
 	var t = Timer.new()
@@ -89,32 +90,30 @@ func set_button_visibility(n):
 	# Because the buttons expand to fill the VBoxContainer, the VBoxContainer itself is adjusted
 	# according to how many buttons there are.
 	if n > 1:
-		# Adjusts the button display for the player or NPC dialogues, taking into account
+		# Adjusts the button size and position for the player or NPC dialogues, taking into account
 		# the size of the NPCs' dialogue display window
 		if Global.player_popup.visible:
 			$VBoxContainer.rect_size = Vector2(460, 120)
+			$VBoxContainer.rect_position.y = 230
 		else:
 			$VBoxContainer.rect_size = Vector2(460, 240)
 		button1.visible = true
 		if n > 2:
 			if Global.player_popup.visible:
 				$VBoxContainer.rect_size = Vector2(460, 260)
+				$VBoxContainer.rect_position.y = 90
 			else:
 				$VBoxContainer.rect_size = Vector2(460, 300)
 			button2.visible = true
 			if n > 3:
 				if Global.player_popup.visible:
 					$VBoxContainer.rect_size = Vector2(460, 300)
+					$VBoxContainer.rect_position.y = 50
 				else:
 					$VBoxContainer.rect_size = Vector2(460, 340)
 				button3.visible = true
 				if n > 4:
-					if Global.player_popup.visible:
-						$VBoxContainer.rect_size = Vector2(460, 360)
-					else:
-						$VBoxContainer.rect_size = Vector2(460, 360)
 					button4.visible = true
-
 
 
 func set_button_labels(dialogue_size, dialogue_lines):
