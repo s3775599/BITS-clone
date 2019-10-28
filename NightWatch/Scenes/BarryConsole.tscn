@@ -93,18 +93,17 @@ tracks/0/keys = {
 }
 
 [node name="BarryConsole" type="Area2D"]
-position = Vector2( -896.005, -479.989 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="BarryConsoleSprite" type="Sprite" parent="."]
-position = Vector2( 1408.01, 780.001 )
-scale = Vector2( 0.266664, 0.277777 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 1922.35, 650.268, 1883.58, 658.022, 1853.85, 687.746, 1829.3, 734.271, 1839.64, 850.583, 1778.9, 862.215, 1709.11, 932.002, 1669.05, 942.341, 1669.05, 984.989, 1651.93, 1032.79, 1717, 1085.59, 1924.48, 1083.13 )
+polygon = PoolVector2Array( 1921.39, 308.802, 1835.26, 347.762, 1788.1, 437.986, 1779.9, 548.716, 1804.51, 624.586, 1777.85, 673.799, 1687.62, 714.81, 1660.97, 702.507, 1550.24, 788.63, 1533.83, 839.894, 1470.27, 835.792, 1455.91, 872.702, 1460.01, 901.41, 1429.26, 958.825, 1462.06, 1026.49, 1537.93, 1059.3, 1550.24, 1079.81, 1717, 1085.59, 1924.48, 1083.13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BarryAirlock = SubResource( 1 )

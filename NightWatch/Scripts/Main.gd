@@ -254,7 +254,7 @@ func play_russian_text4():
 			t.start()
 			yield(t, "timeout")
 
-func _set_anchor():
+#func _set_anchor():
 
 
 # Manages both texts refresh rate
