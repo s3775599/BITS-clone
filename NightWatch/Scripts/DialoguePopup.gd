@@ -93,24 +93,24 @@ func set_button_visibility(n):
 		# Adjusts the button size and position for the player or NPC dialogues, taking into account
 		# the size of the NPCs' dialogue display window
 		if Global.player_popup.visible:
-			$VBoxContainer.rect_size = Vector2(460, 120)
-			$VBoxContainer.rect_position.y = 230
+			$VBoxContainer.rect_size = Vector2(920, 240)
+			$VBoxContainer.rect_position.y = 460
 		else:
-			$VBoxContainer.rect_size = Vector2(460, 240)
+			$VBoxContainer.rect_size = Vector2(920, 480)
 		button1.visible = true
 		if n > 2:
 			if Global.player_popup.visible:
-				$VBoxContainer.rect_size = Vector2(460, 260)
-				$VBoxContainer.rect_position.y = 90
+				$VBoxContainer.rect_size = Vector2(920, 520)
+				$VBoxContainer.rect_position.y = 180
 			else:
-				$VBoxContainer.rect_size = Vector2(460, 300)
+				$VBoxContainer.rect_size = Vector2(920, 600)
 			button2.visible = true
 			if n > 3:
 				if Global.player_popup.visible:
-					$VBoxContainer.rect_size = Vector2(460, 300)
-					$VBoxContainer.rect_position.y = 50
+					$VBoxContainer.rect_size = Vector2(920, 600)
+					$VBoxContainer.rect_position.y = 100
 				else:
-					$VBoxContainer.rect_size = Vector2(460, 340)
+					$VBoxContainer.rect_size = Vector2(920, 680)
 				button3.visible = true
 				if n > 4:
 					button4.visible = true
