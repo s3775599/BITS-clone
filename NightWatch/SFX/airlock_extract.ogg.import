@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/airlock_extract.ogg-15d30fdb7b08f71897b0d19c97945929.oggstr"
+
+[deps]
+
+source_file="res://SFX/airlock_extract.ogg"
+dest_files=[ "res://.import/airlock_extract.ogg-15d30fdb7b08f71897b0d19c97945929.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

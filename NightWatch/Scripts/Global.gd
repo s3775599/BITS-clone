@@ -35,7 +35,7 @@ var current_code = []
 var found_codes = []
 
 # Sound files
-var airlock_warning_alarm = "res://SFX/airlock_warning.wav"
+var airlock_warning_alarm = "res://SFX/airlock_extract.ogg"
 
 func _ready():
 	# Code to get the current scene, taken from Godot docs
