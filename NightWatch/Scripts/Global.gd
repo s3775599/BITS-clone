@@ -50,7 +50,7 @@ func _process(delta):
 	elif outro:
 		player_popup = get_node('/root/Outro/Popups/PlayerPopup')
 	elif title:
-		pass
+		player_popup = null
 	else:
 		player_popup = get_node('/root/Main/Popups/PlayerPopup')
 

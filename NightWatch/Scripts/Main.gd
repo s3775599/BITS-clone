@@ -19,6 +19,7 @@ func _ready():
 	# Sets global current scene vars
 	Global.current_scene = self
 	Global.intro = false
+	Global.title = false
 	Global.can_click = true
 	Global.barry_solved = false
 	Global.john_solved = false
