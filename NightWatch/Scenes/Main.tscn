@@ -240,6 +240,7 @@ margin_right = 108.0
 margin_bottom = 128.0
 
 [node name="Crew" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="JohnConsole" parent="Crew" instance=ExtResource( 8 )]
 

@@ -29,6 +29,8 @@ func _ready():
 	# Plays the scrolling Russian text in the background
 	play_russian_text1()
 	play_russian_text2()
+	play_russian_text3()
+	play_russian_text4()
 
 
 # This function updates every frame
@@ -187,14 +189,26 @@ func _on_BarryConsole_input_event(viewport, event, shape_idx):
 		Global.show_barry()
 		$Popups/BarryPopup.set_text(barry_dialogue.barry_dialogues("1"))
 
+func play_russian_text1():
+	var text_node_1 = $BackgroundMain/BackgroundWallpaper/LeftLeftGlass/RussianText1
+	var arhipelag_GULAG = ["Как попадают на этот таинственный Архипелаг? Туда ежечасно летят самолёты, плывут корабли, гремят", "поезда — но ни единая надпись на них не указывает места назначения. И билетные кассиры, и агенты Совтуриста и", "Интуриста будут изумлены, если вы спросите у них туда билет. Ни всего Архипелага в целом, ни одного из", "бесчисленных его островков они не знают, не слышали. Те, кто едут Архипелагом управлять — попадают", "туда через училища МВД. Те, кто едут Архипелаг охранять — призываются через военкоматы. А те, кто едут", "туда умирать, как мы с вами, читатель, те должны пройти непременно и единственно — через арест."]
+	while true:
+		for text in arhipelag_GULAG:
+			background_text_display(text, text_node_1, .03)
+			t.set_wait_time(7)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+
 
 # Scrolls Russian text on the left side of the background
-func play_russian_text1():
-	var text_node_1 = $BackgroundMain/BackgroundWallpaper/LeftRightGlass/RussianText1
+func play_russian_text2():
+	var text_node_2 = $BackgroundMain/BackgroundWallpaper/LeftRightGlass/RussianText2
 	var master_i_margarita = ["Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, появились два", "гражданина. Первый из них, одетый в летнюю серенькую пару, был маленького роста, упитан, лыс, свою приличную шляпу", "пирожком нес в руке, а на хорошо выбритом лице его помещались сверхъестественных размеров очки в черной", "роговой оправе. Второй – плечистый, рыжеватый, вихрастый молодой человек в заломленной на затылок", "клетчатой кепке – был в ковбойке, жеваных белых брюках и в черных тапочках.Первый был не кто иной, как", "Михаил Александрович Берлиоз, председатель правления одной из крупнейших московских литературных ассоциаций,", "сокращенно именуемой МАССОЛИТ, и редактор толстого художественного журнала, а молодой спутник его – поэт", "Иван Николаевич Понырев, пишущий под псевдонимом Бездомный."]
 	while true:
 		for text in master_i_margarita:
-			background_text_display(text, text_node_1, .1)
+			background_text_display(text, text_node_2, .1)
 			t.set_wait_time(7)
 			t.set_one_shot(true)
 			self.add_child(t)
@@ -203,13 +217,26 @@ func play_russian_text1():
 
 
 # Scrolls Russian text on the right side of the background
-func play_russian_text2():
-	var text_node_2 = $BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText2
+func play_russian_text3():
+	var text_node_3 = $BackgroundMain/BackgroundWallpaper/RightLeftGlass/RussianText3
 	var prestupleniye_i_nakazaniye = ["Он благополучно избегнул встречи с своею хозяйкой на лестнице. Каморка его приходилась под самою кровлей", "высокого пятиэтажного дома и походила более на шкаф, чем на квартиру. Квартирная же хозяйка его, у которой он", "нанимал эту каморку с обедом и прислугой, помещалась одною лестницей ниже, в отдельной квартире, и каждый раз,", "при выходе на улицу, ему непременно надо было проходить мимо хозяйкиной кухни, почти всегда настежь", "отворенной на лестницу. И каждый раз молодой человек, проходя мимо, чувствовал какое-то болезненное и трусливое", "ощущение, которого стыдился и от которого морщился. Он был должен кругом хозяйке и боялся с нею встретиться."]
 	while true:
 		for text in prestupleniye_i_nakazaniye:
-			background_text_display(text, text_node_2, .005)
+			background_text_display(text, text_node_3, .005)
 			t.set_wait_time(3)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+
+
+func play_russian_text4():
+	var text_node_4 = $BackgroundMain/BackgroundWallpaper/RightRightGlass/RussianText4
+	var vechera_no_hutorye_bliz_dikanki = ["Как упоителен, как роскошен летний день в Малороссии! Как томительно-жарки те часы,", "когда полдень блещет в тишине и зное и голубой неизмеримый океан, сладострастным куполом нагнувшийся над", "землёю, кажется заснул, весь потонувши в неге, обнимая и сжимая прекрасную в воздушных объятиях своих! На нём ни облака.", "В поле ни речи. Всё как будто умерло; вверху только, в небесной глубине, дрожит жаворонок, и серебряные", "песни летят по воздушным ступеням на влюблённую землю, да изредка крик чайки или звонкий голос перепела", "отдаётся в степи. Лениво и бездумно, будто гуляющие без цели, стоят подоблачные дубы, и ослепительные удары", "солнечных лучей зажигают целые живописные массы листьев, накидывая на другие тёмную, как ночь, тень,", "по которой только при сильном ветре прыщет золото. Изумруды, топазы, яхонты эфирных насекомых сыплются", "над пёстрыми огородами, осеняемыми статными подсолнечниками. Серые стога сена и золотые снопы", "хлеба станом располагаются в поле и кочуют по его неизмеримости. Нагнувшиеся от тяжести плодов", "широкие ветви черешен, слив, яблонь, груш; небо, его чистое зеркало — река в зелёных, гордо", "поднятых рамах… как полно сладострастия и неги малороссийское лето!"]
+	while true:
+		for text in vechera_no_hutorye_bliz_dikanki:
+			background_text_display(text, text_node_4, .075)
+			t.set_wait_time(7)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()

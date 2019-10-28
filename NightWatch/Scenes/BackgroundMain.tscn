@@ -26,7 +26,7 @@ default_font = SubResource( 3 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 513.56, 301.349 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "CentreLowerLeftImageOff"
 tracks/0/type = "value"
 tracks/0/path = NodePath("BackgroundWallpaper/CentreLowerLeftImage:modulate")
@@ -41,7 +41,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 resource_name = "CentreLowerRightImageOff"
 tracks/0/type = "value"
 tracks/0/path = NodePath("BackgroundWallpaper/CentreLowerRightImage:modulate")
@@ -56,8 +56,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "CentreUpperLeftImageOff"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("BackgroundWallpaper/CentreUpperLeftImage:modulate")
 tracks/0/interp = 1
@@ -93,12 +92,22 @@ position = Vector2( 512, 300.002 )
 scale = Vector2( 0.266667, 0.277772 )
 texture = ExtResource( 1 )
 
-[node name="LeftLeft" type="Polygon2D" parent="BackgroundWallpaper"]
+[node name="LeftLeftGlass" type="Polygon2D" parent="BackgroundWallpaper"]
 position = Vector2( -1933.81, -772.03 )
 scale = Vector2( 5.2926, 4.31823 )
 texture = ExtResource( 2 )
 polygon = PoolVector2Array( 17.2467, 10.3182, 17.3796, 10.0053, 92.9806, 9.47826, 93.1574, 9.74572, 82.0661, 94.4407, 81.8072, 95.0501, 4.62176, 93.322, 4.34955, 93.0907 )
 uv = PoolVector2Array( 0.25, 3.75, 4, 0.25, 95.25, 0.25, 99.75, 4.25, 99.75, 95.75, 95.25, 100, 4.25, 100, 0.25, 95.25 )
+
+[node name="RussianText1" type="RichTextLabel" parent="BackgroundWallpaper/LeftLeftGlass"]
+margin_left = 17.5832
+margin_top = 11.3737
+margin_right = 82.5833
+margin_bottom = 92.3737
+theme = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
 
 [node name="LeftRightGlass" type="Polygon2D" parent="BackgroundWallpaper"]
 position = Vector2( -1369.64, -767.236 )
@@ -107,7 +116,7 @@ texture = ExtResource( 2 )
 polygon = PoolVector2Array( 16.978, 9.08523, 17.1443, 8.99561, 91.1968, 10.0909, 91.3245, 10.2285, 84.0084, 92.9125, 83.827, 93.1081, 6.0991, 91.9526, 5.97319, 91.8393 )
 uv = PoolVector2Array( 0.25, 3.75, 4, 0.25, 95.25, 0.25, 99.75, 4.25, 99.75, 95.75, 95.25, 100, 4.25, 100, 0.25, 95.25 )
 
-[node name="RussianText1" type="RichTextLabel" parent="BackgroundWallpaper/LeftRightGlass"]
+[node name="RussianText2" type="RichTextLabel" parent="BackgroundWallpaper/LeftRightGlass"]
 margin_left = 19.0
 margin_top = 10.0
 margin_right = 84.0
@@ -216,11 +225,11 @@ texture = ExtResource( 2 )
 polygon = PoolVector2Array( 10.4435, 8.12536, 10.4737, 7.8744, 93.7848, 8.09399, 94.0873, 8.1881, 105.674, 99.1286, 105.492, 99.3168, 19.1264, 100.666, 18.9449, 100.477 )
 uv = PoolVector2Array( 0.25, 3.75, 4, 0.25, 95.25, 0.25, 99.75, 4.25, 99.75, 95.75, 95.25, 100, 4.25, 100, 0.25, 95.25 )
 
-[node name="RussianText2" type="RichTextLabel" parent="BackgroundWallpaper/RightLeftGlass"]
-margin_left = 20.0
-margin_top = 9.0
-margin_right = 100.0
-margin_bottom = 101.0
+[node name="RussianText3" type="RichTextLabel" parent="BackgroundWallpaper/RightLeftGlass"]
+margin_left = 18.1285
+margin_top = 9.64687
+margin_right = 98.1285
+margin_bottom = 101.647
 theme = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -233,13 +242,23 @@ texture = ExtResource( 2 )
 polygon = PoolVector2Array( 13.1432, 14.1023, 13.3625, 13.8477, 72.9449, 14.818, 73.2743, 15.2034, 85.4604, 90.6856, 85.084, 90.8508, 23.6829, 91.8418, 23.4006, 91.4564 )
 uv = PoolVector2Array( 0.25, 3.75, 4, 0.25, 95.25, 0.25, 99.75, 4.25, 99.75, 95.75, 95.25, 100, 4.25, 100, 0.25, 95.25 )
 
+[node name="RussianText4" type="RichTextLabel" parent="BackgroundWallpaper/RightRightGlass"]
+margin_left = 23.0
+margin_top = 16.0
+margin_right = 75.0
+margin_bottom = 92.0
+theme = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+scroll_active = false
+
 [node name="BackgroundMainCollisionShape" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 511.555, 302.185 )
 shape = SubResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/CentreLowerLeftImageOff = SubResource( 7 )
-anims/CentreLowerRightImageOff = SubResource( 8 )
-anims/CentreUpperLeftImageOff = SubResource( 6 )
+anims/CentreLowerLeftImageOff = SubResource( 6 )
+anims/CentreLowerRightImageOff = SubResource( 7 )
+anims/CentreUpperLeftImageOff = SubResource( 8 )
 anims/CentreUpperRightImageOff = SubResource( 9 )

@@ -9,17 +9,17 @@ The following function is code adapted from:
 	[Accessed 19 Oct. 2019].
 
 """
-func typewriter_text(display_text):
+func typewriter_text(display_text, node, wait_time):
 	# Create a timer to print text like a typewriter
 	var t = Timer.new()
-	t.set_wait_time(.005)
+	t.set_wait_time(wait_time)
 	t.set_one_shot(true)
 	self.add_child(t)
 	# Prints each individual letter according to Timer length
 	for letter in display_text:
 			t.start()
 			print(letter)
-			display_text.bbcode_text += String(letter)
+			node.bbcode_text += String(letter)
 			yield(t, "timeout")
 """ 
 """
