@@ -201,6 +201,7 @@ font_data = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 0.1 )
@@ -228,11 +229,11 @@ anims/name = SubResource( 2 )
 [node name="Lee" type="RichTextLabel" parent="Names"]
 margin_left = 1920.0
 margin_top = 1080.0
-margin_right = 2176.0
-margin_bottom = 1208.0
+margin_right = 2432.0
+margin_bottom = 1592.0
 rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/normal_font = SubResource( 3 )
-text = "LEE"
+text = "LEE VAN DEN BLINK"
 
 [node name="Paul" type="RichTextLabel" parent="Names"]
 margin_left = -128.0

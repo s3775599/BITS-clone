@@ -15,17 +15,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76.8052, 10.998 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 28
 outline_size = 2
 outline_color = Color( 0.00784314, 0.0588235, 0.47451, 1 )
 font_data = ExtResource( 11 )
 
-[sub_resource type="InputEventAction" id=5]
+[sub_resource type="InputEventAction" id=3]
 action = "\"ui_escape\""
 
-[sub_resource type="ShortCut" id=3]
-shortcut = SubResource( 5 )
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
 
 [node name="Title" type="Node2D"]
 script = ExtResource( 1 )
@@ -120,8 +120,8 @@ margin_left = 220.0
 margin_top = 400.0
 margin_right = 620.0
 margin_bottom = 400.0
-custom_fonts/font = SubResource( 4 )
-shortcut = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
+shortcut = SubResource( 4 )
 text = "Main Menu"
 [connection signal="input_event" from="Options/NewGameArea" to="." method="_on_NewGameArea_input_event"]
 [connection signal="mouse_entered" from="Options/NewGameArea" to="." method="_on_NewGameArea_mouse_entered"]
