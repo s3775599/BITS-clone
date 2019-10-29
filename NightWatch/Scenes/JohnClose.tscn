@@ -6,7 +6,7 @@
 resource_name = "JohnCloseSlideIn"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("JohnCloseSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -15,29 +15,33 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -550, 0 ), Vector2( 900, 0 ) ]
+"values": [ Vector2( -1160, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
 resource_name = "JohnCloseSlideOut"
-length = 0.3
+length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("JohnCloseSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -20, 0 ), Vector2( -640, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -1160, 0 ) ]
 }
 
 [node name="JohnClose" type="Area2D"]
-position = Vector2( -550, 0 )
+position = Vector2( 900, 0 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -962.97 ]
+}
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="JohnCloseSprite" type="Sprite" parent="."]
+position = Vector2( -1160, 0 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 

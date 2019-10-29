@@ -11,9 +11,6 @@ var player_close = false
 # Var is indicate if it's possible to click on an NPC
 var can_click = false
 
-#var barry_airlock = false
-#var player_visible = false
-
 # Vars to indicate if Intro or Outro are running 
 var intro = false
 var outro = false

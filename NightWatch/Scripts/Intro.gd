@@ -11,7 +11,7 @@ func _ready():
 	# Set global current scene vars
 	Global.current_scene = self
 	Global.intro = true
-	# PLay fade-in animation
+	# Play fade-in animation
 	$AnimationPlayer.play("FadeIn")
 	# set and starts timer
 	t.set_wait_time(3)

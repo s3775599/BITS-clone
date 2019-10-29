@@ -15,7 +15,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1408.01, 780.001 ), Vector2( 1670, 780.001 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 500, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CollisionPolygon2D:position")
@@ -27,7 +27,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 280, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 500, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -40,10 +40,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1500, 780.001 ), Vector2( 1408.01, 780.001 ) ]
+"values": [ Vector2( 300, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -58,7 +58,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1670, 780.001 ), Vector2( 1408.01, 780.001 ) ]
+"values": [ Vector2( 500, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 20 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1408.01, 780.001 ), Vector2( 1500, 780.001 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 300, 0 ) ]
 }
 
 [node name="BarryConsole" type="Area2D"]
@@ -103,7 +103,8 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 1921.39, 308.802, 1835.26, 347.762, 1788.1, 437.986, 1779.9, 548.716, 1804.51, 624.586, 1777.85, 673.799, 1687.62, 714.81, 1660.97, 702.507, 1550.24, 788.63, 1533.83, 839.894, 1470.27, 835.792, 1455.91, 872.702, 1460.01, 901.41, 1429.26, 958.825, 1462.06, 1026.49, 1537.93, 1059.3, 1550.24, 1079.81, 1717, 1085.59, 1924.48, 1083.13 )
+visible = false
+polygon = PoolVector2Array( 1921.39, 308.802, 1835.26, 347.762, 1751.97, 482.147, 1773.5, 558.68, 1797.41, 635.213, 1777.85, 673.799, 1687.62, 714.81, 1660.97, 702.507, 1550.24, 788.63, 1527.16, 831.33, 1470.27, 835.792, 1455.91, 872.702, 1460.01, 901.41, 1429.26, 958.825, 1462.58, 1041.8, 1529.55, 1070.5, 1553.46, 1092.02, 1717, 1085.59, 1924.48, 1083.13 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BarryAirlock = SubResource( 1 )
