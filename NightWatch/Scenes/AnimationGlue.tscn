@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/AnimationGlue.gd" type="Script" id=1]
 [ext_resource path="res://GFX/space-2.png" type="Texture" id=2]
 [ext_resource path="res://GFX/title.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://SFX/481981__wi-photos__credits.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "NightWatch"
@@ -47,7 +48,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "name"
-length = 18.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Names/Paul:rect_position")
 tracks/0/interp = 1
@@ -192,6 +193,30 @@ tracks/11/keys = {
 "update": 0,
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 1.5, 1.5 ) ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("Music:autoplay")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Music:volume_db")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 18, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0 ]
+}
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
@@ -227,56 +252,56 @@ editor/display_folded = true
 anims/name = SubResource( 2 )
 
 [node name="Lee" type="RichTextLabel" parent="Names"]
-margin_left = 1920.0
-margin_top = 1080.0
-margin_right = 2432.0
-margin_bottom = 1592.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 384.0
+margin_bottom = 384.0
+rect_scale = Vector2( 0.1, 0.1 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "LEE VAN DEN BLINK"
 
 [node name="Paul" type="RichTextLabel" parent="Names"]
-margin_left = -128.0
-margin_top = 1208.0
-margin_right = 384.001
-margin_bottom = 1720.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 2042.24
+margin_top = -124.463
+margin_right = 2554.24
+margin_bottom = 387.538
+rect_scale = Vector2( 0.104277, 0.104277 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Paul McKercher"
 
 [node name="Daniel" type="RichTextLabel" parent="Names"]
-margin_left = 1920.0
-margin_top = 1080.0
-margin_right = 2432.0
-margin_bottom = 1592.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = -122.558
+margin_top = -124.79
+margin_right = 389.442
+margin_bottom = 387.21
+rect_scale = Vector2( 0.10372, 0.10372 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Daniel Burke"
 
 [node name="Jeff" type="RichTextLabel" parent="Names"]
-margin_left = -128.0
-margin_top = 1208.0
-margin_right = 384.0
-margin_bottom = 1720.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 2037.24
+margin_top = -121.394
+margin_right = 2549.24
+margin_bottom = 390.606
+rect_scale = Vector2( 0.106922, 0.106922 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Jeff Reynolds"
 
 [node name="Michael" type="RichTextLabel" parent="Names"]
-margin_left = 1920.0
-margin_top = 1080.0
-margin_right = 2432.0
-margin_bottom = 1592.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = -118.783
+margin_top = -122.563
+margin_right = 393.22
+margin_bottom = 389.437
+rect_scale = Vector2( 0.106301, 0.106301 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Michael Seymour"
 
 [node name="Atkins" type="RichTextLabel" parent="Names"]
-margin_left = -128.0
-margin_top = 1208.0
-margin_right = 384.0
-margin_bottom = 1720.0
-rect_scale = Vector2( 1.5, 1.5 )
+margin_left = 2038.55
+margin_top = -122.2
+margin_right = 2550.55
+margin_bottom = 389.8
+rect_scale = Vector2( 0.106078, 0.106078 )
 custom_fonts/normal_font = SubResource( 3 )
 text = "Paul Atkins"
 
@@ -286,5 +311,9 @@ autostart = true
 
 [node name="Exit" type="Timer" parent="."]
 wait_time = 27.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Exit" to="." method="_on_Exit_timeout"]

@@ -8,6 +8,7 @@ onready var timer = get_node("Timer")
 var scroll_x = 0
 
 func _ready():
+	$Music.play()
 	run_animations()
 
 func _process(delta):

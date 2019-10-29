@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/481981__wi-photos__credits.ogg-5c55aef6b9c2b687495db4bb54e57d72.oggstr"
+
+[deps]
+
+source_file="res://SFX/481981__wi-photos__credits.ogg"
+dest_files=[ "res://.import/481981__wi-photos__credits.ogg-5c55aef6b9c2b687495db4bb54e57d72.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
