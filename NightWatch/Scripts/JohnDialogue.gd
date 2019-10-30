@@ -81,7 +81,7 @@ func john_dialogues(id):
 		"3a3a1a2":
 			return [["I don't think a lowly 'engineer' has any business fiddling with a G38k Kermit Quantum AI Nanoflux Supercomputer","I bet you really hate that computer"],["3a3a1a2a1"]]
 		"3a3a1a2a1":
-			return [[". . .", "I bet you're disappointed that the League reduced you to a button-pushing errand-boy"], ["3a3a1a2a1a"]]
+			return [[". . .", "I bet you're disappointed that the League reduced you to a button-pushing errand-boy."], ["3a3a1a2a1a"]]
 		"3a3a1a2a1a":
 			return [[". . . ", "I bet you feel like you really wasted your youth on all that study."], ["3a3a1a2a1a1"]]
 		"3a3a1a2a1a1":

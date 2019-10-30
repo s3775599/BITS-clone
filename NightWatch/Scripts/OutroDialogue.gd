@@ -143,7 +143,7 @@ func outro_dialogues(id):
 		"ojohn2":
 			return [["Well done, guys!", "[ -- continue --]"], ["ojohn3"]]
 		"ojohn3":
-			return [["", "Yes, tThanks for your contribution, Barry."], ["ojohn4"]]
+			return [["", "Yes, thanks for your contribution, Barry."], ["ojohn4"]]
 		"ojohn4":
 			return [["Yeah, thanks a lot Barry.", "[ -- continue --]"], ["ojohn5"]]
 		"ojohn5":

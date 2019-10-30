@@ -7,8 +7,8 @@
 [ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/OutroDialogue.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
@@ -162,11 +162,10 @@ position = Vector2( 0, -550 )
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 0, -550 )
 
-[node name="JohnClose" parent="Crew" instance=ExtResource( 8 )]
-position = Vector2( -550, 0 )
-
-[node name="BarryClose" parent="Crew" instance=ExtResource( 9 )]
+[node name="BarryClose" parent="Crew" instance=ExtResource( 8 )]
 position = Vector2( 2600, 0 )
+
+[node name="JohnClose" parent="Crew" instance=ExtResource( 9 )]
 
 [node name="Dialogues" type="Node" parent="."]
 
