@@ -24,12 +24,12 @@ var printing = false
 var button_selected = false
 var quit_button = false
 
-
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		quit_button = true
 
-# This functon gets dialogue lines as a param and prints it to the dialogue box and buttons
+
+# This function gets dialogue lines as a param and prints it to the dialogue box and buttons
 func set_text(dialogue_lines):
 	quit_button = false
 	button_selected = false
@@ -41,7 +41,6 @@ func set_text(dialogue_lines):
 	# If the dialogue is the player's box (in the intro), only show the buttons window
 	if Global.player_popup.visible == false:
 		display_text.bbcode_text = String("")
-		
 	# Gets the number of dialogue lines and button responses
 	var dialogue_size = dialogue_lines[0].size()
 	# Display appripriate number of buttons
@@ -59,7 +58,6 @@ func set_text(dialogue_lines):
 # Writing to screen one letter at a time like a typewriter? - Godot Engine - Q&A. [online] 
 # Available at: https://godotengine.org/qa/17327/writing-to-screen-one-letter-at-a-time-like-a-typewriter 
 # [Accessed 19 Oct. 2019].
-#
 #
 func typewriter_text(text):
 	# Create a timer to print text like a typewriter
@@ -79,8 +77,6 @@ func typewriter_text(text):
 			display_text.bbcode_text += String(letter)
 			yield(t, "timeout")
 	printing = false
-""" 
-"""
 
 
 # Displays the appropriate number of buttons according to number of available options
@@ -93,10 +89,10 @@ func set_button_visibility(n):
 		# Adjusts the button size and position for the player or NPC dialogues, taking into account
 		# the size of the NPCs' dialogue display window
 		if Global.player_popup.visible:
-			$VBoxContainer.rect_size = Vector2(920, 240)
+			$VBoxContainer.rect_size = Vector2(920, 200)
 			$VBoxContainer.rect_position.y = 460
 		else:
-			$VBoxContainer.rect_size = Vector2(920, 480)
+			$VBoxContainer.rect_size = Vector2(920, 400)
 		button1.visible = true
 		if n > 2:
 			if Global.player_popup.visible:
