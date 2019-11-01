@@ -85,9 +85,9 @@ func john_dialogues(id):
 		"3a3a1a2a1a":
 			return [[". . . ", "I bet you feel like you really wasted your youth on all that study."], ["3a3a1a2a1a1"]]
 		"3a3a1a2a1a1":
-			return [[". . .", "I bet you'd really like to show this computer how you really feel."], ["smash"]]
-		"smash":
-			return [["AAAAARGH!!","[ -- continue -- ]"],["fix"]]
+			return [[". . .", "I bet you'd really like to show this computer how you really feel."], ["3a3a1a2a1a1a"]]
+		"3a3a1a2a1a1a":
+			return [["AAAAARGH!!","[ -- continue -- ]"],["smash"]]
 		"fix":
 			Global.john_solved = true
 			return [["Hey! It looks like . . . That's fixed it a bit!","[ -- end -- ]"],["solved"]]

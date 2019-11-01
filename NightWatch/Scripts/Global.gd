@@ -87,6 +87,8 @@ func john_button(button_id):
 	# Button IDs beginning with o are from the Outro dialogue
 	elif button_id[0] == "o":
 		current_scene.get_node('Dialogues/OutroDialogue').outro_sequence(button_id)
+	elif button_id == "smash":
+		current_scene.john_smash()
 	# ID for the Barry/airlock sequence
 	elif button_id == "airlock_close":
 		# Calls the function which manages John's dialogue in the Barry/airlock sequence
@@ -203,7 +205,7 @@ func hide_barry():
 	current_scene.get_node('Popups/BarryPopup').hide()
 	current_scene.get_node('Crew/BarryClose/AnimationPlayer').play('BarryCloseSlideOut')
 	barry_close = false
-	can_click
+	can_click = true
 
 
 # Hides John's close-up and dialogue box
