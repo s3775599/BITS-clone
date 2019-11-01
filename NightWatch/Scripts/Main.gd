@@ -96,7 +96,8 @@ func john_smash():
 # Barry/airlock sequence
 func airlock_barry_out():
 	# Hide's Barry's close-up
-	Global.hide_barry()
+	$Popups/BarryPopup.hide()
+	Global.barry_close = false
 	Global.can_click = false
 	# Short pause
 	var t = Timer.new()
@@ -224,7 +225,7 @@ func play_russian_text1():
 		for text in arhipelag_GULAG:
 			background_text_display(text, text_node_1, .075)
 			var t = Timer.new()
-			t.set_wait_time(2.5)
+			t.set_wait_time(2.3)
 			t.set_one_shot(false)
 			self.add_child(t)
 			t.start()
@@ -241,7 +242,7 @@ func play_russian_text2():
 		for text in master_i_margarita:
 			background_text_display(text, text_node_2, .1)
 			var t = Timer.new()
-			t.set_wait_time(3.5)
+			t.set_wait_time(3.2)
 			t.set_one_shot(false)
 			self.add_child(t)
 			t.start()
@@ -258,7 +259,7 @@ func play_russian_text3():
 		for text in prestupleniye_i_nakazaniye:
 			background_text_display(text, text_node_3, .075)
 			var t = Timer.new()
-			t.set_wait_time(2.75)
+			t.set_wait_time(2.8)
 			t.set_one_shot(false)
 			self.add_child(t)
 			t.start()
@@ -275,7 +276,7 @@ func play_russian_text4():
 		for text in vechera_no_hutorye_bliz_dikanki:
 			background_text_display(text, text_node_4, .05)
 			var t = Timer.new()
-			t.set_wait_time(3)
+			t.set_wait_time(2.6)
 			t.set_one_shot(false)
 			self.add_child(t)
 			t.start()
