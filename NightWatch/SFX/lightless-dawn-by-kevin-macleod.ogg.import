@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lightless-dawn-by-kevin-macleod.ogg-099e70fdb85fe4bd3c0764147403ace8.oggstr"
+
+[deps]
+
+source_file="res://SFX/lightless-dawn-by-kevin-macleod.ogg"
+dest_files=[ "res://.import/lightless-dawn-by-kevin-macleod.ogg-099e70fdb85fe4bd3c0764147403ace8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,7 +8,7 @@
 [ext_resource path="res://GFX/exit_game.png" type="Texture" id=6]
 [ext_resource path="res://SFX/rollover6.ogg" type="AudioStream" id=7]
 [ext_resource path="res://SFX/click3.ogg" type="AudioStream" id=8]
-[ext_resource path="res://SFX/338065__geronimogeronimo__space-alarm.ogg" type="AudioStream" id=9]
+[ext_resource path="res://SFX/lightless-dawn-by-kevin-macleod.ogg" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/About.tscn" type="PackedScene" id=10]
 [ext_resource path="res://GFX/Fonts/PxPlus_IBM_VGA8.ttf" type="DynamicFontData" id=11]
 
