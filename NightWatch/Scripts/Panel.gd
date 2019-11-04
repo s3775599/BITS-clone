@@ -1,5 +1,8 @@
 extends Area2D
 
+
+onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
+
 # Bools for panel buttons
 var one = false
 var two = false
@@ -57,9 +60,13 @@ func get_current_code():
 	Global.current_code.append($GridContainer/ConsoleButton3.id)
 	Global.current_code.append($GridContainer/ConsoleButton4.id)
 
+func click():
+	audio_stream_player.stream = load (Global.console_click1)
+	audio_stream_player.play() 
 
 # Signals to toggle lights
 func _on_ConsoleButton1_pressed():
+	click()
 	# Toggles boolean var
 	one = not one
 	# Updates lights
@@ -67,15 +74,18 @@ func _on_ConsoleButton1_pressed():
 
 
 func _on_ConsoleButton2_pressed():
+	click()
 	two = not two
 	toggle_lights()
 
 
 func _on_ConsoleButton3_pressed():
+	click()
 	three = not three
 	toggle_lights()
 
 
 func _on_ConsoleButton4_pressed():
+	click()
 	four = not four
 	toggle_lights()

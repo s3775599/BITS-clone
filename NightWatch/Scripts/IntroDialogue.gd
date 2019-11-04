@@ -9,7 +9,7 @@ onready var john_popup = get_node("/root/Intro/Popups/JohnPopup")
 onready var barry_anim = get_node("/root/Intro/Crew/BarryClose/AnimationPlayer")
 onready var barry_console_anim = get_node("/root/Intro/Crew/BarryConsole/AnimationPlayer")
 onready var john_anim = get_node("/root/Intro/Crew/JohnClose/AnimationPlayer")
-
+onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
 
 func _ready():
 	Global.player_close = true
@@ -136,6 +136,8 @@ func intro_dialogues(id):
 		"i11d1d":
 			return [[". . .", "[ -- continue -- ]"], ["i11s"]]
 		"i12":
+#			audio_stream_player.stream = load(Global.language_switch)
+#			audio_stream_player.play()
 			return [["See? Everything's . . . ", "[ -- continue -- ]"], ["i13"]]
 		"i13":
 			return [["", "Everything's . . .?"], ["i14"]]

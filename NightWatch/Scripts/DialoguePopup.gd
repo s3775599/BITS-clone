@@ -12,6 +12,7 @@ onready var button1_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/B
 onready var button2_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button2/Label')
 onready var button3_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button3/Label')
 onready var button4_label = get_node('VBoxContainer/ButtonRect/ButtonContainer/Button4/Label')
+onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
 
 # Sets an ID for a selected dialogue button
 var button_id
@@ -134,10 +135,15 @@ func emit_button_signal(button_id):
 	if not printing:
 		emit_signal("button_id", button_id)
 
+# can't get this to work, its supposed to play on each click through dialogue menus
+# func dialogueClick():
+#	audio_stream_player.stream = load (Global.dialogue_click)
+#	audio_stream_player.play() 
 
 func _on_Button_pressed():
 	button_id = button1.button_id
 	emit_button_signal(button_id)
+	
 
 
 func _on_Button2_pressed():

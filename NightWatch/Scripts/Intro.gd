@@ -28,6 +28,7 @@ func _ready():
 	yield(t, "timeout")
 	# Runs the intro sequence
 	intro()
+	
 
 
 func _input(event):
@@ -41,6 +42,7 @@ func intro():
 	show_player()
 	# Calls the first Intro dialogue lines from the intro_dialogue script
 	$Popups/PlayerPopup.set_text(intro_dialogue.intro_dialogues("i1"))
+	
 
 
 # Shows player dialogue box

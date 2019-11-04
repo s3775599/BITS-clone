@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=15]
+[ext_resource path="res://SFX/322054__zimbot__engineroomsteady.ogg" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AirlockWarning"
@@ -354,6 +355,10 @@ anims/FadeOut = SubResource( 3 )
 [node name="ConsoleMiniGame" parent="." instance=ExtResource( 15 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -14.136
 [connection signal="input_event" from="BackgroundMain/AnimationGlue" to="." method="_on_Area2D_input_event"]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]

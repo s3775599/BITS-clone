@@ -3,7 +3,6 @@ extends Node
 onready var background_anim = get_node('/root/Main/BackgroundArea/BackgroundSprite/AnimationPlayer')
 onready var main_script = get_node('/root/Main/')
 
-
 func john_dialogues(id):
 	match id:
 		"1":

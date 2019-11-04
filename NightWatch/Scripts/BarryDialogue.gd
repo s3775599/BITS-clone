@@ -57,6 +57,8 @@ func barry_dialogues(id):
 		"airlock_warning":
 			return [[". . . open airlock warning?", "[ -- continue -- ]"], ["airlock_barry"]]
 		"airlock_barry":
+#			audio_stream_player.stream = load(Global.barry_uhoh)
+#			audio_stream_player.play()
 			return [[". . . is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]
 		"3a2b":
 			return [["What's that, Sir?", "What kind of training did you get when you were qualifying to be a pilot?", "Try pushing random buttons.", "I think you should not touch anything and let me and John try to fix this."], ["3a2b1", "3a2b2", "3a2b3"]]
