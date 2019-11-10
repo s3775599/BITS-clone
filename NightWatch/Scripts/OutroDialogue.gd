@@ -83,13 +83,13 @@ func outro_dialogues(id):
 		"oplayer7":
 			return [["I was trying really hard, Sir.", "[ -- continue --]"], ["oplayer8"]]
 		"oplayer8":
-			return [["", "It was a matter of pressing those buttons there."], ["oplayer9"]]
+			return [["", "It was a matter of flicking those switches there."], ["oplayer9"]]
 		"oplayer9":
-			return [["Which buttons?", "[ -- continue --]"], ["oplayer10"]]
+			return [["Which switches?", "[ -- continue --]"], ["oplayer10"]]
 		"oplayer10":
-			return [["", "Those bright red buttons right next to you, John."], ["oplayer11"]]
+			return [["", "Those bright little red switches right next to you, John."], ["oplayer11"]]
 		"oplayer11":
-			return [["Oh yes, those bright red buttons. And that fixed it?", "[ -- continue --]"], ["oplayer12"]]
+			return [["Oh yes, those bright little red switches. And that fixed it?", "[ -- continue --]"], ["oplayer12"]]
 		"oplayer12":
 			return [["", "I pressed them a few times and played around a bit and it seemed to fix it."], ["oplayer13"]]
 		"oplayer13":
@@ -103,7 +103,7 @@ func outro_dialogues(id):
 		"oplayer17":
 			return [["It was Barry's mistake to fix.", "[ -- continue --]"], ["oplayer18"]]
 		"oplayer18":
-			return [["I knew one of these buttons opens the airlock but I couldn't remember which.", "[ -- continue --]"], ["oplayer19"]]
+			return [["I knew one of these switches opens the airlock but I couldn't remember which.", "[ -- continue --]"], ["oplayer19"]]
 		"oplayer19":
 			return [["", "Barry."], ["oplayer20"]]
 		"oplayer20":

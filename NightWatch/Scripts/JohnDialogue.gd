@@ -95,7 +95,7 @@ func john_dialogues(id):
 			
 # Barry's airlock accident lines
 		"airlock1":
-			return [["SIR WHAT HAPPENED? WHERE'S BARRY?", "I TOLD HIM TO PLAY AROUND WITH SOME BUTTONS!", "HE WAS PLAYING AROUND WITH SOME BUTTONS!", "I TOLD HIM NOT TO PLAY AROUND WITH ANY BUTTONS!", "I HAVE ABSOLUTELY NO IDEA!"], ["airlock1a", "airlock1b", "whatnow", "whatnow"]]
+			return [["SIR WHAT HAPPENED? WHERE'S BARRY?", "I TOLD HIM TO PLAY AROUND WITH SOME SWITCHES!", "HE WAS PLAYING AROUND WITH SOME SWITCHES!", "I TOLD HIM NOT TO PLAY AROUND WITH ANY SWITCHES!", "I HAVE ABSOLUTELY NO IDEA!"], ["airlock1a", "airlock1b", "whatnow", "whatnow"]]
 		"airlock1a":
 			return [["YOU DID WHAT?? WHY DID YOU TELL HIM TO DO THAT?", "I DIDN'T HAVE ANY BETTER IDEAS!", "HE DIDN'T HAVE ANY BETTER IDEAS!"], ["whatnow", "whatnow"]]
 		"airlock1b":
