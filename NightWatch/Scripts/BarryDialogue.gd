@@ -5,6 +5,7 @@ onready var barry_close_anim = get_node('/root/Main/Crew/BarryClose/AnimationPla
 onready var background_anim = get_node('/root/Main/AnimationPlayer')
 onready var main_script = get_node('root/Main')
 onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
+onready var audio_sfx_player = get_node('/root/Main/shortSFX')
 
 func barry_dialogues(id):
 	match id:
@@ -57,8 +58,9 @@ func barry_dialogues(id):
 		"airlock_warning":
 			return [[". . . open airlock warning?", "[ -- continue -- ]"], ["airlock_barry"]]
 		"airlock_barry":
-#			audio_stream_player.stream = load(Global.barry_uhoh)
-#			audio_stream_player.play()
+			#sound is looping? not sure how to fix...
+#			audio_sfx_player.stream = load(Global.barry_uhoh)
+#			audio_sfx_player.play()
 			return [[". . . is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]
 		"3a2b":
 			return [["What's that, Sir?", "What kind of training did you get when you were qualifying to be a pilot?", "Try pushing random buttons.", "I think you should not touch anything and let me and John try to fix this."], ["3a2b1", "3a2b2", "3a2b3"]]

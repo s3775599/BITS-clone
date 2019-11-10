@@ -196,6 +196,8 @@ anims/FadeOut = SubResource( 3 )
 
 [node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
 
+[node name="shortSFX" type="AudioStreamPlayer" parent="."]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
