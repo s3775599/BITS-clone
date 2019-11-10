@@ -310,7 +310,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="Exit" type="Timer" parent="."]
-wait_time = 27.0
+wait_time = 25.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
