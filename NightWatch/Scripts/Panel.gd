@@ -18,47 +18,47 @@ func _ready():
 func toggle_lights():
 	# Sets panel light to 1 or 0 positions
 	if one:
-		$GridContainer/ConsoleButton1.id = 1
-		$GridContainer/OneZero.set_modulate(Color('ff2828'))
-		$GridContainer/OneOne.set_modulate(Color('ffffff'))
+		$ConsoleButton1.id = 1
+#		$GridContainer/OneZero.set_modulate(Color('ff2828'))
+#		$GridContainer/OneOne.set_modulate(Color('ffffff'))
 	else:
-		$GridContainer/ConsoleButton1.id = 0
-		$GridContainer/OneZero.set_modulate(Color('ffffff'))
-		$GridContainer/OneOne.set_modulate(Color('ff2828'))
+		$ConsoleButton1.id = 0
+#		$GridContainer/OneZero.set_modulate(Color('ffffff'))
+#		$GridContainer/OneOne.set_modulate(Color('ff2828'))
 	if two:
-		$GridContainer/ConsoleButton2.id = 1
-		$GridContainer/TwoZero.set_modulate(Color('ff2828'))
-		$GridContainer/TwoOne.set_modulate(Color('ffffff'))
+		$ConsoleButton2.id = 1
+#		$GridContainer/TwoZero.set_modulate(Color('ff2828'))
+#		$GridContainer/TwoOne.set_modulate(Color('ffffff'))
 	else:
-		$GridContainer/ConsoleButton2.id = 0
-		$GridContainer/TwoZero.set_modulate(Color('ffffff'))
-		$GridContainer/TwoOne.set_modulate(Color('ff2828'))
+		$ConsoleButton2.id = 0
+#		$GridContainer/TwoZero.set_modulate(Color('ffffff'))
+#		$GridContainer/TwoOne.set_modulate(Color('ff2828'))
 	if three:
-		$GridContainer/ConsoleButton3.id = 1
-		$GridContainer/ThreeZero.set_modulate(Color('ff2828'))
-		$GridContainer/ThreeOne.set_modulate(Color('ffffff'))
+		$ConsoleButton3.id = 1
+#		$GridContainer/ThreeZero.set_modulate(Color('ff2828'))
+#		$GridContainer/ThreeOne.set_modulate(Color('ffffff'))
 	else:
-		$GridContainer/ConsoleButton3.id = 0
-		$GridContainer/ThreeZero.set_modulate(Color('ffffff'))
-		$GridContainer/ThreeOne.set_modulate(Color('ff2828'))
+		$ConsoleButton3.id = 0
+#		$GridContainer/ThreeZero.set_modulate(Color('ffffff'))
+#		$GridContainer/ThreeOne.set_modulate(Color('ff2828'))
 	if four:
-		$GridContainer/ConsoleButton4.id = 1
-		$GridContainer/FourZero.set_modulate(Color('ff2828'))
-		$GridContainer/FourOne.set_modulate(Color('ffffff'))
+		$ConsoleButton4.id = 1
+#		$GridContainer/FourZero.set_modulate(Color('ff2828'))
+#		$GridContainer/FourOne.set_modulate(Color('ffffff'))
 	else:
-		$GridContainer/ConsoleButton4.id = 0
-		$GridContainer/FourZero.set_modulate(Color('ffffff'))
-		$GridContainer/FourOne.set_modulate(Color('ff2828'))
+		$ConsoleButton4.id = 0
+#		$GridContainer/FourZero.set_modulate(Color('ffffff'))
+#		$GridContainer/FourOne.set_modulate(Color('ff2828'))
 	get_current_code()
 
 
 # Checks light positions and adds to the global array
 func get_current_code():
 	Global.current_code = []
-	Global.current_code.append($GridContainer/ConsoleButton1.id)
-	Global.current_code.append($GridContainer/ConsoleButton2.id)
-	Global.current_code.append($GridContainer/ConsoleButton3.id)
-	Global.current_code.append($GridContainer/ConsoleButton4.id)
+	Global.current_code.append($ConsoleButton1.id)
+	Global.current_code.append($ConsoleButton2.id)
+	Global.current_code.append($ConsoleButton3.id)
+	Global.current_code.append($ConsoleButton4.id)
 
 func click():
 	audio_stream_player.stream = load (Global.console_click1)

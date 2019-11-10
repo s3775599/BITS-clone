@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=2]
@@ -7,15 +7,14 @@
 [ext_resource path="res://Scenes/JohnPopup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/PlayerPopup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Panel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scripts/ConsoleButton1.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=15]
-[ext_resource path="res://SFX/322054__zimbot__engineroomsteady.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Scenes/JohnConsole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/BarryConsole.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BarryDialogue.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/JohnDialogue.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/ConsoleMiniGame.tscn" type="PackedScene" id=14]
+[ext_resource path="res://SFX/322054__zimbot__engineroomsteady.ogg" type="AudioStream" id=15]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AirlockWarning"
@@ -67,7 +66,6 @@ tracks/0/keys = {
 }
 
 [node name="Main" type="Control"]
-modulate = Color( 0, 0, 0, 1 )
 script = ExtResource( 1 )
 
 [node name="BackgroundMain" parent="." instance=ExtResource( 2 )]
@@ -157,169 +155,13 @@ margin_bottom = 40.0
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 6 )]
 
 [node name="Panel" parent="." instance=ExtResource( 7 )]
-editor/display_folded = true
-position = Vector2( 832, 700 )
-scale = Vector2( 1.8, 1.8 )
-
-[node name="GridContainer" parent="Panel" index="0"]
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 256.0
-margin_bottom = 256.0
-
-[node name="Label" parent="Panel/GridContainer" index="0"]
-margin_right = 24.0
-
-[node name="Label2" parent="Panel/GridContainer" index="1"]
-margin_left = 28.0
-margin_right = 52.0
-
-[node name="Label3" parent="Panel/GridContainer" index="2"]
-margin_left = 56.0
-margin_right = 80.0
-
-[node name="Label4" parent="Panel/GridContainer" index="3"]
-margin_left = 84.0
-margin_right = 108.0
-
-[node name="OneZero" parent="Panel/GridContainer" index="4"]
-margin_right = 24.0
-margin_bottom = 48.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-
-[node name="TwoZero" parent="Panel/GridContainer" index="5"]
-margin_left = 28.0
-margin_right = 52.0
-margin_bottom = 48.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="ThreeZero" parent="Panel/GridContainer" index="6"]
-margin_left = 56.0
-margin_right = 80.0
-margin_bottom = 48.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="FourZero" parent="Panel/GridContainer" index="7"]
-margin_left = 84.0
-margin_right = 108.0
-margin_bottom = 48.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="ConsoleButton1" parent="Panel/GridContainer" index="8"]
-margin_top = 52.0
-margin_right = 24.0
-margin_bottom = 76.0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-expand = false
-
-[node name="ConsoleButton2" parent="Panel/GridContainer" index="9"]
-margin_left = 28.0
-margin_top = 52.0
-margin_right = 52.0
-margin_bottom = 76.0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-expand = false
-script = ExtResource( 8 )
-
-[node name="ConsoleButton3" parent="Panel/GridContainer" index="10"]
-margin_left = 56.0
-margin_top = 52.0
-margin_right = 80.0
-margin_bottom = 76.0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-expand = false
-script = ExtResource( 8 )
-
-[node name="ConsoleButton4" parent="Panel/GridContainer" index="11"]
-margin_left = 84.0
-margin_top = 52.0
-margin_right = 108.0
-margin_bottom = 76.0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-expand = false
-script = ExtResource( 8 )
-
-[node name="OneOne" parent="Panel/GridContainer" index="12"]
-margin_top = 80.0
-margin_right = 24.0
-margin_bottom = 104.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="TwoOne" parent="Panel/GridContainer" index="13"]
-margin_left = 28.0
-margin_top = 80.0
-margin_right = 52.0
-margin_bottom = 104.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="ThreeOne" parent="Panel/GridContainer" index="14"]
-margin_left = 56.0
-margin_top = 80.0
-margin_right = 80.0
-margin_bottom = 104.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="FourOne" parent="Panel/GridContainer" index="15"]
-margin_left = 84.0
-margin_top = 80.0
-margin_right = 108.0
-margin_bottom = 104.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-expand = false
-stretch_mode = 1
-
-[node name="Label5" parent="Panel/GridContainer" index="16"]
-margin_top = 108.0
-margin_right = 24.0
-margin_bottom = 128.0
-
-[node name="Label6" parent="Panel/GridContainer" index="17"]
-margin_left = 28.0
-margin_top = 108.0
-margin_right = 52.0
-margin_bottom = 128.0
-
-[node name="Label7" parent="Panel/GridContainer" index="18"]
-margin_left = 56.0
-margin_top = 108.0
-margin_right = 80.0
-margin_bottom = 128.0
-
-[node name="Label8" parent="Panel/GridContainer" index="19"]
-margin_left = 84.0
-margin_top = 108.0
-margin_right = 108.0
-margin_bottom = 128.0
+position = Vector2( 752, 783.158 )
+scale = Vector2( 1, 0.9 )
 
 [node name="Crew" type="Node2D" parent="."]
 position = Vector2( 0, 550 )
 
-[node name="JohnConsole" parent="Crew" instance=ExtResource( 9 )]
+[node name="JohnConsole" parent="Crew" instance=ExtResource( 8 )]
 editor/display_folded = true
 position = Vector2( 0, -550 )
 
@@ -327,37 +169,37 @@ position = Vector2( 0, -550 )
 position = Vector2( 0, 480 )
 polygon = PoolVector2Array( -1.27499, -151.828, 53.841, -131.786, 103.947, -86.6913, 127.329, -13.2033, 135.68, 167.176, 130.669, 212.271, 187.456, 254.026, 275.975, 279.079, 307.709, 332.524, 367.835, 444.427, 387.878, 355.907, 412.93, 334.195, 468.046, 345.886, 481.408, 387.64, 466.376, 427.725, 454.685, 531.276, 459.695, 596.413, 237.561, 598.083, -2.57022, 602.938 )
 
-[node name="BarryConsole" parent="Crew" instance=ExtResource( 10 )]
+[node name="BarryConsole" parent="Crew" instance=ExtResource( 9 )]
 editor/display_folded = true
 position = Vector2( 0, -550 )
 
 [node name="CollisionPolygon2D" parent="Crew/BarryConsole" index="1"]
 polygon = PoolVector2Array( 1921.88, 308.684, 1831.66, 350.211, 1798.73, 403.194, 1781.54, 565.007, 1801.59, 623.718, 1780.11, 669.541, 1694.19, 705.34, 1655.53, 703.908, 1636.91, 726.82, 1602.55, 746.867, 1550.99, 789.826, 1548.13, 819.898, 1533.81, 841.377, 1510.9, 827.058, 1469.37, 837.081, 1455.05, 852.833, 1462.21, 904.384, 1436.44, 951.639, 1443.6, 1007.49, 1512.33, 1050.45, 1549.56, 1076.22, 1717, 1085.59, 1924.48, 1083.13 )
 
-[node name="JohnClose" parent="Crew" instance=ExtResource( 11 )]
+[node name="JohnClose" parent="Crew" instance=ExtResource( 10 )]
 editor/display_folded = true
 
-[node name="BarryClose" parent="Crew" instance=ExtResource( 12 )]
+[node name="BarryClose" parent="Crew" instance=ExtResource( 11 )]
 position = Vector2( 2600, 0 )
 
 [node name="Dialogues" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 13 )]
+[node name="BarryDialogue" parent="Dialogues" instance=ExtResource( 12 )]
 
-[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 14 )]
+[node name="JohnDialogue" parent="Dialogues" instance=ExtResource( 13 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AirlockWarning = SubResource( 1 )
 anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 
-[node name="ConsoleMiniGame" parent="." instance=ExtResource( 15 )]
+[node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = -14.136
 [connection signal="input_event" from="BackgroundMain/AnimationGlue" to="." method="_on_Area2D_input_event"]
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
