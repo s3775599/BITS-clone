@@ -35,7 +35,7 @@ func barry_dialogues(id):
 		"3a2":
 			return [["I'm going to try something . . .", "What's that?", "Wait, I have an idea.", "Whatever it is, Barry, you'd better have a good plan."], ["3a2a", "3a2b", "3a2c"]]
 		"3a2a":
-			return [["I'm going to try pressing a button.", "Are you sure that's a good idea?", "I don't think that's a good idea.", "Okay, try that."], ["3a2a1a", "3a2a1b", "3a2a1c"]]
+			return [["I'm going to try flicking a switch.", "Are you sure that's a good idea?", "I don't think that's a good idea.", "Okay, try that."], ["3a2a1a", "3a2a1b", "3a2a1c"]]
 		"3a2a1a":
 			return [["Honestly Sir, No. But I'm not sure what else to try.", "I don't think that's a good idea.", "Okay, try that."], ["3a2a1b", "3a2a1c"]] 
 		"3a2a1b":
@@ -61,7 +61,7 @@ func barry_dialogues(id):
 #			audio_stream_player.play()
 			return [[". . . is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]
 		"3a2b":
-			return [["What's that, Sir?", "What kind of training did you get when you were qualifying to be a pilot?", "Try pushing random buttons.", "I think you should not touch anything and let me and John try to fix this."], ["3a2b1", "3a2b2", "3a2b3"]]
+			return [["What's that, Sir?", "What kind of training did you get when you were qualifying to be a pilot?", "Try flicking random switches.", "I think you should not touch anything and let me and John try to fix this."], ["3a2b1", "3a2b2", "3a2b3"]]
 		"3a2b1":
 			return [["Aerodynamics, vector calculus, spatial geometry, mechanical engineering, first aid, how to drink seven shots of run and vomit it out your nose into a pint glass, navigation . . . ", "Navigation! Wait, seven shots and what? No, never mind actually . . ."], ["3a2b1a"]]
 		"3a2b1a":
@@ -91,7 +91,7 @@ func barry_dialogues(id):
 		"3a2c1":
 			return [[". . .", "Barry."], ["3a2c1a"]]
 		"3a2c1a":
-			return [[". . .", "You were going to start pushing random buttons, weren't you Barry?"], ["3a2c1a1"]]
+			return [[". . .", "You were going to start flicking random switches, weren't you Barry?"], ["3a2c1a1"]]
 		"3a2c1a1":
 			return [["Kind of yes, Sir. Sorry Sir.", "[ -- end -- ]"], ["end"]]
 		"3a3":
