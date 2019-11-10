@@ -145,6 +145,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
 [node name="Popups" type="Control" parent="."]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -155,10 +156,12 @@ margin_bottom = 40.0
 [node name="PlayerPopup" parent="Popups" instance=ExtResource( 6 )]
 
 [node name="Panel" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
 position = Vector2( 752, 783.158 )
 scale = Vector2( 1, 0.9 )
 
 [node name="Crew" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, 550 )
 
 [node name="JohnConsole" parent="Crew" instance=ExtResource( 8 )]
@@ -197,6 +200,7 @@ anims/FadeOut = SubResource( 3 )
 [node name="ConsoleMiniGame" parent="." instance=ExtResource( 14 )]
 
 [node name="shortSFX" type="AudioStreamPlayer" parent="."]
+volume_db = 5.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

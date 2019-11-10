@@ -12,4 +12,4 @@ dest_files=[ "res://.import/lightless-dawn-by-kevin-macleod.ogg-099e70fdb85fe4bd
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=0.0
