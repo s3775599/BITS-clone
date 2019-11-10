@@ -27,6 +27,7 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	# Runs the intro sequence
+	$BackgroundSFX.play()
 	intro()
 	
 

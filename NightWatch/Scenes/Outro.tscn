@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Outro.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/BackgroundIntro.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/BarryClose.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/JohnClose.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/OutroDialogue.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SFX/322054__zimbot__engineroomsteady.ogg" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -178,6 +179,11 @@ one_shot = true
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
 anims/LowerLights = SubResource( 3 )
+
+[node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -13.126
+autoplay = true
 [connection signal="button_id" from="Popups/BarryPopup" to="." method="_on_BarryPopup_button_id"]
 [connection signal="button_id" from="Popups/JohnPopup" to="." method="_on_JohnPopup_button_id"]
 [connection signal="button_id" from="Popups/PlayerPopup" to="." method="_on_PlayerPopup_button_id"]

@@ -29,6 +29,7 @@ func _ready():
 	t.start()
 	yield(t, "timeout")
 	# Plays Outro sequence
+	$BackgroundSFX.play()
 	outro()
 
 func _input(event):
