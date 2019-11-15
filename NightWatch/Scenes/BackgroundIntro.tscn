@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/BackgroundMain.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GFX/switch1on.png" type="Texture" id=2]
+[ext_resource path="res://GFX/switch2on.png" type="Texture" id=3]
+[ext_resource path="res://GFX/switch3on.png" type="Texture" id=4]
+[ext_resource path="res://GFX/switch4on.png" type="Texture" id=5]
 
 [node name="BackgroundIntro" type="Control"]
 __meta__ = {
@@ -29,5 +33,25 @@ visible = false
 
 [node name="CurrentSequence" parent="BackgroundMain/BackgroundWallpaper/CentreMiddleGlass" index="1"]
 visible = false
+
+[node name="Switch1" type="Sprite" parent="."]
+position = Vector2( 784.414, 813.753 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="Switch2" type="Sprite" parent="."]
+position = Vector2( 858.599, 815.759 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 3 )
+
+[node name="Switch3" type="Sprite" parent="."]
+position = Vector2( 945.656, 815.968 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="Switch4" type="Sprite" parent="."]
+position = Vector2( 1012.3, 813.184 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
 
 [editable path="BackgroundMain"]

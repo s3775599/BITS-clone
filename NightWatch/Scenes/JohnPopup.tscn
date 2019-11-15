@@ -14,7 +14,6 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [node name="JohnPopup" type="Popup"]
-visible = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
