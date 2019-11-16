@@ -58,7 +58,6 @@ func barry_dialogues(id):
 		"airlock_warning":
 			return [[". . . open airlock warning?", "[ -- continue -- ]"], ["airlock_barry"]]
 		"airlock_barry":
-			#sound is looping? not sure how to fix...
 			audio_sfx_player.stream = load(Global.barry_uhoh)
 			audio_sfx_player.play()
 			return [[". . . is my harness on?", "[ -- continue -- ]"], ["airlock_barry_out"]]

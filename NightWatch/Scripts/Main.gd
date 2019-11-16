@@ -101,6 +101,7 @@ func airlock_barry_out():
 	$Popups/BarryPopup.hide()
 	Global.barry_close = false
 	Global.can_click = false
+	Global.barry_gone = true
 	# Short pause
 	var t = Timer.new()
 	t.set_wait_time(0.5)
