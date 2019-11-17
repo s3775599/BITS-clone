@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Title.gd" type="Script" id=1]
+[ext_resource path="res://GFX/titleBG.jpg" type="Texture" id=2]
+[ext_resource path="res://GFX/new_game.png" type="Texture" id=3]
+[ext_resource path="res://GFX/about_game.png" type="Texture" id=4]
+[ext_resource path="res://GFX/exit_game.png" type="Texture" id=5]
+[ext_resource path="res://SFX/rollover6.ogg" type="AudioStream" id=6]
+[ext_resource path="res://SFX/click3.ogg" type="AudioStream" id=7]
+[ext_resource path="res://SFX/338065__geronimogeronimo__space-alarm.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/About.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="InputEventAction" id=2]
+action = "\"ui_cancel\""
+
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
+
+[node name="Title" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 0.313654, 0.326695 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NewGameArea" type="Area2D" parent="."]
+position = Vector2( -10.1459, 55.4409 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NewGameCol" type="CollisionShape2D" parent="NewGameArea"]
+visible = false
+position = Vector2( 512, 220 )
+scale = Vector2( 15, -2.5 )
+shape = SubResource( 1 )
+
+[node name="NewGameSprite" type="Sprite" parent="NewGameArea"]
+position = Vector2( 515.865, 220.92 )
+scale = Vector2( 0.531, 0.563 )
+texture = ExtResource( 3 )
+
+[node name="AboutGameArea" type="Area2D" parent="."]
+position = Vector2( -7.45428, 45.2985 )
+scale = Vector2( 0.99737, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AboutGameCol" type="CollisionShape2D" parent="AboutGameArea"]
+visible = false
+position = Vector2( 512, 280 )
+scale = Vector2( 18, -2.5 )
+shape = SubResource( 1 )
+
+[node name="AboutGameSprite" type="Sprite" parent="AboutGameArea"]
+position = Vector2( 511.447, 279.816 )
+scale = Vector2( 0.531471, 0.545602 )
+texture = ExtResource( 4 )
+
+[node name="ExitGameArea" type="Area2D" parent="."]
+position = Vector2( -5.50317, 33.775 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ExitGameCol" type="CollisionShape2D" parent="ExitGameArea"]
+visible = false
+position = Vector2( 512, 350 )
+scale = Vector2( 15, -2.5 )
+shape = SubResource( 1 )
+
+[node name="ExitGameSprite" type="Sprite" parent="ExitGameArea"]
+position = Vector2( 512.555, 350.555 )
+scale = Vector2( 0.53017, 0.523954 )
+texture = ExtResource( 5 )
+
+[node name="SFXRollOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="SFXSelect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="AboutCtrl" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Buttons" type="Control" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 312.0
+margin_top = 500.0
+margin_right = 712.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 400, 80 )
+
+[node name="Back" type="Button" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+shortcut = SubResource( 3 )
+text = "Back Button"
+[connection signal="input_event" from="NewGameArea" to="." method="_on_NewGameArea_input_event"]
+[connection signal="mouse_entered" from="NewGameArea" to="." method="_on_NewGameArea_mouse_entered"]
+[connection signal="mouse_exited" from="NewGameArea" to="." method="_on_NewGameArea_mouse_exited"]
+[connection signal="input_event" from="AboutGameArea" to="." method="_on_AboutGameArea_input_event"]
+[connection signal="mouse_entered" from="AboutGameArea" to="." method="_on_AboutGameArea_mouse_entered"]
+[connection signal="mouse_exited" from="AboutGameArea" to="." method="_on_AboutGameArea_mouse_exited"]
+[connection signal="input_event" from="ExitGameArea" to="." method="_on_ExitGameArea_input_event"]
+[connection signal="mouse_entered" from="ExitGameArea" to="." method="_on_ExitGameArea_mouse_entered"]
+[connection signal="mouse_exited" from="ExitGameArea" to="." method="_on_ExitGameArea_mouse_exited"]
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_Back_pressed"]
