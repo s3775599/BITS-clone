@@ -1,6 +1,5 @@
 extends Area2D
 
-
 onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
 
 # Bools for panel buttons
@@ -19,36 +18,20 @@ func toggle_lights():
 	# Sets panel light to 1 or 0 positions
 	if one:
 		$ConsoleButton1.id = 1
-#		$GridContainer/OneZero.set_modulate(Color('ff2828'))
-#		$GridContainer/OneOne.set_modulate(Color('ffffff'))
 	else:
 		$ConsoleButton1.id = 0
-#		$GridContainer/OneZero.set_modulate(Color('ffffff'))
-#		$GridContainer/OneOne.set_modulate(Color('ff2828'))
 	if two:
 		$ConsoleButton2.id = 1
-#		$GridContainer/TwoZero.set_modulate(Color('ff2828'))
-#		$GridContainer/TwoOne.set_modulate(Color('ffffff'))
 	else:
 		$ConsoleButton2.id = 0
-#		$GridContainer/TwoZero.set_modulate(Color('ffffff'))
-#		$GridContainer/TwoOne.set_modulate(Color('ff2828'))
 	if three:
 		$ConsoleButton3.id = 1
-#		$GridContainer/ThreeZero.set_modulate(Color('ff2828'))
-#		$GridContainer/ThreeOne.set_modulate(Color('ffffff'))
 	else:
 		$ConsoleButton3.id = 0
-#		$GridContainer/ThreeZero.set_modulate(Color('ffffff'))
-#		$GridContainer/ThreeOne.set_modulate(Color('ff2828'))
 	if four:
 		$ConsoleButton4.id = 1
-#		$GridContainer/FourZero.set_modulate(Color('ff2828'))
-#		$GridContainer/FourOne.set_modulate(Color('ffffff'))
 	else:
 		$ConsoleButton4.id = 0
-#		$GridContainer/FourZero.set_modulate(Color('ffffff'))
-#		$GridContainer/FourOne.set_modulate(Color('ff2828'))
 	get_current_code()
 
 

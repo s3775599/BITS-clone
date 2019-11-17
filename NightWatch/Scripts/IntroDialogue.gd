@@ -150,7 +150,7 @@ func intro_dialogues(id):
 		"i17":
 			return [["", "It LOOKS the same, or it IS the same?"], ["i18"]]
 		"i18":
-			return [["It LOOKS the same. SIR", "[ -- continue -- ]"], ["i19"]]
+			return [["It LOOKS the same. SIR.", "[ -- continue -- ]"], ["i19"]]
 		"i19":
 			return [["", "So can you CONFIRM that it IS the same?"], ["i20"]]
 		"i20":
@@ -214,7 +214,7 @@ func intro_dialogues(id):
 		"i46":
 			return [["", "COMPUTER!"], ["i47"]]
 		"i47":
-			return [["", "{ КОМПЮТЕР } ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ!"], ["i48"]]
+			return [["", "{ КОМПЮТЕР } ЧЕГО? ДАВАЙ БЫСТРЕЕ, Я ЗАНЯТ."], ["i48"]]
 		"i48":
 			return [["", "Barry, you complete idiot."], ["end_intro"]]
 

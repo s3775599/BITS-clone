@@ -5,7 +5,6 @@ onready var intro_dialogue = get_node("Dialogues/IntroDialogue")
 onready var john_dialogue = get_node("Dialogues/JohnDialogue")
 onready var barry_dialogue = get_node("Dialogues/BarryDialogue")
 onready var console = get_node("BackgroundArea/Console")
-onready var audio_stream_player = get_node('/root/Main/AudioStreamPlayer')
 
 # Images on the central panels
 onready var image1 = get_node('BackgroundMain/BackgroundWallpaper/CentreUpperLeftImage')

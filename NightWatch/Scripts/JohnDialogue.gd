@@ -10,7 +10,7 @@ func john_dialogues(id):
 		"1a":
 			return [["Me? You want me to fix this?", "Yes.", "No.", "I think you're the only one who can."], ["1a1", "1a2", "1a3"]]
 		"1a1":
-			return [["What do you imagine I can do to fix this?", "You could use you enormous brain.", "You could find someone who can help.", "You could try talking to the computer."], ["1a1a", "1a1b", "1a1c"]]
+			return [["What do you imagine I can do to fix this?", "You could use your enormous brain.", "You could find someone who can help.", "You could try talking to the computer."], ["1a1a", "1a1b", "1a1c"]]
 		"1a1a":
 			return [["What's in it for me?", "A big thank-you and a firm handshake.", "The League's appreciation for all your hard work over the years.", "That attitude isn't helping the team now, is it?"], ["1a1a1", "1a1a2", "1a1a3"]]
 		"1a1a1":
