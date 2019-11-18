@@ -17,6 +17,7 @@ func _ready():
 	Global.current_scene = self
 	Global.intro = false
 	Global.title = false
+	Global.found_codes = []
 	Global.can_click = true
 	Global.barry_solved = false
 	Global.john_solved = false
