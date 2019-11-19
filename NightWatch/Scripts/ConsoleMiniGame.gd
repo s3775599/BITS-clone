@@ -17,7 +17,7 @@ func generate_combination():
 	return combination
 
 
-# Generates all consol minigame codes
+# Generates all console minigame codes
 func generate_console_codes():
 	var code
 	# Loops until array contains 4 codes

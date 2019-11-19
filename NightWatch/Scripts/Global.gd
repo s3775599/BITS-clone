@@ -39,7 +39,6 @@ var dialogue_click = "res://SFX/finger-tap-2-4.ogg"
 var background = "res://SFX/322054__zimbot__engineroomsteady.ogg"
 var language_switch = "res://SFX/error-bleep-2.ogg"
 var barry_uhoh = "res://SFX/uh-oh.ogg"
-var main_screen_anim_effect = "res://SFX/zapsplat_science_fiction_radio_signal_interference_burst_044_37795.ogg"
 
 func _ready():
 	# Code to get the current scene, taken from Godot docs
